@@ -1,0 +1,1 @@
+Here are the files and scripts needed to generate the map of the US east coast and to plot the temperature data presented in Figure 1. Note that much of the output was modified in adobe illustrator to generate Figure 1. 
