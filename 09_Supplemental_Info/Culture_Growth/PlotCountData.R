@@ -8,7 +8,7 @@ library(ggplot2)
 library(ggpubr)
 library(Rmisc)
 
-setwd("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/Culture_Growth")
+setwd("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/09_Supplemental_Info/Culture_Growth")
 
 # We have cell count data from two separate experiments, the test experiment to determine the timing of stationary growth phase (test_counts), 
 # and the final experiment where we sampled cells for gene expression (exp_counts). 
@@ -42,7 +42,7 @@ test.plot = ggplot(test_summary, aes(x = Day, fill = Flask_ID))+
   theme(legend.position = c(.8, .15), legend.background = element_rect(color = "black"))
 test.plot
 
-ggsave(test.plot, file = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/test.culture.growth.pdf", width=4, height=4, units=c("in"), useDingbats=FALSE)
+ggsave(test.plot, file = "test.culture.growth.pdf", width=4, height=4, units=c("in"), useDingbats=FALSE)
 
 
 
@@ -62,7 +62,7 @@ exp.plot = ggplot(exp_summary, aes(x = Day, fill = Flask_ID))+
   ggtitle("C. Full Experiment - All Flasks") 
 exp.plot
 
-ggsave(exp.plot, file = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/exp.culture.growth.pdf", width=8, height=4, units=c("in"), useDingbats=FALSE)
+ggsave(exp.plot, file = "exp.culture.growth.pdf", width=8, height=4, units=c("in"), useDingbats=FALSE)
 
 
 # now average over flask id too
@@ -86,5 +86,5 @@ exp.plot2 = ggplot(exp_summary2, aes(x = Day, fill = treatment))+
   theme(legend.position = c(.2, .15), legend.background = element_rect(color = "black"))
 exp.plot2
 
-ggsave(exp.plot2, file = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/exp.culture.growth.collapsed.pdf", width=4, height=4, units=c("in"), useDingbats=FALSE)
+ggsave(exp.plot2, file = "exp.culture.growth.collapsed.pdf", width=4, height=4, units=c("in"), useDingbats=FALSE)
 

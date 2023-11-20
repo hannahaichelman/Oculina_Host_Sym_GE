@@ -20,8 +20,8 @@ library(plyr)
 # SymPortal ITS2 DIV Analysis
 # cleaned file up to remove extraneous info in the header in excel, but original file here:
 # Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/ITS2_Analyses/20210826_aichelman/its2_type_profiles/166_20210826_DBV_20210826T064400.profiles.absolute.abund_and_meta.txt
-setwd("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/ITS2_Analyses/")
-its2_divs = read.csv("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/ITS2_Analyses/20210826_aichelman/its2_type_profiles/SymPortal_RawDIVs.csv")
+setwd("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/09_Supplemental_Info/Symbiont_Identity/ITS2_Analyses")
+its2_divs = read.csv("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/09_Supplemental_Info/Symbiont_Identity/ITS2_Analyses/20210826_aichelman/its2_type_profiles/SymPortal_RawDIVs.csv")
 head(its2_divs)
 
 # remove samples not included in the dataset and clones
@@ -43,7 +43,7 @@ metadata = metadata %>%
   dplyr::rename(frag = its2_divs.frag)
 
 # need to figure out symbiotic state, which we have in the PAM data
-pam = read.csv('/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Phys_data/Oculina/Oculina_PAM.csv')
+pam = read.csv('~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/06_Sym_Physiology/Oculina_PAM.csv')
 
 pam2 = pam %>%
   select(coral_id, sym_state)
@@ -118,5 +118,5 @@ barplot = plot_bar(ps.rel, fill="DIV") +
   theme(axis.text.x = element_text(angle = -90, vjust = 0.4, hjust= 0)) 
 barplot
 
-ggsave(barplot, filename = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/its2_barplot.pdf", width=6, height=4, units=c("in"), useDingbats=FALSE)
+ggsave(barplot, filename = "its2_barplot.pdf", width=6, height=4, units=c("in"), useDingbats=FALSE)
 

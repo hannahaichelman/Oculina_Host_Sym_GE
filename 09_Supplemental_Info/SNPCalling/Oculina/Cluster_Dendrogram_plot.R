@@ -1,5 +1,5 @@
 # Set working directory
-setwd("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/SNPCalling/Oculina")
+setwd("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/09_Supplemental_Info/SNPCalling/Oculina")
 #clustering / PCoA based on identity by state (IBS) 
 #(for low and/or uneven coverage)
 

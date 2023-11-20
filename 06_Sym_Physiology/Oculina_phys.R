@@ -9,7 +9,7 @@ library(emmeans)
 #### Read in & organize data ####
 # Read in Fv/Fm data and separate by symbiotic and aposybiotic
 
-pam = read.csv('/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Phys_data/Oculina/Oculina_PAM.csv')
+pam = read.csv('~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/06_Sym_Physiology/Oculina_PAM.csv')
 
 str(pam)
 head(pam)
@@ -33,7 +33,7 @@ pam.apo = pam2 %>%
 
 
 # Read in temperature data
-host_exp_temp = read.csv("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_TagSeq/Oculina_temperature.csv") %>%
+host_exp_temp = read.csv("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/02_ExperimentalDesign/Temperature_data/Oculina_temperature.csv") %>%
   select(-X) %>%
   mutate(treatment = factor(treatment))
 head(host_exp_temp)
@@ -69,7 +69,7 @@ pam.sym.plot = ggplot(pam.sym.summary, aes(x = day, color = treatment))+
   theme(legend.position = 'none')
 pam.sym.plot
 
-ggsave(pam.sym.plot, file = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/sym.host.fvfm.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
+ggsave(pam.sym.plot, file = "sym.host.fvfm.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
 
 
 # raw fv/fm data and means + se
@@ -93,7 +93,7 @@ pam.sym.plot.2 <- ggplot(pam_temps,aes(x = day, y = avgfvfm))+
 #geom_hline(yintercept=0, linetype='dotted', color = 'gray')+
 #theme(panel.border = element_rect(colour = "black", fill = NA, size = 1)) 
 pam.sym.plot.2  
-ggsave(pam.sym.plot.2, file = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/sym.host.fvfm_alldata.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
+ggsave(pam.sym.plot.2, file = "sym.host.fvfm_alldata.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
 
 
 
@@ -109,7 +109,7 @@ temp.pam.plot = day_temps_to_merge %>%
   scale_x_continuous(breaks = c(2,5,8,11,14))
 #theme(legend.position = 'none')
 temp.pam.plot
-ggsave(temp.pam.plot, file = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/temps.fvfm.pdf", width=5, height=2, units=c("in"), useDingbats=FALSE)
+ggsave(temp.pam.plot, file = "temps.fvfm.pdf", width=5, height=2, units=c("in"), useDingbats=FALSE)
 
 
 

@@ -15,16 +15,16 @@
 ################################################################
 # First, press command-D on mac or ctrl-shift-H in Rstudio and navigate to the directory containing scripts and input files. Then edit, mark and execute the following bits of code, one after another.
 
-setwd("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/Oculina_GO_Analyses")
+setwd("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/")
 
 # Edit these to match your data file names: 
-goAnnotations="B_psygmophilum_isogroup_to_GOterm.tab" # two-column, tab-delimited, one line per gene, multiple GO terms separated by semicolon. If you have multiple lines per gene, use nrify_GOtable.pl prior to running this script.
+goAnnotations="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/B_psygmophilum_isogroup_to_GOterm.tab" # two-column, tab-delimited, one line per gene, multiple GO terms separated by semicolon. If you have multiple lines per gene, use nrify_GOtable.pl prior to running this script.
 #goAnnotations="O_arbuscula_isogroup_to_GOterm.tab" # two-column, tab-delimited, one line per gene, multiple GO terms separated by semicolon. If you have multiple lines per gene, use nrify_GOtable.pl prior to running this script.
-goDatabase="go.obo" # download from http://www.geneontology.org/GO.downloads.ontology.shtml
-source("gomwu.functions.R")
+goDatabase="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/go.obo" # download from http://www.geneontology.org/GO.downloads.ontology.shtml
+source("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/gomwu.functions.R")
 
 #### Oculina Symbiotic Host Heat GO Terms ####
-input="oculina_hot_brown_host_GO.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
+input="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/oculina_hot_brown_host_GO.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
 goDivision="MF" # either MF, or BP, or CC
 
 # ------------- Calculating stats
@@ -115,7 +115,7 @@ results[[1]]
 write.csv(cc_hot_sym_results, "cc_oculina_host_brown_heat_results.csv")
 
 #### Oculina Symbiotic Host Cold GO Terms ####
-input="oculina_cold_brown_host_GO.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
+input="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/oculina_cold_brown_host_GO.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
 goDivision="MF" # either MF, or BP, or CC
 
 # ------------- Calculating stats
@@ -207,7 +207,7 @@ results[[1]]
 write.csv(cc_cold_sym_results, "cc_oculina_host_brown_cold_results.csv")
 
 #### Oculina Aposymbiotic Host Heat GO Terms ####
-input="oculina_hot_white_host_GO.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
+input="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/oculina_hot_white_host_GO.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
 goDivision="MF" # either MF, or BP, or CC
 
 # ------------- Calculating stats
@@ -298,7 +298,7 @@ results[[1]]
 write.csv(cc_hot_white_host_results, "cc_oculina_host_white_heat_results.csv")
 
 #### Oculina Aposymbiotic Host Cold GO Terms ####
-input="oculina_cold_white_host_GO.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
+input="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/oculina_cold_white_host_GO.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
 goDivision="MF" # either MF, or BP, or CC
 
 # ------------- Calculating stats
@@ -392,8 +392,8 @@ write.csv(cc_cold_white_host_results, "cc_oculina_host_white_cold_results.csv")
 
 
 #### Symbiont Hot In Host GO Terms ####
-goAnnotations="B_psygmophilum_isogroup_to_GOterm.tab" # two-column, tab-delimited, one line per gene, multiple GO terms separated by semicolon. If you have multiple lines per gene, use nrify_GOtable.pl prior to running this script.
-input="oculina_hot_syminhost_GO.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
+goAnnotations="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/B_psygmophilum_isogroup_to_GOterm.tab" # two-column, tab-delimited, one line per gene, multiple GO terms separated by semicolon. If you have multiple lines per gene, use nrify_GOtable.pl prior to running this script.
+input="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/oculina_hot_syminhost_GO.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
 goDivision="MF" # either MF, or BP, or CC
 
 # ------------- Calculating stats
@@ -485,7 +485,7 @@ results[[1]]
 write.csv(cc_hot_sym_results, "cc_hot_syminhost_results.csv")
 
 #### Symbiont Cold In Host GO Terms ####
-input="oculina_cold_syminhost_GO.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
+input="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/oculina_cold_syminhost_GO.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
 goDivision="MF" # either MF, or BP, or CC
 
 # ------------- Calculating stats
@@ -573,7 +573,7 @@ results[[1]]
 write.csv(cc_cold_sym_results, "cc_cold_syminhost_results.csv")
 
 #### Symbiont Culture Hot GO Terms ####
-input="culture_hot_GO.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
+input="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/culture_hot_GO.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
 goDivision="MF" # either MF, or BP, or CC
 
 # ------------- Calculating stats
@@ -665,7 +665,7 @@ results[[1]]
 write.csv(cc_hot_culture_results, "cc_hot_culture_results.csv")
 
 #### Symbiont Culture Cold GO Terms ####
-input="culture_cold_GO.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
+input="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/culture_cold_GO.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
 goDivision="MF" # either MF, or BP, or CC
 
 # ------------- Calculating stats
@@ -753,8 +753,8 @@ write.csv(cc_cold_culture_results, "cc_cold_culture_results.csv")
 
 
 #### Symbionts Combined Analysis - In Culture Cold GO Terms ####
-goAnnotations="B_psygmophilum_isogroup_to_GOterm.tab" # two-column, tab-delimited, one line per gene, multiple GO terms separated by semicolon. If you have multiple lines per gene, use nrify_GOtable.pl prior to running this script.
-input="oculina_cold_symcombined_culture_GO.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
+goAnnotations="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/B_psygmophilum_isogroup_to_GOterm.tab" # two-column, tab-delimited, one line per gene, multiple GO terms separated by semicolon. If you have multiple lines per gene, use nrify_GOtable.pl prior to running this script.
+input="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/oculina_cold_symcombined_culture_GO.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
 goDivision="MF" # either MF, or BP, or CC
 
 # ------------- Calculating stats
@@ -844,8 +844,8 @@ cc_cold_inculture_results[[1]]
 write.csv(cc_cold_inculture_results, "cc_cold_symcombined_inculture_results.csv")
 
 #### Symbionts Combined Analysis - In Culture Heat GO Terms ####
-goAnnotations="B_psygmophilum_isogroup_to_GOterm.tab" # two-column, tab-delimited, one line per gene, multiple GO terms separated by semicolon. If you have multiple lines per gene, use nrify_GOtable.pl prior to running this script.
-input="oculina_hot_symcombined_culture_GO.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
+goAnnotations="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/B_psygmophilum_isogroup_to_GOterm.tab" # two-column, tab-delimited, one line per gene, multiple GO terms separated by semicolon. If you have multiple lines per gene, use nrify_GOtable.pl prior to running this script.
+input="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/oculina_hot_symcombined_culture_GO.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
 goDivision="MF" # either MF, or BP, or CC
 
 # ------------- Calculating stats
@@ -884,8 +884,8 @@ gomwuStats(input, goDatabase, goAnnotations, goDivision,
 
 
 #### Symbionts Combined Analysis - In Host Cold GO Terms ####
-goAnnotations="B_psygmophilum_isogroup_to_GOterm.tab" # two-column, tab-delimited, one line per gene, multiple GO terms separated by semicolon. If you have multiple lines per gene, use nrify_GOtable.pl prior to running this script.
-input="oculina_cold_symcombined_inhost_GO.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
+goAnnotations="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/B_psygmophilum_isogroup_to_GOterm.tab" # two-column, tab-delimited, one line per gene, multiple GO terms separated by semicolon. If you have multiple lines per gene, use nrify_GOtable.pl prior to running this script.
+input="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/oculina_cold_symcombined_inhost_GO.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
 goDivision="MF" # either MF, or BP, or CC
 
 # ------------- Calculating stats
@@ -923,8 +923,8 @@ gomwuStats(input, goDatabase, goAnnotations, goDivision,
 # can't make the GO tree because not enough terms
 
 #### Symbionts Combined Analysis - In Host Heat GO Terms ####
-goAnnotations="B_psygmophilum_isogroup_to_GOterm.tab" # two-column, tab-delimited, one line per gene, multiple GO terms separated by semicolon. If you have multiple lines per gene, use nrify_GOtable.pl prior to running this script.
-input="oculina_hot_symcombined_inhost_GO.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
+goAnnotations="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/B_psygmophilum_isogroup_to_GOterm.tab" # two-column, tab-delimited, one line per gene, multiple GO terms separated by semicolon. If you have multiple lines per gene, use nrify_GOtable.pl prior to running this script.
+input="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/oculina_hot_symcombined_inhost_GO.csv" # two columns of comma-separated values: gene id, continuous measure of significance. To perform standard GO enrichment analysis based on Fisher's exact test, use binary measure (0 or 1, i.e., either sgnificant or not).
 goDivision="MF" # either MF, or BP, or CC
 
 # ------------- Calculating stats
