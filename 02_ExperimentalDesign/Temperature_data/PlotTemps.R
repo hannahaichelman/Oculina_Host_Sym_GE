@@ -8,15 +8,14 @@ library(ggplot2)
 library(ggpubr)
 library(Rmisc)
 
-setwd("/Users/hannahaichelman/Documents/BU/Host_Buffering/")
 
-host_exp = read.csv("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_TagSeq/Oculina_temperature.csv") %>%
+host_exp = read.csv("02_ExperimentalDesign/Temperature_data/Oculina_temperature.csv") %>%
   select(-X) %>%
   mutate(treatment = factor(treatment))
 head(host_exp)
 str(host_exp)
 
-culture_exp = read.csv("/Users/hannahaichelman/Documents/BU/Host_Buffering/Sym_TagSeq/All_Temps.csv") %>%
+culture_exp = read.csv("02_ExperimentalDesign/Temperature_data/All_Temps.csv") %>%
   mutate(Incubator = factor(Incubator))
 head(culture_exp)
 str(culture_exp)
@@ -67,12 +66,12 @@ culture.plot = culture_exp %>%
   ggtitle("B. Culture Experiment") +
   theme(legend.position = c(.1, .2), legend.background = element_rect(color = "black"))
 culture.plot
-ggsave(culture.plot, filename = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/Culture_Temp_Plot.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
+ggsave(culture.plot, filename = "Culture_Temp_Plot.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
 
 
 # combine host and symbiont plots
 figs.combined = ggarrange(host.plot, culture.plot, ncol = 2, nrow = 1)
-ggsave(figs.combined, filename = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/Combined_Temp_Plot.pdf", width=8, height=4, units=c("in"), useDingbats=FALSE)
+ggsave(figs.combined, filename = "Combined_Temp_Plot.pdf", width=8, height=4, units=c("in"), useDingbats=FALSE)
 
 
 #### Ribbon plot experiments together ####
@@ -189,7 +188,7 @@ min(culture_exp$TempC)
 library(lubridate)
 
 
-boing<-read.delim("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/Temperature_Data/RadioIsland_Temps/RadioIslandTempNOAABuoy_2017full.txt", na.strings='999')
+boing<-read.delim("02_ExperimentalDesign/Temperature_Data/RadioIsland_Temps/RadioIslandTempNOAABuoy_2017full.txt", na.strings='999')
 head(boing)
 boing<-cbind("datetime"=paste(paste(boing$X.YY.yr, boing$MM.mo, boing$DD.dy, sep="-")," ",paste(boing$hh.hr,boing$mm.mn, sep=":"),sep=""),boing)
 boing$datetime<-strptime(boing$datetime, format="%Y-%m-%d %H:%M")
@@ -224,4 +223,4 @@ ritemp_plot = ggplot(data = boing, aes(x = datetime, y = WTMP.degC)) +
         axis.title.x = element_blank())
 
 ritemp_plot 
-ggsave(ritemp_plot, filename = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/RadioIsland_Temp_Plot.pdf", width=4, height=3.5, units=c("in"), useDingbats=FALSE)
+ggsave(ritemp_plot, filename = "RadioIsland_Temp_Plot.pdf", width=4, height=3.5, units=c("in"), useDingbats=FALSE)
