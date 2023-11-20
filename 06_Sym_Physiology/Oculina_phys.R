@@ -1,4 +1,4 @@
-# Analyze Oculina arbuscula physiology data
+# Analyze Oculina arbuscula Fv/Fm data
 
 library(tidyverse)
 library(Rmisc)

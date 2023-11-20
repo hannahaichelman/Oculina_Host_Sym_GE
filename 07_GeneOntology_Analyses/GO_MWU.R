@@ -19,7 +19,7 @@ setwd("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses
 
 # Edit these to match your data file names: 
 goAnnotations="B_psygmophilum_isogroup_to_GOterm.tab" # two-column, tab-delimited, one line per gene, multiple GO terms separated by semicolon. If you have multiple lines per gene, use nrify_GOtable.pl prior to running this script.
-goAnnotations="O_arbuscula_isogroup_to_GOterm.tab" # two-column, tab-delimited, one line per gene, multiple GO terms separated by semicolon. If you have multiple lines per gene, use nrify_GOtable.pl prior to running this script.
+#goAnnotations="O_arbuscula_isogroup_to_GOterm.tab" # two-column, tab-delimited, one line per gene, multiple GO terms separated by semicolon. If you have multiple lines per gene, use nrify_GOtable.pl prior to running this script.
 goDatabase="go.obo" # download from http://www.geneontology.org/GO.downloads.ontology.shtml
 source("gomwu.functions.R")
 
@@ -737,7 +737,6 @@ gomwuStats(input, goDatabase, goAnnotations, goDivision,
 quartz()
 cc_cold_culture_results=gomwuPlot(input,goAnnotations,goDivision,
                                   absValue=-log(0.05,10),  # genes with the measure value exceeding this will be counted as "good genes". This setting is for signed log-pvalues. Specify absValue=0.001 if you are doing Fisher's exact test for standard GO enrichment or analyzing a WGCNA module (all non-zero genes = "good genes").
-                                  #	absValue=1, # un-remark this if you are using log2-fold changes
                                   level1=0.05, # FDR threshold for plotting. Specify level1=1 to plot all GO categories containing genes exceeding the absValue.
                                   level2=0.01, # FDR cutoff to print in regular (not italic) font.
                                   level3=0.001, # FDR cutoff to print in large bold font.
