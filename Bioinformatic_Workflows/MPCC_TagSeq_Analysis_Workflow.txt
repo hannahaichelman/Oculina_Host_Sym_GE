@@ -1,0 +1,650 @@
+Pipeline for analyzing TagSeq data from MPCC 2018 class
+
+#------------------------------USEFUL COMMANDS
+qdel --> to delete a job
+pquota --> check how much space you have, can designate a user:
+   [haich@scc1 ~]$ pquota -u davies-hb
+qstat --> checks status of running jobs
+   [haich@scc1 ~]$ qstat -u haich
+module list --> check modules that are loaded
+qrsh --> request interactive node
+
+#------------------------------GET DATA FROM SEQUENCER
+#download data from Tufts
+[haich@scc1 hannah]$ pwd
+/project/davies-hb/hannah
+
+[haich@scc1 davies-hb]$ wget -r -nH --cut-dirs=5 -nc ftp://sarah.davies:XVddLhQ@130.64.74.72//TUCF-5515/
+
+#organized and unzipped files
+
+[haich@scc1 Astrangia]$ nano gunzip_files 
+
+#!/bin/bash
+#$ -V # inherit the submission environment
+#$ -cwd # start job in submission directory
+#$ -N gunzip # job name, anything you want
+#$ -l h_rt=24:00:00 #maximum run time
+#$ -M hannahaichelman@gmail.com #your email
+#$ -m be
+
+gunzip *.gz
+
+
+moved everything over to correct working directory with all of the space (/projectnb/davies-hb/)
+used a qsub command to do this
+
+#------------------------------BACKING UP DATA
+downloaded a second copy of the data to /project/davies-hb to ensure we have it backed up
+[haich@scc1 MPCC_2018]$ pwd
+/project/davies-hb/MPCC_2018
+
+[haich@scc1 MPCC_2018]$ wget -r -nH --cut-dirs=5 -nc ftp://sarah.davies:XVddLhQ@130.64.74.72//TUCF-5515/
+
+#sarah asked me to tarball the back-up file, used this:
+[haich@scc1 davies-hb]$ pwd
+/project/davies-hb
+
+[haich@scc1 davies-hb]$ y
+
+#------------------------------TRIMMING FILES
+
+downloaded all scripts from from https://github.com/z0on/tag-based_RNAseq - check it out for additional analyses etc
+scp'd them over to: 
+/projectnb/davies-hb/hannah/MPCC_2018
+
+module load fastx-toolkit
+
+[haich@scc1 Oculina]$ ../tag-based_RNAseq-master/tagseq_trim_launch.pl '\.fastq$' > clean
+
+[haich@scc1 Oculina]$ nano clean
+#!/bin/bash
+#$ -V # inherit the submission environment
+#$ -cwd # start job in submission directory
+#$ -N trim # job name, anything you want
+#$ -l h_rt=24:00:00 #maximum run time
+#$ -M hannahaichelman@gmail.com #your email
+#$ -m be
+
+tagseq_clipper.pl Oculina_OL6_S16_R1_001.fastq | fastx_clipper -a AAAAAAAA -l 20 -Q33 | fastx_clipper -a AGATCGGAAG -l 20 -Q33 | fastq_quality_filter -Q33 -q 20 -p 90 >Oculina_OL6_S16_R1_001.fastq.trim
+tagseq_clipper.pl Oculina_OE11_S3_R1_001.fastq | fastx_clipper -a AAAAAAAA -l 20 -Q33 | fastx_clipper -a AGATCGGAAG -l 20 -Q33 | fastq_quality_filter -Q33 -q 20 -p 90 >Oculina_OE11_S3_R1_001.fastq.trim
+tagseq_clipper.pl Oculina_OL8_S19_R1_001.fastq | fastx_clipper -a AAAAAAAA -l 20 -Q33 | fastx_clipper -a AGATCGGAAG -l 20 -Q33 | fastq_quality_filter -Q33 -q 20 -p 90 >Oculina_OL8_S19_R1_001.fastq.trim
+tagseq_clipper.pl Oculina_OD5_S5_R1_001.fastq | fastx_clipper -a AAAAAAAA -l 20 -Q33 | fastx_clipper -a AGATCGGAAG -l 20 -Q33 | fastq_quality_filter -Q33 -q 20 -p 90 >Oculina_OD5_S5_R1_001.fastq.trim
+tagseq_clipper.pl Oculina_OF7_S32_R1_001.fastq | fastx_clipper -a AAAAAAAA -l 20 -Q33 | fastx_clipper -a AGATCGGAAG -l 20 -Q33 | fastq_quality_filter -Q33 -q 20 -p 90 >Oculina_OF7_S32_R1_001.fastq.trim
+tagseq_clipper.pl Oculina_OD4_S40_R1_001.fastq | fastx_clipper -a AAAAAAAA -l 20 -Q33 | fastx_clipper -a AGATCGGAAG -l 20 -Q33 | fastq_quality_filter -Q33 -q 20 -p 90 >Oculina_OD4_S40_R1_001.fastq.trim
+re Oculina_OC5_S18_R1_001.fastq | fastx_clipper -a AAAAAAAA -l 20 -Q33 | fastx_clipper -a AGATCGGAAG -l 20 -Q33 | fastq_quality_filter -Q33 -q 20 -p 90 >Oculina_OC5_S18_R1_001.fastq.trim
+...
+
+#here, first fastx_clipper is removing poly-A sequences, then second fastx_clipper is removing illumina adapters. 
+#both then keep sequences with length greater than 20 bp and quality score greater than 33
+#second fastx_clipper is looking for the reverse complement of the TruSeq_Un1-4 primers
+#These TruSeq primers are combined with different reverse barcodes to create unique barcode combo for Illumina sequencing
+
+[haich@scc1 Oculina]$ qsub clean
+*have to make sure tagseq_clipper.pl is in folder before you submit clean though*
+
+[haich@scc1 Oculina]$ cat trim.e9747676 
+Oculina_OL6_S16_R1_001.fastq	total:3668299	goods:1609611	dups:1767751	noheader:290682	N.in.header:256
+Oculina_OE11_S3_R1_001.fastq	total:3308942	goods:1339550	dups:1634136	noheader:335062	N.in.header:195
+Oculina_OL8_S19_R1_001.fastq	total:2466305	goods:1224850	dups:952365	noheader:288943	N.in.header:148
+Oculina_OD5_S5_R1_001.fastq	total:6030497	goods:2509640	dups:2900630	noheader:619876	N.in.header:352
+Oculina_OF7_S32_R1_001.fastq	total:2097443	goods:972582	dups:849508	noheader:275251	N.in.header:103
+Oculina_OD4_S40_R1_001.fastq	total:3136756	goods:1426727	dups:1301847	noheader:408032	N.in.header:151
+Oculina_OC5_S18_R1_001.fastq	total:2795155	goods:1106540	dups:1360752	noheader:327626	N.in.header:238
+Oculina_OF9_S9_R1_001.fastq	total:12787828	goods:2815371	dups:8728610	noheader:1243182	N.in.header:666
+Oculina_OP2_S47_R1_001.fastq	total:4596831	goods:1927617	dups:2301462	noheader:367531	N.in.header:222
+Oculina_OQ4_S14_R1_001.fastq	total:9668834	goods:4203196	dups:4649490	noheader:815610	N.in.header:539
+Oculina_OM1_S10_R1_001.fastq	total:7295614	goods:3004634	dups:3582580	noheader:707938	N.in.header:463
+Oculina_ON6_S17_R1_001.fastq	total:4920306	goods:1175537	dups:3362449	noheader:381878	N.in.header:443
+Oculina_OH15_S12_R1_001.fastq	total:8292392	goods:3283442	dups:4243734	noheader:764734	N.in.header:483
+Oculina_OR9_S25_R1_001.fastq	total:4230653	goods:1014575	dups:2831493	noheader:384247	N.in.header:339
+Oculina_OQ1_S41_R1_001.fastq	total:3568498	goods:1445525	dups:1673046	noheader:449649	N.in.header:278
+Oculina_OE10_S46_R1_001.fastq	total:4196932	goods:1846763	dups:1741168	noheader:608796	N.in.header:206
+Oculina_OQ11_S8_R1_001.fastq	total:8004810	goods:2639612	dups:4568482	noheader:796187	N.in.header:530
+Oculina_OJ14_S6_R1_001.fastq	total:8008008	goods:3299036	dups:3839153	noheader:869328	N.in.header:492
+Oculina_OH1_S34_R1_001.fastq	total:3782080	goods:1702677	dups:1582858	noheader:496234	N.in.header:312
+Oculina_OK3_S31_R1_001.fastq	total:1802139	goods:977514	dups:673327	noheader:151207	N.in.header:92
+Oculina_OC9_S36_R1_001.fastq	total:5259035	goods:1834340	dups:2621624	noheader:802767	N.in.header:305
+Oculina_OM2_S28_R1_001.fastq	total:1853944	goods:941901	dups:662471	noheader:249456	N.in.header:117
+Oculina_OP1_S42_R1_001.fastq	total:5471120	goods:2303583	dups:2521695	noheader:645408	N.in.header:435
+Oculina_OI2_S35_R1_001.fastq	total:4702871	goods:2104090	dups:1910232	noheader:688256	N.in.header:294
+Oculina_OK1_S38_R1_001.fastq	total:833657	goods:472945	dups:247837	noheader:112830	N.in.header:46
+Oculina_OI3_S4_R1_001.fastq	total:3848414	goods:1367181	dups:2138047	noheader:342973	N.in.header:214
+Oculina_ON5_S13_R1_001.fastq	total:16246514	goods:6201923	dups:8271877	noheader:1771720	N.in.header:995
+Oculina_OO1_S7_R1_001.fastq	total:5739490	goods:2436496	dups:2820994	noheader:481605	N.in.header:396
+Oculina_OR8_S21_R1_001.fastq	total:4983180	goods:2006830	dups:2185205	noheader:790835	N.in.header:311
+Oculina_OR7_S39_R1_001.fastq	total:3930279	goods:1604180	dups:1881504	noheader:444384	N.in.header:212
+Oculina_OK2_S1_R1_001.fastq	total:6949550	goods:1782467	dups:4529030	noheader:637716	N.in.header:338
+Oculina_OC4_S29_R1_001.fastq	total:3129577	goods:1427895	dups:1261418	noheader:440063	N.in.header:202
+Oculina_OJ15_S24_R1_001.fastq	total:2255126	goods:1112164	dups:895361	noheader:247501	N.in.header:101
+Oculina_OJ13_S11_R1_001.fastq	total:6221360	goods:2829382	dups:2788750	noheader:602915	N.in.header:314
+Oculina_OI1_S15_R1_001.fastq	total:8138535	goods:3292538	dups:4108668	noheader:736748	N.in.header:581
+Oculina_ON4_S27_R1_001.fastq	total:4824787	goods:2049045	dups:2127195	noheader:648254	N.in.header:294
+Oculina_OH11_S43_R1_001.fastq	total:2126834	goods:1019441	dups:770700	noheader:336561	N.in.header:133
+Oculina_OE3_S30_R1_001.fastq	total:4162845	goods:1961845	dups:1878814	noheader:321946	N.in.header:241
+Oculina_OP3_S37_R1_001.fastq	total:6076638	goods:1873834	dups:3524804	noheader:677623	N.in.header:378
+Oculina_OO2_S22_R1_001.fastq	total:3620699	goods:1786440	dups:1442159	noheader:391895	N.in.header:206
+Oculina_OD6_S26_R1_001.fastq	total:3724669	goods:1559812	dups:1738747	noheader:425783	N.in.header:327
+Oculina_OA5_S33_R1_001.fastq	total:3804138	goods:1428325	dups:1953637	noheader:421848	N.in.header:329
+Oculina_OL7_S2_R1_001.fastq	total:4727630	goods:1955185	dups:2142900	noheader:629265	N.in.header:280
+Oculina_OA6_S20_R1_001.fastq	total:6953917	goods:2047216	dups:4055941	noheader:850301	N.in.header:460
+Oculina_OM3_S23_R1_001.fastq	total:2884074	goods:1329457	dups:1180058	noheader:374419	N.in.header:140
+Oculina_OA4_S45_R1_001.fastq	total:713004	goods:131447	dups:517854	noheader:63661	N.in.header:43
+Oculina_OF8_S44_R1_001.fastq	total:2937370	goods:1417755	dups:1150635	noheader:368789	N.in.header:192
+
+
+#Trying to do this without removing dups (using tagseq_clipper_keepDupes.pl):
+
+[haich@scc1 Oculina]$ pwd
+/projectnb/davies-hb/hannah/MPCC_2018/Oculina
+
+[haich@scc1 Oculina]$ cat clean_keepdups.e5080667
+Oculina_OL6_S16_R1_001.fastq	total:3668299	goods:1609611	dups:1767751(NOT removed!)	noheader:290681	N.in.header:256
+Oculina_OE11_S3_R1_001.fastq	total:3308942	goods:1339550	dups:1634136(NOT removed!)	noheader:335061	N.in.header:195
+Oculina_OL8_S19_R1_001.fastq	total:2466305	goods:1224850	dups:952365(NOT removed!)	noheader:288942	N.in.header:148
+Oculina_OD5_S5_R1_001.fastq	total:6030497	goods:2509640	dups:2900630(NOT removed!)	noheader:619875	N.in.header:352
+Oculina_OF7_S32_R1_001.fastq	total:2097443	goods:972582	dups:849508(NOT removed!)	noheader:275250	N.in.header:103
+Oculina_OD4_S40_R1_001.fastq	total:3136756	goods:1426727	dups:1301847(NOT removed!)	noheader:408031	N.in.header:151
+Oculina_OC5_S18_R1_001.fastq	total:2795155	goods:1106540	dups:1360752(NOT removed!)	noheader:327625	N.in.header:238
+Oculina_OF9_S9_R1_001.fastq	total:12787828	goods:2815371	dups:8728610(NOT removed!)	noheader:1243181	N.in.header:666
+Oculina_OP2_S47_R1_001.fastq	total:4596831	goods:1927617	dups:2301462(NOT removed!)	noheader:367530	N.in.header:222
+Oculina_OQ4_S14_R1_001.fastq	total:9668834	goods:4203196	dups:4649490(NOT removed!)	noheader:815609	N.in.header:539
+Oculina_OM1_S10_R1_001.fastq	total:7295614	goods:3004634	dups:3582580(NOT removed!)	noheader:707937	N.in.header:463
+Oculina_ON6_S17_R1_001.fastq	total:4920306	goods:1175537	dups:3362449(NOT removed!)	noheader:381877	N.in.header:443
+Oculina_OH15_S12_R1_001.fastq	total:8292392	goods:3283442	dups:4243734(NOT removed!)	noheader:764733	N.in.header:483
+Oculina_OR9_S25_R1_001.fastq	total:4230653	goods:1014575	dups:2831493(NOT removed!)	noheader:384246	N.in.header:339
+Oculina_OQ1_S41_R1_001.fastq	total:3568498	goods:1445525	dups:1673046(NOT removed!)	noheader:449649	N.in.header:278
+Oculina_OE10_S46_R1_001.fastq	total:4196932	goods:1846763	dups:1741168(NOT removed!)	noheader:608795	N.in.header:206
+Oculina_OQ11_S8_R1_001.fastq	total:8004810	goods:2639612	dups:4568482(NOT removed!)	noheader:796186	N.in.header:530
+Oculina_OJ14_S6_R1_001.fastq	total:8008008	goods:3299036	dups:3839153(NOT removed!)	noheader:869327	N.in.header:492
+Oculina_OH1_S34_R1_001.fastq	total:3782080	goods:1702677	dups:1582858(NOT removed!)	noheader:496233	N.in.header:312
+Oculina_OK3_S31_R1_001.fastq	total:1802139	goods:977514	dups:673327(NOT removed!)	noheader:151206	N.in.header:92
+Oculina_OC9_S36_R1_001.fastq	total:5259035	goods:1834340	dups:2621624(NOT removed!)	noheader:802766	N.in.header:305
+Oculina_OM2_S28_R1_001.fastq	total:1853944	goods:941901	dups:662471(NOT removed!)	noheader:249455	N.in.header:117
+Oculina_OP1_S42_R1_001.fastq	total:5471120	goods:2303583	dups:2521695(NOT removed!)	noheader:645407	N.in.header:435
+Oculina_OI2_S35_R1_001.fastq	total:4702871	goods:2104090	dups:1910232(NOT removed!)	noheader:688255	N.in.header:294
+Oculina_OK1_S38_R1_001.fastq	total:833657	goods:472945	dups:247837(NOT removed!)	noheader:112829	N.in.header:46
+Oculina_OI3_S4_R1_001.fastq	total:3848414	goods:1367181	dups:2138047(NOT removed!)	noheader:342972	N.in.header:214
+Oculina_ON5_S13_R1_001.fastq	total:16246514	goods:6201923	dups:8271877(NOT removed!)	noheader:1771719	N.in.header:995
+Oculina_OO1_S7_R1_001.fastq	total:5739490	goods:2436496	dups:2820994(NOT removed!)	noheader:481604	N.in.header:396
+Oculina_OR8_S21_R1_001.fastq	total:4983180	goods:2006830	dups:2185205(NOT removed!)	noheader:790834	N.in.header:311
+Oculina_OR7_S39_R1_001.fastq	total:3930279	goods:1604180	dups:1881504(NOT removed!)	noheader:444383	N.in.header:212
+Oculina_OK2_S1_R1_001.fastq	total:6949550	goods:1782467	dups:4529030(NOT removed!)	noheader:637715	N.in.header:338
+Oculina_OC4_S29_R1_001.fastq	total:3129577	goods:1427895	dups:1261418(NOT removed!)	noheader:440062	N.in.header:202
+Oculina_OJ15_S24_R1_001.fastq	total:2255126	goods:1112164	dups:895361(NOT removed!)	noheader:247500	N.in.header:101
+Oculina_OJ13_S11_R1_001.fastq	total:6221360	goods:2829382	dups:2788750(NOT removed!)	noheader:602914	N.in.header:314
+Oculina_OI1_S15_R1_001.fastq	total:8138535	goods:3292538	dups:4108668(NOT removed!)	noheader:736748	N.in.header:581
+Oculina_ON4_S27_R1_001.fastq	total:4824787	goods:2049045	dups:2127195(NOT removed!)	noheader:648253	N.in.header:294
+Oculina_OH11_S43_R1_001.fastq	total:2126834	goods:1019441	dups:770700(NOT removed!)	noheader:336560	N.in.header:133
+Oculina_OE3_S30_R1_001.fastq	total:4162845	goods:1961845	dups:1878814(NOT removed!)	noheader:321945	N.in.header:241
+Oculina_OP3_S37_R1_001.fastq	total:6076638	goods:1873834	dups:3524804(NOT removed!)	noheader:677622	N.in.header:378
+Oculina_OO2_S22_R1_001.fastq	total:3620699	goods:1786440	dups:1442159(NOT removed!)	noheader:391894	N.in.header:206
+Oculina_OD6_S26_R1_001.fastq	total:3724669	goods:1559812	dups:1738747(NOT removed!)	noheader:425783	N.in.header:327
+Oculina_OA5_S33_R1_001.fastq	total:3804138	goods:1428325	dups:1953637(NOT removed!)	noheader:421847	N.in.header:329
+Oculina_OL7_S2_R1_001.fastq	total:4727630	goods:1955185	dups:2142900(NOT removed!)	noheader:629265	N.in.header:280
+Oculina_OA6_S20_R1_001.fastq	total:6953917	goods:2047216	dups:4055941(NOT removed!)	noheader:850300	N.in.header:460
+Oculina_OM3_S23_R1_001.fastq	total:2884074	goods:1329457	dups:1180058(NOT removed!)	noheader:374419	N.in.header:140
+Oculina_OA4_S45_R1_001.fastq	total:713004	goods:131447	dups:517854(NOT removed!)	noheader:63660	N.in.header:43
+Oculina_OF8_S44_R1_001.fastq	total:2937370	goods:1417755	dups:1150635(NOT removed!)	noheader:368788	N.in.header:192
+
+
+### Astrangia
+[haich@scc1 Astrangia]$ pwd
+/projectnb/davies-hb/hannah/MPCC_2018/Astrangia
+[haich@scc1 Astrangia]$ ../tag-based_RNAseq-master/tagseq_trim_launch.pl '\.fastq$' > clean
+
+[haich@scc1 Astrangia]$ cat trim.e9942301 
+Astrangia_Pdam_AG1_S32_R1_001.fastq	total:51	goods:46	dups:0	noheader:6	N.in.header:
+Astrangia_Pdam_AM1_S30_R1_001.fastq	total:2797047	goods:923996	dups:1617620	noheader:254977	N.in.header:455
+Astrangia_Pdam_AJ2_S13_R1_001.fastq	total:2983572	goods:1444516	dups:1206578	noheader:332023	N.in.header:456
+Astrangia_Pdam_AS3_S9_R1_001.fastq	total:4066912	goods:611642	dups:3052875	noheader:401647	N.in.header:749
+Astrangia_Pdam_AL2_S1_R1_001.fastq	total:4785674	goods:862300	dups:3588097	noheader:334318	N.in.header:960
+Astrangia_Pdam_AD5_S4_R1_001.fastq	total:2609448	goods:984852	dups:1347247	noheader:276840	N.in.header:510
+Astrangia_Pdam_AG2_S41_R1_001.fastq	total:5632433	goods:2449316	dups:2647673	noheader:534345	N.in.header:1100
+Astrangia_Pdam_AP4_S42_R1_001.fastq	total:2456638	goods:1193760	dups:925727	noheader:336668	N.in.header:484
+Astrangia_Pdam_AG3_S2_R1_001.fastq	total:6128832	goods:2401066	dups:2985263	noheader:741451	N.in.header:1053
+Astrangia_Pdam_AH1_S38_R1_001.fastq	total:4562147	goods:1393903	dups:2703738	noheader:463570	N.in.header:937
+Astrangia_Pdam_AH3_S12_R1_001.fastq	total:2471788	goods:1179396	dups:1007191	noheader:284691	N.in.header:511
+Astrangia_Pdam_AE5_S15_R1_001.fastq	total:4528236	goods:1778420	dups:2220166	noheader:528946	N.in.header:705
+Astrangia_Pdam_AP1_S44_R1_001.fastq	total:4284600	goods:1963558	dups:1825053	noheader:495186	N.in.header:804
+Astrangia_Pdam_AL1_S23_R1_001.fastq	total:3298436	goods:1464830	dups:1490774	noheader:342337	N.in.header:496
+Astrangia_Pdam_AH2_S17_R1_001.fastq	total:2653474	goods:664685	dups:1740095	noheader:248116	N.in.header:579
+Astrangia_Pdam_AD4_S33_R1_001.fastq	total:5621719	goods:1741662	dups:3120722	noheader:758375	N.in.header:961
+Astrangia_Pdam_AM3_S43_R1_001.fastq	total:5028286	goods:1776605	dups:2720374	noheader:530301	N.in.header:1007
+Astrangia_Pdam_AK3_S25_R1_001.fastq	total:3009774	goods:1017705	dups:1680165	noheader:311317	N.in.header:588
+Astrangia_Pdam_AS5_S28_R1_001.fastq	total:2041873	goods:992035	dups:822340	noheader:227081	N.in.header:418
+Astrangia_Pdam_AD6_S10_R1_001.fastq	total:6092666	goods:2278626	dups:3276281	noheader:536685	N.in.header:1075
+Astrangia_Pdam_AM2_S5_R1_001.fastq	total:3510007	goods:1553207	dups:1512057	noheader:444121	N.in.header:623
+Astrangia_Pdam_AE6_S6_R1_001.fastq	total:5024737	goods:1888507	dups:2584826	noheader:550577	N.in.header:828
+Astrangia_Pdam_AC1-2_S27_R1_001.fastq	total:6186284	goods:2745617	dups:2799240	noheader:640360	N.in.header:1068
+Astrangia_Pdam_AF3_S46_R1_001.fastq	total:3844256	goods:1390184	dups:2116174	noheader:337052	N.in.header:847
+Astrangia_Pdam_AF5_S35_R1_001.fastq	total:5017655	goods:2040452	dups:2420494	noheader:555662	N.in.header:1048
+Astrangia_Pdam_AI1_S7_R1_001.fastq	total:4720194	goods:1997306	dups:2242502	noheader:479612	N.in.header:775
+Astrangia_Pdam_AC1_S16_R1_001.fastq	total:98	goods:94	dups:0	noheader:5	N.in.header:
+Astrangia_Pdam_AN1_S26_R1_001.fastq	total:3444755	goods:1658281	dups:1394240	noheader:391625	N.in.header:610
+Astrangia_Pdam_AI5_S20_R1_001.fastq	total:1655390	goods:925636	dups:552168	noheader:177271	N.in.header:316
+Astrangia_Pdam_AJ4_S31_R1_001.fastq	total:4827011	goods:1512167	dups:2874186	noheader:439889	N.in.header:770
+Astrangia_Pdam_AA3_S39_R1_001.fastq	total:3740666	goods:1353921	dups:1994354	noheader:391627	N.in.header:765
+Astrangia_Pdam_AB3_S37_R1_001.fastq	total:810976	goods:449189	dups:292586	noheader:68910	N.in.header:292
+Astrangia_Pdam_AJ3_S19_R1_001.fastq	total:2565084	goods:1194151	dups:1106549	noheader:263927	N.in.header:458
+Astrangia_Pdam_AP2_S29_R1_001.fastq	total:1997983	goods:932779	dups:829002	noheader:235856	N.in.header:347
+Astrangia_Pdam_AE2_S21_R1_001.fastq	total:3056318	goods:1555189	dups:1166118	noheader:334521	N.in.header:491
+Astrangia_Pdam_AL3_S48_R1_001.fastq	total:27109	goods:15762	dups:9324	noheader:2016	N.in.header:8
+Astrangia_Pdam_AK2_S8_R1_001.fastq	total:107	goods:94	dups:0	noheader:13	N.in.header:
+Astrangia_Pdam_AB1_S14_R1_001.fastq	total:5130310	goods:2111799	dups:2362874	noheader:654859	N.in.header:779
+Astrangia_Pdam_AA4_S22_R1_001.fastq	total:2780124	goods:1265718	dups:1230866	noheader:283133	N.in.header:408
+Astrangia_Pdam_AN2_S47_R1_001.fastq	total:4278155	goods:2014780	dups:1751231	noheader:511238	N.in.header:907
+Astrangia_Pdam_AC3_S36_R1_001.fastq	total:8772244	goods:3299522	dups:4521697	noheader:949348	N.in.header:1678
+Astrangia_Pdam_AA2_S3_R1_001.fastq	total:5057078	goods:2074708	dups:2427143	noheader:554359	N.in.header:869
+Astrangia_Pdam_AF2_S40_R1_001.fastq	total:8447	goods:6130	dups:1617	noheader:698	N.in.header:3
+Astrangia_Pdam_AK5_S34_R1_001.fastq	total:3280922	goods:1475499	dups:1336590	noheader:468178	N.in.header:656
+Astrangia_Pdam_AB2_S18_R1_001.fastq	total:5607990	goods:2302532	dups:2815892	noheader:488606	N.in.header:961
+Astrangia_Pdam_AS1_S24_R1_001.fastq	total:37	goods:35	dups:0	noheader:3	N.in.header:
+Astrangia_Pdam_AN3_S11_R1_001.fastq	total:3587592	goods:1411828	dups:1658708	noheader:516531	N.in.header:526
+Astrangia_Pdam_AI2_S45_R1_001.fastq	total:1101842	goods:648261	dups:353544	noheader:99721	N.in.header:317
+
+
+#---------------------------------------Mapping reads to reference transcriptome
+### Oculina
+[haich@scc1 ref]$ pwd
+/projectnb/davies-hb/hannah/MPCC_2018/Oculina/ref
+
+#combine host and symbiont reference transcriptomes
+[haich@scc1 ref]$ cat Brevolium_psyg_transcriptome.fasta Oculina_arbuscula_transcriptome.fasta > Oculina_Breviolum_combined_transcriptome.fasta
+
+#start interactive session
+[haich@scc1 ref]$ qrsh    
+
+#load module
+[haich@scc-pi3 ref]$ module load bowtie2
+
+#build bowtie2 mapping database
+[haich@scc-pi3 ref]$ bowtie2-build Oculina_Breviolum_combined_transcriptome.fasta Oculina_Breviolum_combined_transcriptome.fasta 
+
+[haich@scc-pi3 Oculina]$ tagseq_bowtie2map.pl "trim$" ref/Oculina_Breviolum_combined_transcriptome.fasta  > maps
+
+[haich@scc-pi3 Oculina]$ head -20 maps
+#!/bin/bash
+#$ -V # inherit the submission environment
+#$ -cwd # start job in submission directory
+#$ -N maps # job name, anything you want
+#$ -l h_rt=24:00:00 #maximum run time
+#$ -M hannahaichelman@gmail.com #your email
+#$ -m be
+
+bowtie2 --local -x ref/Oculina_Breviolum_combined_transcriptome.fasta -U Oculina_OA6_S20_R1_001.fastq.trim -S Oculina_OA6_S20_R1_001.fastq.trim.sam --no-hd --no-sq --no-unal -k 5
+bowtie2 --local -x ref/Oculina_Breviolum_combined_transcriptome.fasta -U Oculina_OR8_S21_R1_001.fastq.trim -S Oculina_OR8_S21_R1_001.fastq.trim.sam --no-hd --no-sq --no-unal -k 5
+bowtie2 --local -x ref/Oculina_Breviolum_combined_transcriptome.fasta -U Oculina_OL7_S2_R1_001.fastq.trim -S Oculina_OL7_S2_R1_001.fastq.trim.sam --no-hd --no-sq --no-unal -k 5
+bowtie2 --local -x ref/Oculina_Breviolum_combined_transcriptome.fasta -U Oculina_OC4_S29_R1_001.fastq.trim -S Oculina_OC4_S29_R1_001.fastq.trim.sam --no-hd --no-sq --no-unal -k 5
+bowtie2 --local -x ref/Oculina_Breviolum_combined_transcriptome.fasta -U Oculina_OI1_S15_R1_001.fastq.trim -S Oculina_OI1_S15_R1_001.fastq.trim.sam --no-hd --no-sq --no-unal -k 5
+bowtie2 --local -x ref/Oculina_Breviolum_combined_transcriptome.fasta -U Oculina_OQ1_S41_R1_001.fastq.trim -S Oculina_OQ1_S41_R1_001.fastq.trim.sam --no-hd --no-sq --no-unal -k 5
+bowtie2 --local -x ref/Oculina_Breviolum_combined_transcriptome.fasta -U Oculina_OR7_S39_R1_001.fastq.trim -S Oculina_OR7_S39_R1_001.fastq.trim.sam --no-hd --no-sq --no-unal -k 5
+bowtie2 --local -x ref/Oculina_Breviolum_combined_transcriptome.fasta -U Oculina_OE3_S30_R1_001.fastq.trim -S Oculina_OE3_S30_R1_001.fastq.trim.sam --no-hd --no-sq --no-unal -k 5
+bowtie2 --local -x ref/Oculina_Breviolum_combined_transcriptome.fasta -U Oculina_OD4_S40_R1_001.fastq.trim -S Oculina_OD4_S40_R1_001.fastq.trim.sam --no-hd --no-sq --no-unal -k 5
+bowtie2 --local -x ref/Oculina_Breviolum_combined_transcriptome.fasta -U Oculina_OE11_S3_R1_001.fastq.trim -S Oculina_OE11_S3_R1_001.fastq.trim.sam --no-hd --no-sq --no-unal -k 5
+bowtie2 --local -x ref/Oculina_Breviolum_combined_transcriptome.fasta -U Oculina_OL8_S19_R1_001.fastq.trim -S Oculina_OL8_S19_R1_001.fastq.trim.sam --no-hd --no-sq --no-unal -k 5
+bowtie2 --local -x ref/Oculina_Breviolum_combined_transcriptome.fasta -U Oculina_OJ13_S11_R1_001.fastq.trim -S Oculina_OJ13_S11_R1_001.fastq.trim.sam --no-hd --no-sq --no-unal -k 5
+
+[haich@scc-pi3 Oculina]$ qsub maps
+
+#also re-did Oculina mapping to the references after they were re-named for ortholog analyses. 
+[haich@scc1 ref_for_orthos]$ pwd
+/projectnb/davies-hb/hannah/MPCC_2018/Oculina/ref/ref_for_orthos
+
+[haich@scc1 ref_for_orthos]$ cp /projectnb/davies-hb/hannah/MPCC_2018/Oculina/orthologs/*.fasta .
+[haich@scc1 ref_for_orthos]$ cat Brevolium_psyg_transcriptomesta.fasta Oculina_arbuscula_transcriptomesta.fasta > Oarb_Bpsg_combined_ortho.fasta
+[haich@scc1 ref_for_orthos]$ bowtie2-build Oarb_Bpsg_combined_ortho.fasta Oarb_Bpsg_combined_ortho.fasta
+[haich@scc1 mapping]$ tagseq_bowtie2map.pl "trim$" /projectnb/davies-hb/hannah/MPCC_2018/Oculina/ref/ref_for_orthos/Oarb_Bpsg_combined_ortho.fasta > maps
+
+
+#also re-did Oculina mapping to the newest references from Hanny after she collapsed isoforms and re-annotated
+#### THIS IS THE ONE I AM CURRENTLY USING FOR ANALYSIS
+[haich@scc1 ref]$ pwd
+/projectnb/davies-hb/hannah/MPCC_2018/Oculina/ref
+
+[haich@scc1 ref]$ cat B_psygmophilum_transcriptome/B_psygmophilum_transcriptome.fasta O_arbuscula_transcriptome/O_arbuscula_transcriptome.fasta > Oculina_Brev_transcriptome_new.fasta
+[haich@scc1 ref]$ module load bowtie2
+[haich@scc1 ref]$ bowtie2-build Oculina_Brev_transcriptome_new.fasta Oculina_Brev_transcriptome_new.fasta
+
+#moved original mapping into a new folder
+[haich@scc1 Oculina]$ mkdir original_mapping
+[haich@scc1 Oculina]$ mv *.trim.sam original_mapping/
+[haich@scc1 Oculina]$ mv *.trim.sam.counts original_mapping/
+
+
+[haich@scc1 Oculina]$ tagseq_bowtie2map.pl "trim$" ref/Oculina_Brev_transcriptome_new.fasta > maps_newref
+[haich@scc1 Oculina]$ qsub maps_newref
+
+
+#and re-did mapping after keeping pcr duplicate reads, still mapping to the new transcriptome
+[haich@scc1 Oculina]$ head -20 maps_keepdups
+#!/bin/bash
+#$ -cwd # start job in submission directory
+#$ -V # inherit the submission environment
+#$ -N maps_keepdups # job name, anything you want
+#$ -l h_rt=24:00:00 #maximum run time
+#$ -M hannahaichelman@gmail.com #your email
+#$ -m be
+
+
+module load bowtie2
+
+bowtie2 --local -x ref/Oculina_Brev_transcriptome_new.fasta -U Oculina_OF7_S32_R1_001.fastq.trim.keepdups -S Oculina_OF7_S32_R1_001.fastq.trim.keepdups.sam --no-hd --no-sq --no-unal -k 5
+bowtie2 --local -x ref/Oculina_Brev_transcriptome_new.fasta -U Oculina_OK2_S1_R1_001.fastq.trim.keepdups -S Oculina_OK2_S1_R1_001.fastq.trim.keepdups.sam --no-hd --no-sq --no-unal -k 5
+
+### Astrangia
+[haich@scc-pi3 ref]$ pwd
+/projectnb/davies-hb/hannah/MPCC_2018/Astrangia/ref
+#these references are from Dan, but I added host and sym to isogroup id's in seq2iso.tab files and re-cat'd
+
+[haich@scc1 Astrangia]$ qrsh
+[haich@scc-pi3 ref]$ module load bowtie2
+
+#seemed like cleaned_XX files are the ones that Dan cleaned the chloroplast and rRNA from
+#original reference files from sarah are labeled 'final' (confusingly)
+
+[haich@scc-pi3 ref]$ bowtie2-build cleaned_wh_holobiont.fasta cleaned_wh_holobiont.fasta
+[haich@scc-pi3 Astrangia]$ tagseq_bowtie2map.pl "trim$" ref/cleaned_wh_holobiont.fasta > maps
+
+[haich@scc-pi3 Astrangia]$ head -20 maps
+#!/bin/bash
+#$ -V # inherit the submission environment
+#$ -cwd # start job in submission directory
+#$ -N maps # job name, anything you want
+#$ -l h_rt=24:00:00 #maximum run time
+#$ -M hannahaichelman@gmail.com #your email
+#$ -m be
+
+bowtie2 --local -x ref/cleaned_wh_holobiont.fasta -U Astrangia_Pdam_AI5_S20_R1_001.fastq.trim -S Astrangia_Pdam_AI5_S20_R1_001.fastq.trim.sam --no-hd --no-sq --no-unal -k 5
+bowtie2 --local -x ref/cleaned_wh_holobiont.fasta -U Astrangia_Pdam_AM2_S5_R1_001.fastq.trim -S Astrangia_Pdam_AM2_S5_R1_001.fastq.trim.sam --no-hd --no-sq --no-unal -k 5
+bowtie2 --local -x ref/cleaned_wh_holobiont.fasta -U Astrangia_Pdam_AL3_S48_R1_001.fastq.trim -S Astrangia_Pdam_AL3_S48_R1_001.fastq.trim.sam --no-hd --no-sq --no-unal -k 5
+bowtie2 --local -x ref/cleaned_wh_holobiont.fasta -U Astrangia_Pdam_AS5_S28_R1_001.fastq.trim -S Astrangia_Pdam_AS5_S28_R1_001.fastq.trim.sam --no-hd --no-sq --no-unal -k 5
+bowtie2 --local -x ref/cleaned_wh_holobiont.fasta -U Astrangia_Pdam_AJ2_S13_R1_001.fastq.trim -S Astrangia_Pdam_AJ2_S13_R1_001.fastq.trim.sam --no-hd --no-sq --no-unal -k 5
+bowtie2 --local -x ref/cleaned_wh_holobiont.fasta -U Astrangia_Pdam_AE6_S6_R1_001.fastq.trim -S Astrangia_Pdam_AE6_S6_R1_001.fastq.trim.sam --no-hd --no-sq --no-unal -k 5
+bowtie2 --local -x ref/cleaned_wh_holobiont.fasta -U Astrangia_Pdam_AF5_S35_R1_001.fastq.trim -S Astrangia_Pdam_AF5_S35_R1_001.fastq.trim.sam --no-hd --no-sq --no-unal -k 5
+bowtie2 --local -x ref/cleaned_wh_holobiont.fasta -U Astrangia_Pdam_AC1-2_S27_R1_001.fastq.trim -S Astrangia_Pdam_AC1-2_S27_R1_001.fastq.trim.sam --no-hd --no-sq --no-unal -k 5
+bowtie2 --local -x ref/cleaned_wh_holobiont.fasta -U Astrangia_Pdam_AG2_S41_R1_001.fastq.trim -S Astrangia_Pdam_AG2_S41_R1_001.fastq.trim.sam --no-hd --no-sq --no-unal -k 5
+bowtie2 --local -x ref/cleaned_wh_holobiont.fasta -U Astrangia_Pdam_AS1_S24_R1_001.fastq.trim -S Astrangia_Pdam_AS1_S24_R1_001.fastq.trim.sam --no-hd --no-sq --no-unal -k 5
+bowtie2 --local -x ref/cleaned_wh_holobiont.fasta -U Astrangia_Pdam_AK2_S8_R1_001.fastq.trim -S Astrangia_Pdam_AK2_S8_R1_001.fastq.trim.sam --no-hd --no-sq --no-unal -k 5
+bowtie2 --local -x ref/cleaned_wh_holobiont.fasta -U Astrangia_Pdam_AM1_S30_R1_001.fastq.trim -S Astrangia_Pdam_AM1_S30_R1_001.fastq.trim.sam --no-hd --no-sq --no-unal -k 5
+
+[haich@scc-pi3 Astrangia]$ qsub maps
+
+
+#---------------------------------------Generating read-counts-per gene 
+### Oculina
+[haich@scc-pi3 ref]$ cat Brevolium_psyg_seq2iso.tab Oculina_arbuscula_seq2iso.tab > Oculina_Breviolum_combined_seq2iso.tab  
+
+[haich@scc-pi3 Oculina]$ samcount_launch_bt2.pl '\.sam' ref/Oculina_Breviolum_combined_seq2iso.tab > sc
+
+[haich@scc-pi3 Oculina]$ head -20 sc
+#!/bin/bash
+#$ -V # inherit the submission environment
+#$ -cwd # start job in submission directory
+#$ -N counts # job name, anything you want
+#$ -l h_rt=24:00:00 #maximum run time
+#$ -M hannahaichelman@gmail.com #your email
+#$ -m be
+
+samcount.pl Oculina_OR7_S39_R1_001.fastq.trim.sam ref/Oculina_Breviolum_combined_seq2iso.tab aligner=bowtie2 >Oculina_OR7_S39_R1_001.fastq.trim.sam.counts
+samcount.pl Oculina_OC9_S36_R1_001.fastq.trim.sam ref/Oculina_Breviolum_combined_seq2iso.tab aligner=bowtie2 >Oculina_OC9_S36_R1_001.fastq.trim.sam.counts
+samcount.pl Oculina_OP1_S42_R1_001.fastq.trim.sam ref/Oculina_Breviolum_combined_seq2iso.tab aligner=bowtie2 >Oculina_OP1_S42_R1_001.fastq.trim.sam.counts
+samcount.pl Oculina_OH15_S12_R1_001.fastq.trim.sam ref/Oculina_Breviolum_combined_seq2iso.tab aligner=bowtie2 >Oculina_OH15_S12_R1_001.fastq.trim.sam.counts
+samcount.pl Oculina_OH1_S34_R1_001.fastq.trim.sam ref/Oculina_Breviolum_combined_seq2iso.tab aligner=bowtie2 >Oculina_OH1_S34_R1_001.fastq.trim.sam.counts
+samcount.pl Oculina_OR9_S25_R1_001.fastq.trim.sam ref/Oculina_Breviolum_combined_seq2iso.tab aligner=bowtie2 >Oculina_OR9_S25_R1_001.fastq.trim.sam.counts
+samcount.pl Oculina_OL8_S19_R1_001.fastq.trim.sam ref/Oculina_Breviolum_combined_seq2iso.tab aligner=bowtie2 >Oculina_OL8_S19_R1_001.fastq.trim.sam.counts
+samcount.pl Oculina_OR8_S21_R1_001.fastq.trim.sam ref/Oculina_Breviolum_combined_seq2iso.tab aligner=bowtie2 >Oculina_OR8_S21_R1_001.fastq.trim.sam.counts
+samcount.pl Oculina_OA4_S45_R1_001.fastq.trim.sam ref/Oculina_Breviolum_combined_seq2iso.tab aligner=bowtie2 >Oculina_OA4_S45_R1_001.fastq.trim.sam.counts
+samcount.pl Oculina_OE10_S46_R1_001.fastq.trim.sam ref/Oculina_Breviolum_combined_seq2iso.tab aligner=bowtie2 >Oculina_OE10_S46_R1_001.fastq.trim.sam.counts
+samcount.pl Oculina_OK2_S1_R1_001.fastq.trim.sam ref/Oculina_Breviolum_combined_seq2iso.tab aligner=bowtie2 >Oculina_OK2_S1_R1_001.fastq.trim.sam.counts
+samcount.pl Oculina_OO2_S22_R1_001.fastq.trim.sam ref/Oculina_Breviolum_combined_seq2iso.tab aligner=bowtie2 >Oculina_OO2_S22_R1_001.fastq.trim.sam.counts
+
+[haich@scc-pi3 Oculina]$ qsub sc
+
+####### Realized that my isogroups were not id'd as coral or sym, so went back and added designations to the seq2iso.tab files and re-cat'd
+
+[haich@scc1 ref]$ pwd
+/projectnb/davies-hb/hannah/MPCC_2018/Oculina/ref
+
+[haich@scc1 ref]$ cat Oculina_arbuscula_seq2iso.tab Brevolium_psyg_seq2iso.tab > Oculina_Breviolum_combined_seq2iso.tab
+
+[haich@scc1 Oculina]$ qsub sc                               
+
+[haich@scc1 Oculina]$ expression_compiler.pl *.sam.counts > Oculina_counts.txt
+
+
+###Oculina read counts with new transcriptome - THIS IS THE ONE I AM CURRENTLY USING
+[haich@scc1 ref]$ pwd
+/projectnb/davies-hb/hannah/MPCC_2018/Oculina/ref
+
+[haich@scc1 ref]$ cat B_psygmophilum_transcriptome/B_psygmophilum_sequenceID_to_isogroup.tab O_arbuscula_transcriptome/O_arbuscula_sequenceID_to_isogroup.tab > Oculina_Brev_new_seq2iso.tab
+
+[haich@scc1 Oculina]$ samcount_launch_bt2.pl '\.sam' ref/Oculina_Brev_new_seq2iso.tab > sc_newref
+
+[haich@scc1 Oculina]$ qsub sc_newref 
+
+
+###Oculina Ortholog read counts
+
+[haich@scc1 ortho_mapping]$ pwd
+/projectnb/davies-hb/hannah/MPCC_2018/Oculina/orthologs/ortho_mapping
+
+[haich@scc-pi3 ortho_mapping]$ samcount_launch_bt2.pl '\.sam' ortho_ref/Oculina_combined_clustered_transcriptome_seq2iso.tab > samcount
+
+[haich@scc1 ortho_mapping]$ head -20 samcount
+#!/bin/bash
+#$ -cwd # start job in submission directory
+#$ -N counts # job name, anything you want
+#$ -l h_rt=24:00:00 #maximum run time
+#$ -M hannahaichelman@gmail.com #your email
+#$ -m be
+
+module load samtools
+
+samcount.pl Oculina_OR7_S39_R1_001.fastq.trim.sam ortho_ref/Oculina_combined_clustered_transcriptome_seq2iso.tab aligner=bowtie2 >Oculina_OR7_S39_R1_001.fastq.trim.sam.counts
+samcount.pl Oculina_OC9_S36_R1_001.fastq.trim.sam ortho_ref/Oculina_combined_clustered_transcriptome_seq2iso.tab aligner=bowtie2 >Oculina_OC9_S36_R1_001.fastq.trim.sam.counts
+samcount.pl Oculina_OP1_S42_R1_001.fastq.trim.sam ortho_ref/Oculina_combined_clustered_transcriptome_seq2iso.tab aligner=bowtie2 >Oculina_OP1_S42_R1_001.fastq.trim.sam.counts
+samcount.pl Oculina_OH15_S12_R1_001.fastq.trim.sam ortho_ref/Oculina_combined_clustered_transcriptome_seq2iso.tab aligner=bowtie2 >Oculina_OH15_S12_R1_001.fastq.trim.sam.counts
+samcount.pl Oculina_OH1_S34_R1_001.fastq.trim.sam ortho_ref/Oculina_combined_clustered_transcriptome_seq2iso.tab aligner=bowtie2 >Oculina_OH1_S34_R1_001.fastq.trim.sam.counts
+samcount.pl Oculina_OR9_S25_R1_001.fastq.trim.sam ortho_ref/Oculina_combined_clustered_transcriptome_seq2iso.tab aligner=bowtie2 >Oculina_OR9_S25_R1_001.fastq.trim.sam.counts
+
+#The seq2iso is really just an ortho2ortho file, because we have already re-clustered the orthologs with deseq
+
+[haich@scc1 ortho_ref]$ head Oculina_combined_clustered_transcriptome_seq2iso.tab
+OARB_1	OARB_1
+OARB_2	OARB_2
+OARB_3	OARB_3
+OARB_4	OARB_4
+OARB_5	OARB_5
+OARB_6	OARB_6
+OARB_7	OARB_7
+OARB_8	OARB_8
+OARB_11	OARB_11
+OARB_12	OARB_12
+
+
+#also Oculina read counts with keeping pcr duplicates
+
+[haich@scc1 Oculina]$ samcount_launch_bt2.pl '\.keepdups.sam' ref/Oculina_Brev_new_seq2iso.tab > sc_newref_keepdups
+
+[haich@scc1 Oculina]$ qsub sc_newref_keepdups
+
+[haich@scc1 Oculina]$ expression_compiler.pl *.keepdups.sam.counts > Oculina_counts_newref_keepdups.txt
+
+### Astrangia                        
+[haich@scc1 Astrangia]$ pwd
+/projectnb/davies-hb/hannah/MPCC_2018/Astrangia
+
+[haich@scc-pi3 Astrangia]$ samcount_launch_bt2.pl '\.sam' ref/wh_holobiont_seq2iso.tab > sc
+
+[haich@scc-pi3 Astrangia]$ head -20 sc
+#!/bin/bash
+#$ -V # inherit the submission environment
+#$ -cwd # start job in submission directory
+#$ -N counts # job name, anything you want
+#$ -l h_rt=24:00:00 #maximum run time
+#$ -M hannahaichelman@gmail.com #your email
+#$ -m be
+
+samcount.pl Astrangia_Pdam_AK3_S25_R1_001.fastq.trim.sam ref/wh_holobiont_seq2iso.tab aligner=bowtie2 >Astrangia_Pdam_AK3_S25_R1_001.fastq.trim.sam.counts
+samcount.pl Astrangia_Pdam_AD5_S4_R1_001.fastq.trim.sam ref/wh_holobiont_seq2iso.tab aligner=bowtie2 >Astrangia_Pdam_AD5_S4_R1_001.fastq.trim.sam.counts
+samcount.pl Astrangia_Pdam_AJ2_S13_R1_001.fastq.trim.sam ref/wh_holobiont_seq2iso.tab aligner=bowtie2 >Astrangia_Pdam_AJ2_S13_R1_001.fastq.trim.sam.counts
+samcount.pl Astrangia_Pdam_AH2_S17_R1_001.fastq.trim.sam ref/wh_holobiont_seq2iso.tab aligner=bowtie2 >Astrangia_Pdam_AH2_S17_R1_001.fastq.trim.sam.counts
+samcount.pl Astrangia_Pdam_AN2_S47_R1_001.fastq.trim.sam ref/wh_holobiont_seq2iso.tab aligner=bowtie2 >Astrangia_Pdam_AN2_S47_R1_001.fastq.trim.sam.counts
+samcount.pl Astrangia_Pdam_AN1_S26_R1_001.fastq.trim.sam ref/wh_holobiont_seq2iso.tab aligner=bowtie2 >Astrangia_Pdam_AN1_S26_R1_001.fastq.trim.sam.counts
+samcount.pl Astrangia_Pdam_AI1_S7_R1_001.fastq.trim.sam ref/wh_holobiont_seq2iso.tab aligner=bowtie2 >Astrangia_Pdam_AI1_S7_R1_001.fastq.trim.sam.counts
+samcount.pl Astrangia_Pdam_AB3_S37_R1_001.fastq.trim.sam ref/wh_holobiont_seq2iso.tab aligner=bowtie2 >Astrangia_Pdam_AB3_S37_R1_001.fastq.trim.sam.counts
+samcount.pl Astrangia_Pdam_AI2_S45_R1_001.fastq.trim.sam ref/wh_holobiont_seq2iso.tab aligner=bowtie2 >Astrangia_Pdam_AI2_S45_R1_001.fastq.trim.sam.counts
+samcount.pl Astrangia_Pdam_AG1_S32_R1_001.fastq.trim.sam ref/wh_holobiont_seq2iso.tab aligner=bowtie2 >Astrangia_Pdam_AG1_S32_R1_001.fastq.trim.sam.counts
+samcount.pl Astrangia_Pdam_AE5_S15_R1_001.fastq.trim.sam ref/wh_holobiont_seq2iso.tab aligner=bowtie2 >Astrangia_Pdam_AE5_S15_R1_001.fastq.trim.sam.counts
+samcount.pl Astrangia_Pdam_AJ3_S19_R1_001.fastq.trim.sam ref/wh_holobiont_seq2iso.tab aligner=bowtie2 >Astrangia_Pdam_AJ3_S19_R1_001.fastq.trim.sam.counts
+
+[haich@scc-pi3 Astrangia]$ qsub sc
+
+[haich@scc1 Astrangia]$ expression_compiler.pl *.sam.counts > Astrangia_counts.txt
+
+
+#---------------------------------------Now take counts files to DESeq!
+
+
+#############################
+
+#---------------------------------------Keeping no header reads analysis
+
+Realized that, with low counts, keeping the 'no header' reads from the clean step could be important. 
+Dan W. did this when he analyzed his previous Astrangia TagSeq dataset, so we will try this too
+
+First, starting with Astrangia:
+
+[haich@scc1 Astrangia]$ pwd
+/projectnb/davies-hb/hannah/MPCC_2018/Astrangia
+
+Moved all the original .trim, .trim.sam, and .trim.sam.counts, counts, and relevant output files into a folder called analysis_with_noheader/ 
+Just in case we need to go back to compare.
+
+[haich@scc-pi2 Astrangia]$ head -20 clean_noheader 
+#!/bin/bash
+#$ -V # inherit the submission environment
+#$ -cwd # start job in submission directory
+#$ -N trim_noheader # job name, anything you want
+#$ -l h_rt=24:00:00 #maximum run time
+#$ -M hannahaichelman@gmail.com #your email
+#$ -m be
+
+tagseq_clipper.pl Astrangia_Pdam_AG1_S32_R1_001.fastq "[ATGC]?[ATGC][AC][AT]GGG+|[ATGC]?[ATGC]TGC[AC][AT]GGG+|[ATGC]?[ATGC]GC[AT]TC[ACT][AC][AT]GGG+" keep | fastx_clipper -a AAAAAAAA -l 20 -Q33 | fastx_clipper -a AGATCGGAAG -l 20 -Q33 | fastq_quality_filter -Q33 -q 20 -p 90 >Astrangia_Pdam_AG1_S32_R1_001.fastq.trim
+tagseq_clipper.pl Astrangia_Pdam_AM1_S30_R1_001.fastq "[ATGC]?[ATGC][AC][AT]GGG+|[ATGC]?[ATGC]TGC[AC][AT]GGG+|[ATGC]?[ATGC]GC[AT]TC[ACT][AC][AT]GGG+" keep | fastx_clipper -a AAAAAAAA -l 20 -Q33 | fastx_clipper -a AGATCGGAAG -l 20 -Q33 | fastq_quality_filter -Q33 -q 20 -p 90 >Astrangia_Pdam_AM1_S30_R1_001.fastq.trim
+tagseq_clipper.pl Astrangia_Pdam_AJ2_S13_R1_001.fastq "[ATGC]?[ATGC][AC][AT]GGG+|[ATGC]?[ATGC]TGC[AC][AT]GGG+|[ATGC]?[ATGC]GC[AT]TC[ACT][AC][AT]GGG+" keep | fastx_clipper -a AAAAAAAA -l 20 -Q33 | fastx_clipper -a AGATCGGAAG -l 20 -Q33 | fastq_quality_filter -Q33 -q 20 -p 90 >Astrangia_Pdam_AJ2_S13_R1_001.fastq.trim
+tagseq_clipper.pl Astrangia_Pdam_AS3_S9_R1_001.fastq "[ATGC]?[ATGC][AC][AT]GGG+|[ATGC]?[ATGC]TGC[AC][AT]GGG+|[ATGC]?[ATGC]GC[AT]TC[ACT][AC][AT]GGG+" keep | fastx_clipper -a AAAAAAAA -l 20 -Q33 | fastx_clipper -a AGATCGGAAG -l 20 -Q33 | fastq_quality_filter -Q33 -q 20 -p 90 >Astrangia_Pdam_AS3_S9_R1_001.fastq.trim
+tagseq_clipper.pl Astrangia_Pdam_AL2_S1_R1_001.fastq "[ATGC]?[ATGC][AC][AT]GGG+|[ATGC]?[ATGC]TGC[AC][AT]GGG+|[ATGC]?[ATGC]GC[AT]TC[ACT][AC][AT]GGG+" keep | fastx_clipper -a AAAAAAAA -l 20 -Q33 | fastx_clipper -a AGATCGGAAG -l 20 -Q33 | fastq_quality_filter -Q33 -q 20 -p 90 >Astrangia_Pdam_AL2_S1_R1_001.fastq.trim
+tagseq_clipper.pl Astrangia_Pdam_AD5_S4_R1_001.fastq "[ATGC]?[ATGC][AC][AT]GGG+|[ATGC]?[ATGC]TGC[AC][AT]GGG+|[ATGC]?[ATGC]GC[AT]TC[ACT][AC][AT]GGG+" keep | fastx_clipper -a AAAAAAAA -l 20 -Q33 | fastx_clipper -a AGATCGGAAG -l 20 -Q33 | fastq_quality_filter -Q33 -q 20 -p 90 >Astrangia_Pdam_AD5_S4_R1_001.fastq.trim
+tagseq_clipper.pl Astrangia_Pdam_AG2_S41_R1_001.fastq "[ATGC]?[ATGC][AC][AT]GGG+|[ATGC]?[ATGC]TGC[AC][AT]GGG+|[ATGC]?[ATGC]GC[AT]TC[ACT][AC][AT]GGG+" keep | fastx_clipper -a AAAAAAAA -l 20 -Q33 | fastx_clipper -a AGATCGGAAG -l 20 -Q33 | fastq_quality_filter -Q33 -q 20 -p 90 >Astrangia_Pdam_AG2_S41_R1_001.fastq.trim
+tagseq_clipper.pl Astrangia_Pdam_AP4_S42_R1_001.fastq "[ATGC]?[ATGC][AC][AT]GGG+|[ATGC]?[ATGC]TGC[AC][AT]GGG+|[ATGC]?[ATGC]GC[AT]TC[ACT][AC][AT]GGG+" keep | fastx_clipper -a AAAAAAAA -l 20 -Q33 | fastx_clipper -a AGATCGGAAG -l 20 -Q33 | fastq_quality_filter -Q33 -q 20 -p 90 >Astrangia_Pdam_AP4_S42_R1_001.fastq.trim
+tagseq_clipper.pl Astrangia_Pdam_AG3_S2_R1_001.fastq "[ATGC]?[ATGC][AC][AT]GGG+|[ATGC]?[ATGC]TGC[AC][AT]GGG+|[ATGC]?[ATGC]GC[AT]TC[ACT][AC][AT]GGG+" keep | fastx_clipper -a AAAAAAAA -l 20 -Q33 | fastx_clipper -a AGATCGGAAG -l 20 -Q33 | fastq_quality_filter -Q33 -q 20 -p 90 >Astrangia_Pdam_AG3_S2_R1_001.fastq.trim
+tagseq_clipper.pl Astrangia_Pdam_AH1_S38_R1_001.fastq "[ATGC]?[ATGC][AC][AT]GGG+|[ATGC]?[ATGC]TGC[AC][AT]GGG+|[ATGC]?[ATGC]GC[AT]TC[ACT][AC][AT]GGG+" keep | fastx_clipper -a AAAAAAAA -l 20 -Q33 | fastx_clipper -a AGATCGGAAG -l 20 -Q33 | fastq_quality_filter -Q33 -q 20 -p 90 >Astrangia_Pdam_AH1_S38_R1_001.fastq.trim
+tagseq_clipper.pl Astrangia_Pdam_AH3_S12_R1_001.fastq "[ATGC]?[ATGC][AC][AT]GGG+|[ATGC]?[ATGC]TGC[AC][AT]GGG+|[ATGC]?[ATGC]GC[AT]TC[ACT][AC][AT]GGG+" keep | fastx_clipper -a AAAAAAAA -l 20 -Q33 | fastx_clipper -a AGATCGGAAG -l 20 -Q33 | fastq_quality_filter -Q33 -q 20 -p 90 >Astrangia_Pdam_AH3_S12_R1_001.fastq.trim
+tagseq_clipper.pl Astrangia_Pdam_AE5_S15_R1_001.fastq "[ATGC]?[ATGC][AC][AT]GGG+|[ATGC]?[ATGC]TGC[AC][AT]GGG+|[ATGC]?[ATGC]GC[AT]TC[ACT][AC][AT]GGG+" keep | fastx_clipper -a AAAAAAAA -l 20 -Q33 | fastx_clipper -a AGATCGGAAG -l 20 -Q33 | fastq_quality_filter -Q33 -q 20 -p 90 >Astrangia_Pdam_AE5_S15_R1_001.fastq.trim
+
+
+[haich@scc-pi2 Astrangia]$ cat trim_noheader.e77089 
+Astrangia_Pdam_AG1_S32_R1_001.fastq	total:51	goods:46	dups:0	noheader:1	N.in.header:
+Astrangia_Pdam_AM1_S30_R1_001.fastq	total:2797047	goods:923972	dups:1617610	noheader:1	N.in.header:455
+Astrangia_Pdam_AJ2_S13_R1_001.fastq	total:2983572	goods:1444491	dups:1206563	noheader:1	N.in.header:456
+Astrangia_Pdam_AS3_S9_R1_001.fastq	total:4066912	goods:611609	dups:3052842	noheader:1	N.in.header:749
+Astrangia_Pdam_AL2_S1_R1_001.fastq	total:4785674	goods:862273	dups:3588080	noheader:1	N.in.header:960
+Astrangia_Pdam_AD5_S4_R1_001.fastq	total:2609448	goods:984838	dups:1347234	noheader:1	N.in.header:510
+Astrangia_Pdam_AG2_S41_R1_001.fastq	total:5632433	goods:2449267	dups:2647650	noheader:1	N.in.header:1100
+Astrangia_Pdam_AP4_S42_R1_001.fastq	total:2456638	goods:1193725	dups:925710	noheader:1	N.in.header:484
+Astrangia_Pdam_AG3_S2_R1_001.fastq	total:6128832	goods:2401000	dups:2985214	noheader:1	N.in.header:1053
+Astrangia_Pdam_AH1_S38_R1_001.fastq	total:4562147	goods:1393861	dups:2703685	noheader:1	N.in.header:937
+Astrangia_Pdam_AH3_S12_R1_001.fastq	total:2471788	goods:1179377	dups:1007187	noheader:1	N.in.header:511
+Astrangia_Pdam_AE5_S15_R1_001.fastq	total:4528236	goods:1778375	dups:2220152	noheader:1	N.in.header:705
+Astrangia_Pdam_AP1_S44_R1_001.fastq	total:4284600	goods:1963512	dups:1825035	noheader:1	N.in.header:804
+Astrangia_Pdam_AL1_S23_R1_001.fastq	total:3298436	goods:1464805	dups:1490761	noheader:1	N.in.header:496
+Astrangia_Pdam_AH2_S17_R1_001.fastq	total:2653474	goods:664663	dups:1740091	noheader:1	N.in.header:579
+Astrangia_Pdam_AD4_S33_R1_001.fastq	total:5621719	goods:1741596	dups:3120650	noheader:1	N.in.header:961
+Astrangia_Pdam_AM3_S43_R1_001.fastq	total:5028286	goods:1776564	dups:2720359	noheader:1	N.in.header:1007
+Astrangia_Pdam_AK3_S25_R1_001.fastq	total:3009774	goods:1017672	dups:1680161	noheader:1	N.in.header:588
+Astrangia_Pdam_AS5_S28_R1_001.fastq	total:2041873	goods:992007	dups:822328	noheader:1	N.in.header:418
+Astrangia_Pdam_AD6_S10_R1_001.fastq	total:6092666	goods:2278580	dups:3276252	noheader:1	N.in.header:1075
+Astrangia_Pdam_AM2_S5_R1_001.fastq	total:3510007	goods:1553169	dups:1512031	noheader:1	N.in.header:623
+Astrangia_Pdam_AE6_S6_R1_001.fastq	total:5024737	goods:1888464	dups:2584797	noheader:1	N.in.header:828
+Astrangia_Pdam_AC1-2_S27_R1_001.fastq	total:6186284	goods:2745560	dups:2799229	noheader:1	N.in.header:1068
+Astrangia_Pdam_AF3_S46_R1_001.fastq	total:3844256	goods:1390141	dups:2116157	noheader:1	N.in.header:847
+Astrangia_Pdam_AF5_S35_R1_001.fastq	total:5017655	goods:2040401	dups:2420460	noheader:1	N.in.header:1048
+Astrangia_Pdam_AI1_S7_R1_001.fastq	total:4720194	goods:1997261	dups:2242474	noheader:1	N.in.header:775
+Astrangia_Pdam_AC1_S16_R1_001.fastq	total:98	goods:94	dups:0	noheader:1	N.in.header:
+Astrangia_Pdam_AN1_S26_R1_001.fastq	total:3444755	goods:1658234	dups:1394207	noheader:1	N.in.header:610
+Astrangia_Pdam_AI5_S20_R1_001.fastq	total:1655390	goods:925621	dups:552164	noheader:1	N.in.header:316
+Astrangia_Pdam_AJ4_S31_R1_001.fastq	total:4827011	goods:1512135	dups:2874179	noheader:1	N.in.header:770
+Astrangia_Pdam_AA3_S39_R1_001.fastq	total:3740666	goods:1353892	dups:1994329	noheader:1	N.in.header:765
+Astrangia_Pdam_AB3_S37_R1_001.fastq	total:810976	goods:449178	dups:292579	noheader:1	N.in.header:292
+Astrangia_Pdam_AJ3_S19_R1_001.fastq	total:2565084	goods:1194128	dups:1106540	noheader:1	N.in.header:458
+Astrangia_Pdam_AP2_S29_R1_001.fastq	total:1997983	goods:932762	dups:829001	noheader:1	N.in.header:347
+Astrangia_Pdam_AE2_S21_R1_001.fastq	total:3056318	goods:1555156	dups:1166110	noheader:1	N.in.header:491
+Astrangia_Pdam_AL3_S48_R1_001.fastq	total:27109	goods:15762	dups:9324	noheader:1	N.in.header:8
+Astrangia_Pdam_AK2_S8_R1_001.fastq	total:107	goods:94	dups:0	noheader:1	N.in.header:
+Astrangia_Pdam_AB1_S14_R1_001.fastq	total:5130310	goods:2111740	dups:2362845	noheader:1	N.in.header:779
+Astrangia_Pdam_AA4_S22_R1_001.fastq	total:2780124	goods:1265692	dups:1230855	noheader:1	N.in.header:408
+Astrangia_Pdam_AN2_S47_R1_001.fastq	total:4278155	goods:2014727	dups:1751189	noheader:1	N.in.header:907
+Astrangia_Pdam_AC3_S36_R1_001.fastq	total:8772244	goods:3299438	dups:4521618	noheader:1	N.in.header:1678
+Astrangia_Pdam_AA2_S3_R1_001.fastq	total:5057078	goods:2074671	dups:2427121	noheader:1	N.in.header:869
+Astrangia_Pdam_AF2_S40_R1_001.fastq	total:8447	goods:6130	dups:1617	noheader:1	N.in.header:3
+Astrangia_Pdam_AK5_S34_R1_001.fastq	total:3280922	goods:1475467	dups:1336561	noheader:1	N.in.header:656
+Astrangia_Pdam_AB2_S18_R1_001.fastq	total:5607990	goods:2302483	dups:2815877	noheader:1	N.in.header:961
+Astrangia_Pdam_AS1_S24_R1_001.fastq	total:37	goods:35	dups:0	noheader:1	N.in.header:
+Astrangia_Pdam_AN3_S11_R1_001.fastq	total:3587592	goods:1411781	dups:1658694	noheader:1	N.in.header:526
+Astrangia_Pdam_AI2_S45_R1_001.fastq	total:1101842	goods:648250	dups:353542	noheader:1	N.in.header:317
+
+
+[haich@scc1 Astrangia]$ qsub sc
+
+
+######################################
+Going back to basics and trying to figure out number of raw reads in the .fastq files for Astrangia and Oculina to see at what stage of the pipeline we are losing the reads
+
+Corinna wrote a script to do this, which I did for all Astrangia and Oculina .fastq files
+Make sure to change what comes after the @ to the specific ID from your sequencing run
+Can't just look for @ in the grep command because it is also used as a quality score metric
+
+[haich@scc1 Oculina]$ nano countsTablesScript.sh 
+
+#!/bin/bash
+#$ -V # Inherits submission environment
+#$ -cwd # Job starts in current directory
+#$ -N trim_counts_table # Desired job name
+#$ -l h_rt=24:00:00 # Maximum job run time
+#$ -M corinna.pilcher@gmail.com # Email
+#$ -m be
+#$ -P coral # Project name
+
+files=(*.fastq) # Match to relevant extension
+
+fileWrite=$1
+touch $fileWrite
+for fileRead in ${files[@]}
+do
+        sample="$(echo $fileRead | sed 's/.fastq/,/')"
+        count="$(grep -e "@D00780" $fileRead | wc -l)"
+        echo $sample$count >> $fileWrite
+done
+
+
+chmod +x countsTablesScript.sh # Ensure script is executable
+qsub countsTablesScript.sh count.csv #counts.csv file does not have to exist before-hand
+
+
+
+#### Removing all of the Astrangia test files with keeping no headers from my cluster, it doesn't seem to have worked. 
+Keeping counts file though just in case
+
+
+#---------------------------------------GO MWU analysis on the BU cluster
+
+*do qrsh first to request interactive node
+[haich@scc1 GO_MWU_analyses]$ module load R/3.6.0
+[haich@scc1 GO_MWU_analyses]$ R
+#now you are in the R environment. Type your R code at the command line just like you would run it in R!
+
+
+
+

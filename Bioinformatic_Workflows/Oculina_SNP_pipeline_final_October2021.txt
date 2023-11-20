@@ -1,0 +1,246 @@
+#Pipeline to call SNPs from Oculina TagSeq data:
+#Author: Hannah Aichelman, adapted from Sarah Barfield
+#Last Updated: June 12, 2020 to map to new reference, October 2021 to clean up the pipeline
+#This pipeline takes TagSeq data and calls SNPs with the purpose of figuring out clones in the dataset
+
+
+[haich@scc-yq4 snps]$ pwd
+/projectnb/davies-hb/hannah/MPCC_2018/Oculina/snps
+
+#Map all .trim files
+#Download 2bRAD_bowtie2_launch.pl from Misha's github: https://github.com/z0on/2bRAD_denovo/blob/master/2bRAD_bowtie2_launch.pl
+
+[haich@scc1 snps]$ 2bRAD_bowtie2_launch.pl '\.trim$' /projectnb/davies-hb/hannah/MPCC_2018/Oculina/ref/Oculina_Brev_transcriptome_new.fasta > bowtie2_forsnp_newref
+
+#add this to the top of bowtie2_forsnp_newref:
+#!/bin/bash -l
+#$ -cwd # start job in submission directory
+#$ -N bt2_snp # job name, anything you want
+#$ -l h_rt=24:00:00
+#$ -M hannahaichelman@gmail.com
+#$ -m be
+
+
+module load bowtie2
+
+
+#this is mapping to the newest reference transcriptome 6/15/2020
+#example line in script:
+
+bowtie2 --no-unal --score-min L,16,1 --local -L 16 -x /projectnb/davies-hb/hannah/MPCC_2018/Oculina/ref/Oculina_Brev_transcriptome_new.fasta -U Oculina_OA6_S20_R1_001.fastq.trim -S Oculina_OA6_S20_R1_001.fastq.trim.bt2.sam
+
+#breakdown =
+#--no-unal = suppress SAM records for unaligned reads
+#--score-min L,16,1 [L = linear --> f(x) = 16 + 1 * x]
+#--local -L 16 = Sets the length of the seed substrings to align during multiseed alignment. 
+#Smaller values make alignment slower but more sensitive
+
+
+#this is different from the tagseq mapping script in a few ways. the tagseq method includes these unique flags:
+#--no-hd = suppress SAM header lines (starting with @)
+#--no-sq  = suppress @SQ SAM header lines
+#-k = indicates -k mode. In this mode, bowtie searches for up to N distinct, valid alignments for each read. We have -k 5, meaning bowtie will search for at most 5 distinct alignments. 
+#The manual says that the -k mode is effective in situations where you care more about whether a read aligns, or aligns a certain number of times, rather than where exactly it originated
+
+
+#need to parse the sam files into host and sym specific files. Matt Kanke wrote this to help:
+
+for x in *bt2.sam; do echo $x; grep 'Oarb\|SO:unsorted' $x &> ${x//sam/Oarb.sam}; grep 'Sym\|SO:unsorted' $x &> ${x//sam/Sym.sam}; done
+
+#Moved original .sam files and Sym.sam files to other_sams/ directory
+
+#create file 'sams' that is a list of all sam files
+ls *bt2.Oarb.sam > sams
+
+#how many files?
+cat sams | wc -l  
+#47
+
+
+#now make bam files:
+#make sure to module load the libraries below, or this won't work
+
+
+module load htslib/1.9
+module load samtools/1.9
+module load picard
+
+
+[haich@scc-yd4 snps]$ cat sams | perl -pe 's/(\S+)\.sam/samtools import \$GENOME_REF $1\.sam $1\.unsorted\.bam && samtools sort -o $1\.sorted\.bam $1\.unsorted\.bam && picard AddOrReplaceReadGroups INPUT=$1\.sorted\.bam OUTPUT=$1\.bam RGID=group1 RGLB=lib1 RGPL=illumina RGPU=unit1 RGSM=$1 && samtools index $1\.bam/' >s2b
+
+#altered the file on my local computer in BBEdit to replace GENOME_REF with the full path to the reference transcriptome
+#Example command for one file:
+
+samtools import /projectnb/davies-hb/hannah/MPCC_2018/Oculina/ref/Oculina_Brev_transcriptome_new.fasta Oculina_OA4_S45_R1_001.fastq.trim.bt2.Oarb.sam Oculina_OA4_S45_R1_001.fastq.trim.bt2.Oarb.unsorted.bam && samtools sort -o Oculina_OA4_S45_R1_001.fastq.trim.bt2.Oarb.sorted.bam Oculina_OA4_S45_R1_001.fastq.trim.bt2.Oarb.unsorted.bam && picard AddOrReplaceReadGroups INPUT=Oculina_OA4_S45_R1_001.fastq.trim.bt2.Oarb.sorted.bam OUTPUT=Oculina_OA4_S45_R1_001.fastq.trim.bt2.Oarb.bam RGID=group1 RGLB=lib1 RGPL=illumina RGPU=unit1 RGSM=Oculina_OA4_S45_R1_001.fastq.trim.bt2.Oarb && samtools index Oculina_OA4_S45_R1_001.fastq.trim.bt2.Oarb.bam
+
+
+#add this to top of s2b file:
+
+#!/bin/bash -l
+#$ -cwd # start job in submission directory
+#$ -N s2b # job name, anything you want
+#$ -l h_rt=24:00:00
+#$ -M hannahaichelman@gmail.com
+#$ -m be
+
+module load htslib/1.9
+module load samtools/1.9
+module load picard
+
+#once job finishes, remove unnecessary intermediate files
+[haich@scc-yd4 snps]$ rm -f *sorted*
+
+[haich@scc-yd4 snps]$ ls *bt2.Oarb.bam > bams
+[haich@scc-yd4 snps]$ cat bams | wc -l
+47
+
+
+## Ignore lines 98-111 Dan ##
+#this is from the first analysis, mapping to the original reference
+#testing removing samples that we know are clones to try and resolve what is happening in the other clumps of genotypes
+#removed all OR, OF, OI, OE, OC, and OJ genotypes, along with OA5 still removed because it looked like a weirdo
+[haich@scc-je1 snps]$ cat bams_noclones | wc -l
+28
+
+#another test, removing Q, N, P, O genotypes to try and resolve the rest
+[haich@scc-jb1 snps]$ cat bams_noclones2 | wc -l
+17
+#end tests from first reference
+
+#now after mapping to new reference, trying to remove all A genotypes, because the original dendrogram they are weirdos
+#removing A (white) really fixes the dendrogr
+###############################################################################
+
+### angsd genotyping - initial quality check 
+## This isn't necessary, more as an initial look at your data. 
+## I SKIP THIS STEP IN THE FINAL RUN AND GO STRAIGHT TO GENOTYPING BELOW
+
+# angsd settings:
+# -minMapQ 20 : only highly unique mappings (prob of erroneous mapping = 1%)\
+# -baq 1 : realign around indels (not terribly relevant for 2bRAD reads mapped with --local option) \
+# -maxDepth : highest total depth (sum over all samples) to assess; set to 10x number of samples \
+
+
+#first need to create a dictionary and an index (.fai) file for the reference transcriptomes
+module load htslib/1.9
+module load samtools/1.9
+module load picard
+[haich@scc-yd4 ref]$ picard CreateSequenceDictionary R=Oculina_Brev_transcriptome_new.fasta O=Oculina_Brev_transcriptome_new.dict
+[haich@scc-yd4 ref]$ samtools faidx Oculina_Brev_transcriptome_new.fasta
+
+#Sarah Barfield says:
+# in the angsd command, -r argument is one chromosome or contig to work with (no need to do this for whole genome as long as the chosen chromosome or contig is long enough)
+# (look up lengths of your contigs in the header of *.sam files if you need)
+# bams is a file with a list of your bam files 
+
+#I scrolled through the headers for Oarb and randomly selected this contig, one of the longer ones I could find:
+@SQ	SN:OArb_144639_c4_g1_i17	LN:2831
+
+FILTERS="-uniqueOnly 1 -remove_bads 1 -minMapQ 20 -baq 1 -ref /projectnb/davies-hb/hannah/MPCC_2018/Oculina/ref/Oculina_Breviolum_combined_transcriptome.fasta -maxDepth 470" 
+
+TODO="-doQsDist 1 -doDepth 1 -doCounts 1 -dumpCounts 2"
+
+#Then ran angsd...
+[haich@scc1 snps]$ module load angsd
+[haich@scc-yd4 snps]$ angsd -b bams -r OArb_144639_c4_g1_i17 -GL 1 $FILTERS $TODO -P 12 -out dd 
+
+#Make new file called plotQC.R and copy script from Misha's website (https://github.com/z0on/2bRAD_denovo/blob/master/plotQC.R) into it
+[haich@scc-yd4 snps]$ nano plotQC.R
+[haich@scc1 snps]$ module load R
+[haich@scc-yd4 snps]$ Rscript plotQC.R dd
+
+#Moved the dd.pdf file to local computer and look at it.  
+2020-02-11 12:00 /SNPcalling/--% scp haich@scc1.bu.edu:/projectnb/davies-hb/hannah/MPCC_2018/Oculina/snps/dd.pdf .
+
+#Looks really weird, but not sure what to expect for just one contig. Going to move forward with genotyping with strict filters below.
+
+##note, didn't do this for the new reference mapping yet##
+
+
+#### genotype with ANGSD #### 
+
+#--------------- population structure (based on common polymorphisms)
+
+# F I L T E R S :
+# (ALWAYS record your filter settings and explore different combinations to confirm that results are robust. )
+# Suggested filters :
+# -minMapQ 20 : only highly unique mappings (prob of erroneous mapping = 1%)
+# -minQ 30 : only highly confident base calls
+#could make this 20 to get more snps
+
+# -minInd 36 : the site must be genotyped in at least 36 individuals (note: set this to ~ 80% of your total number of your individuals)
+#lower this if you want more snps
+#set to 22 for the _noclones analysis
+#set to 14 for the _noclones2 analysis
+
+# -minIndDepth 6 : depth of at least 6 in non-missing individual
+#change to 5 to get more snps, no lower than 5 though
+#made 10 for the noclones2 analysis to make extra sure with so few samples
+
+# -snp_pval 1e-3 : high confidence that the SNP is not just sequencing error 
+# -minMaf 0.05 : only common SNPs, with allele frequency 0.05 or more.
+# Note: the last two filters are very efficient against sequencing errors but introduce bias against true rare alleles. It is OK (and even desirable) - UNLESS we want to do AFS analysis. We will generate data for AFS analysis in the next part.\
+# also adding  filters against very badly non-HWE sites (such as, all calls are heterozygotes => lumped paralog situation) and sites with really bad strand bias:\
+
+
+# T O   D O : \
+# -GL 1 : samtools likelihood model\
+# -doGlf 2 : output beagle format (for admixture)\
+# -doGeno 32 : binary genotype likelihoods format (for ngsCovar => PCA)\
+# -doMajorMinor 4 -ref $GENOME_REF : infer major and minor alleles from reference (in our case it is outgroup taxon)\
+# -makeMatrix 1 -doIBS 1 -doCov 1 : identity-by-state and covariance matrices based on single-read resampling (robust to variation in coverage across samples)\
+# TO-DO commands can be changed to generate different files needed for different analyses as well (http://www.popgen.dk/angsd/index.php/ANGSD#Overview) 
+
+#skipTrialellic 1 #could add this if you want to remove triallelic snps, usually a sequencing error
+
+#Request an interactive node before you start this analysis, might get kicked off for taking up too much memory on the head node
+qrsh -pe omp 12
+
+#here are the original filters I used for angsd, based on Nicola and Sarah Barfield:
+[haich@scc-yd4 snps]$ FILTERS="-uniqueOnly 1 -remove_bads 1 -minMapQ 20 -minQ 30 -baq 1 -dosnpstat 1 -doHWE 1 -hwe_pval 1e-5 -sb_pval 1e-5 -minInd 14 -minIndDepth 10 -snp_pval 1e-5 -minMaf 0.05"
+[haich@scc-yd4 snps]$ TODO="-doMajorMinor 1 -ref /projectnb/davies-hb/hannah/MPCC_2018/Oculina/ref/Oculina_Breviolum_combined_transcriptome.fasta -doMaf 1 -doCounts 1 -makeMatrix 1 -doIBS 1 -doCov 1 -doGeno 32 -doPost 1 -doGlf 2"
+
+######## Here are the new filters from Misha, used these for new reference analysis (June 12, 2020):
+FILTERS="-uniqueOnly 1 -remove_bads 1 -minMapQ 20 -minQ 25 -dosnpstat 1 -doHWE 1 -sb_pval 1e-5 -hetbias_pval 1e-5 -skipTriallelic 1 -minInd 36 -snp_pval 1e-5 -minMaf 0.05"
+TODO="-doMajorMinor 1 -ref /projectnb/davies-hb/hannah/MPCC_2018/Oculina/ref/Oculina_Brev_transcriptome_new.fasta -doMaf 1 -doCounts 1 -makeMatrix 1 -doIBS 1 -doCov 1 -doGeno 8 -doVcf 1 -doPost 1 -doGlf 2"
+
+######## Dan, do the filters above (lines 205,206) and compare with this:
+FILTERS="-uniqueOnly 1 -remove_bads 1 -minMapQ 20 -minQ 25 -dosnpstat 1 -doHWE 1 -sb_pval 1e-5 -hetbias_pval 1e-5 -skipTriallelic 1 -minInd 36 -minIndDepth 5 -snp_pval 1e-5 -minMaf 0.05"
+TODO="-doMajorMinor 1 -ref /projectnb/davies-hb/hannah/MPCC_2018/Oculina/ref/Oculina_Brev_transcriptome_new.fasta -doMaf 1 -doCounts 1 -makeMatrix 1 -doIBS 1 -doCov 1 -doGeno 8 -doVcf 1 -doPost 1 -doGlf 2"
+
+#for brown only, change -minInd to 19, ~80% of 24 samples
+FILTERS="-uniqueOnly 1 -remove_bads 1 -minMapQ 20 -minQ 25 -dosnpstat 1 -doHWE 1 -sb_pval 1e-5 -hetbias_pval 1e-5 -skipTriallelic 1 -minInd 19 -snp_pval 1e-5 -minMaf 0.05"
+TODO="-doMajorMinor 1 -ref /projectnb/davies-hb/hannah/MPCC_2018/Oculina/ref/Oculina_Brev_transcriptome_new.fasta -doMaf 1 -doCounts 1 -makeMatrix 1 -doIBS 1 -doCov 1 -doGeno 8 -doVcf 1 -doPost 1 -doGlf 2"
+
+
+## now actually run angsd
+[haich@scc1 snps]$ module load angsd
+[haich@scc-yd4 snps]$ angsd -b bams -GL 1 $FILTERS $TODO -P 1 -out Oarb_newref
+#change the -b and -out to be appropriate to the bams files you are looking at. 
+
+
+#----------------------
+# ADMIXTURE\
+
+[haich@scc-yd4 snps]$ module load admixture
+
+[haich@scc1 snps]$ NSITES=`zcat Oarb_newref.beagle.gz | wc -l`
+[haich@scc1 snps]$ echo $NSITES
+#178 before removing OA5
+#166 with removing OA5
+#173 with removing the clones
+#55 with removing clones 2
+
+#13800 with new filters !!!!
+#11510 with new filters and no A genotypes included
+#13562 with new filters and browns only
+
+for K in 2 3 4; 
+do 
+NGSadmix -likes Oarb_browns.beagle.gz -K $K -P 10 -o admix;
+done
+
+
+# scp *Mat, *qopt and bams files to laptop, same directory as dd.pdf file above
+
+# Next we will use angsd_ibs_pca.R to plot PCA and admixturePlotting_v4.R to plot ADMIXTURE and move to home laptops and work in R for visualizations. 

@@ -1,0 +1,1872 @@
+name	term	lev	seq	value
+"obsolete oxidation-reduction process"	GO:0055114	-1	Sym_119275_c3_g2	-4.34183169105967
+"obsolete oxidation-reduction process"	GO:0055114	-1	Sym_110848_c2_g1	2.0755308621403
+"obsolete oxidation-reduction process"	GO:0055114	-1	Sym_94893_c0_g3	1.69989650639723
+"obsolete oxidation-reduction process"	GO:0055114	-1	Sym_150495_c0_g1	0.295357849726893
+"obsolete oxidation-reduction process"	GO:0055114	-1	Sym_115306_c0_g1	2.77332383788982
+"obsolete oxidation-reduction process"	GO:0055114	-1	Sym_103171_c0_g1	-0.603384703080326
+"obsolete oxidation-reduction process"	GO:0055114	-1	Sym_94893_c0_g2	-5.37096176268859
+"obsolete oxidation-reduction process"	GO:0055114	-1	Sym_105558_c0_g1	15.7186593086585
+"obsolete oxidation-reduction process"	GO:0055114	-1	Sym_101057_c0_g1	-2.05055880017112
+"obsolete oxidation-reduction process"	GO:0055114	-1	Sym_94893_c0_g4	12.2730302159295
+"regulation of immune system process"	GO:0002682	2	Sym_310154_c0_g1	-0.107919262979185
+"regulation of immune system process"	GO:0002682	2	Sym_24568_c0_g1	16.2353942201521
+"regulation of immune system process"	GO:0002682	2	Sym_150432_c3_g6	61.8550133899771
+"regulation of immune system process"	GO:0002682	2	Sym_105558_c0_g1	15.7186593086585
+"regulation of immune system process"	GO:0002682	2	Sym_45310_c0_g1	-4.24782038117046
+"regulation of immune system process"	GO:0002682	2	Sym_101057_c0_g1	-2.05055880017112
+"response to external biotic stimulus"	GO:0051707;GO:0043207;GO:0044419;GO:0009607	2	Sym_136847_c3_g1	12.0492609525839
+"response to external biotic stimulus"	GO:0051707;GO:0043207;GO:0044419;GO:0009607	2	Sym_284899_c0_g1	7.05401579318168
+"response to external biotic stimulus"	GO:0051707;GO:0043207;GO:0044419;GO:0009607	2	Sym_112519_c1_g6	-2.6408815861298
+"response to external biotic stimulus"	GO:0051707;GO:0043207;GO:0044419;GO:0009607	2	Sym_109253_c1_g2	-4.07479292137967
+"response to external biotic stimulus"	GO:0051707;GO:0043207;GO:0044419;GO:0009607	2	Sym_112389_c0_g1	0.985562171814962
+"response to external biotic stimulus"	GO:0051707;GO:0043207;GO:0044419;GO:0009607	2	Sym_128149_c1_g1	-8.04282547175407
+"response to external biotic stimulus"	GO:0051707;GO:0043207;GO:0044419;GO:0009607	2	Sym_137506_c2_g3	30.4234312846885
+"response to external biotic stimulus"	GO:0051707;GO:0043207;GO:0044419;GO:0009607	2	Sym_109253_c1_g1	1.57359036822975
+"response to external biotic stimulus"	GO:0051707;GO:0043207;GO:0044419;GO:0009607	2	Sym_136877_c0_g1	-6.95505543899488
+"response to external biotic stimulus"	GO:0051707;GO:0043207;GO:0044419;GO:0009607	2	Sym_115147_c3_g1	-1.09499257037519
+"response to external biotic stimulus"	GO:0051707;GO:0043207;GO:0044419;GO:0009607	2	Sym_112519_c1_g1	-4.9546526982083
+"response to external biotic stimulus"	GO:0051707;GO:0043207;GO:0044419;GO:0009607	2	Sym_144233_c1_g1	-1.51148092003028
+"response to external biotic stimulus"	GO:0051707;GO:0043207;GO:0044419;GO:0009607	2	Sym_24568_c0_g1	16.2353942201521
+"response to external biotic stimulus"	GO:0051707;GO:0043207;GO:0044419;GO:0009607	2	Sym_159792_c0_g1	-2.71154134479165
+"regulation of catabolic process"	GO:0031329;GO:0009894	2	Sym_131859_c1_g2	5.83979639411501
+"regulation of catabolic process"	GO:0031329;GO:0009894	2	Sym_284899_c0_g1	7.05401579318168
+"regulation of catabolic process"	GO:0031329;GO:0009894	2	Sym_112389_c0_g1	0.985562171814962
+"regulation of catabolic process"	GO:0031329;GO:0009894	2	Sym_145648_c3_g1	-1.13964814778694
+"regulation of catabolic process"	GO:0031329;GO:0009894	2	Sym_43139_c0_g1	-3.22564337894425
+"regulation of catabolic process"	GO:0031329;GO:0009894	2	Sym_128217_c2_g1	-0.946632288707344
+"regulation of catabolic process"	GO:0031329;GO:0009894	2	Sym_69276_c0_g1	1.49397127110569
+"regulation of catabolic process"	GO:0031329;GO:0009894	2	Sym_119843_c6_g1	15.250034955111
+"regulation of catabolic process"	GO:0031329;GO:0009894	2	Sym_84654_c0_g1	-3.11425835421903
+"regulation of catabolic process"	GO:0031329;GO:0009894	2	Sym_80796_c0_g1	2.75787866185817
+"cellular response to stress"	GO:0033554	2	Sym_310154_c0_g1	-0.107919262979185
+"cellular response to stress"	GO:0033554	2	Sym_126392_c0_g1	-0.224133526947624
+"cellular response to stress"	GO:0033554	2	Sym_57115_c0_g1	-15.119363668111
+"cellular response to stress"	GO:0033554	2	Sym_125225_c1_g2	-0.78987481266211
+"cellular response to stress"	GO:0033554	2	Sym_24952_c0_g1	-69.1736814680241
+"cellular response to stress"	GO:0033554	2	Sym_103763_c6_g1	1.64809471626028
+"cellular response to stress"	GO:0033554	2	Sym_110848_c2_g1	2.0755308621403
+"cellular response to stress"	GO:0033554	2	Sym_130013_c0_g1	6.1725525506105
+"cellular response to stress"	GO:0033554	2	Sym_207498_c0_g1	4.13727158147116
+"cellular response to stress"	GO:0033554	2	Sym_107127_c2_g8	3.31675479217134
+"cellular response to stress"	GO:0033554	2	Sym_28806_c0_g1	0.61347772348389
+"cellular response to stress"	GO:0033554	2	Sym_125225_c1_g1	-0.95138836303257
+"cellular response to stress"	GO:0033554	2	Sym_125225_c1_g3	-33.3722638015644
+"cellular response to stress"	GO:0033554	2	Sym_89763_c0_g1	8.47349820276669
+"cellular response to stress"	GO:0033554	2	Sym_209170_c0_g1	-1.21885817220069
+"cellular response to stress"	GO:0033554	2	Sym_101138_c0_g1	1.62889206614134
+"cellular response to stress"	GO:0033554	2	Sym_100230_c0_g1	8.89454650346743
+"cellular response to stress"	GO:0033554	2	Sym_119843_c6_g1	15.250034955111
+"cellular response to stress"	GO:0033554	2	Sym_152309_c0_g2	-11.5566218346626
+"cellular response to stress"	GO:0033554	2	Sym_142384_c1_g2	-2.71930854896858
+"cellular response to stress"	GO:0033554	2	Sym_114907_c3_g2	-1.94385574826031
+"response to salt stress"	GO:0009651	2	Sym_117355_c0_g1	-1.39800870612488
+"response to salt stress"	GO:0009651	2	Sym_140163_c0_g1	-14.0962370651635
+"response to salt stress"	GO:0009651	2	Sym_24952_c0_g1	-69.1736814680241
+"response to salt stress"	GO:0009651	2	Sym_207498_c0_g1	4.13727158147116
+"response to salt stress"	GO:0009651	2	Sym_148542_c0_g2	-8.11764781885257
+"positive regulation of cellular process"	GO:0048522	2	Sym_175570_c0_g1	21.094498827213
+"positive regulation of cellular process"	GO:0048522	2	Sym_133740_c1_g1	1.32754046388189
+"positive regulation of cellular process"	GO:0048522	2	Sym_131859_c1_g2	5.83979639411501
+"positive regulation of cellular process"	GO:0048522	2	Sym_109358_c2_g1	-0.530669227466644
+"positive regulation of cellular process"	GO:0048522	2	Sym_127086_c1_g3	-0.273855837115441
+"positive regulation of cellular process"	GO:0048522	2	Sym_284899_c0_g1	7.05401579318168
+"positive regulation of cellular process"	GO:0048522	2	Sym_107369_c3_g5	0.117245382176398
+"positive regulation of cellular process"	GO:0048522	2	Sym_24568_c0_g1	16.2353942201521
+"positive regulation of cellular process"	GO:0048522	2	Sym_132105_c3_g7	-3.4633075803853
+"positive regulation of cellular process"	GO:0048522	2	Sym_111423_c4_g1	0.629301819249032
+"positive regulation of cellular process"	GO:0048522	2	Sym_103763_c6_g1	1.64809471626028
+"positive regulation of cellular process"	GO:0048522	2	Sym_237540_c0_g1	13.2824926785187
+"positive regulation of cellular process"	GO:0048522	2	Sym_101501_c0_g2	-0.928240260689423
+"positive regulation of cellular process"	GO:0048522	2	Sym_145648_c3_g1	-1.13964814778694
+"positive regulation of cellular process"	GO:0048522	2	Sym_43139_c0_g1	-3.22564337894425
+"positive regulation of cellular process"	GO:0048522	2	Sym_104762_c1_g5	-6.80631077923629
+"positive regulation of cellular process"	GO:0048522	2	Sym_157544_c0_g1	4.47498758621292
+"positive regulation of cellular process"	GO:0048522	2	Sym_37542_c0_g1	-0.0629221229476182
+"positive regulation of cellular process"	GO:0048522	2	Sym_100802_c0_g1	-4.46148008552169
+"positive regulation of cellular process"	GO:0048522	2	Sym_128217_c2_g1	-0.946632288707344
+"positive regulation of cellular process"	GO:0048522	2	Sym_69276_c0_g1	1.49397127110569
+"positive regulation of cellular process"	GO:0048522	2	Sym_100008_c0_g3	0.652887439468474
+"positive regulation of cellular process"	GO:0048522	2	Sym_45310_c0_g1	-4.24782038117046
+"positive regulation of cellular process"	GO:0048522	2	Sym_119843_c6_g1	15.250034955111
+"positive regulation of cellular process"	GO:0048522	2	Sym_113653_c1_g2	-22.4809407064687
+"positive regulation of cellular process"	GO:0048522	2	Sym_101501_c0_g1	3.95441988581741
+"positive regulation of cellular process"	GO:0048522	2	Sym_84654_c0_g1	-3.11425835421903
+"positive regulation of cellular process"	GO:0048522	2	Sym_42149_c0_g1	0.127481875528154
+"regulation of intracellular signal transduction"	GO:1902531	2	Sym_24568_c0_g1	16.2353942201521
+"regulation of intracellular signal transduction"	GO:1902531	2	Sym_150432_c3_g6	61.8550133899771
+"regulation of intracellular signal transduction"	GO:1902531	2	Sym_92829_c0_g1	0.38997535529179
+"regulation of intracellular signal transduction"	GO:1902531	2	Sym_43139_c0_g1	-3.22564337894425
+"regulation of intracellular signal transduction"	GO:1902531	2	Sym_89763_c0_g1	8.47349820276669
+"regulation of intracellular signal transduction"	GO:1902531	2	Sym_66494_c0_g1	0.712134852533098
+"regulation of intracellular signal transduction"	GO:1902531	2	Sym_84654_c0_g1	-3.11425835421903
+"regulation of intracellular signal transduction"	GO:1902531	2	Sym_42149_c0_g1	0.127481875528154
+"regulation of intracellular signal transduction"	GO:1902531	2	Sym_120986_c2_g1	4.22237326430696
+"regulation of mRNA stability"	GO:0043488;GO:0043487	4	Sym_284899_c0_g1	7.05401579318168
+"regulation of mRNA stability"	GO:0043488;GO:0043487	4	Sym_43139_c0_g1	-3.22564337894425
+"regulation of mRNA stability"	GO:0043488;GO:0043487	4	Sym_69276_c0_g1	1.49397127110569
+"regulation of mRNA stability"	GO:0043488;GO:0043487	4	Sym_119843_c6_g1	15.250034955111
+"regulation of mRNA stability"	GO:0043488;GO:0043487	4	Sym_84654_c0_g1	-3.11425835421903
+"positive regulation of gene expression"	GO:0010628	2	Sym_107369_c3_g5	0.117245382176398
+"positive regulation of gene expression"	GO:0010628	2	Sym_111423_c4_g1	0.629301819249032
+"positive regulation of gene expression"	GO:0010628	2	Sym_237540_c0_g1	13.2824926785187
+"positive regulation of gene expression"	GO:0010628	2	Sym_128217_c2_g1	-0.946632288707344
+"positive regulation of gene expression"	GO:0010628	2	Sym_100008_c0_g3	0.652887439468474
+"plasma membrane bounded cell projection organization"	GO:0120036	3	Sym_310154_c0_g1	-0.107919262979185
+"plasma membrane bounded cell projection organization"	GO:0120036	3	Sym_131859_c1_g2	5.83979639411501
+"plasma membrane bounded cell projection organization"	GO:0120036	3	Sym_30900_c0_g1	1.9750961562418
+"plasma membrane bounded cell projection organization"	GO:0120036	3	Sym_102785_c0_g1	8.05531505118345
+"plasma membrane bounded cell projection organization"	GO:0120036	3	Sym_137236_c0_g1	0.0324716805471844
+"secretion"	GO:0046903	2	Sym_57115_c0_g1	-15.119363668111
+"secretion"	GO:0046903	2	Sym_30458_c0_g1	8.33934130259168
+"secretion"	GO:0046903	2	Sym_43550_c0_g1	-98.2287966111583
+"secretion"	GO:0046903	2	Sym_94907_c0_g2	18.4876594115042
+"secretion"	GO:0046903	2	Sym_85763_c0_g2	-0.418774948238708
+"cytoskeleton organization"	GO:0007010	3	Sym_131859_c1_g2	5.83979639411501
+"cytoskeleton organization"	GO:0007010	3	Sym_30458_c0_g1	8.33934130259168
+"cytoskeleton organization"	GO:0007010	3	Sym_205051_c0_g1	36.6258781028596
+"cytoskeleton organization"	GO:0007010	3	Sym_85763_c0_g2	-0.418774948238708
+"cytoskeleton organization"	GO:0007010	3	Sym_112389_c0_g1	0.985562171814962
+"reactive oxygen species metabolic process"	GO:0072593	3	Sym_24568_c0_g1	16.2353942201521
+"reactive oxygen species metabolic process"	GO:0072593	3	Sym_144984_c0_g1	-6.5969619778542
+"reactive oxygen species metabolic process"	GO:0072593	3	Sym_141083_c0_g1	-34.1385292892441
+"reactive oxygen species metabolic process"	GO:0072593	3	Sym_209170_c0_g1	-1.21885817220069
+"reactive oxygen species metabolic process"	GO:0072593	3	Sym_30446_c0_g1	5.33878880661604
+"RNA splicing, via transesterification reactions with bulged adenosine as nucleophile"	GO:0000398;GO:0000377;GO:0000375	5	Sym_133740_c1_g1	1.32754046388189
+"RNA splicing, via transesterification reactions with bulged adenosine as nucleophile"	GO:0000398;GO:0000377;GO:0000375	5	Sym_105077_c3_g2	-0.0989275511979511
+"RNA splicing, via transesterification reactions with bulged adenosine as nucleophile"	GO:0000398;GO:0000377;GO:0000375	5	Sym_80984_c0_g1	23.5788200099427
+"RNA splicing, via transesterification reactions with bulged adenosine as nucleophile"	GO:0000398;GO:0000377;GO:0000375	5	Sym_244501_c0_g1	-10.2617774494438
+"RNA splicing, via transesterification reactions with bulged adenosine as nucleophile"	GO:0000398;GO:0000377;GO:0000375	5	Sym_173607_c0_g1	3.44627375643787
+"RNA splicing, via transesterification reactions with bulged adenosine as nucleophile"	GO:0000398;GO:0000377;GO:0000375	5	Sym_179741_c0_g1	-4.57090491711408
+"RNA splicing, via transesterification reactions with bulged adenosine as nucleophile"	GO:0000398;GO:0000377;GO:0000375	5	Sym_139545_c4_g1	-2.01932242622509
+"RNA splicing, via transesterification reactions with bulged adenosine as nucleophile"	GO:0000398;GO:0000377;GO:0000375	5	Sym_101312_c0_g2	-3.10341568803234
+"RNA splicing, via transesterification reactions with bulged adenosine as nucleophile"	GO:0000398;GO:0000377;GO:0000375	5	Sym_78927_c0_g1	-1.576760358643
+"RNA splicing, via transesterification reactions with bulged adenosine as nucleophile"	GO:0000398;GO:0000377;GO:0000375	5	Sym_144233_c1_g1	-1.51148092003028
+"RNA splicing, via transesterification reactions with bulged adenosine as nucleophile"	GO:0000398;GO:0000377;GO:0000375	5	Sym_245377_c0_g1	0.0652133445433471
+"regulation of transport"	GO:0051049;GO:0043269	4	Sym_310154_c0_g1	-0.107919262979185
+"regulation of transport"	GO:0051049;GO:0043269	4	Sym_284899_c0_g1	7.05401579318168
+"regulation of transport"	GO:0051049;GO:0043269	4	Sym_237540_c0_g1	13.2824926785187
+"regulation of transport"	GO:0051049;GO:0043269	4	Sym_148791_c2_g2	-31.0746237720127
+"regulation of transport"	GO:0051049;GO:0043269	4	Sym_100008_c0_g3	0.652887439468474
+"regulation of transport"	GO:0051049;GO:0043269	4	Sym_45310_c0_g1	-4.24782038117046
+"electron transport chain"	GO:0022900	2	Sym_103301_c0_g1	-0.662851698776769
+"electron transport chain"	GO:0022900	2	Sym_244729_c0_g1	-0.46594196462083
+"electron transport chain"	GO:0022900	2	Sym_102471_c7_g1	4.83583699478512
+"electron transport chain"	GO:0022900	2	Sym_83072_c0_g2	-4.4422346603043
+"electron transport chain"	GO:0022900	2	Sym_78376_c0_g2	-2.73942760354235
+"drug metabolic process"	GO:0016999;GO:0017144	3	Sym_140883_c1_g1	2.2540502228834
+"drug metabolic process"	GO:0016999;GO:0017144	3	Sym_127689_c0_g1	0.365945606798629
+"drug metabolic process"	GO:0016999;GO:0017144	3	Sym_120595_c3_g2	14.601616737514
+"drug metabolic process"	GO:0016999;GO:0017144	3	Sym_55311_c0_g1	2.72182535958131
+"drug metabolic process"	GO:0016999;GO:0017144	3	Sym_126375_c0_g3	-1.32744788953874
+"drug metabolic process"	GO:0016999;GO:0017144	3	Sym_214581_c0_g1	-1.93871113809854
+"purine ribonucleotide biosynthetic process"	GO:0015986;GO:0006754;GO:0015985;GO:0009152;GO:0009206;GO:1902600;GO:0006164;GO:0072522;GO:0009145;GO:0009201;GO:0009205;GO:0009142;GO:0009144;GO:0009199;GO:0009141	8	Sym_105819_c0_g1	-5.48831246788115
+"purine ribonucleotide biosynthetic process"	GO:0015986;GO:0006754;GO:0015985;GO:0009152;GO:0009206;GO:1902600;GO:0006164;GO:0072522;GO:0009145;GO:0009201;GO:0009205;GO:0009142;GO:0009144;GO:0009199;GO:0009141	8	Sym_176037_c0_g1	-0.71450110033221
+"purine ribonucleotide biosynthetic process"	GO:0015986;GO:0006754;GO:0015985;GO:0009152;GO:0009206;GO:1902600;GO:0006164;GO:0072522;GO:0009145;GO:0009201;GO:0009205;GO:0009142;GO:0009144;GO:0009199;GO:0009141	8	Sym_101543_c0_g2	-13.3092254362418
+"purine ribonucleotide biosynthetic process"	GO:0015986;GO:0006754;GO:0015985;GO:0009152;GO:0009206;GO:1902600;GO:0006164;GO:0072522;GO:0009145;GO:0009201;GO:0009205;GO:0009142;GO:0009144;GO:0009199;GO:0009141	8	Sym_101543_c0_g3	-4.83332352909251
+"purine ribonucleotide biosynthetic process"	GO:0015986;GO:0006754;GO:0015985;GO:0009152;GO:0009206;GO:1902600;GO:0006164;GO:0072522;GO:0009145;GO:0009201;GO:0009205;GO:0009142;GO:0009144;GO:0009199;GO:0009141	8	Sym_208217_c0_g1	1.77326250004317
+"purine ribonucleotide biosynthetic process"	GO:0015986;GO:0006754;GO:0015985;GO:0009152;GO:0009206;GO:1902600;GO:0006164;GO:0072522;GO:0009145;GO:0009201;GO:0009205;GO:0009142;GO:0009144;GO:0009199;GO:0009141	8	Sym_120676_c2_g1	-4.74919964214161
+"purine ribonucleotide biosynthetic process"	GO:0015986;GO:0006754;GO:0015985;GO:0009152;GO:0009206;GO:1902600;GO:0006164;GO:0072522;GO:0009145;GO:0009201;GO:0009205;GO:0009142;GO:0009144;GO:0009199;GO:0009141	8	Sym_144324_c2_g4	-1.22980373812778
+"purine ribonucleotide biosynthetic process"	GO:0015986;GO:0006754;GO:0015985;GO:0009152;GO:0009206;GO:1902600;GO:0006164;GO:0072522;GO:0009145;GO:0009201;GO:0009205;GO:0009142;GO:0009144;GO:0009199;GO:0009141	8	Sym_102471_c7_g1	4.83583699478512
+"negative regulation of response to external stimulus"	GO:0032102	2	Sym_109358_c2_g1	-0.530669227466644
+"negative regulation of response to external stimulus"	GO:0032102	2	Sym_24568_c0_g1	16.2353942201521
+"negative regulation of response to external stimulus"	GO:0032102	2	Sym_109253_c1_g2	-4.07479292137967
+"negative regulation of response to external stimulus"	GO:0032102	2	Sym_150432_c3_g6	61.8550133899771
+"negative regulation of response to external stimulus"	GO:0032102	2	Sym_109253_c1_g1	1.57359036822975
+"organic acid biosynthetic process"	GO:0046394;GO:0016053	3	Sym_66977_c0_g1	17.1250414504078
+"organic acid biosynthetic process"	GO:0046394;GO:0016053	3	Sym_136796_c2_g1	-6.80732584770358
+"organic acid biosynthetic process"	GO:0046394;GO:0016053	3	Sym_150495_c0_g1	0.295357849726893
+"organic acid biosynthetic process"	GO:0046394;GO:0016053	3	Sym_110246_c0_g1	-8.9028489000906
+"organic acid biosynthetic process"	GO:0046394;GO:0016053	3	Sym_271368_c0_g1	42.7295258977713
+"organic acid biosynthetic process"	GO:0046394;GO:0016053	3	Sym_108903_c2_g1	1.07082668657512
+"organic acid biosynthetic process"	GO:0046394;GO:0016053	3	Sym_144324_c2_g4	-1.22980373812778
+"organic acid biosynthetic process"	GO:0046394;GO:0016053	3	Sym_156041_c0_g1	-3.40903138411735
+"regulation of cell population proliferation"	GO:0042127	2	Sym_310154_c0_g1	-0.107919262979185
+"regulation of cell population proliferation"	GO:0042127	2	Sym_103763_c6_g1	1.64809471626028
+"regulation of cell population proliferation"	GO:0042127	2	Sym_145648_c3_g1	-1.13964814778694
+"regulation of cell population proliferation"	GO:0042127	2	Sym_105558_c0_g1	15.7186593086585
+"regulation of cell population proliferation"	GO:0042127	2	Sym_101057_c0_g1	-2.05055880017112
+"photosynthesis"	GO:0015979	3	Sym_119275_c3_g2	-4.34183169105967
+"photosynthesis"	GO:0015979	3	Sym_275443_c0_g1	1.49952746345735
+"photosynthesis"	GO:0015979	3	Sym_102230_c0_g1	-0.519175868744793
+"photosynthesis"	GO:0015979	3	Sym_94893_c0_g3	1.69989650639723
+"photosynthesis"	GO:0015979	3	Sym_146541_c1_g1	-8.09430899017412
+"photosynthesis"	GO:0015979	3	Sym_102774_c0_g1	-0.555066597938941
+"photosynthesis"	GO:0015979	3	Sym_317193_c0_g1	-1.21459095763862
+"photosynthesis"	GO:0015979	3	Sym_94893_c0_g2	-5.37096176268859
+"photosynthesis"	GO:0015979	3	Sym_94893_c0_g4	12.2730302159295
+"peptidyl-amino acid modification"	GO:0018193	5	Sym_140163_c0_g1	-14.0962370651635
+"peptidyl-amino acid modification"	GO:0018193	5	Sym_30458_c0_g1	8.33934130259168
+"peptidyl-amino acid modification"	GO:0018193	5	Sym_110848_c2_g1	2.0755308621403
+"peptidyl-amino acid modification"	GO:0018193	5	Sym_85763_c0_g2	-0.418774948238708
+"peptidyl-amino acid modification"	GO:0018193	5	Sym_142384_c1_g2	-2.71930854896858
+"regulation of developmental process"	GO:0050793	2	Sym_131859_c1_g2	5.83979639411501
+"regulation of developmental process"	GO:0050793	2	Sym_30458_c0_g1	8.33934130259168
+"regulation of developmental process"	GO:0050793	2	Sym_107369_c3_g5	0.117245382176398
+"regulation of developmental process"	GO:0050793	2	Sym_24568_c0_g1	16.2353942201521
+"regulation of developmental process"	GO:0050793	2	Sym_85763_c0_g2	-0.418774948238708
+"regulation of developmental process"	GO:0050793	2	Sym_145648_c3_g1	-1.13964814778694
+"regulation of developmental process"	GO:0050793	2	Sym_105558_c0_g1	15.7186593086585
+"regulation of developmental process"	GO:0050793	2	Sym_45310_c0_g1	-4.24782038117046
+"regulation of developmental process"	GO:0050793	2	Sym_119843_c6_g1	15.250034955111
+"regulation of developmental process"	GO:0050793	2	Sym_101057_c0_g1	-2.05055880017112
+"regulation of developmental process"	GO:0050793	2	Sym_84654_c0_g1	-3.11425835421903
+"lipid biosynthetic process"	GO:0008610	2	Sym_87432_c0_g1	2.76858164800877
+"lipid biosynthetic process"	GO:0008610	2	Sym_126392_c0_g1	-0.224133526947624
+"lipid biosynthetic process"	GO:0008610	2	Sym_136796_c2_g1	-6.80732584770358
+"lipid biosynthetic process"	GO:0008610	2	Sym_150495_c0_g1	0.295357849726893
+"lipid biosynthetic process"	GO:0008610	2	Sym_131343_c2_g1	0.366958814383093
+"lipid biosynthetic process"	GO:0008610	2	Sym_110246_c0_g1	-8.9028489000906
+"lipid biosynthetic process"	GO:0008610	2	Sym_148542_c0_g2	-8.11764781885257
+"lipid biosynthetic process"	GO:0008610	2	Sym_108903_c2_g1	1.07082668657512
+"lipid biosynthetic process"	GO:0008610	2	Sym_144324_c2_g4	-1.22980373812778
+"regulation of cell cycle"	GO:0051726	2	Sym_107369_c3_g5	0.117245382176398
+"regulation of cell cycle"	GO:0051726	2	Sym_101501_c0_g2	-0.928240260689423
+"regulation of cell cycle"	GO:0051726	2	Sym_145648_c3_g1	-1.13964814778694
+"regulation of cell cycle"	GO:0051726	2	Sym_69276_c0_g1	1.49397127110569
+"regulation of cell cycle"	GO:0051726	2	Sym_101501_c0_g1	3.95441988581741
+"regulation of cell cycle"	GO:0051726	2	Sym_66995_c0_g1	-0.901139339173578
+"regulation of cell cycle"	GO:0051726	2	Sym_282497_c0_g1	1.58597831106069
+"regulation of cell cycle"	GO:0051726	2	Sym_84654_c0_g1	-3.11425835421903
+"proteolysis"	GO:0006508;GO:0051603	3	Sym_93418_c0_g1	0.360199658478098
+"proteolysis"	GO:0006508;GO:0051603	3	Sym_109358_c2_g1	-0.530669227466644
+"proteolysis"	GO:0006508;GO:0051603	3	Sym_178813_c0_g1	-1.66116606087105
+"proteolysis"	GO:0006508;GO:0051603	3	Sym_44505_c0_g1	0.511369226154053
+"proteolysis"	GO:0006508;GO:0051603	3	Sym_66220_c0_g2	-0.404158036114577
+"proteolysis"	GO:0006508;GO:0051603	3	Sym_107783_c2_g1	1.08092272624163
+"proteolysis"	GO:0006508;GO:0051603	3	Sym_132105_c3_g7	-3.4633075803853
+"proteolysis"	GO:0006508;GO:0051603	3	Sym_103763_c6_g1	1.64809471626028
+"proteolysis"	GO:0006508;GO:0051603	3	Sym_101971_c0_g1	1.94771167599123
+"proteolysis"	GO:0006508;GO:0051603	3	Sym_128685_c8_g1	2.85787311302968
+"proteolysis"	GO:0006508;GO:0051603	3	Sym_278829_c0_g1	-0.494732375542863
+"proteolysis"	GO:0006508;GO:0051603	3	Sym_114958_c5_g1	3.14374182900109
+"proteolysis"	GO:0006508;GO:0051603	3	Sym_17199_c0_g1	29.122263033591
+"proteolysis"	GO:0006508;GO:0051603	3	Sym_130165_c13_g1	-2.53371309750074
+"proteolysis"	GO:0006508;GO:0051603	3	Sym_91477_c0_g1	-5.03760633963937
+"proteolysis"	GO:0006508;GO:0051603	3	Sym_100802_c0_g1	-4.46148008552169
+"proteolysis"	GO:0006508;GO:0051603	3	Sym_101138_c0_g1	1.62889206614134
+"proteolysis"	GO:0006508;GO:0051603	3	Sym_204881_c0_g1	0.0129770166476083
+"proteolysis"	GO:0006508;GO:0051603	3	Sym_136877_c0_g1	-6.95505543899488
+"proteolysis"	GO:0006508;GO:0051603	3	Sym_242526_c0_g1	-49.1375764095091
+"proteolysis"	GO:0006508;GO:0051603	3	Sym_53466_c0_g1	-1.32038195502402
+"proteolysis"	GO:0006508;GO:0051603	3	Sym_175830_c0_g1	-0.373197317978894
+"cellular localization"	GO:0051641	2	Sym_93418_c0_g1	0.360199658478098
+"cellular localization"	GO:0051641	2	Sym_131859_c1_g2	5.83979639411501
+"cellular localization"	GO:0051641	2	Sym_107369_c3_g5	0.117245382176398
+"cellular localization"	GO:0051641	2	Sym_237540_c0_g1	13.2824926785187
+"cellular localization"	GO:0051641	2	Sym_114907_c3_g1	-0.509850833046138
+"cellular localization"	GO:0051641	2	Sym_30900_c0_g1	1.9750961562418
+"cellular localization"	GO:0051641	2	Sym_31210_c0_g1	7.17959835086772
+"cellular localization"	GO:0051641	2	Sym_94700_c0_g1	1.53117151021395
+"cellular localization"	GO:0051641	2	Sym_102785_c0_g1	8.05531505118345
+"cellular localization"	GO:0051641	2	Sym_17199_c0_g1	29.122263033591
+"cellular localization"	GO:0051641	2	Sym_137236_c0_g1	0.0324716805471844
+"cellular localization"	GO:0051641	2	Sym_101312_c0_g2	-3.10341568803234
+"cellular localization"	GO:0051641	2	Sym_147119_c0_g1	0.330276428917375
+"cellular localization"	GO:0051641	2	Sym_20490_c0_g1	-3.70010562374536
+"cellular localization"	GO:0051641	2	Sym_143426_c2_g1	0.37271951577531
+"cellular localization"	GO:0051641	2	Sym_18246_c0_g1	-0.312855860006296
+"cellular localization"	GO:0051641	2	Sym_100008_c0_g3	0.652887439468474
+"cellular localization"	GO:0051641	2	Sym_136070_c2_g1	-0.519259115603013
+"cellular localization"	GO:0051641	2	Sym_239078_c0_g1	-3.07685220933308
+"cellular localization"	GO:0051641	2	Sym_84654_c0_g1	-3.11425835421903
+"cellular localization"	GO:0051641	2	Sym_114907_c3_g2	-1.94385574826031
+"cellular response to chemical stimulus"	GO:0070887	2	Sym_57115_c0_g1	-15.119363668111
+"cellular response to chemical stimulus"	GO:0070887	2	Sym_107369_c3_g5	0.117245382176398
+"cellular response to chemical stimulus"	GO:0070887	2	Sym_24952_c0_g1	-69.1736814680241
+"cellular response to chemical stimulus"	GO:0070887	2	Sym_237540_c0_g1	13.2824926785187
+"cellular response to chemical stimulus"	GO:0070887	2	Sym_130013_c0_g1	6.1725525506105
+"cellular response to chemical stimulus"	GO:0070887	2	Sym_207498_c0_g1	4.13727158147116
+"cellular response to chemical stimulus"	GO:0070887	2	Sym_94700_c0_g1	1.53117151021395
+"cellular response to chemical stimulus"	GO:0070887	2	Sym_80796_c0_g1	2.75787866185817
+"cellular response to chemical stimulus"	GO:0070887	2	Sym_89763_c0_g1	8.47349820276669
+"cellular response to chemical stimulus"	GO:0070887	2	Sym_159792_c0_g1	-2.71154134479165
+"cellular response to chemical stimulus"	GO:0070887	2	Sym_209170_c0_g1	-1.21885817220069
+"cellular response to chemical stimulus"	GO:0070887	2	Sym_101138_c0_g1	1.62889206614134
+"cellular response to chemical stimulus"	GO:0070887	2	Sym_119843_c6_g1	15.250034955111
+"cellular response to chemical stimulus"	GO:0070887	2	Sym_114907_c3_g2	-1.94385574826031
+"cellular lipid metabolic process"	GO:0006631;GO:0044255	3	Sym_24015_c0_g1	-0.956097240188298
+"cellular lipid metabolic process"	GO:0006631;GO:0044255	3	Sym_148791_c2_g2	-31.0746237720127
+"cellular lipid metabolic process"	GO:0006631;GO:0044255	3	Sym_136796_c2_g1	-6.80732584770358
+"cellular lipid metabolic process"	GO:0006631;GO:0044255	3	Sym_150495_c0_g1	0.295357849726893
+"cellular lipid metabolic process"	GO:0006631;GO:0044255	3	Sym_122621_c3_g1	-0.32537016523195
+"cellular lipid metabolic process"	GO:0006631;GO:0044255	3	Sym_110246_c0_g1	-8.9028489000906
+"cellular lipid metabolic process"	GO:0006631;GO:0044255	3	Sym_108903_c2_g1	1.07082668657512
+"cellular lipid metabolic process"	GO:0006631;GO:0044255	3	Sym_144324_c2_g4	-1.22980373812778
+"cellular lipid metabolic process"	GO:0006631;GO:0044255	3	Sym_126392_c0_g1	-0.224133526947624
+"cellular lipid metabolic process"	GO:0006631;GO:0044255	3	Sym_148542_c0_g2	-8.11764781885257
+"cellular macromolecule biosynthetic process"	GO:0034645;GO:0009059	3	Sym_103894_c0_g2	1.0484151715674
+"cellular macromolecule biosynthetic process"	GO:0034645;GO:0009059	3	Sym_103894_c0_g4	-6.79175138635626
+"cellular macromolecule biosynthetic process"	GO:0034645;GO:0009059	3	Sym_121495_c10_g3	-2.43816164327294
+"cellular macromolecule biosynthetic process"	GO:0034645;GO:0009059	3	Sym_103894_c0_g1	-1.39171453357481
+"cellular macromolecule biosynthetic process"	GO:0034645;GO:0009059	3	Sym_121495_c10_g2	2.50119520282685
+"cellular macromolecule biosynthetic process"	GO:0034645;GO:0009059	3	Sym_28806_c0_g1	0.61347772348389
+"cellular macromolecule biosynthetic process"	GO:0034645;GO:0009059	3	Sym_145648_c3_g1	-1.13964814778694
+"cellular macromolecule biosynthetic process"	GO:0034645;GO:0009059	3	Sym_106636_c7_g3	-4.18092850699544
+"cellular macromolecule biosynthetic process"	GO:0034645;GO:0009059	3	Sym_157544_c0_g1	4.47498758621292
+"cellular macromolecule biosynthetic process"	GO:0034645;GO:0009059	3	Sym_137506_c2_g3	30.4234312846885
+"cellular macromolecule biosynthetic process"	GO:0034645;GO:0009059	3	Sym_116663_c1_g1	-0.191313982081301
+"cellular macromolecule biosynthetic process"	GO:0034645;GO:0009059	3	Sym_110707_c7_g1	-1.71447005824288
+"cellular macromolecule biosynthetic process"	GO:0034645;GO:0009059	3	Sym_122045_c4_g1	-10.2609880927791
+"cellular macromolecule biosynthetic process"	GO:0034645;GO:0009059	3	Sym_152309_c0_g2	-11.5566218346626
+"cellular macromolecule biosynthetic process"	GO:0034645;GO:0009059	3	Sym_88907_c0_g1	-22.3746782416087
+"amide biosynthetic process"	GO:0043043;GO:0043604	2	Sym_66220_c0_g2	-0.404158036114577
+"amide biosynthetic process"	GO:0043043;GO:0043604	2	Sym_121495_c10_g2	2.50119520282685
+"amide biosynthetic process"	GO:0043043;GO:0043604	2	Sym_145648_c3_g1	-1.13964814778694
+"amide biosynthetic process"	GO:0043043;GO:0043604	2	Sym_106636_c7_g3	-4.18092850699544
+"amide biosynthetic process"	GO:0043043;GO:0043604	2	Sym_122045_c4_g1	-10.2609880927791
+"amide biosynthetic process"	GO:0043043;GO:0043604	2	Sym_88907_c0_g1	-22.3746782416087
+"amide biosynthetic process"	GO:0043043;GO:0043604	2	Sym_144324_c2_g4	-1.22980373812778
+"macromolecule localization"	GO:0015031;GO:0015833;GO:0045184;GO:0042886;GO:0008104;GO:0033036	5	Sym_102324_c0_g5	-0.0895604355932369
+"macromolecule localization"	GO:0015031;GO:0015833;GO:0045184;GO:0042886;GO:0008104;GO:0033036	5	Sym_93418_c0_g1	0.360199658478098
+"macromolecule localization"	GO:0015031;GO:0015833;GO:0045184;GO:0042886;GO:0008104;GO:0033036	5	Sym_131859_c1_g2	5.83979639411501
+"macromolecule localization"	GO:0015031;GO:0015833;GO:0045184;GO:0042886;GO:0008104;GO:0033036	5	Sym_102764_c1_g1	0.772779734837966
+"macromolecule localization"	GO:0015031;GO:0015833;GO:0045184;GO:0042886;GO:0008104;GO:0033036	5	Sym_237540_c0_g1	13.2824926785187
+"macromolecule localization"	GO:0015031;GO:0015833;GO:0045184;GO:0042886;GO:0008104;GO:0033036	5	Sym_114907_c3_g1	-0.509850833046138
+"macromolecule localization"	GO:0015031;GO:0015833;GO:0045184;GO:0042886;GO:0008104;GO:0033036	5	Sym_30900_c0_g1	1.9750961562418
+"macromolecule localization"	GO:0015031;GO:0015833;GO:0045184;GO:0042886;GO:0008104;GO:0033036	5	Sym_31210_c0_g1	7.17959835086772
+"macromolecule localization"	GO:0015031;GO:0015833;GO:0045184;GO:0042886;GO:0008104;GO:0033036	5	Sym_102695_c0_g1	-3.58773499778493
+"macromolecule localization"	GO:0015031;GO:0015833;GO:0045184;GO:0042886;GO:0008104;GO:0033036	5	Sym_102785_c0_g1	8.05531505118345
+"macromolecule localization"	GO:0015031;GO:0015833;GO:0045184;GO:0042886;GO:0008104;GO:0033036	5	Sym_128685_c8_g1	2.85787311302968
+"macromolecule localization"	GO:0015031;GO:0015833;GO:0045184;GO:0042886;GO:0008104;GO:0033036	5	Sym_157759_c0_g1	-0.0407217808470963
+"macromolecule localization"	GO:0015031;GO:0015833;GO:0045184;GO:0042886;GO:0008104;GO:0033036	5	Sym_17199_c0_g1	29.122263033591
+"macromolecule localization"	GO:0015031;GO:0015833;GO:0045184;GO:0042886;GO:0008104;GO:0033036	5	Sym_114907_c2_g1	-1.25127623531411
+"macromolecule localization"	GO:0015031;GO:0015833;GO:0045184;GO:0042886;GO:0008104;GO:0033036	5	Sym_114907_c1_g1	1.49409048054632
+"macromolecule localization"	GO:0015031;GO:0015833;GO:0045184;GO:0042886;GO:0008104;GO:0033036	5	Sym_143426_c2_g1	0.37271951577531
+"macromolecule localization"	GO:0015031;GO:0015833;GO:0045184;GO:0042886;GO:0008104;GO:0033036	5	Sym_100008_c0_g3	0.652887439468474
+"macromolecule localization"	GO:0015031;GO:0015833;GO:0045184;GO:0042886;GO:0008104;GO:0033036	5	Sym_114907_c3_g2	-1.94385574826031
+"macromolecule localization"	GO:0015031;GO:0015833;GO:0045184;GO:0042886;GO:0008104;GO:0033036	5	Sym_107369_c3_g5	0.117245382176398
+"macromolecule localization"	GO:0015031;GO:0015833;GO:0045184;GO:0042886;GO:0008104;GO:0033036	5	Sym_94700_c0_g1	1.53117151021395
+"macromolecule localization"	GO:0015031;GO:0015833;GO:0045184;GO:0042886;GO:0008104;GO:0033036	5	Sym_137236_c0_g1	0.0324716805471844
+"macromolecule localization"	GO:0015031;GO:0015833;GO:0045184;GO:0042886;GO:0008104;GO:0033036	5	Sym_84654_c0_g1	-3.11425835421903
+"macromolecule localization"	GO:0015031;GO:0015833;GO:0045184;GO:0042886;GO:0008104;GO:0033036	5	Sym_147119_c0_g1	0.330276428917375
+"macromolecule localization"	GO:0015031;GO:0015833;GO:0045184;GO:0042886;GO:0008104;GO:0033036	5	Sym_20490_c0_g1	-3.70010562374536
+"negative regulation of nucleobase-containing compound metabolic process"	GO:0051253;GO:0045934	2	Sym_109358_c2_g1	-0.530669227466644
+"negative regulation of nucleobase-containing compound metabolic process"	GO:0051253;GO:0045934	2	Sym_121495_c10_g2	2.50119520282685
+"negative regulation of nucleobase-containing compound metabolic process"	GO:0051253;GO:0045934	2	Sym_130013_c0_g1	6.1725525506105
+"negative regulation of nucleobase-containing compound metabolic process"	GO:0051253;GO:0045934	2	Sym_104762_c1_g5	-6.80631077923629
+"negative regulation of nucleobase-containing compound metabolic process"	GO:0051253;GO:0045934	2	Sym_128217_c2_g1	-0.946632288707344
+"negative regulation of nucleobase-containing compound metabolic process"	GO:0051253;GO:0045934	2	Sym_130850_c4_g1	-6.877253236067
+"negative regulation of nucleobase-containing compound metabolic process"	GO:0051253;GO:0045934	2	Sym_100230_c0_g1	8.89454650346743
+"protein folding"	GO:0006457	2	Sym_110848_c2_g1	2.0755308621403
+"protein folding"	GO:0006457	2	Sym_107499_c4_g1	0.402241323171826
+"protein folding"	GO:0006457	2	Sym_105147_c1_g1	-0.698881580491468
+"protein folding"	GO:0006457	2	Sym_130891_c0_g1	1.73455834355943
+"protein folding"	GO:0006457	2	Sym_105147_c1_g2	-0.411859050118288
+"organic acid transport"	GO:0015849	6	Sym_117355_c0_g1	-1.39800870612488
+"organic acid transport"	GO:0015849	6	Sym_136847_c3_g1	12.0492609525839
+"organic acid transport"	GO:0015849	6	Sym_24952_c0_g1	-69.1736814680241
+"organic acid transport"	GO:0015849	6	Sym_101441_c0_g1	3.73752184679616
+"organic acid transport"	GO:0015849	6	Sym_117760_c6_g1	1.90668364178473
+"organic cyclic compound biosynthetic process"	GO:1901362;GO:0018130;GO:0019438	2	Sym_87432_c0_g1	2.76858164800877
+"organic cyclic compound biosynthetic process"	GO:1901362;GO:0018130;GO:0019438	2	Sym_66977_c0_g1	17.1250414504078
+"organic cyclic compound biosynthetic process"	GO:1901362;GO:0018130;GO:0019438	2	Sym_105819_c0_g1	-5.48831246788115
+"organic cyclic compound biosynthetic process"	GO:1901362;GO:0018130;GO:0019438	2	Sym_106193_c0_g1	0.266178946928881
+"organic cyclic compound biosynthetic process"	GO:1901362;GO:0018130;GO:0019438	2	Sym_28806_c0_g1	0.61347772348389
+"organic cyclic compound biosynthetic process"	GO:1901362;GO:0018130;GO:0019438	2	Sym_94893_c0_g3	1.69989650639723
+"organic cyclic compound biosynthetic process"	GO:1901362;GO:0018130;GO:0019438	2	Sym_176037_c0_g1	-0.71450110033221
+"organic cyclic compound biosynthetic process"	GO:1901362;GO:0018130;GO:0019438	2	Sym_150495_c0_g1	0.295357849726893
+"organic cyclic compound biosynthetic process"	GO:1901362;GO:0018130;GO:0019438	2	Sym_107647_c1_g2	-11.4130605925763
+"organic cyclic compound biosynthetic process"	GO:1901362;GO:0018130;GO:0019438	2	Sym_146541_c1_g1	-8.09430899017412
+"organic cyclic compound biosynthetic process"	GO:1901362;GO:0018130;GO:0019438	2	Sym_37542_c0_g1	-0.0629221229476182
+"organic cyclic compound biosynthetic process"	GO:1901362;GO:0018130;GO:0019438	2	Sym_116663_c1_g1	-0.191313982081301
+"organic cyclic compound biosynthetic process"	GO:1901362;GO:0018130;GO:0019438	2	Sym_244548_c0_g1	-61.1818249116412
+"organic cyclic compound biosynthetic process"	GO:1901362;GO:0018130;GO:0019438	2	Sym_131343_c2_g1	0.366958814383093
+"organic cyclic compound biosynthetic process"	GO:1901362;GO:0018130;GO:0019438	2	Sym_101543_c0_g2	-13.3092254362418
+"organic cyclic compound biosynthetic process"	GO:1901362;GO:0018130;GO:0019438	2	Sym_94893_c0_g2	-5.37096176268859
+"organic cyclic compound biosynthetic process"	GO:1901362;GO:0018130;GO:0019438	2	Sym_101543_c0_g3	-4.83332352909251
+"organic cyclic compound biosynthetic process"	GO:1901362;GO:0018130;GO:0019438	2	Sym_206385_c0_g1	-0.665200675108518
+"organic cyclic compound biosynthetic process"	GO:1901362;GO:0018130;GO:0019438	2	Sym_156041_c0_g1	-3.40903138411735
+"organic cyclic compound biosynthetic process"	GO:1901362;GO:0018130;GO:0019438	2	Sym_208217_c0_g1	1.77326250004317
+"organic cyclic compound biosynthetic process"	GO:1901362;GO:0018130;GO:0019438	2	Sym_94893_c0_g4	12.2730302159295
+"organic cyclic compound biosynthetic process"	GO:1901362;GO:0018130;GO:0019438	2	Sym_120676_c2_g1	-4.74919964214161
+"organic cyclic compound biosynthetic process"	GO:1901362;GO:0018130;GO:0019438	2	Sym_144324_c2_g4	-1.22980373812778
+"chemical homeostasis"	GO:0048878;GO:0055065;GO:0055080;GO:0098771;GO:0050801	3	Sym_57115_c0_g1	-15.119363668111
+"chemical homeostasis"	GO:0048878;GO:0055065;GO:0055080;GO:0098771;GO:0050801	3	Sym_109358_c2_g1	-0.530669227466644
+"chemical homeostasis"	GO:0048878;GO:0055065;GO:0055080;GO:0098771;GO:0050801	3	Sym_109253_c1_g2	-4.07479292137967
+"chemical homeostasis"	GO:0048878;GO:0055065;GO:0055080;GO:0098771;GO:0050801	3	Sym_237540_c0_g1	13.2824926785187
+"chemical homeostasis"	GO:0048878;GO:0055065;GO:0055080;GO:0098771;GO:0050801	3	Sym_92829_c0_g1	0.38997535529179
+"chemical homeostasis"	GO:0048878;GO:0055065;GO:0055080;GO:0098771;GO:0050801	3	Sym_109253_c1_g1	1.57359036822975
+"chemical homeostasis"	GO:0048878;GO:0055065;GO:0055080;GO:0098771;GO:0050801	3	Sym_159792_c0_g1	-2.71154134479165
+"chemical homeostasis"	GO:0048878;GO:0055065;GO:0055080;GO:0098771;GO:0050801	3	Sym_82593_c0_g2	0.246569685967351
+"chemical homeostasis"	GO:0048878;GO:0055065;GO:0055080;GO:0098771;GO:0050801	3	Sym_100008_c0_g3	0.652887439468474
+"defense response to other organism"	GO:0098542	2	Sym_284899_c0_g1	7.05401579318168
+"defense response to other organism"	GO:0098542	2	Sym_109253_c1_g2	-4.07479292137967
+"defense response to other organism"	GO:0098542	2	Sym_109253_c1_g1	1.57359036822975
+"defense response to other organism"	GO:0098542	2	Sym_136877_c0_g1	-6.95505543899488
+"defense response to other organism"	GO:0098542	2	Sym_115147_c3_g1	-1.09499257037519
+"protein localization to organelle"	GO:0033365	5	Sym_93418_c0_g1	0.360199658478098
+"protein localization to organelle"	GO:0033365	5	Sym_107369_c3_g5	0.117245382176398
+"protein localization to organelle"	GO:0033365	5	Sym_31210_c0_g1	7.17959835086772
+"protein localization to organelle"	GO:0033365	5	Sym_17199_c0_g1	29.122263033591
+"protein localization to organelle"	GO:0033365	5	Sym_137236_c0_g1	0.0324716805471844
+"protein localization to organelle"	GO:0033365	5	Sym_143426_c2_g1	0.37271951577531
+"protein localization to organelle"	GO:0033365	5	Sym_100008_c0_g3	0.652887439468474
+"protein localization to organelle"	GO:0033365	5	Sym_84654_c0_g1	-3.11425835421903
+"cellular amide metabolic process"	GO:0006518;GO:0043603	2	Sym_66220_c0_g2	-0.404158036114577
+"cellular amide metabolic process"	GO:0006518;GO:0043603	2	Sym_121495_c10_g2	2.50119520282685
+"cellular amide metabolic process"	GO:0006518;GO:0043603	2	Sym_145648_c3_g1	-1.13964814778694
+"cellular amide metabolic process"	GO:0006518;GO:0043603	2	Sym_106636_c7_g3	-4.18092850699544
+"cellular amide metabolic process"	GO:0006518;GO:0043603	2	Sym_101138_c0_g1	1.62889206614134
+"cellular amide metabolic process"	GO:0006518;GO:0043603	2	Sym_90654_c0_g1	24.845643147002
+"cellular amide metabolic process"	GO:0006518;GO:0043603	2	Sym_122045_c4_g1	-10.2609880927791
+"cellular amide metabolic process"	GO:0006518;GO:0043603	2	Sym_88907_c0_g1	-22.3746782416087
+"cellular amide metabolic process"	GO:0006518;GO:0043603	2	Sym_174615_c0_g1	-12.0305196781801
+"cellular amide metabolic process"	GO:0006518;GO:0043603	2	Sym_144324_c2_g4	-1.22980373812778
+"monocarboxylic acid metabolic process"	GO:0032787	2	Sym_24015_c0_g1	-0.956097240188298
+"monocarboxylic acid metabolic process"	GO:0032787	2	Sym_127086_c1_g3	-0.273855837115441
+"monocarboxylic acid metabolic process"	GO:0032787	2	Sym_107578_c2_g1	-1.10516438094495
+"monocarboxylic acid metabolic process"	GO:0032787	2	Sym_107578_c2_g2	-0.53508738027716
+"monocarboxylic acid metabolic process"	GO:0032787	2	Sym_211422_c0_g1	-2.88350466247405
+"monocarboxylic acid metabolic process"	GO:0032787	2	Sym_148791_c2_g2	-31.0746237720127
+"monocarboxylic acid metabolic process"	GO:0032787	2	Sym_136796_c2_g1	-6.80732584770358
+"monocarboxylic acid metabolic process"	GO:0032787	2	Sym_150495_c0_g1	0.295357849726893
+"monocarboxylic acid metabolic process"	GO:0032787	2	Sym_122621_c3_g1	-0.32537016523195
+"monocarboxylic acid metabolic process"	GO:0032787	2	Sym_90654_c0_g1	24.845643147002
+"monocarboxylic acid metabolic process"	GO:0032787	2	Sym_113653_c1_g2	-22.4809407064687
+"monocarboxylic acid metabolic process"	GO:0032787	2	Sym_110246_c0_g1	-8.9028489000906
+"monocarboxylic acid metabolic process"	GO:0032787	2	Sym_108903_c2_g1	1.07082668657512
+"monocarboxylic acid metabolic process"	GO:0032787	2	Sym_144324_c2_g4	-1.22980373812778
+"glycolytic process"	GO:0006096;GO:0006090;GO:0006757;GO:0006165;GO:0046031;GO:0009132;GO:0046939;GO:0009179;GO:0009135;GO:0009185	6	Sym_127086_c1_g3	-0.273855837115441
+"glycolytic process"	GO:0006096;GO:0006090;GO:0006757;GO:0006165;GO:0046031;GO:0009132;GO:0046939;GO:0009179;GO:0009135;GO:0009185	6	Sym_107578_c2_g1	-1.10516438094495
+"glycolytic process"	GO:0006096;GO:0006090;GO:0006757;GO:0006165;GO:0046031;GO:0009132;GO:0046939;GO:0009179;GO:0009135;GO:0009185	6	Sym_107578_c2_g2	-0.53508738027716
+"glycolytic process"	GO:0006096;GO:0006090;GO:0006757;GO:0006165;GO:0046031;GO:0009132;GO:0046939;GO:0009179;GO:0009135;GO:0009185	6	Sym_211422_c0_g1	-2.88350466247405
+"glycolytic process"	GO:0006096;GO:0006090;GO:0006757;GO:0006165;GO:0046031;GO:0009132;GO:0046939;GO:0009179;GO:0009135;GO:0009185	6	Sym_113653_c1_g2	-22.4809407064687
+"translation"	GO:0006412	4	Sym_121495_c10_g2	2.50119520282685
+"translation"	GO:0006412	4	Sym_145648_c3_g1	-1.13964814778694
+"translation"	GO:0006412	4	Sym_106636_c7_g3	-4.18092850699544
+"translation"	GO:0006412	4	Sym_122045_c4_g1	-10.2609880927791
+"translation"	GO:0006412	4	Sym_88907_c0_g1	-22.3746782416087
+"ribonucleoprotein complex subunit organization"	GO:0022618;GO:0071826	3	Sym_138442_c2_g4	-1.07245367093778
+"ribonucleoprotein complex subunit organization"	GO:0022618;GO:0071826	3	Sym_133740_c1_g1	1.32754046388189
+"ribonucleoprotein complex subunit organization"	GO:0022618;GO:0071826	3	Sym_139545_c4_g1	-2.01932242622509
+"ribonucleoprotein complex subunit organization"	GO:0022618;GO:0071826	3	Sym_147201_c3_g4	1.02402041549374
+"ribonucleoprotein complex subunit organization"	GO:0022618;GO:0071826	3	Sym_101312_c0_g2	-3.10341568803234
+"ribonucleoprotein complex subunit organization"	GO:0022618;GO:0071826	3	Sym_90254_c0_g1	7.99222380357747
+"ribonucleoprotein complex subunit organization"	GO:0022618;GO:0071826	3	Sym_147119_c0_g1	0.330276428917375
+"cell projection organization"	GO:0030030	2	Sym_310154_c0_g1	-0.107919262979185
+"cell projection organization"	GO:0030030	2	Sym_131859_c1_g2	5.83979639411501
+"cell projection organization"	GO:0030030	2	Sym_237540_c0_g1	13.2824926785187
+"cell projection organization"	GO:0030030	2	Sym_30900_c0_g1	1.9750961562418
+"cell projection organization"	GO:0030030	2	Sym_102785_c0_g1	8.05531505118345
+"cell projection organization"	GO:0030030	2	Sym_137236_c0_g1	0.0324716805471844
+"cell projection organization"	GO:0030030	2	Sym_115171_c4_g3	-0.96290338136238
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_66977_c0_g1	17.1250414504078
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_66220_c0_g2	-0.404158036114577
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_105819_c0_g1	-5.48831246788115
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_106193_c0_g1	0.266178946928881
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_121495_c10_g2	2.50119520282685
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_145648_c3_g1	-1.13964814778694
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_106636_c7_g3	-4.18092850699544
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_94893_c0_g3	1.69989650639723
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_176037_c0_g1	-0.71450110033221
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_107647_c1_g2	-11.4130605925763
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_146541_c1_g1	-8.09430899017412
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_37542_c0_g1	-0.0629221229476182
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_121618_c0_g2	-137.848594038255
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_101543_c0_g2	-13.3092254362418
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_94893_c0_g2	-5.37096176268859
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_101543_c0_g3	-4.83332352909251
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_206385_c0_g1	-0.665200675108518
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_86661_c0_g1	4.77352941694795
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_148542_c0_g2	-8.11764781885257
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_122045_c4_g1	-10.2609880927791
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_208217_c0_g1	1.77326250004317
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_88907_c0_g1	-22.3746782416087
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_94893_c0_g4	12.2730302159295
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_120676_c2_g1	-4.74919964214161
+"organonitrogen compound biosynthetic process"	GO:1901566	3	Sym_144324_c2_g4	-1.22980373812778
+"regulation of transcription by RNA polymerase II"	GO:0006357	3	Sym_109358_c2_g1	-0.530669227466644
+"regulation of transcription by RNA polymerase II"	GO:0006357	3	Sym_284899_c0_g1	7.05401579318168
+"regulation of transcription by RNA polymerase II"	GO:0006357	3	Sym_107369_c3_g5	0.117245382176398
+"regulation of transcription by RNA polymerase II"	GO:0006357	3	Sym_121495_c10_g2	2.50119520282685
+"regulation of transcription by RNA polymerase II"	GO:0006357	3	Sym_104762_c1_g5	-6.80631077923629
+"regulation of localization"	GO:0032879	2	Sym_310154_c0_g1	-0.107919262979185
+"regulation of localization"	GO:0032879	2	Sym_284899_c0_g1	7.05401579318168
+"regulation of localization"	GO:0032879	2	Sym_107369_c3_g5	0.117245382176398
+"regulation of localization"	GO:0032879	2	Sym_237540_c0_g1	13.2824926785187
+"regulation of localization"	GO:0032879	2	Sym_148791_c2_g2	-31.0746237720127
+"regulation of localization"	GO:0032879	2	Sym_100008_c0_g3	0.652887439468474
+"regulation of localization"	GO:0032879	2	Sym_45310_c0_g1	-4.24782038117046
+"regulation of localization"	GO:0032879	2	Sym_113653_c1_g2	-22.4809407064687
+"response to organic substance"	GO:0010033	3	Sym_117355_c0_g1	-1.39800870612488
+"response to organic substance"	GO:0010033	3	Sym_140163_c0_g1	-14.0962370651635
+"response to organic substance"	GO:0010033	3	Sym_57115_c0_g1	-15.119363668111
+"response to organic substance"	GO:0010033	3	Sym_107369_c3_g5	0.117245382176398
+"response to organic substance"	GO:0010033	3	Sym_24568_c0_g1	16.2353942201521
+"response to organic substance"	GO:0010033	3	Sym_109253_c1_g2	-4.07479292137967
+"response to organic substance"	GO:0010033	3	Sym_130013_c0_g1	6.1725525506105
+"response to organic substance"	GO:0010033	3	Sym_101971_c0_g1	1.94771167599123
+"response to organic substance"	GO:0010033	3	Sym_94700_c0_g1	1.53117151021395
+"response to organic substance"	GO:0010033	3	Sym_80796_c0_g1	2.75787866185817
+"response to organic substance"	GO:0010033	3	Sym_146541_c1_g1	-8.09430899017412
+"response to organic substance"	GO:0010033	3	Sym_109253_c1_g1	1.57359036822975
+"response to organic substance"	GO:0010033	3	Sym_159792_c0_g1	-2.71154134479165
+"response to organic substance"	GO:0010033	3	Sym_242526_c0_g1	-49.1375764095091
+"response to organic substance"	GO:0010033	3	Sym_238053_c0_g1	-7.48550007893156
+"response to organic substance"	GO:0010033	3	Sym_119843_c6_g1	15.250034955111
+"response to organic substance"	GO:0010033	3	Sym_206385_c0_g1	-0.665200675108518
+"response to organic substance"	GO:0010033	3	Sym_148542_c0_g2	-8.11764781885257
+"cellular response to nutrient levels"	GO:0031669;GO:0031667	2	Sym_126392_c0_g1	-0.224133526947624
+"cellular response to nutrient levels"	GO:0031669;GO:0031667	2	Sym_125225_c1_g2	-0.78987481266211
+"cellular response to nutrient levels"	GO:0031669;GO:0031667	2	Sym_145648_c3_g1	-1.13964814778694
+"cellular response to nutrient levels"	GO:0031669;GO:0031667	2	Sym_125225_c1_g1	-0.95138836303257
+"cellular response to nutrient levels"	GO:0031669;GO:0031667	2	Sym_125225_c1_g3	-33.3722638015644
+"regulation of organelle organization"	GO:0033043	2	Sym_131859_c1_g2	5.83979639411501
+"regulation of organelle organization"	GO:0033043	2	Sym_107369_c3_g5	0.117245382176398
+"regulation of organelle organization"	GO:0033043	2	Sym_101501_c0_g2	-0.928240260689423
+"regulation of organelle organization"	GO:0033043	2	Sym_112389_c0_g1	0.985562171814962
+"regulation of organelle organization"	GO:0033043	2	Sym_102785_c0_g1	8.05531505118345
+"regulation of organelle organization"	GO:0033043	2	Sym_113653_c1_g2	-22.4809407064687
+"regulation of organelle organization"	GO:0033043	2	Sym_101501_c0_g1	3.95441988581741
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_24015_c0_g1	-0.956097240188298
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_66977_c0_g1	17.1250414504078
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_127086_c1_g3	-0.273855837115441
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_107578_c2_g1	-1.10516438094495
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_107578_c2_g2	-0.53508738027716
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_211422_c0_g1	-2.88350466247405
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_103259_c1_g4	-1.83054870965001
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_148791_c2_g2	-31.0746237720127
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_111600_c1_g1	-9.33430189193298
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_136796_c2_g1	-6.80732584770358
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_103259_c1_g2	5.76705949990883
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_150495_c0_g1	0.295357849726893
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_107647_c1_g2	-11.4130605925763
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_122621_c3_g1	-0.32537016523195
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_119993_c5_g1	-1.46564702288652
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_90654_c0_g1	24.845643147002
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_206385_c0_g1	-0.665200675108518
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_113653_c1_g2	-22.4809407064687
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_110246_c0_g1	-8.9028489000906
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_103259_c1_g1	6.49348943739329
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_271368_c0_g1	42.7295258977713
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_83072_c0_g2	-4.4422346603043
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_93060_c0_g1	1.16011359355256
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_103259_c2_g1	-12.594402679183
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_174615_c0_g1	-12.0305196781801
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_108903_c2_g1	1.07082668657512
+"carboxylic acid metabolic process"	GO:0019752	4	Sym_144324_c2_g4	-1.22980373812778
+"cell differentiation"	GO:0030154	2	Sym_284899_c0_g1	7.05401579318168
+"cell differentiation"	GO:0030154	2	Sym_107369_c3_g5	0.117245382176398
+"cell differentiation"	GO:0030154	2	Sym_112389_c0_g1	0.985562171814962
+"cell differentiation"	GO:0030154	2	Sym_80796_c0_g1	2.75787866185817
+"cell differentiation"	GO:0030154	2	Sym_104762_c1_g5	-6.80631077923629
+"cell differentiation"	GO:0030154	2	Sym_69276_c0_g1	1.49397127110569
+"cell differentiation"	GO:0030154	2	Sym_119843_c6_g1	15.250034955111
+"cell differentiation"	GO:0030154	2	Sym_42149_c0_g1	0.127481875528154
+"modification-dependent macromolecule catabolic process"	GO:0006511;GO:0019941;GO:0043632	6	Sym_178813_c0_g1	-1.66116606087105
+"modification-dependent macromolecule catabolic process"	GO:0006511;GO:0019941;GO:0043632	6	Sym_107783_c2_g1	1.08092272624163
+"modification-dependent macromolecule catabolic process"	GO:0006511;GO:0019941;GO:0043632	6	Sym_132105_c3_g7	-3.4633075803853
+"modification-dependent macromolecule catabolic process"	GO:0006511;GO:0019941;GO:0043632	6	Sym_103763_c6_g1	1.64809471626028
+"modification-dependent macromolecule catabolic process"	GO:0006511;GO:0019941;GO:0043632	6	Sym_101971_c0_g1	1.94771167599123
+"modification-dependent macromolecule catabolic process"	GO:0006511;GO:0019941;GO:0043632	6	Sym_128685_c8_g1	2.85787311302968
+"modification-dependent macromolecule catabolic process"	GO:0006511;GO:0019941;GO:0043632	6	Sym_278829_c0_g1	-0.494732375542863
+"modification-dependent macromolecule catabolic process"	GO:0006511;GO:0019941;GO:0043632	6	Sym_17199_c0_g1	29.122263033591
+"modification-dependent macromolecule catabolic process"	GO:0006511;GO:0019941;GO:0043632	6	Sym_130165_c13_g1	-2.53371309750074
+"modification-dependent macromolecule catabolic process"	GO:0006511;GO:0019941;GO:0043632	6	Sym_100802_c0_g1	-4.46148008552169
+"modification-dependent macromolecule catabolic process"	GO:0006511;GO:0019941;GO:0043632	6	Sym_204881_c0_g1	0.0129770166476083
+"modification-dependent macromolecule catabolic process"	GO:0006511;GO:0019941;GO:0043632	6	Sym_136877_c0_g1	-6.95505543899488
+"modification-dependent macromolecule catabolic process"	GO:0006511;GO:0019941;GO:0043632	6	Sym_175830_c0_g1	-0.373197317978894
+"modification-dependent macromolecule catabolic process"	GO:0006511;GO:0019941;GO:0043632	6	Sym_92614_c0_g2	0.280025840472364
+"lipid metabolic process"	GO:0006629	2	Sym_24015_c0_g1	-0.956097240188298
+"lipid metabolic process"	GO:0006629	2	Sym_87432_c0_g1	2.76858164800877
+"lipid metabolic process"	GO:0006629	2	Sym_310154_c0_g1	-0.107919262979185
+"lipid metabolic process"	GO:0006629	2	Sym_126392_c0_g1	-0.224133526947624
+"lipid metabolic process"	GO:0006629	2	Sym_148791_c2_g2	-31.0746237720127
+"lipid metabolic process"	GO:0006629	2	Sym_136796_c2_g1	-6.80732584770358
+"lipid metabolic process"	GO:0006629	2	Sym_80796_c0_g1	2.75787866185817
+"lipid metabolic process"	GO:0006629	2	Sym_150495_c0_g1	0.295357849726893
+"lipid metabolic process"	GO:0006629	2	Sym_122621_c3_g1	-0.32537016523195
+"lipid metabolic process"	GO:0006629	2	Sym_131343_c2_g1	0.366958814383093
+"lipid metabolic process"	GO:0006629	2	Sym_110246_c0_g1	-8.9028489000906
+"lipid metabolic process"	GO:0006629	2	Sym_148542_c0_g2	-8.11764781885257
+"lipid metabolic process"	GO:0006629	2	Sym_108903_c2_g1	1.07082668657512
+"lipid metabolic process"	GO:0006629	2	Sym_144324_c2_g4	-1.22980373812778
+"protein-containing complex assembly"	GO:0034622;GO:0065003;GO:0043933	2	Sym_138442_c2_g4	-1.07245367093778
+"protein-containing complex assembly"	GO:0034622;GO:0065003;GO:0043933	2	Sym_133740_c1_g1	1.32754046388189
+"protein-containing complex assembly"	GO:0034622;GO:0065003;GO:0043933	2	Sym_131859_c1_g2	5.83979639411501
+"protein-containing complex assembly"	GO:0034622;GO:0065003;GO:0043933	2	Sym_178813_c0_g1	-1.66116606087105
+"protein-containing complex assembly"	GO:0034622;GO:0065003;GO:0043933	2	Sym_205051_c0_g1	36.6258781028596
+"protein-containing complex assembly"	GO:0034622;GO:0065003;GO:0043933	2	Sym_103301_c0_g1	-0.662851698776769
+"protein-containing complex assembly"	GO:0034622;GO:0065003;GO:0043933	2	Sym_139545_c4_g1	-2.01932242622509
+"protein-containing complex assembly"	GO:0034622;GO:0065003;GO:0043933	2	Sym_147201_c3_g4	1.02402041549374
+"protein-containing complex assembly"	GO:0034622;GO:0065003;GO:0043933	2	Sym_67337_c0_g1	2.36672403963537
+"protein-containing complex assembly"	GO:0034622;GO:0065003;GO:0043933	2	Sym_113783_c0_g1	-1.4640532990148
+"protein-containing complex assembly"	GO:0034622;GO:0065003;GO:0043933	2	Sym_101312_c0_g2	-3.10341568803234
+"protein-containing complex assembly"	GO:0034622;GO:0065003;GO:0043933	2	Sym_90254_c0_g1	7.99222380357747
+"protein-containing complex assembly"	GO:0034622;GO:0065003;GO:0043933	2	Sym_147119_c0_g1	0.330276428917375
+"protein-containing complex assembly"	GO:0034622;GO:0065003;GO:0043933	2	Sym_175830_c0_g1	-0.373197317978894
+"protein-containing complex assembly"	GO:0034622;GO:0065003;GO:0043933	2	Sym_124370_c1_g1	-0.598187209802267
+"protein-containing complex assembly"	GO:0034622;GO:0065003;GO:0043933	2	Sym_120913_c7_g2	-2.15956664826875
+"protein-containing complex assembly"	GO:0034622;GO:0065003;GO:0043933	2	Sym_113653_c1_g2	-22.4809407064687
+"protein-containing complex assembly"	GO:0034622;GO:0065003;GO:0043933	2	Sym_115171_c4_g3	-0.96290338136238
+"regulation of cellular localization"	GO:0060341	4	Sym_310154_c0_g1	-0.107919262979185
+"regulation of cellular localization"	GO:0060341	4	Sym_107369_c3_g5	0.117245382176398
+"regulation of cellular localization"	GO:0060341	4	Sym_237540_c0_g1	13.2824926785187
+"regulation of cellular localization"	GO:0060341	4	Sym_148791_c2_g2	-31.0746237720127
+"regulation of cellular localization"	GO:0060341	4	Sym_100008_c0_g3	0.652887439468474
+"cellular macromolecule localization"	GO:0034613;GO:0070727	3	Sym_93418_c0_g1	0.360199658478098
+"cellular macromolecule localization"	GO:0034613;GO:0070727	3	Sym_107369_c3_g5	0.117245382176398
+"cellular macromolecule localization"	GO:0034613;GO:0070727	3	Sym_237540_c0_g1	13.2824926785187
+"cellular macromolecule localization"	GO:0034613;GO:0070727	3	Sym_31210_c0_g1	7.17959835086772
+"cellular macromolecule localization"	GO:0034613;GO:0070727	3	Sym_94700_c0_g1	1.53117151021395
+"cellular macromolecule localization"	GO:0034613;GO:0070727	3	Sym_17199_c0_g1	29.122263033591
+"cellular macromolecule localization"	GO:0034613;GO:0070727	3	Sym_137236_c0_g1	0.0324716805471844
+"cellular macromolecule localization"	GO:0034613;GO:0070727	3	Sym_143426_c2_g1	0.37271951577531
+"cellular macromolecule localization"	GO:0034613;GO:0070727	3	Sym_100008_c0_g3	0.652887439468474
+"cellular macromolecule localization"	GO:0034613;GO:0070727	3	Sym_84654_c0_g1	-3.11425835421903
+"cellular macromolecule localization"	GO:0034613;GO:0070727	3	Sym_147119_c0_g1	0.330276428917375
+"cellular macromolecule localization"	GO:0034613;GO:0070727	3	Sym_20490_c0_g1	-3.70010562374536
+"positive regulation of nucleobase-containing compound metabolic process"	GO:0045935	3	Sym_109358_c2_g1	-0.530669227466644
+"positive regulation of nucleobase-containing compound metabolic process"	GO:0045935	3	Sym_284899_c0_g1	7.05401579318168
+"positive regulation of nucleobase-containing compound metabolic process"	GO:0045935	3	Sym_107369_c3_g5	0.117245382176398
+"positive regulation of nucleobase-containing compound metabolic process"	GO:0045935	3	Sym_101501_c0_g2	-0.928240260689423
+"positive regulation of nucleobase-containing compound metabolic process"	GO:0045935	3	Sym_104762_c1_g5	-6.80631077923629
+"positive regulation of nucleobase-containing compound metabolic process"	GO:0045935	3	Sym_157544_c0_g1	4.47498758621292
+"positive regulation of nucleobase-containing compound metabolic process"	GO:0045935	3	Sym_128217_c2_g1	-0.946632288707344
+"positive regulation of nucleobase-containing compound metabolic process"	GO:0045935	3	Sym_69276_c0_g1	1.49397127110569
+"positive regulation of nucleobase-containing compound metabolic process"	GO:0045935	3	Sym_101501_c0_g1	3.95441988581741
+"positive regulation of nucleobase-containing compound metabolic process"	GO:0045935	3	Sym_84654_c0_g1	-3.11425835421903
+"response to endogenous stimulus"	GO:0009725;GO:0009719	2	Sym_117355_c0_g1	-1.39800870612488
+"response to endogenous stimulus"	GO:0009725;GO:0009719	2	Sym_140163_c0_g1	-14.0962370651635
+"response to endogenous stimulus"	GO:0009725;GO:0009719	2	Sym_107369_c3_g5	0.117245382176398
+"response to endogenous stimulus"	GO:0009725;GO:0009719	2	Sym_94700_c0_g1	1.53117151021395
+"response to endogenous stimulus"	GO:0009725;GO:0009719	2	Sym_146541_c1_g1	-8.09430899017412
+"response to endogenous stimulus"	GO:0009725;GO:0009719	2	Sym_242526_c0_g1	-49.1375764095091
+"response to endogenous stimulus"	GO:0009725;GO:0009719	2	Sym_238053_c0_g1	-7.48550007893156
+"response to endogenous stimulus"	GO:0009725;GO:0009719	2	Sym_206385_c0_g1	-0.665200675108518
+"response to endogenous stimulus"	GO:0009725;GO:0009719	2	Sym_148542_c0_g2	-8.11764781885257
+"response to endogenous stimulus"	GO:0009725;GO:0009719	2	Sym_119843_c6_g1	15.250034955111
+"cellular homeostasis"	GO:0019725	2	Sym_57115_c0_g1	-15.119363668111
+"cellular homeostasis"	GO:0019725	2	Sym_109358_c2_g1	-0.530669227466644
+"cellular homeostasis"	GO:0019725	2	Sym_127086_c1_g3	-0.273855837115441
+"cellular homeostasis"	GO:0019725	2	Sym_24568_c0_g1	16.2353942201521
+"cellular homeostasis"	GO:0019725	2	Sym_110848_c2_g1	2.0755308621403
+"cellular homeostasis"	GO:0019725	2	Sym_84255_c0_g2	0.200887196280385
+"cellular homeostasis"	GO:0019725	2	Sym_92829_c0_g1	0.38997535529179
+"cellular homeostasis"	GO:0019725	2	Sym_100008_c0_g3	0.652887439468474
+"small molecule catabolic process"	GO:0044282	2	Sym_24015_c0_g1	-0.956097240188298
+"small molecule catabolic process"	GO:0044282	2	Sym_111600_c1_g1	-9.33430189193298
+"small molecule catabolic process"	GO:0044282	2	Sym_90654_c0_g1	24.845643147002
+"small molecule catabolic process"	GO:0044282	2	Sym_271368_c0_g1	42.7295258977713
+"small molecule catabolic process"	GO:0044282	2	Sym_174615_c0_g1	-12.0305196781801
+"chromatin organization"	GO:0006325	2	Sym_107369_c3_g5	0.117245382176398
+"chromatin organization"	GO:0006325	2	Sym_121495_c10_g3	-2.43816164327294
+"chromatin organization"	GO:0006325	2	Sym_311128_c0_g1	2.53453989966806
+"chromatin organization"	GO:0006325	2	Sym_103763_c6_g1	1.64809471626028
+"chromatin organization"	GO:0006325	2	Sym_130013_c0_g1	6.1725525506105
+"regulation of plasma membrane bounded cell projection organization"	GO:0120035;GO:0031344	3	Sym_175570_c0_g1	21.094498827213
+"regulation of plasma membrane bounded cell projection organization"	GO:0120035;GO:0031344	3	Sym_133740_c1_g1	1.32754046388189
+"regulation of plasma membrane bounded cell projection organization"	GO:0120035;GO:0031344	3	Sym_114907_c3_g1	-0.509850833046138
+"regulation of plasma membrane bounded cell projection organization"	GO:0120035;GO:0031344	3	Sym_45310_c0_g1	-4.24782038117046
+"regulation of plasma membrane bounded cell projection organization"	GO:0120035;GO:0031344	3	Sym_119843_c6_g1	15.250034955111
+"organic hydroxy compound metabolic process"	GO:1901615	2	Sym_87432_c0_g1	2.76858164800877
+"organic hydroxy compound metabolic process"	GO:1901615	2	Sym_150495_c0_g1	0.295357849726893
+"organic hydroxy compound metabolic process"	GO:1901615	2	Sym_107647_c1_g2	-11.4130605925763
+"organic hydroxy compound metabolic process"	GO:1901615	2	Sym_125914_c2_g1	0.975291157351245
+"organic hydroxy compound metabolic process"	GO:1901615	2	Sym_90654_c0_g1	24.845643147002
+"organic hydroxy compound metabolic process"	GO:1901615	2	Sym_156041_c0_g1	-3.40903138411735
+"organic hydroxy compound metabolic process"	GO:1901615	2	Sym_271368_c0_g1	42.7295258977713
+"positive regulation of cellular component organization"	GO:0051130	2	Sym_175570_c0_g1	21.094498827213
+"positive regulation of cellular component organization"	GO:0051130	2	Sym_133740_c1_g1	1.32754046388189
+"positive regulation of cellular component organization"	GO:0051130	2	Sym_131859_c1_g2	5.83979639411501
+"positive regulation of cellular component organization"	GO:0051130	2	Sym_145648_c3_g1	-1.13964814778694
+"positive regulation of cellular component organization"	GO:0051130	2	Sym_45310_c0_g1	-4.24782038117046
+"positive regulation of cellular component organization"	GO:0051130	2	Sym_119843_c6_g1	15.250034955111
+"negative regulation of response to stimulus"	GO:0009968;GO:0010648;GO:0023057;GO:0048585;GO:0080134	2	Sym_310154_c0_g1	-0.107919262979185
+"negative regulation of response to stimulus"	GO:0009968;GO:0010648;GO:0023057;GO:0048585;GO:0080134	2	Sym_131859_c1_g2	5.83979639411501
+"negative regulation of response to stimulus"	GO:0009968;GO:0010648;GO:0023057;GO:0048585;GO:0080134	2	Sym_109358_c2_g1	-0.530669227466644
+"negative regulation of response to stimulus"	GO:0009968;GO:0010648;GO:0023057;GO:0048585;GO:0080134	2	Sym_24568_c0_g1	16.2353942201521
+"negative regulation of response to stimulus"	GO:0009968;GO:0010648;GO:0023057;GO:0048585;GO:0080134	2	Sym_150432_c3_g6	61.8550133899771
+"negative regulation of response to stimulus"	GO:0009968;GO:0010648;GO:0023057;GO:0048585;GO:0080134	2	Sym_92829_c0_g1	0.38997535529179
+"negative regulation of response to stimulus"	GO:0009968;GO:0010648;GO:0023057;GO:0048585;GO:0080134	2	Sym_89763_c0_g1	8.47349820276669
+"negative regulation of response to stimulus"	GO:0009968;GO:0010648;GO:0023057;GO:0048585;GO:0080134	2	Sym_66494_c0_g1	0.712134852533098
+"negative regulation of response to stimulus"	GO:0009968;GO:0010648;GO:0023057;GO:0048585;GO:0080134	2	Sym_109253_c1_g2	-4.07479292137967
+"negative regulation of response to stimulus"	GO:0009968;GO:0010648;GO:0023057;GO:0048585;GO:0080134	2	Sym_109253_c1_g1	1.57359036822975
+"regulation of cellular component organization"	GO:0051128	4	Sym_175570_c0_g1	21.094498827213
+"regulation of cellular component organization"	GO:0051128	4	Sym_310154_c0_g1	-0.107919262979185
+"regulation of cellular component organization"	GO:0051128	4	Sym_133740_c1_g1	1.32754046388189
+"regulation of cellular component organization"	GO:0051128	4	Sym_131859_c1_g2	5.83979639411501
+"regulation of cellular component organization"	GO:0051128	4	Sym_107369_c3_g5	0.117245382176398
+"regulation of cellular component organization"	GO:0051128	4	Sym_101501_c0_g2	-0.928240260689423
+"regulation of cellular component organization"	GO:0051128	4	Sym_114907_c3_g1	-0.509850833046138
+"regulation of cellular component organization"	GO:0051128	4	Sym_112389_c0_g1	0.985562171814962
+"regulation of cellular component organization"	GO:0051128	4	Sym_145648_c3_g1	-1.13964814778694
+"regulation of cellular component organization"	GO:0051128	4	Sym_102785_c0_g1	8.05531505118345
+"regulation of cellular component organization"	GO:0051128	4	Sym_45310_c0_g1	-4.24782038117046
+"regulation of cellular component organization"	GO:0051128	4	Sym_119843_c6_g1	15.250034955111
+"regulation of cellular component organization"	GO:0051128	4	Sym_113653_c1_g2	-22.4809407064687
+"regulation of cellular component organization"	GO:0051128	4	Sym_101501_c0_g1	3.95441988581741
+"carbohydrate metabolic process"	GO:0005975	2	Sym_133183_c1_g1	16.1839017387085
+"carbohydrate metabolic process"	GO:0005975	2	Sym_310154_c0_g1	-0.107919262979185
+"carbohydrate metabolic process"	GO:0005975	2	Sym_127086_c1_g3	-0.273855837115441
+"carbohydrate metabolic process"	GO:0005975	2	Sym_107578_c2_g1	-1.10516438094495
+"carbohydrate metabolic process"	GO:0005975	2	Sym_107578_c2_g2	-0.53508738027716
+"carbohydrate metabolic process"	GO:0005975	2	Sym_103005_c0_g1	-7.03247395551668
+"carbohydrate metabolic process"	GO:0005975	2	Sym_211422_c0_g1	-2.88350466247405
+"carbohydrate metabolic process"	GO:0005975	2	Sym_147654_c1_g3	-1.6227833657817
+"carbohydrate metabolic process"	GO:0005975	2	Sym_82427_c0_g1	10.2741796340878
+"carbohydrate metabolic process"	GO:0005975	2	Sym_102664_c0_g1	0.378359429094274
+"carbohydrate metabolic process"	GO:0005975	2	Sym_74356_c0_g1	2.04398092389789
+"carbohydrate metabolic process"	GO:0005975	2	Sym_125914_c2_g1	0.975291157351245
+"carbohydrate metabolic process"	GO:0005975	2	Sym_133813_c2_g1	1.90138426453913
+"carbohydrate metabolic process"	GO:0005975	2	Sym_151306_c5_g1	-0.353140761930338
+"carbohydrate metabolic process"	GO:0005975	2	Sym_113653_c1_g2	-22.4809407064687
+"carbohydrate metabolic process"	GO:0005975	2	Sym_271368_c0_g1	42.7295258977713
+"carbohydrate metabolic process"	GO:0005975	2	Sym_149385_c2_g1	-6.19781610711728
+"carbohydrate metabolic process"	GO:0005975	2	Sym_109725_c2_g2	-0.150318508403171
+"anatomical structure development"	GO:0048856	2	Sym_175570_c0_g1	21.094498827213
+"anatomical structure development"	GO:0048856	2	Sym_310154_c0_g1	-0.107919262979185
+"anatomical structure development"	GO:0048856	2	Sym_136847_c3_g1	12.0492609525839
+"anatomical structure development"	GO:0048856	2	Sym_127086_c1_g3	-0.273855837115441
+"anatomical structure development"	GO:0048856	2	Sym_107369_c3_g5	0.117245382176398
+"anatomical structure development"	GO:0048856	2	Sym_128463_c0_g2	0.323865567791101
+"anatomical structure development"	GO:0048856	2	Sym_24568_c0_g1	16.2353942201521
+"anatomical structure development"	GO:0048856	2	Sym_311128_c0_g1	2.53453989966806
+"anatomical structure development"	GO:0048856	2	Sym_103763_c6_g1	1.64809471626028
+"anatomical structure development"	GO:0048856	2	Sym_97621_c0_g2	2.33939547493827
+"anatomical structure development"	GO:0048856	2	Sym_102785_c0_g1	8.05531505118345
+"anatomical structure development"	GO:0048856	2	Sym_80796_c0_g1	2.75787866185817
+"anatomical structure development"	GO:0048856	2	Sym_67222_c0_g1	-4.11227944685487
+"anatomical structure development"	GO:0048856	2	Sym_91477_c0_g1	-5.03760633963937
+"anatomical structure development"	GO:0048856	2	Sym_215998_c0_g1	-1.30505477931748
+"anatomical structure development"	GO:0048856	2	Sym_242526_c0_g1	-49.1375764095091
+"anatomical structure development"	GO:0048856	2	Sym_119843_c6_g1	15.250034955111
+"anatomical structure development"	GO:0048856	2	Sym_109060_c7_g1	-7.1368908262198
+"anatomical structure development"	GO:0048856	2	Sym_130850_c4_g1	-6.877253236067
+"response to abiotic stimulus"	GO:0009628	2	Sym_117355_c0_g1	-1.39800870612488
+"response to abiotic stimulus"	GO:0009628	2	Sym_140163_c0_g1	-14.0962370651635
+"response to abiotic stimulus"	GO:0009628	2	Sym_57115_c0_g1	-15.119363668111
+"response to abiotic stimulus"	GO:0009628	2	Sym_30458_c0_g1	8.33934130259168
+"response to abiotic stimulus"	GO:0009628	2	Sym_127086_c1_g3	-0.273855837115441
+"response to abiotic stimulus"	GO:0009628	2	Sym_125225_c1_g2	-0.78987481266211
+"response to abiotic stimulus"	GO:0009628	2	Sym_24952_c0_g1	-69.1736814680241
+"response to abiotic stimulus"	GO:0009628	2	Sym_103763_c6_g1	1.64809471626028
+"response to abiotic stimulus"	GO:0009628	2	Sym_130013_c0_g1	6.1725525506105
+"response to abiotic stimulus"	GO:0009628	2	Sym_207498_c0_g1	4.13727158147116
+"response to abiotic stimulus"	GO:0009628	2	Sym_85763_c0_g2	-0.418774948238708
+"response to abiotic stimulus"	GO:0009628	2	Sym_107242_c3_g1	3.72647676843126
+"response to abiotic stimulus"	GO:0009628	2	Sym_179741_c0_g1	-4.57090491711408
+"response to abiotic stimulus"	GO:0009628	2	Sym_146541_c1_g1	-8.09430899017412
+"response to abiotic stimulus"	GO:0009628	2	Sym_125225_c1_g1	-0.95138836303257
+"response to abiotic stimulus"	GO:0009628	2	Sym_125225_c1_g3	-33.3722638015644
+"response to abiotic stimulus"	GO:0009628	2	Sym_89763_c0_g1	8.47349820276669
+"response to abiotic stimulus"	GO:0009628	2	Sym_101138_c0_g1	1.62889206614134
+"response to abiotic stimulus"	GO:0009628	2	Sym_242526_c0_g1	-49.1375764095091
+"response to abiotic stimulus"	GO:0009628	2	Sym_238053_c0_g1	-7.48550007893156
+"response to abiotic stimulus"	GO:0009628	2	Sym_148542_c0_g2	-8.11764781885257
+"response to abiotic stimulus"	GO:0009628	2	Sym_105943_c4_g1	-0.477191255612564
+"lipid transport"	GO:0006869	6	Sym_117355_c0_g1	-1.39800870612488
+"lipid transport"	GO:0006869	6	Sym_310154_c0_g1	-0.107919262979185
+"lipid transport"	GO:0006869	6	Sym_159792_c0_g1	-2.71154134479165
+"lipid transport"	GO:0006869	6	Sym_238053_c0_g1	-7.48550007893156
+"lipid transport"	GO:0006869	6	Sym_135943_c0_g1	-4.75813562082652
+"response to lipid"	GO:0033993	2	Sym_117355_c0_g1	-1.39800870612488
+"response to lipid"	GO:0033993	2	Sym_140163_c0_g1	-14.0962370651635
+"response to lipid"	GO:0033993	2	Sym_107369_c3_g5	0.117245382176398
+"response to lipid"	GO:0033993	2	Sym_24568_c0_g1	16.2353942201521
+"response to lipid"	GO:0033993	2	Sym_109253_c1_g2	-4.07479292137967
+"response to lipid"	GO:0033993	2	Sym_109253_c1_g1	1.57359036822975
+"response to lipid"	GO:0033993	2	Sym_159792_c0_g1	-2.71154134479165
+"response to lipid"	GO:0033993	2	Sym_238053_c0_g1	-7.48550007893156
+"response to lipid"	GO:0033993	2	Sym_148542_c0_g2	-8.11764781885257
+"positive regulation of macromolecule biosynthetic process"	GO:0010557;GO:0031328;GO:0009891	6	Sym_109358_c2_g1	-0.530669227466644
+"positive regulation of macromolecule biosynthetic process"	GO:0010557;GO:0031328;GO:0009891	6	Sym_284899_c0_g1	7.05401579318168
+"positive regulation of macromolecule biosynthetic process"	GO:0010557;GO:0031328;GO:0009891	6	Sym_107369_c3_g5	0.117245382176398
+"positive regulation of macromolecule biosynthetic process"	GO:0010557;GO:0031328;GO:0009891	6	Sym_111423_c4_g1	0.629301819249032
+"positive regulation of macromolecule biosynthetic process"	GO:0010557;GO:0031328;GO:0009891	6	Sym_101501_c0_g2	-0.928240260689423
+"positive regulation of macromolecule biosynthetic process"	GO:0010557;GO:0031328;GO:0009891	6	Sym_104762_c1_g5	-6.80631077923629
+"positive regulation of macromolecule biosynthetic process"	GO:0010557;GO:0031328;GO:0009891	6	Sym_157544_c0_g1	4.47498758621292
+"positive regulation of macromolecule biosynthetic process"	GO:0010557;GO:0031328;GO:0009891	6	Sym_101501_c0_g1	3.95441988581741
+"signal transduction"	GO:0007165	3	Sym_140163_c0_g1	-14.0962370651635
+"signal transduction"	GO:0007165	3	Sym_109358_c2_g1	-0.530669227466644
+"signal transduction"	GO:0007165	3	Sym_128463_c0_g2	0.323865567791101
+"signal transduction"	GO:0007165	3	Sym_125225_c1_g2	-0.78987481266211
+"signal transduction"	GO:0007165	3	Sym_24952_c0_g1	-69.1736814680241
+"signal transduction"	GO:0007165	3	Sym_132105_c3_g7	-3.4633075803853
+"signal transduction"	GO:0007165	3	Sym_110848_c2_g1	2.0755308621403
+"signal transduction"	GO:0007165	3	Sym_237540_c0_g1	13.2824926785187
+"signal transduction"	GO:0007165	3	Sym_101501_c0_g2	-0.928240260689423
+"signal transduction"	GO:0007165	3	Sym_112389_c0_g1	0.985562171814962
+"signal transduction"	GO:0007165	3	Sym_80796_c0_g1	2.75787866185817
+"signal transduction"	GO:0007165	3	Sym_125225_c1_g1	-0.95138836303257
+"signal transduction"	GO:0007165	3	Sym_125225_c1_g3	-33.3722638015644
+"signal transduction"	GO:0007165	3	Sym_115874_c4_g1	0.102243361472688
+"signal transduction"	GO:0007165	3	Sym_100008_c0_g3	0.652887439468474
+"signal transduction"	GO:0007165	3	Sym_53466_c0_g1	-1.32038195502402
+"signal transduction"	GO:0007165	3	Sym_101501_c0_g1	3.95441988581741
+"signal transduction"	GO:0007165	3	Sym_42149_c0_g1	0.127481875528154
+"regulation of chromosome segregation"	GO:0051983	2	Sym_107369_c3_g5	0.117245382176398
+"regulation of chromosome segregation"	GO:0051983	2	Sym_101501_c0_g2	-0.928240260689423
+"regulation of chromosome segregation"	GO:0051983	2	Sym_43139_c0_g1	-3.22564337894425
+"regulation of chromosome segregation"	GO:0051983	2	Sym_69276_c0_g1	1.49397127110569
+"regulation of chromosome segregation"	GO:0051983	2	Sym_101501_c0_g1	3.95441988581741
+"regulation of response to external stimulus"	GO:0032101	4	Sym_109358_c2_g1	-0.530669227466644
+"regulation of response to external stimulus"	GO:0032101	4	Sym_24568_c0_g1	16.2353942201521
+"regulation of response to external stimulus"	GO:0032101	4	Sym_109253_c1_g2	-4.07479292137967
+"regulation of response to external stimulus"	GO:0032101	4	Sym_150432_c3_g6	61.8550133899771
+"regulation of response to external stimulus"	GO:0032101	4	Sym_43139_c0_g1	-3.22564337894425
+"regulation of response to external stimulus"	GO:0032101	4	Sym_109253_c1_g1	1.57359036822975
+"regulation of response to external stimulus"	GO:0032101	4	Sym_45310_c0_g1	-4.24782038117046
+"regulation of cellular component biogenesis"	GO:0044087	2	Sym_310154_c0_g1	-0.107919262979185
+"regulation of cellular component biogenesis"	GO:0044087	2	Sym_131859_c1_g2	5.83979639411501
+"regulation of cellular component biogenesis"	GO:0044087	2	Sym_107369_c3_g5	0.117245382176398
+"regulation of cellular component biogenesis"	GO:0044087	2	Sym_114907_c3_g1	-0.509850833046138
+"regulation of cellular component biogenesis"	GO:0044087	2	Sym_145648_c3_g1	-1.13964814778694
+"regulation of cellular component biogenesis"	GO:0044087	2	Sym_102785_c0_g1	8.05531505118345
+"regulation of cellular component biogenesis"	GO:0044087	2	Sym_113653_c1_g2	-22.4809407064687
+"DNA replication"	GO:0006260	2	Sym_103894_c0_g2	1.0484151715674
+"DNA replication"	GO:0006260	2	Sym_103894_c0_g4	-6.79175138635626
+"DNA replication"	GO:0006260	2	Sym_121495_c10_g3	-2.43816164327294
+"DNA replication"	GO:0006260	2	Sym_103894_c0_g1	-1.39171453357481
+"DNA replication"	GO:0006260	2	Sym_28806_c0_g1	0.61347772348389
+"DNA replication"	GO:0006260	2	Sym_157544_c0_g1	4.47498758621292
+"DNA replication"	GO:0006260	2	Sym_116663_c1_g1	-0.191313982081301
+"DNA replication"	GO:0006260	2	Sym_152309_c0_g2	-11.5566218346626
+"regulation of mRNA metabolic process"	GO:0061013;GO:1903311	2	Sym_284899_c0_g1	7.05401579318168
+"regulation of mRNA metabolic process"	GO:0061013;GO:1903311	2	Sym_43139_c0_g1	-3.22564337894425
+"regulation of mRNA metabolic process"	GO:0061013;GO:1903311	2	Sym_128217_c2_g1	-0.946632288707344
+"regulation of mRNA metabolic process"	GO:0061013;GO:1903311	2	Sym_69276_c0_g1	1.49397127110569
+"regulation of mRNA metabolic process"	GO:0061013;GO:1903311	2	Sym_119843_c6_g1	15.250034955111
+"regulation of mRNA metabolic process"	GO:0061013;GO:1903311	2	Sym_84654_c0_g1	-3.11425835421903
+"regulation of mRNA metabolic process"	GO:0061013;GO:1903311	2	Sym_104103_c2_g4	-0.71413616432613
+"intracellular signal transduction"	GO:0035556	2	Sym_140163_c0_g1	-14.0962370651635
+"intracellular signal transduction"	GO:0035556	2	Sym_109358_c2_g1	-0.530669227466644
+"intracellular signal transduction"	GO:0035556	2	Sym_125225_c1_g2	-0.78987481266211
+"intracellular signal transduction"	GO:0035556	2	Sym_24952_c0_g1	-69.1736814680241
+"intracellular signal transduction"	GO:0035556	2	Sym_101501_c0_g2	-0.928240260689423
+"intracellular signal transduction"	GO:0035556	2	Sym_125225_c1_g1	-0.95138836303257
+"intracellular signal transduction"	GO:0035556	2	Sym_125225_c1_g3	-33.3722638015644
+"intracellular signal transduction"	GO:0035556	2	Sym_115874_c4_g1	0.102243361472688
+"intracellular signal transduction"	GO:0035556	2	Sym_100008_c0_g3	0.652887439468474
+"intracellular signal transduction"	GO:0035556	2	Sym_101501_c0_g1	3.95441988581741
+"negative regulation of cellular metabolic process"	GO:0031324;GO:0051172	2	Sym_175570_c0_g1	21.094498827213
+"negative regulation of cellular metabolic process"	GO:0031324;GO:0051172	2	Sym_310154_c0_g1	-0.107919262979185
+"negative regulation of cellular metabolic process"	GO:0031324;GO:0051172	2	Sym_109358_c2_g1	-0.530669227466644
+"negative regulation of cellular metabolic process"	GO:0031324;GO:0051172	2	Sym_24568_c0_g1	16.2353942201521
+"negative regulation of cellular metabolic process"	GO:0031324;GO:0051172	2	Sym_109253_c1_g2	-4.07479292137967
+"negative regulation of cellular metabolic process"	GO:0031324;GO:0051172	2	Sym_121495_c10_g2	2.50119520282685
+"negative regulation of cellular metabolic process"	GO:0031324;GO:0051172	2	Sym_130013_c0_g1	6.1725525506105
+"negative regulation of cellular metabolic process"	GO:0031324;GO:0051172	2	Sym_112389_c0_g1	0.985562171814962
+"negative regulation of cellular metabolic process"	GO:0031324;GO:0051172	2	Sym_145648_c3_g1	-1.13964814778694
+"negative regulation of cellular metabolic process"	GO:0031324;GO:0051172	2	Sym_104762_c1_g5	-6.80631077923629
+"negative regulation of cellular metabolic process"	GO:0031324;GO:0051172	2	Sym_109253_c1_g1	1.57359036822975
+"negative regulation of cellular metabolic process"	GO:0031324;GO:0051172	2	Sym_147119_c0_g1	0.330276428917375
+"negative regulation of cellular metabolic process"	GO:0031324;GO:0051172	2	Sym_128217_c2_g1	-0.946632288707344
+"negative regulation of cellular metabolic process"	GO:0031324;GO:0051172	2	Sym_69276_c0_g1	1.49397127110569
+"negative regulation of cellular metabolic process"	GO:0031324;GO:0051172	2	Sym_100230_c0_g1	8.89454650346743
+"negative regulation of cellular metabolic process"	GO:0031324;GO:0051172	2	Sym_84654_c0_g1	-3.11425835421903
+"negative regulation of cellular metabolic process"	GO:0031324;GO:0051172	2	Sym_130850_c4_g1	-6.877253236067
+"response to light stimulus"	GO:0009416;GO:0009314	4	Sym_103763_c6_g1	1.64809471626028
+"response to light stimulus"	GO:0009416;GO:0009314	4	Sym_107242_c3_g1	3.72647676843126
+"response to light stimulus"	GO:0009416;GO:0009314	4	Sym_146541_c1_g1	-8.09430899017412
+"response to light stimulus"	GO:0009416;GO:0009314	4	Sym_238053_c0_g1	-7.48550007893156
+"response to light stimulus"	GO:0009416;GO:0009314	4	Sym_105943_c4_g1	-0.477191255612564
+"DNA metabolic process"	GO:0006259;GO:0006281;GO:0006974	2	Sym_121495_c10_g3	-2.43816164327294
+"DNA metabolic process"	GO:0006259;GO:0006281;GO:0006974	2	Sym_103763_c6_g1	1.64809471626028
+"DNA metabolic process"	GO:0006259;GO:0006281;GO:0006974	2	Sym_107127_c2_g8	3.31675479217134
+"DNA metabolic process"	GO:0006259;GO:0006281;GO:0006974	2	Sym_28806_c0_g1	0.61347772348389
+"DNA metabolic process"	GO:0006259;GO:0006281;GO:0006974	2	Sym_115147_c3_g1	-1.09499257037519
+"DNA metabolic process"	GO:0006259;GO:0006281;GO:0006974	2	Sym_100230_c0_g1	8.89454650346743
+"DNA metabolic process"	GO:0006259;GO:0006281;GO:0006974	2	Sym_152309_c0_g2	-11.5566218346626
+"DNA metabolic process"	GO:0006259;GO:0006281;GO:0006974	2	Sym_142384_c1_g2	-2.71930854896858
+"cellular component assembly"	GO:0022607	2	Sym_138442_c2_g4	-1.07245367093778
+"cellular component assembly"	GO:0022607	2	Sym_133740_c1_g1	1.32754046388189
+"cellular component assembly"	GO:0022607	2	Sym_131859_c1_g2	5.83979639411501
+"cellular component assembly"	GO:0022607	2	Sym_178813_c0_g1	-1.66116606087105
+"cellular component assembly"	GO:0022607	2	Sym_205051_c0_g1	36.6258781028596
+"cellular component assembly"	GO:0022607	2	Sym_103301_c0_g1	-0.662851698776769
+"cellular component assembly"	GO:0022607	2	Sym_237540_c0_g1	13.2824926785187
+"cellular component assembly"	GO:0022607	2	Sym_30900_c0_g1	1.9750961562418
+"cellular component assembly"	GO:0022607	2	Sym_102785_c0_g1	8.05531505118345
+"cellular component assembly"	GO:0022607	2	Sym_43139_c0_g1	-3.22564337894425
+"cellular component assembly"	GO:0022607	2	Sym_139545_c4_g1	-2.01932242622509
+"cellular component assembly"	GO:0022607	2	Sym_147201_c3_g4	1.02402041549374
+"cellular component assembly"	GO:0022607	2	Sym_150495_c0_g1	0.295357849726893
+"cellular component assembly"	GO:0022607	2	Sym_67337_c0_g1	2.36672403963537
+"cellular component assembly"	GO:0022607	2	Sym_113783_c0_g1	-1.4640532990148
+"cellular component assembly"	GO:0022607	2	Sym_137236_c0_g1	0.0324716805471844
+"cellular component assembly"	GO:0022607	2	Sym_101312_c0_g2	-3.10341568803234
+"cellular component assembly"	GO:0022607	2	Sym_90254_c0_g1	7.99222380357747
+"cellular component assembly"	GO:0022607	2	Sym_147119_c0_g1	0.330276428917375
+"cellular component assembly"	GO:0022607	2	Sym_113653_c1_g2	-22.4809407064687
+"cellular component assembly"	GO:0022607	2	Sym_175830_c0_g1	-0.373197317978894
+"cellular component assembly"	GO:0022607	2	Sym_115171_c4_g3	-0.96290338136238
+"cellular component assembly"	GO:0022607	2	Sym_124370_c1_g1	-0.598187209802267
+"cellular component assembly"	GO:0022607	2	Sym_120913_c7_g2	-2.15956664826875
+"carbohydrate derivative metabolic process"	GO:1901135;GO:0009117;GO:0006753;GO:0019637;GO:0055086;GO:0009259;GO:0019693	2	Sym_126392_c0_g1	-0.224133526947624
+"carbohydrate derivative metabolic process"	GO:1901135;GO:0009117;GO:0006753;GO:0019637;GO:0055086;GO:0009259;GO:0019693	2	Sym_127086_c1_g3	-0.273855837115441
+"carbohydrate derivative metabolic process"	GO:1901135;GO:0009117;GO:0006753;GO:0019637;GO:0055086;GO:0009259;GO:0019693	2	Sym_107578_c2_g1	-1.10516438094495
+"carbohydrate derivative metabolic process"	GO:1901135;GO:0009117;GO:0006753;GO:0019637;GO:0055086;GO:0009259;GO:0019693	2	Sym_107578_c2_g2	-0.53508738027716
+"carbohydrate derivative metabolic process"	GO:1901135;GO:0009117;GO:0006753;GO:0019637;GO:0055086;GO:0009259;GO:0019693	2	Sym_105819_c0_g1	-5.48831246788115
+"carbohydrate derivative metabolic process"	GO:1901135;GO:0009117;GO:0006753;GO:0019637;GO:0055086;GO:0009259;GO:0019693	2	Sym_106193_c0_g1	0.266178946928881
+"carbohydrate derivative metabolic process"	GO:1901135;GO:0009117;GO:0006753;GO:0019637;GO:0055086;GO:0009259;GO:0019693	2	Sym_211422_c0_g1	-2.88350466247405
+"carbohydrate derivative metabolic process"	GO:1901135;GO:0009117;GO:0006753;GO:0019637;GO:0055086;GO:0009259;GO:0019693	2	Sym_176037_c0_g1	-0.71450110033221
+"carbohydrate derivative metabolic process"	GO:1901135;GO:0009117;GO:0006753;GO:0019637;GO:0055086;GO:0009259;GO:0019693	2	Sym_116663_c1_g1	-0.191313982081301
+"carbohydrate derivative metabolic process"	GO:1901135;GO:0009117;GO:0006753;GO:0019637;GO:0055086;GO:0009259;GO:0019693	2	Sym_244548_c0_g1	-61.1818249116412
+"carbohydrate derivative metabolic process"	GO:1901135;GO:0009117;GO:0006753;GO:0019637;GO:0055086;GO:0009259;GO:0019693	2	Sym_101543_c0_g2	-13.3092254362418
+"carbohydrate derivative metabolic process"	GO:1901135;GO:0009117;GO:0006753;GO:0019637;GO:0055086;GO:0009259;GO:0019693	2	Sym_101543_c0_g3	-4.83332352909251
+"carbohydrate derivative metabolic process"	GO:1901135;GO:0009117;GO:0006753;GO:0019637;GO:0055086;GO:0009259;GO:0019693	2	Sym_113653_c1_g2	-22.4809407064687
+"carbohydrate derivative metabolic process"	GO:1901135;GO:0009117;GO:0006753;GO:0019637;GO:0055086;GO:0009259;GO:0019693	2	Sym_208217_c0_g1	1.77326250004317
+"carbohydrate derivative metabolic process"	GO:1901135;GO:0009117;GO:0006753;GO:0019637;GO:0055086;GO:0009259;GO:0019693	2	Sym_142384_c1_g2	-2.71930854896858
+"carbohydrate derivative metabolic process"	GO:1901135;GO:0009117;GO:0006753;GO:0019637;GO:0055086;GO:0009259;GO:0019693	2	Sym_109725_c2_g2	-0.150318508403171
+"carbohydrate derivative metabolic process"	GO:1901135;GO:0009117;GO:0006753;GO:0019637;GO:0055086;GO:0009259;GO:0019693	2	Sym_174615_c0_g1	-12.0305196781801
+"carbohydrate derivative metabolic process"	GO:1901135;GO:0009117;GO:0006753;GO:0019637;GO:0055086;GO:0009259;GO:0019693	2	Sym_120676_c2_g1	-4.74919964214161
+"carbohydrate derivative metabolic process"	GO:1901135;GO:0009117;GO:0006753;GO:0019637;GO:0055086;GO:0009259;GO:0019693	2	Sym_144324_c2_g4	-1.22980373812778
+"carbohydrate derivative metabolic process"	GO:1901135;GO:0009117;GO:0006753;GO:0019637;GO:0055086;GO:0009259;GO:0019693	2	Sym_37542_c0_g1	-0.0629221229476182
+"carbohydrate derivative metabolic process"	GO:1901135;GO:0009117;GO:0006753;GO:0019637;GO:0055086;GO:0009259;GO:0019693	2	Sym_107647_c1_g2	-11.4130605925763
+"movement of cell or subcellular component"	GO:0006928;GO:0040011	2	Sym_131859_c1_g2	5.83979639411501
+"movement of cell or subcellular component"	GO:0006928;GO:0040011	2	Sym_205051_c0_g1	36.6258781028596
+"movement of cell or subcellular component"	GO:0006928;GO:0040011	2	Sym_30900_c0_g1	1.9750961562418
+"movement of cell or subcellular component"	GO:0006928;GO:0040011	2	Sym_102785_c0_g1	8.05531505118345
+"movement of cell or subcellular component"	GO:0006928;GO:0040011	2	Sym_120913_c7_g2	-2.15956664826875
+"movement of cell or subcellular component"	GO:0006928;GO:0040011	2	Sym_112389_c0_g1	0.985562171814962
+"purine nucleotide metabolic process"	GO:0046034;GO:0009150;GO:0006163;GO:0072521	5	Sym_127086_c1_g3	-0.273855837115441
+"purine nucleotide metabolic process"	GO:0046034;GO:0009150;GO:0006163;GO:0072521	5	Sym_107578_c2_g1	-1.10516438094495
+"purine nucleotide metabolic process"	GO:0046034;GO:0009150;GO:0006163;GO:0072521	5	Sym_107578_c2_g2	-0.53508738027716
+"purine nucleotide metabolic process"	GO:0046034;GO:0009150;GO:0006163;GO:0072521	5	Sym_105819_c0_g1	-5.48831246788115
+"purine nucleotide metabolic process"	GO:0046034;GO:0009150;GO:0006163;GO:0072521	5	Sym_211422_c0_g1	-2.88350466247405
+"purine nucleotide metabolic process"	GO:0046034;GO:0009150;GO:0006163;GO:0072521	5	Sym_176037_c0_g1	-0.71450110033221
+"purine nucleotide metabolic process"	GO:0046034;GO:0009150;GO:0006163;GO:0072521	5	Sym_156351_c0_g1	-13.2671179124383
+"purine nucleotide metabolic process"	GO:0046034;GO:0009150;GO:0006163;GO:0072521	5	Sym_101543_c0_g2	-13.3092254362418
+"purine nucleotide metabolic process"	GO:0046034;GO:0009150;GO:0006163;GO:0072521	5	Sym_101543_c0_g3	-4.83332352909251
+"purine nucleotide metabolic process"	GO:0046034;GO:0009150;GO:0006163;GO:0072521	5	Sym_113653_c1_g2	-22.4809407064687
+"purine nucleotide metabolic process"	GO:0046034;GO:0009150;GO:0006163;GO:0072521	5	Sym_208217_c0_g1	1.77326250004317
+"purine nucleotide metabolic process"	GO:0046034;GO:0009150;GO:0006163;GO:0072521	5	Sym_142384_c1_g2	-2.71930854896858
+"purine nucleotide metabolic process"	GO:0046034;GO:0009150;GO:0006163;GO:0072521	5	Sym_120676_c2_g1	-4.74919964214161
+"purine nucleotide metabolic process"	GO:0046034;GO:0009150;GO:0006163;GO:0072521	5	Sym_174615_c0_g1	-12.0305196781801
+"purine nucleotide metabolic process"	GO:0046034;GO:0009150;GO:0006163;GO:0072521	5	Sym_144324_c2_g4	-1.22980373812778
+"carbohydrate biosynthetic process"	GO:0016051	2	Sym_127086_c1_g3	-0.273855837115441
+"carbohydrate biosynthetic process"	GO:0016051	2	Sym_211422_c0_g1	-2.88350466247405
+"carbohydrate biosynthetic process"	GO:0016051	2	Sym_102664_c0_g1	0.378359429094274
+"carbohydrate biosynthetic process"	GO:0016051	2	Sym_271368_c0_g1	42.7295258977713
+"carbohydrate biosynthetic process"	GO:0016051	2	Sym_149385_c2_g1	-6.19781610711728
+"carbohydrate biosynthetic process"	GO:0016051	2	Sym_109725_c2_g2	-0.150318508403171
+"phosphorylation"	GO:0016310	2	Sym_140163_c0_g1	-14.0962370651635
+"phosphorylation"	GO:0016310	2	Sym_30458_c0_g1	8.33934130259168
+"phosphorylation"	GO:0016310	2	Sym_127086_c1_g3	-0.273855837115441
+"phosphorylation"	GO:0016310	2	Sym_107578_c2_g1	-1.10516438094495
+"phosphorylation"	GO:0016310	2	Sym_107578_c2_g2	-0.53508738027716
+"phosphorylation"	GO:0016310	2	Sym_211422_c0_g1	-2.88350466247405
+"phosphorylation"	GO:0016310	2	Sym_85763_c0_g2	-0.418774948238708
+"phosphorylation"	GO:0016310	2	Sym_156351_c0_g1	-13.2671179124383
+"phosphorylation"	GO:0016310	2	Sym_115874_c4_g1	0.102243361472688
+"phosphorylation"	GO:0016310	2	Sym_113653_c1_g2	-22.4809407064687
+"hormone-mediated signaling pathway"	GO:0009755	2	Sym_140163_c0_g1	-14.0962370651635
+"hormone-mediated signaling pathway"	GO:0009755	2	Sym_125225_c1_g2	-0.78987481266211
+"hormone-mediated signaling pathway"	GO:0009755	2	Sym_125225_c1_g1	-0.95138836303257
+"hormone-mediated signaling pathway"	GO:0009755	2	Sym_125225_c1_g3	-33.3722638015644
+"hormone-mediated signaling pathway"	GO:0009755	2	Sym_53466_c0_g1	-1.32038195502402
+"positive regulation of protein metabolic process"	GO:0032270;GO:0051247	2	Sym_24568_c0_g1	16.2353942201521
+"positive regulation of protein metabolic process"	GO:0032270;GO:0051247	2	Sym_111423_c4_g1	0.629301819249032
+"positive regulation of protein metabolic process"	GO:0032270;GO:0051247	2	Sym_145648_c3_g1	-1.13964814778694
+"positive regulation of protein metabolic process"	GO:0032270;GO:0051247	2	Sym_100802_c0_g1	-4.46148008552169
+"positive regulation of protein metabolic process"	GO:0032270;GO:0051247	2	Sym_84654_c0_g1	-3.11425835421903
+"positive regulation of protein metabolic process"	GO:0032270;GO:0051247	2	Sym_80796_c0_g1	2.75787866185817
+"membrane organization"	GO:0061024	2	Sym_131859_c1_g2	5.83979639411501
+"membrane organization"	GO:0061024	2	Sym_237540_c0_g1	13.2824926785187
+"membrane organization"	GO:0061024	2	Sym_107242_c3_g1	3.72647676843126
+"membrane organization"	GO:0061024	2	Sym_159792_c0_g1	-2.71154134479165
+"membrane organization"	GO:0061024	2	Sym_100008_c0_g3	0.652887439468474
+"membrane organization"	GO:0061024	2	Sym_115171_c4_g3	-0.96290338136238
+"membrane organization"	GO:0061024	2	Sym_84654_c0_g1	-3.11425835421903
+"positive regulation of RNA metabolic process"	GO:0051254	4	Sym_109358_c2_g1	-0.530669227466644
+"positive regulation of RNA metabolic process"	GO:0051254	4	Sym_284899_c0_g1	7.05401579318168
+"positive regulation of RNA metabolic process"	GO:0051254	4	Sym_107369_c3_g5	0.117245382176398
+"positive regulation of RNA metabolic process"	GO:0051254	4	Sym_104762_c1_g5	-6.80631077923629
+"positive regulation of RNA metabolic process"	GO:0051254	4	Sym_128217_c2_g1	-0.946632288707344
+"positive regulation of RNA metabolic process"	GO:0051254	4	Sym_69276_c0_g1	1.49397127110569
+"positive regulation of RNA metabolic process"	GO:0051254	4	Sym_84654_c0_g1	-3.11425835421903
+"cell communication"	GO:0031668;GO:0009991;GO:0007154;GO:0071496	3	Sym_126392_c0_g1	-0.224133526947624
+"cell communication"	GO:0031668;GO:0009991;GO:0007154;GO:0071496	3	Sym_125225_c1_g2	-0.78987481266211
+"cell communication"	GO:0031668;GO:0009991;GO:0007154;GO:0071496	3	Sym_207498_c0_g1	4.13727158147116
+"cell communication"	GO:0031668;GO:0009991;GO:0007154;GO:0071496	3	Sym_107127_c2_g8	3.31675479217134
+"cell communication"	GO:0031668;GO:0009991;GO:0007154;GO:0071496	3	Sym_145648_c3_g1	-1.13964814778694
+"cell communication"	GO:0031668;GO:0009991;GO:0007154;GO:0071496	3	Sym_125225_c1_g1	-0.95138836303257
+"cell communication"	GO:0031668;GO:0009991;GO:0007154;GO:0071496	3	Sym_125225_c1_g3	-33.3722638015644
+"cell communication"	GO:0031668;GO:0009991;GO:0007154;GO:0071496	3	Sym_127086_c1_g3	-0.273855837115441
+"cell communication"	GO:0031668;GO:0009991;GO:0007154;GO:0071496	3	Sym_100008_c0_g3	0.652887439468474
+"cell communication"	GO:0031668;GO:0009991;GO:0007154;GO:0071496	3	Sym_242526_c0_g1	-49.1375764095091
+"cellular carbohydrate metabolic process"	GO:0044262	3	Sym_103005_c0_g1	-7.03247395551668
+"cellular carbohydrate metabolic process"	GO:0044262	3	Sym_82427_c0_g1	10.2741796340878
+"cellular carbohydrate metabolic process"	GO:0044262	3	Sym_125914_c2_g1	0.975291157351245
+"cellular carbohydrate metabolic process"	GO:0044262	3	Sym_133813_c2_g1	1.90138426453913
+"cellular carbohydrate metabolic process"	GO:0044262	3	Sym_271368_c0_g1	42.7295258977713
+"response to oxidative stress"	GO:0006979	3	Sym_310154_c0_g1	-0.107919262979185
+"response to oxidative stress"	GO:0006979	3	Sym_209170_c0_g1	-1.21885817220069
+"response to oxidative stress"	GO:0006979	3	Sym_82593_c0_g2	0.246569685967351
+"response to oxidative stress"	GO:0006979	3	Sym_114907_c3_g2	-1.94385574826031
+"response to oxidative stress"	GO:0006979	3	Sym_30446_c0_g1	5.33878880661604
+"response to oxygen-containing compound"	GO:1901700	2	Sym_117355_c0_g1	-1.39800870612488
+"response to oxygen-containing compound"	GO:1901700	2	Sym_140163_c0_g1	-14.0962370651635
+"response to oxygen-containing compound"	GO:1901700	2	Sym_310154_c0_g1	-0.107919262979185
+"response to oxygen-containing compound"	GO:1901700	2	Sym_57115_c0_g1	-15.119363668111
+"response to oxygen-containing compound"	GO:1901700	2	Sym_107369_c3_g5	0.117245382176398
+"response to oxygen-containing compound"	GO:1901700	2	Sym_24568_c0_g1	16.2353942201521
+"response to oxygen-containing compound"	GO:1901700	2	Sym_109253_c1_g2	-4.07479292137967
+"response to oxygen-containing compound"	GO:1901700	2	Sym_207498_c0_g1	4.13727158147116
+"response to oxygen-containing compound"	GO:1901700	2	Sym_94700_c0_g1	1.53117151021395
+"response to oxygen-containing compound"	GO:1901700	2	Sym_109253_c1_g1	1.57359036822975
+"response to oxygen-containing compound"	GO:1901700	2	Sym_159792_c0_g1	-2.71154134479165
+"response to oxygen-containing compound"	GO:1901700	2	Sym_209170_c0_g1	-1.21885817220069
+"response to oxygen-containing compound"	GO:1901700	2	Sym_242526_c0_g1	-49.1375764095091
+"response to oxygen-containing compound"	GO:1901700	2	Sym_238053_c0_g1	-7.48550007893156
+"response to oxygen-containing compound"	GO:1901700	2	Sym_119843_c6_g1	15.250034955111
+"response to oxygen-containing compound"	GO:1901700	2	Sym_148542_c0_g2	-8.11764781885257
+"response to oxygen-containing compound"	GO:1901700	2	Sym_114907_c3_g2	-1.94385574826031
+"cellular response to oxygen-containing compound"	GO:1901701	2	Sym_57115_c0_g1	-15.119363668111
+"cellular response to oxygen-containing compound"	GO:1901701	2	Sym_107369_c3_g5	0.117245382176398
+"cellular response to oxygen-containing compound"	GO:1901701	2	Sym_207498_c0_g1	4.13727158147116
+"cellular response to oxygen-containing compound"	GO:1901701	2	Sym_94700_c0_g1	1.53117151021395
+"cellular response to oxygen-containing compound"	GO:1901701	2	Sym_159792_c0_g1	-2.71154134479165
+"cellular response to oxygen-containing compound"	GO:1901701	2	Sym_114907_c3_g2	-1.94385574826031
+"regulation of nucleobase-containing compound metabolic process"	GO:0051252;GO:0019219	3	Sym_89236_c0_g1	-18.9152456457284
+"regulation of nucleobase-containing compound metabolic process"	GO:0051252;GO:0019219	3	Sym_109358_c2_g1	-0.530669227466644
+"regulation of nucleobase-containing compound metabolic process"	GO:0051252;GO:0019219	3	Sym_284899_c0_g1	7.05401579318168
+"regulation of nucleobase-containing compound metabolic process"	GO:0051252;GO:0019219	3	Sym_107369_c3_g5	0.117245382176398
+"regulation of nucleobase-containing compound metabolic process"	GO:0051252;GO:0019219	3	Sym_24568_c0_g1	16.2353942201521
+"regulation of nucleobase-containing compound metabolic process"	GO:0051252;GO:0019219	3	Sym_121495_c10_g2	2.50119520282685
+"regulation of nucleobase-containing compound metabolic process"	GO:0051252;GO:0019219	3	Sym_130013_c0_g1	6.1725525506105
+"regulation of nucleobase-containing compound metabolic process"	GO:0051252;GO:0019219	3	Sym_31210_c0_g1	7.17959835086772
+"regulation of nucleobase-containing compound metabolic process"	GO:0051252;GO:0019219	3	Sym_43139_c0_g1	-3.22564337894425
+"regulation of nucleobase-containing compound metabolic process"	GO:0051252;GO:0019219	3	Sym_104762_c1_g5	-6.80631077923629
+"regulation of nucleobase-containing compound metabolic process"	GO:0051252;GO:0019219	3	Sym_128217_c2_g1	-0.946632288707344
+"regulation of nucleobase-containing compound metabolic process"	GO:0051252;GO:0019219	3	Sym_69276_c0_g1	1.49397127110569
+"regulation of nucleobase-containing compound metabolic process"	GO:0051252;GO:0019219	3	Sym_104103_c2_g4	-0.71413616432613
+"regulation of nucleobase-containing compound metabolic process"	GO:0051252;GO:0019219	3	Sym_45310_c0_g1	-4.24782038117046
+"regulation of nucleobase-containing compound metabolic process"	GO:0051252;GO:0019219	3	Sym_119843_c6_g1	15.250034955111
+"regulation of nucleobase-containing compound metabolic process"	GO:0051252;GO:0019219	3	Sym_84654_c0_g1	-3.11425835421903
+"regulation of nucleobase-containing compound metabolic process"	GO:0051252;GO:0019219	3	Sym_130850_c4_g1	-6.877253236067
+"regulation of nucleobase-containing compound metabolic process"	GO:0051252;GO:0019219	3	Sym_101501_c0_g2	-0.928240260689423
+"regulation of nucleobase-containing compound metabolic process"	GO:0051252;GO:0019219	3	Sym_157544_c0_g1	4.47498758621292
+"regulation of nucleobase-containing compound metabolic process"	GO:0051252;GO:0019219	3	Sym_100230_c0_g1	8.89454650346743
+"regulation of nucleobase-containing compound metabolic process"	GO:0051252;GO:0019219	3	Sym_101501_c0_g1	3.95441988581741
+"regulation of biological quality"	GO:0065008	2	Sym_131859_c1_g2	5.83979639411501
+"regulation of biological quality"	GO:0065008	2	Sym_57115_c0_g1	-15.119363668111
+"regulation of biological quality"	GO:0065008	2	Sym_109358_c2_g1	-0.530669227466644
+"regulation of biological quality"	GO:0065008	2	Sym_127086_c1_g3	-0.273855837115441
+"regulation of biological quality"	GO:0065008	2	Sym_284899_c0_g1	7.05401579318168
+"regulation of biological quality"	GO:0065008	2	Sym_24568_c0_g1	16.2353942201521
+"regulation of biological quality"	GO:0065008	2	Sym_109253_c1_g2	-4.07479292137967
+"regulation of biological quality"	GO:0065008	2	Sym_110848_c2_g1	2.0755308621403
+"regulation of biological quality"	GO:0065008	2	Sym_237540_c0_g1	13.2824926785187
+"regulation of biological quality"	GO:0065008	2	Sym_94907_c0_g2	18.4876594115042
+"regulation of biological quality"	GO:0065008	2	Sym_28806_c0_g1	0.61347772348389
+"regulation of biological quality"	GO:0065008	2	Sym_145648_c3_g1	-1.13964814778694
+"regulation of biological quality"	GO:0065008	2	Sym_84255_c0_g2	0.200887196280385
+"regulation of biological quality"	GO:0065008	2	Sym_92829_c0_g1	0.38997535529179
+"regulation of biological quality"	GO:0065008	2	Sym_43139_c0_g1	-3.22564337894425
+"regulation of biological quality"	GO:0065008	2	Sym_80796_c0_g1	2.75787866185817
+"regulation of biological quality"	GO:0065008	2	Sym_109253_c1_g1	1.57359036822975
+"regulation of biological quality"	GO:0065008	2	Sym_159792_c0_g1	-2.71154134479165
+"regulation of biological quality"	GO:0065008	2	Sym_69276_c0_g1	1.49397127110569
+"regulation of biological quality"	GO:0065008	2	Sym_82593_c0_g2	0.246569685967351
+"regulation of biological quality"	GO:0065008	2	Sym_100008_c0_g3	0.652887439468474
+"regulation of biological quality"	GO:0065008	2	Sym_119843_c6_g1	15.250034955111
+"regulation of biological quality"	GO:0065008	2	Sym_113653_c1_g2	-22.4809407064687
+"regulation of biological quality"	GO:0065008	2	Sym_84654_c0_g1	-3.11425835421903
+"cell cycle"	GO:0007049	2	Sym_107369_c3_g5	0.117245382176398
+"cell cycle"	GO:0007049	2	Sym_28806_c0_g1	0.61347772348389
+"cell cycle"	GO:0007049	2	Sym_37542_c0_g1	-0.0629221229476182
+"cell cycle"	GO:0007049	2	Sym_66995_c0_g1	-0.901139339173578
+"cell cycle"	GO:0007049	2	Sym_282497_c0_g1	1.58597831106069
+"transmembrane transport"	GO:0055085;GO:0034220	3	Sym_117355_c0_g1	-1.39800870612488
+"transmembrane transport"	GO:0055085;GO:0034220	3	Sym_115069_c1_g1	9.24816636425155
+"transmembrane transport"	GO:0055085;GO:0034220	3	Sym_136847_c3_g1	12.0492609525839
+"transmembrane transport"	GO:0055085;GO:0034220	3	Sym_24952_c0_g1	-69.1736814680241
+"transmembrane transport"	GO:0055085;GO:0034220	3	Sym_105819_c0_g1	-5.48831246788115
+"transmembrane transport"	GO:0055085;GO:0034220	3	Sym_101441_c0_g1	3.73752184679616
+"transmembrane transport"	GO:0055085;GO:0034220	3	Sym_176037_c0_g1	-0.71450110033221
+"transmembrane transport"	GO:0055085;GO:0034220	3	Sym_128149_c1_g1	-8.04282547175407
+"transmembrane transport"	GO:0055085;GO:0034220	3	Sym_89392_c0_g1	1.35410188875899
+"transmembrane transport"	GO:0055085;GO:0034220	3	Sym_141362_c0_g3	-16.943075722627
+"transmembrane transport"	GO:0055085;GO:0034220	3	Sym_101543_c0_g2	-13.3092254362418
+"transmembrane transport"	GO:0055085;GO:0034220	3	Sym_102471_c7_g1	4.83583699478512
+"transmembrane transport"	GO:0055085;GO:0034220	3	Sym_101543_c0_g3	-4.83332352909251
+"transmembrane transport"	GO:0055085;GO:0034220	3	Sym_112513_c2_g1	-3.28059436606443
+"transmembrane transport"	GO:0055085;GO:0034220	3	Sym_208217_c0_g1	1.77326250004317
+"transmembrane transport"	GO:0055085;GO:0034220	3	Sym_135943_c0_g1	-4.75813562082652
+"transmembrane transport"	GO:0055085;GO:0034220	3	Sym_120676_c2_g1	-4.74919964214161
+"reproductive process"	GO:0022414	1	Sym_117355_c0_g1	-1.39800870612488
+"reproductive process"	GO:0022414	1	Sym_136847_c3_g1	12.0492609525839
+"reproductive process"	GO:0022414	1	Sym_205051_c0_g1	36.6258781028596
+"reproductive process"	GO:0022414	1	Sym_103763_c6_g1	1.64809471626028
+"reproductive process"	GO:0022414	1	Sym_101501_c0_g2	-0.928240260689423
+"reproductive process"	GO:0022414	1	Sym_28806_c0_g1	0.61347772348389
+"reproductive process"	GO:0022414	1	Sym_92614_c0_g2	0.280025840472364
+"reproductive process"	GO:0022414	1	Sym_80796_c0_g1	2.75787866185817
+"reproductive process"	GO:0022414	1	Sym_91477_c0_g1	-5.03760633963937
+"reproductive process"	GO:0022414	1	Sym_131343_c2_g1	0.366958814383093
+"reproductive process"	GO:0022414	1	Sym_69276_c0_g1	1.49397127110569
+"reproductive process"	GO:0022414	1	Sym_242526_c0_g1	-49.1375764095091
+"reproductive process"	GO:0022414	1	Sym_101501_c0_g1	3.95441988581741
+"reproductive process"	GO:0022414	1	Sym_84654_c0_g1	-3.11425835421903
+"reproductive process"	GO:0022414	1	Sym_130850_c4_g1	-6.877253236067
+"fatty acid biosynthetic process"	GO:0006633;GO:0072330	3	Sym_136796_c2_g1	-6.80732584770358
+"fatty acid biosynthetic process"	GO:0006633;GO:0072330	3	Sym_150495_c0_g1	0.295357849726893
+"fatty acid biosynthetic process"	GO:0006633;GO:0072330	3	Sym_110246_c0_g1	-8.9028489000906
+"fatty acid biosynthetic process"	GO:0006633;GO:0072330	3	Sym_108903_c2_g1	1.07082668657512
+"fatty acid biosynthetic process"	GO:0006633;GO:0072330	3	Sym_144324_c2_g4	-1.22980373812778
+"vesicle-mediated transport"	GO:0016192	2	Sym_102324_c0_g5	-0.0895604355932369
+"vesicle-mediated transport"	GO:0016192	2	Sym_131859_c1_g2	5.83979639411501
+"vesicle-mediated transport"	GO:0016192	2	Sym_30458_c0_g1	8.33934130259168
+"vesicle-mediated transport"	GO:0016192	2	Sym_102764_c1_g1	0.772779734837966
+"vesicle-mediated transport"	GO:0016192	2	Sym_43550_c0_g1	-98.2287966111583
+"vesicle-mediated transport"	GO:0016192	2	Sym_237540_c0_g1	13.2824926785187
+"vesicle-mediated transport"	GO:0016192	2	Sym_85763_c0_g2	-0.418774948238708
+"vesicle-mediated transport"	GO:0016192	2	Sym_114907_c3_g1	-0.509850833046138
+"vesicle-mediated transport"	GO:0016192	2	Sym_94700_c0_g1	1.53117151021395
+"vesicle-mediated transport"	GO:0016192	2	Sym_157759_c0_g1	-0.0407217808470963
+"vesicle-mediated transport"	GO:0016192	2	Sym_17199_c0_g1	29.122263033591
+"vesicle-mediated transport"	GO:0016192	2	Sym_114907_c2_g1	-1.25127623531411
+"vesicle-mediated transport"	GO:0016192	2	Sym_114907_c1_g1	1.49409048054632
+"vesicle-mediated transport"	GO:0016192	2	Sym_18246_c0_g1	-0.312855860006296
+"vesicle-mediated transport"	GO:0016192	2	Sym_100008_c0_g3	0.652887439468474
+"vesicle-mediated transport"	GO:0016192	2	Sym_239078_c0_g1	-3.07685220933308
+"vesicle-mediated transport"	GO:0016192	2	Sym_114907_c3_g2	-1.94385574826031
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_103894_c0_g2	1.0484151715674
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_89236_c0_g1	-18.9152456457284
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_103894_c0_g4	-6.79175138635626
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_109358_c2_g1	-0.530669227466644
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_113764_c0_g1	10.2267597202933
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_284899_c0_g1	7.05401579318168
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_107369_c3_g5	0.117245382176398
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_24568_c0_g1	16.2353942201521
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_111423_c4_g1	0.629301819249032
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_103894_c0_g1	-1.39171453357481
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_121495_c10_g2	2.50119520282685
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_101501_c0_g2	-0.928240260689423
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_130013_c0_g1	6.1725525506105
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_145648_c3_g1	-1.13964814778694
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_31210_c0_g1	7.17959835086772
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_43139_c0_g1	-3.22564337894425
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_104762_c1_g5	-6.80631077923629
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_157544_c0_g1	4.47498758621292
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_69276_c0_g1	1.49397127110569
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_45310_c0_g1	-4.24782038117046
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_119843_c6_g1	15.250034955111
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_101501_c0_g1	3.95441988581741
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_109060_c7_g1	-7.1368908262198
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_84654_c0_g1	-3.11425835421903
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_130850_c4_g1	-6.877253236067
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_109253_c1_g2	-4.07479292137967
+"regulation of cellular biosynthetic process"	GO:2000112;GO:0010556;GO:0031326;GO:0009889	4	Sym_109253_c1_g1	1.57359036822975
+"regulation of nucleic acid-templated transcription"	GO:0006355;GO:1903506;GO:2001141	4	Sym_89236_c0_g1	-18.9152456457284
+"regulation of nucleic acid-templated transcription"	GO:0006355;GO:1903506;GO:2001141	4	Sym_109358_c2_g1	-0.530669227466644
+"regulation of nucleic acid-templated transcription"	GO:0006355;GO:1903506;GO:2001141	4	Sym_284899_c0_g1	7.05401579318168
+"regulation of nucleic acid-templated transcription"	GO:0006355;GO:1903506;GO:2001141	4	Sym_107369_c3_g5	0.117245382176398
+"regulation of nucleic acid-templated transcription"	GO:0006355;GO:1903506;GO:2001141	4	Sym_24568_c0_g1	16.2353942201521
+"regulation of nucleic acid-templated transcription"	GO:0006355;GO:1903506;GO:2001141	4	Sym_121495_c10_g2	2.50119520282685
+"regulation of nucleic acid-templated transcription"	GO:0006355;GO:1903506;GO:2001141	4	Sym_130013_c0_g1	6.1725525506105
+"regulation of nucleic acid-templated transcription"	GO:0006355;GO:1903506;GO:2001141	4	Sym_31210_c0_g1	7.17959835086772
+"regulation of nucleic acid-templated transcription"	GO:0006355;GO:1903506;GO:2001141	4	Sym_104762_c1_g5	-6.80631077923629
+"regulation of nucleic acid-templated transcription"	GO:0006355;GO:1903506;GO:2001141	4	Sym_45310_c0_g1	-4.24782038117046
+"regulation of nucleic acid-templated transcription"	GO:0006355;GO:1903506;GO:2001141	4	Sym_130850_c4_g1	-6.877253236067
+"small molecule biosynthetic process"	GO:0044283	2	Sym_66977_c0_g1	17.1250414504078
+"small molecule biosynthetic process"	GO:0044283	2	Sym_127086_c1_g3	-0.273855837115441
+"small molecule biosynthetic process"	GO:0044283	2	Sym_211422_c0_g1	-2.88350466247405
+"small molecule biosynthetic process"	GO:0044283	2	Sym_97621_c0_g2	2.33939547493827
+"small molecule biosynthetic process"	GO:0044283	2	Sym_136796_c2_g1	-6.80732584770358
+"small molecule biosynthetic process"	GO:0044283	2	Sym_150495_c0_g1	0.295357849726893
+"small molecule biosynthetic process"	GO:0044283	2	Sym_107647_c1_g2	-11.4130605925763
+"small molecule biosynthetic process"	GO:0044283	2	Sym_110246_c0_g1	-8.9028489000906
+"small molecule biosynthetic process"	GO:0044283	2	Sym_156041_c0_g1	-3.40903138411735
+"small molecule biosynthetic process"	GO:0044283	2	Sym_271368_c0_g1	42.7295258977713
+"small molecule biosynthetic process"	GO:0044283	2	Sym_108903_c2_g1	1.07082668657512
+"small molecule biosynthetic process"	GO:0044283	2	Sym_144324_c2_g4	-1.22980373812778
+"sulfur compound metabolic process"	GO:0006790	3	Sym_126392_c0_g1	-0.224133526947624
+"sulfur compound metabolic process"	GO:0006790	3	Sym_102806_c2_g4	-0.360107441667389
+"sulfur compound metabolic process"	GO:0006790	3	Sym_102806_c2_g3	-20.4580585715519
+"sulfur compound metabolic process"	GO:0006790	3	Sym_90654_c0_g1	24.845643147002
+"sulfur compound metabolic process"	GO:0006790	3	Sym_174615_c0_g1	-12.0305196781801
+"sulfur compound metabolic process"	GO:0006790	3	Sym_144324_c2_g4	-1.22980373812778
+"multicellular organism development"	GO:0007275	2	Sym_136847_c3_g1	12.0492609525839
+"multicellular organism development"	GO:0007275	2	Sym_107369_c3_g5	0.117245382176398
+"multicellular organism development"	GO:0007275	2	Sym_128463_c0_g2	0.323865567791101
+"multicellular organism development"	GO:0007275	2	Sym_311128_c0_g1	2.53453989966806
+"multicellular organism development"	GO:0007275	2	Sym_103763_c6_g1	1.64809471626028
+"multicellular organism development"	GO:0007275	2	Sym_215998_c0_g1	-1.30505477931748
+"multicellular organism development"	GO:0007275	2	Sym_109060_c7_g1	-7.1368908262198
+"aromatic compound catabolic process"	GO:0019439;GO:0044270;GO:0046700;GO:1901361	4	Sym_138442_c2_g4	-1.07245367093778
+"aromatic compound catabolic process"	GO:0019439;GO:0044270;GO:0046700;GO:1901361	4	Sym_80984_c0_g1	23.5788200099427
+"aromatic compound catabolic process"	GO:0019439;GO:0044270;GO:0046700;GO:1901361	4	Sym_101806_c0_g1	0.0477912589509881
+"aromatic compound catabolic process"	GO:0019439;GO:0044270;GO:0046700;GO:1901361	4	Sym_92614_c0_g2	0.280025840472364
+"aromatic compound catabolic process"	GO:0019439;GO:0044270;GO:0046700;GO:1901361	4	Sym_128217_c2_g1	-0.946632288707344
+"aromatic compound catabolic process"	GO:0019439;GO:0044270;GO:0046700;GO:1901361	4	Sym_82593_c0_g2	0.246569685967351
+"carbohydrate catabolic process"	GO:0016052	2	Sym_127086_c1_g3	-0.273855837115441
+"carbohydrate catabolic process"	GO:0016052	2	Sym_107578_c2_g1	-1.10516438094495
+"carbohydrate catabolic process"	GO:0016052	2	Sym_107578_c2_g2	-0.53508738027716
+"carbohydrate catabolic process"	GO:0016052	2	Sym_211422_c0_g1	-2.88350466247405
+"carbohydrate catabolic process"	GO:0016052	2	Sym_82427_c0_g1	10.2741796340878
+"carbohydrate catabolic process"	GO:0016052	2	Sym_133813_c2_g1	1.90138426453913
+"carbohydrate catabolic process"	GO:0016052	2	Sym_151306_c5_g1	-0.353140761930338
+"carbohydrate catabolic process"	GO:0016052	2	Sym_113653_c1_g2	-22.4809407064687
+"carbohydrate catabolic process"	GO:0016052	2	Sym_271368_c0_g1	42.7295258977713
+"positive regulation of molecular function"	GO:0044093	3	Sym_107369_c3_g5	0.117245382176398
+"positive regulation of molecular function"	GO:0044093	3	Sym_24568_c0_g1	16.2353942201521
+"positive regulation of molecular function"	GO:0044093	3	Sym_237540_c0_g1	13.2824926785187
+"positive regulation of molecular function"	GO:0044093	3	Sym_145648_c3_g1	-1.13964814778694
+"positive regulation of molecular function"	GO:0044093	3	Sym_157544_c0_g1	4.47498758621292
+"positive regulation of molecular function"	GO:0044093	3	Sym_100008_c0_g3	0.652887439468474
+"positive regulation of molecular function"	GO:0044093	3	Sym_45310_c0_g1	-4.24782038117046
+"positive regulation of molecular function"	GO:0044093	3	Sym_84654_c0_g1	-3.11425835421903
+"negative regulation of gene expression"	GO:0010629	2	Sym_138442_c2_g4	-1.07245367093778
+"negative regulation of gene expression"	GO:0010629	2	Sym_310154_c0_g1	-0.107919262979185
+"negative regulation of gene expression"	GO:0010629	2	Sym_80984_c0_g1	23.5788200099427
+"negative regulation of gene expression"	GO:0010629	2	Sym_109253_c1_g2	-4.07479292137967
+"negative regulation of gene expression"	GO:0010629	2	Sym_150432_c3_g6	61.8550133899771
+"negative regulation of gene expression"	GO:0010629	2	Sym_92614_c0_g2	0.280025840472364
+"negative regulation of gene expression"	GO:0010629	2	Sym_80796_c0_g1	2.75787866185817
+"negative regulation of gene expression"	GO:0010629	2	Sym_109253_c1_g1	1.57359036822975
+"negative regulation of gene expression"	GO:0010629	2	Sym_128217_c2_g1	-0.946632288707344
+"negative regulation of gene expression"	GO:0010629	2	Sym_69276_c0_g1	1.49397127110569
+"negative regulation of gene expression"	GO:0010629	2	Sym_84654_c0_g1	-3.11425835421903
+"nitrogen compound transport"	GO:0071705	3	Sym_102324_c0_g5	-0.0895604355932369
+"nitrogen compound transport"	GO:0071705	3	Sym_93418_c0_g1	0.360199658478098
+"nitrogen compound transport"	GO:0071705	3	Sym_152125_c5_g2	-5.67095590592914
+"nitrogen compound transport"	GO:0071705	3	Sym_131859_c1_g2	5.83979639411501
+"nitrogen compound transport"	GO:0071705	3	Sym_57115_c0_g1	-15.119363668111
+"nitrogen compound transport"	GO:0071705	3	Sym_102764_c1_g1	0.772779734837966
+"nitrogen compound transport"	GO:0071705	3	Sym_24952_c0_g1	-69.1736814680241
+"nitrogen compound transport"	GO:0071705	3	Sym_237540_c0_g1	13.2824926785187
+"nitrogen compound transport"	GO:0071705	3	Sym_114907_c3_g1	-0.509850833046138
+"nitrogen compound transport"	GO:0071705	3	Sym_101441_c0_g1	3.73752184679616
+"nitrogen compound transport"	GO:0071705	3	Sym_30900_c0_g1	1.9750961562418
+"nitrogen compound transport"	GO:0071705	3	Sym_31210_c0_g1	7.17959835086772
+"nitrogen compound transport"	GO:0071705	3	Sym_102695_c0_g1	-3.58773499778493
+"nitrogen compound transport"	GO:0071705	3	Sym_102785_c0_g1	8.05531505118345
+"nitrogen compound transport"	GO:0071705	3	Sym_128685_c8_g1	2.85787311302968
+"nitrogen compound transport"	GO:0071705	3	Sym_157759_c0_g1	-0.0407217808470963
+"nitrogen compound transport"	GO:0071705	3	Sym_128149_c1_g1	-8.04282547175407
+"nitrogen compound transport"	GO:0071705	3	Sym_17199_c0_g1	29.122263033591
+"nitrogen compound transport"	GO:0071705	3	Sym_117760_c6_g1	1.90668364178473
+"nitrogen compound transport"	GO:0071705	3	Sym_114907_c2_g1	-1.25127623531411
+"nitrogen compound transport"	GO:0071705	3	Sym_114907_c1_g1	1.49409048054632
+"nitrogen compound transport"	GO:0071705	3	Sym_141362_c0_g3	-16.943075722627
+"nitrogen compound transport"	GO:0071705	3	Sym_143426_c2_g1	0.37271951577531
+"nitrogen compound transport"	GO:0071705	3	Sym_100008_c0_g3	0.652887439468474
+"nitrogen compound transport"	GO:0071705	3	Sym_112513_c2_g1	-3.28059436606443
+"nitrogen compound transport"	GO:0071705	3	Sym_136070_c2_g1	-0.519259115603013
+"nitrogen compound transport"	GO:0071705	3	Sym_114907_c3_g2	-1.94385574826031
+"cell cycle process"	GO:0022402	2	Sym_30458_c0_g1	8.33934130259168
+"cell cycle process"	GO:0022402	2	Sym_237540_c0_g1	13.2824926785187
+"cell cycle process"	GO:0022402	2	Sym_101501_c0_g2	-0.928240260689423
+"cell cycle process"	GO:0022402	2	Sym_85763_c0_g2	-0.418774948238708
+"cell cycle process"	GO:0022402	2	Sym_114907_c3_g1	-0.509850833046138
+"cell cycle process"	GO:0022402	2	Sym_101501_c0_g1	3.95441988581741
+"cell cycle process"	GO:0022402	2	Sym_84654_c0_g1	-3.11425835421903
+"regulation of DNA replication"	GO:0006275	2	Sym_103894_c0_g2	1.0484151715674
+"regulation of DNA replication"	GO:0006275	2	Sym_103894_c0_g4	-6.79175138635626
+"regulation of DNA replication"	GO:0006275	2	Sym_103894_c0_g1	-1.39171453357481
+"regulation of DNA replication"	GO:0006275	2	Sym_101501_c0_g2	-0.928240260689423
+"regulation of DNA replication"	GO:0006275	2	Sym_157544_c0_g1	4.47498758621292
+"regulation of DNA replication"	GO:0006275	2	Sym_101501_c0_g1	3.95441988581741
+"intracellular protein transport"	GO:0006886	2	Sym_93418_c0_g1	0.360199658478098
+"intracellular protein transport"	GO:0006886	2	Sym_131859_c1_g2	5.83979639411501
+"intracellular protein transport"	GO:0006886	2	Sym_114907_c3_g1	-0.509850833046138
+"intracellular protein transport"	GO:0006886	2	Sym_30900_c0_g1	1.9750961562418
+"intracellular protein transport"	GO:0006886	2	Sym_31210_c0_g1	7.17959835086772
+"intracellular protein transport"	GO:0006886	2	Sym_102785_c0_g1	8.05531505118345
+"intracellular protein transport"	GO:0006886	2	Sym_17199_c0_g1	29.122263033591
+"intracellular protein transport"	GO:0006886	2	Sym_143426_c2_g1	0.37271951577531
+"intracellular protein transport"	GO:0006886	2	Sym_114907_c3_g2	-1.94385574826031
+"negative regulation of RNA biosynthetic process"	GO:0045892;GO:1903507;GO:1902679	7	Sym_109358_c2_g1	-0.530669227466644
+"negative regulation of RNA biosynthetic process"	GO:0045892;GO:1903507;GO:1902679	7	Sym_121495_c10_g2	2.50119520282685
+"negative regulation of RNA biosynthetic process"	GO:0045892;GO:1903507;GO:1902679	7	Sym_130013_c0_g1	6.1725525506105
+"negative regulation of RNA biosynthetic process"	GO:0045892;GO:1903507;GO:1902679	7	Sym_104762_c1_g5	-6.80631077923629
+"negative regulation of RNA biosynthetic process"	GO:0045892;GO:1903507;GO:1902679	7	Sym_130850_c4_g1	-6.877253236067
+"protein modification by small protein conjugation or removal"	GO:0016567;GO:0032446;GO:0070647	8	Sym_132105_c3_g7	-3.4633075803853
+"protein modification by small protein conjugation or removal"	GO:0016567;GO:0032446;GO:0070647	8	Sym_103763_c6_g1	1.64809471626028
+"protein modification by small protein conjugation or removal"	GO:0016567;GO:0032446;GO:0070647	8	Sym_207498_c0_g1	4.13727158147116
+"protein modification by small protein conjugation or removal"	GO:0016567;GO:0032446;GO:0070647	8	Sym_103763_c6_g2	2.37056779433886
+"protein modification by small protein conjugation or removal"	GO:0016567;GO:0032446;GO:0070647	8	Sym_172768_c0_g1	3.39152272545589
+"protein modification by small protein conjugation or removal"	GO:0016567;GO:0032446;GO:0070647	8	Sym_100802_c0_g1	-4.46148008552169
+"protein modification by small protein conjugation or removal"	GO:0016567;GO:0032446;GO:0070647	8	Sym_42974_c0_g1	-2.29422787806691
+"protein modification by small protein conjugation or removal"	GO:0016567;GO:0032446;GO:0070647	8	Sym_101971_c0_g1	1.94771167599123
+"establishment of localization in cell"	GO:0046907;GO:0051649	2	Sym_93418_c0_g1	0.360199658478098
+"establishment of localization in cell"	GO:0046907;GO:0051649	2	Sym_131859_c1_g2	5.83979639411501
+"establishment of localization in cell"	GO:0046907;GO:0051649	2	Sym_237540_c0_g1	13.2824926785187
+"establishment of localization in cell"	GO:0046907;GO:0051649	2	Sym_114907_c3_g1	-0.509850833046138
+"establishment of localization in cell"	GO:0046907;GO:0051649	2	Sym_30900_c0_g1	1.9750961562418
+"establishment of localization in cell"	GO:0046907;GO:0051649	2	Sym_31210_c0_g1	7.17959835086772
+"establishment of localization in cell"	GO:0046907;GO:0051649	2	Sym_102785_c0_g1	8.05531505118345
+"establishment of localization in cell"	GO:0046907;GO:0051649	2	Sym_17199_c0_g1	29.122263033591
+"establishment of localization in cell"	GO:0046907;GO:0051649	2	Sym_143426_c2_g1	0.37271951577531
+"establishment of localization in cell"	GO:0046907;GO:0051649	2	Sym_18246_c0_g1	-0.312855860006296
+"establishment of localization in cell"	GO:0046907;GO:0051649	2	Sym_136070_c2_g1	-0.519259115603013
+"establishment of localization in cell"	GO:0046907;GO:0051649	2	Sym_239078_c0_g1	-3.07685220933308
+"establishment of localization in cell"	GO:0046907;GO:0051649	2	Sym_114907_c3_g2	-1.94385574826031
+"establishment of localization in cell"	GO:0046907;GO:0051649	2	Sym_94907_c0_g2	18.4876594115042
+"establishment of localization in cell"	GO:0046907;GO:0051649	2	Sym_84654_c0_g1	-3.11425835421903
+"regulation of cell differentiation"	GO:0045595	2	Sym_107369_c3_g5	0.117245382176398
+"regulation of cell differentiation"	GO:0045595	2	Sym_24568_c0_g1	16.2353942201521
+"regulation of cell differentiation"	GO:0045595	2	Sym_145648_c3_g1	-1.13964814778694
+"regulation of cell differentiation"	GO:0045595	2	Sym_105558_c0_g1	15.7186593086585
+"regulation of cell differentiation"	GO:0045595	2	Sym_101057_c0_g1	-2.05055880017112
+"regulation of cell differentiation"	GO:0045595	2	Sym_84654_c0_g1	-3.11425835421903
+"defense response"	GO:0006952	3	Sym_284899_c0_g1	7.05401579318168
+"defense response"	GO:0006952	3	Sym_109253_c1_g2	-4.07479292137967
+"defense response"	GO:0006952	3	Sym_145648_c3_g1	-1.13964814778694
+"defense response"	GO:0006952	3	Sym_109253_c1_g1	1.57359036822975
+"defense response"	GO:0006952	3	Sym_136877_c0_g1	-6.95505543899488
+"defense response"	GO:0006952	3	Sym_115147_c3_g1	-1.09499257037519
+"defense response"	GO:0006952	3	Sym_45310_c0_g1	-4.24782038117046
+"regulation of multicellular organismal process"	GO:0051239	2	Sym_310154_c0_g1	-0.107919262979185
+"regulation of multicellular organismal process"	GO:0051239	2	Sym_131859_c1_g2	5.83979639411501
+"regulation of multicellular organismal process"	GO:0051239	2	Sym_109358_c2_g1	-0.530669227466644
+"regulation of multicellular organismal process"	GO:0051239	2	Sym_24568_c0_g1	16.2353942201521
+"regulation of multicellular organismal process"	GO:0051239	2	Sym_109253_c1_g2	-4.07479292137967
+"regulation of multicellular organismal process"	GO:0051239	2	Sym_150432_c3_g6	61.8550133899771
+"regulation of multicellular organismal process"	GO:0051239	2	Sym_109253_c1_g1	1.57359036822975
+"regulation of multicellular organismal process"	GO:0051239	2	Sym_100008_c0_g3	0.652887439468474
+"regulation of multicellular organismal process"	GO:0051239	2	Sym_105558_c0_g1	15.7186593086585
+"regulation of multicellular organismal process"	GO:0051239	2	Sym_142384_c1_g2	-2.71930854896858
+"regulation of multicellular organismal process"	GO:0051239	2	Sym_101057_c0_g1	-2.05055880017112
+"regulation of multicellular organismal process"	GO:0051239	2	Sym_84654_c0_g1	-3.11425835421903
+"regulation of protein metabolic process"	GO:0051246;GO:0032268	2	Sym_175570_c0_g1	21.094498827213
+"regulation of protein metabolic process"	GO:0051246;GO:0032268	2	Sym_310154_c0_g1	-0.107919262979185
+"regulation of protein metabolic process"	GO:0051246;GO:0032268	2	Sym_113764_c0_g1	10.2267597202933
+"regulation of protein metabolic process"	GO:0051246;GO:0032268	2	Sym_24568_c0_g1	16.2353942201521
+"regulation of protein metabolic process"	GO:0051246;GO:0032268	2	Sym_111423_c4_g1	0.629301819249032
+"regulation of protein metabolic process"	GO:0051246;GO:0032268	2	Sym_130013_c0_g1	6.1725525506105
+"regulation of protein metabolic process"	GO:0051246;GO:0032268	2	Sym_145648_c3_g1	-1.13964814778694
+"regulation of protein metabolic process"	GO:0051246;GO:0032268	2	Sym_43139_c0_g1	-3.22564337894425
+"regulation of protein metabolic process"	GO:0051246;GO:0032268	2	Sym_80796_c0_g1	2.75787866185817
+"regulation of protein metabolic process"	GO:0051246;GO:0032268	2	Sym_100802_c0_g1	-4.46148008552169
+"regulation of protein metabolic process"	GO:0051246;GO:0032268	2	Sym_147119_c0_g1	0.330276428917375
+"regulation of protein metabolic process"	GO:0051246;GO:0032268	2	Sym_69276_c0_g1	1.49397127110569
+"regulation of protein metabolic process"	GO:0051246;GO:0032268	2	Sym_119843_c6_g1	15.250034955111
+"regulation of protein metabolic process"	GO:0051246;GO:0032268	2	Sym_109060_c7_g1	-7.1368908262198
+"regulation of protein metabolic process"	GO:0051246;GO:0032268	2	Sym_282497_c0_g1	1.58597831106069
+"regulation of protein metabolic process"	GO:0051246;GO:0032268	2	Sym_84654_c0_g1	-3.11425835421903
+"positive regulation of metabolic process"	GO:0010604;GO:0031325;GO:0009893;GO:0051173	5	Sym_109358_c2_g1	-0.530669227466644
+"positive regulation of metabolic process"	GO:0010604;GO:0031325;GO:0009893;GO:0051173	5	Sym_284899_c0_g1	7.05401579318168
+"positive regulation of metabolic process"	GO:0010604;GO:0031325;GO:0009893;GO:0051173	5	Sym_107369_c3_g5	0.117245382176398
+"positive regulation of metabolic process"	GO:0010604;GO:0031325;GO:0009893;GO:0051173	5	Sym_24568_c0_g1	16.2353942201521
+"positive regulation of metabolic process"	GO:0010604;GO:0031325;GO:0009893;GO:0051173	5	Sym_111423_c4_g1	0.629301819249032
+"positive regulation of metabolic process"	GO:0010604;GO:0031325;GO:0009893;GO:0051173	5	Sym_237540_c0_g1	13.2824926785187
+"positive regulation of metabolic process"	GO:0010604;GO:0031325;GO:0009893;GO:0051173	5	Sym_101501_c0_g2	-0.928240260689423
+"positive regulation of metabolic process"	GO:0010604;GO:0031325;GO:0009893;GO:0051173	5	Sym_145648_c3_g1	-1.13964814778694
+"positive regulation of metabolic process"	GO:0010604;GO:0031325;GO:0009893;GO:0051173	5	Sym_80796_c0_g1	2.75787866185817
+"positive regulation of metabolic process"	GO:0010604;GO:0031325;GO:0009893;GO:0051173	5	Sym_104762_c1_g5	-6.80631077923629
+"positive regulation of metabolic process"	GO:0010604;GO:0031325;GO:0009893;GO:0051173	5	Sym_157544_c0_g1	4.47498758621292
+"positive regulation of metabolic process"	GO:0010604;GO:0031325;GO:0009893;GO:0051173	5	Sym_100802_c0_g1	-4.46148008552169
+"positive regulation of metabolic process"	GO:0010604;GO:0031325;GO:0009893;GO:0051173	5	Sym_128217_c2_g1	-0.946632288707344
+"positive regulation of metabolic process"	GO:0010604;GO:0031325;GO:0009893;GO:0051173	5	Sym_69276_c0_g1	1.49397127110569
+"positive regulation of metabolic process"	GO:0010604;GO:0031325;GO:0009893;GO:0051173	5	Sym_100008_c0_g3	0.652887439468474
+"positive regulation of metabolic process"	GO:0010604;GO:0031325;GO:0009893;GO:0051173	5	Sym_101501_c0_g1	3.95441988581741
+"positive regulation of metabolic process"	GO:0010604;GO:0031325;GO:0009893;GO:0051173	5	Sym_84654_c0_g1	-3.11425835421903
+"positive regulation of metabolic process"	GO:0010604;GO:0031325;GO:0009893;GO:0051173	5	Sym_127086_c1_g3	-0.273855837115441
+"positive regulation of metabolic process"	GO:0010604;GO:0031325;GO:0009893;GO:0051173	5	Sym_45310_c0_g1	-4.24782038117046
+"regulation of protein modification process"	GO:0031399	3	Sym_24568_c0_g1	16.2353942201521
+"regulation of protein modification process"	GO:0031399	3	Sym_130013_c0_g1	6.1725525506105
+"regulation of protein modification process"	GO:0031399	3	Sym_145648_c3_g1	-1.13964814778694
+"regulation of protein modification process"	GO:0031399	3	Sym_100802_c0_g1	-4.46148008552169
+"regulation of protein modification process"	GO:0031399	3	Sym_282497_c0_g1	1.58597831106069
+"regulation of protein modification process"	GO:0031399	3	Sym_84654_c0_g1	-3.11425835421903
+"developmental process involved in reproduction"	GO:0003006	2	Sym_136847_c3_g1	12.0492609525839
+"developmental process involved in reproduction"	GO:0003006	2	Sym_205051_c0_g1	36.6258781028596
+"developmental process involved in reproduction"	GO:0003006	2	Sym_92614_c0_g2	0.280025840472364
+"developmental process involved in reproduction"	GO:0003006	2	Sym_80796_c0_g1	2.75787866185817
+"developmental process involved in reproduction"	GO:0003006	2	Sym_91477_c0_g1	-5.03760633963937
+"developmental process involved in reproduction"	GO:0003006	2	Sym_131343_c2_g1	0.366958814383093
+"developmental process involved in reproduction"	GO:0003006	2	Sym_69276_c0_g1	1.49397127110569
+"developmental process involved in reproduction"	GO:0003006	2	Sym_242526_c0_g1	-49.1375764095091
+"developmental process involved in reproduction"	GO:0003006	2	Sym_84654_c0_g1	-3.11425835421903
+"developmental process involved in reproduction"	GO:0003006	2	Sym_130850_c4_g1	-6.877253236067
+"photosynthesis, light harvesting"	GO:0009765;GO:0018298	2	Sym_94454_c0_g1	3.12878025631602
+"photosynthesis, light harvesting"	GO:0009765;GO:0018298	2	Sym_104246_c5_g1	0.576830714706903
+"photosynthesis, light harvesting"	GO:0009765;GO:0018298	2	Sym_134584_c0_g2	-14.9085718958894
+"photosynthesis, light harvesting"	GO:0009765;GO:0018298	2	Sym_135168_c1_g2	1.43541821529863
+"photosynthesis, light harvesting"	GO:0009765;GO:0018298	2	Sym_209908_c0_g1	3.15658399229115
+"photosynthesis, light harvesting"	GO:0009765;GO:0018298	2	Sym_118341_c1_g3	-2.75989087377779
+"photosynthesis, light harvesting"	GO:0009765;GO:0018298	2	Sym_104246_c3_g2	5.2060022140495
+"photosynthesis, light harvesting"	GO:0009765;GO:0018298	2	Sym_110573_c3_g3	0.786947245907324
+"photosynthesis, light harvesting"	GO:0009765;GO:0018298	2	Sym_110573_c3_g1	0.0259208518856289
+"photosynthesis, light harvesting"	GO:0009765;GO:0018298	2	Sym_134584_c0_g1	-0.489227110097939
+"photosynthesis, light harvesting"	GO:0009765;GO:0018298	2	Sym_104246_c5_g4	2.21592108044183
+"photosynthesis, light harvesting"	GO:0009765;GO:0018298	2	Sym_135168_c1_g4	4.18732317067179
+"photosynthesis, light harvesting"	GO:0009765;GO:0018298	2	Sym_110573_c2_g2	0.136064488933329
+"photosynthesis, light harvesting"	GO:0009765;GO:0018298	2	Sym_131189_c6_g1	0.415779768911546
+"photosynthesis, light harvesting"	GO:0009765;GO:0018298	2	Sym_110573_c2_g1	0.819590772053367
+"photosynthesis, light harvesting"	GO:0009765;GO:0018298	2	Sym_119017_c0_g5	-0.667363324076237
+"photosynthesis, light harvesting"	GO:0009765;GO:0018298	2	Sym_142252_c2_g6	-1.80206559929765
+"photosynthesis, light harvesting"	GO:0009765;GO:0018298	2	Sym_118341_c1_g2	0.0174235224835343
+"photosynthesis, light harvesting"	GO:0009765;GO:0018298	2	Sym_124087_c4_g1	-1.5877945240046
+"photosynthesis, light harvesting"	GO:0009765;GO:0018298	2	Sym_110573_c3_g4	0.0154258679663102
+"photosynthesis, light harvesting"	GO:0009765;GO:0018298	2	Sym_135168_c1_g5	2.00322914510541
+"photosynthesis, light harvesting"	GO:0009765;GO:0018298	2	Sym_142252_c2_g5	-1.3953705985463
+"photosynthesis, light harvesting"	GO:0009765;GO:0018298	2	Sym_104246_c3_g1	26.2671741780786
+"photosynthesis, light harvesting"	GO:0009765;GO:0018298	2	Sym_105943_c4_g1	-0.477191255612564
+"programmed cell death"	GO:0012501;GO:0008219	2	Sym_130013_c0_g1	6.1725525506105
+"programmed cell death"	GO:0012501;GO:0008219	2	Sym_91477_c0_g1	-5.03760633963937
+"programmed cell death"	GO:0012501;GO:0008219	2	Sym_159792_c0_g1	-2.71154134479165
+"programmed cell death"	GO:0012501;GO:0008219	2	Sym_104103_c2_g4	-0.71413616432613
+"programmed cell death"	GO:0012501;GO:0008219	2	Sym_120986_c2_g1	4.22237326430696
+"response to external stimulus"	GO:0009605	2	Sym_126392_c0_g1	-0.224133526947624
+"response to external stimulus"	GO:0009605	2	Sym_136847_c3_g1	12.0492609525839
+"response to external stimulus"	GO:0009605	2	Sym_284899_c0_g1	7.05401579318168
+"response to external stimulus"	GO:0009605	2	Sym_112519_c1_g6	-2.6408815861298
+"response to external stimulus"	GO:0009605	2	Sym_125225_c1_g2	-0.78987481266211
+"response to external stimulus"	GO:0009605	2	Sym_24568_c0_g1	16.2353942201521
+"response to external stimulus"	GO:0009605	2	Sym_109253_c1_g2	-4.07479292137967
+"response to external stimulus"	GO:0009605	2	Sym_207498_c0_g1	4.13727158147116
+"response to external stimulus"	GO:0009605	2	Sym_107127_c2_g8	3.31675479217134
+"response to external stimulus"	GO:0009605	2	Sym_112389_c0_g1	0.985562171814962
+"response to external stimulus"	GO:0009605	2	Sym_145648_c3_g1	-1.13964814778694
+"response to external stimulus"	GO:0009605	2	Sym_128149_c1_g1	-8.04282547175407
+"response to external stimulus"	GO:0009605	2	Sym_125225_c1_g1	-0.95138836303257
+"response to external stimulus"	GO:0009605	2	Sym_137506_c2_g3	30.4234312846885
+"response to external stimulus"	GO:0009605	2	Sym_109253_c1_g1	1.57359036822975
+"response to external stimulus"	GO:0009605	2	Sym_125225_c1_g3	-33.3722638015644
+"response to external stimulus"	GO:0009605	2	Sym_159792_c0_g1	-2.71154134479165
+"response to external stimulus"	GO:0009605	2	Sym_136877_c0_g1	-6.95505543899488
+"response to external stimulus"	GO:0009605	2	Sym_242526_c0_g1	-49.1375764095091
+"response to external stimulus"	GO:0009605	2	Sym_115147_c3_g1	-1.09499257037519
+"response to external stimulus"	GO:0009605	2	Sym_112519_c1_g1	-4.9546526982083
+"response to external stimulus"	GO:0009605	2	Sym_144233_c1_g1	-1.51148092003028
+"regulation of programmed cell death"	GO:0043066;GO:0042981;GO:0043069;GO:0043067;GO:0060548	5	Sym_131859_c1_g2	5.83979639411501
+"regulation of programmed cell death"	GO:0043066;GO:0042981;GO:0043069;GO:0043067;GO:0060548	5	Sym_24568_c0_g1	16.2353942201521
+"regulation of programmed cell death"	GO:0043066;GO:0042981;GO:0043069;GO:0043067;GO:0060548	5	Sym_112389_c0_g1	0.985562171814962
+"regulation of programmed cell death"	GO:0043066;GO:0042981;GO:0043069;GO:0043067;GO:0060548	5	Sym_92829_c0_g1	0.38997535529179
+"regulation of programmed cell death"	GO:0043066;GO:0042981;GO:0043069;GO:0043067;GO:0060548	5	Sym_89763_c0_g1	8.47349820276669
+"regulation of programmed cell death"	GO:0043066;GO:0042981;GO:0043069;GO:0043067;GO:0060548	5	Sym_45310_c0_g1	-4.24782038117046
+"regulation of programmed cell death"	GO:0043066;GO:0042981;GO:0043069;GO:0043067;GO:0060548	5	Sym_120986_c2_g1	4.22237326430696
+"regulation of programmed cell death"	GO:0043066;GO:0042981;GO:0043069;GO:0043067;GO:0060548	5	Sym_104103_c2_g4	-0.71413616432613
+"regulation of programmed cell death"	GO:0043066;GO:0042981;GO:0043069;GO:0043067;GO:0060548	5	Sym_242526_c0_g1	-49.1375764095091
+"multicellular organismal process"	GO:0032501	1	Sym_117355_c0_g1	-1.39800870612488
+"multicellular organismal process"	GO:0032501	1	Sym_57115_c0_g1	-15.119363668111
+"multicellular organismal process"	GO:0032501	1	Sym_136847_c3_g1	12.0492609525839
+"multicellular organismal process"	GO:0032501	1	Sym_107369_c3_g5	0.117245382176398
+"multicellular organismal process"	GO:0032501	1	Sym_128463_c0_g2	0.323865567791101
+"multicellular organismal process"	GO:0032501	1	Sym_24568_c0_g1	16.2353942201521
+"multicellular organismal process"	GO:0032501	1	Sym_109253_c1_g2	-4.07479292137967
+"multicellular organismal process"	GO:0032501	1	Sym_311128_c0_g1	2.53453989966806
+"multicellular organismal process"	GO:0032501	1	Sym_103763_c6_g1	1.64809471626028
+"multicellular organismal process"	GO:0032501	1	Sym_145648_c3_g1	-1.13964814778694
+"multicellular organismal process"	GO:0032501	1	Sym_80796_c0_g1	2.75787866185817
+"multicellular organismal process"	GO:0032501	1	Sym_146541_c1_g1	-8.09430899017412
+"multicellular organismal process"	GO:0032501	1	Sym_109253_c1_g1	1.57359036822975
+"multicellular organismal process"	GO:0032501	1	Sym_215998_c0_g1	-1.30505477931748
+"multicellular organismal process"	GO:0032501	1	Sym_69276_c0_g1	1.49397127110569
+"multicellular organismal process"	GO:0032501	1	Sym_100008_c0_g3	0.652887439468474
+"multicellular organismal process"	GO:0032501	1	Sym_119843_c6_g1	15.250034955111
+"multicellular organismal process"	GO:0032501	1	Sym_109060_c7_g1	-7.1368908262198
+"multicellular organismal process"	GO:0032501	1	Sym_42149_c0_g1	0.127481875528154
+"multicellular organismal process"	GO:0032501	1	Sym_130850_c4_g1	-6.877253236067
+"protein catabolic process"	GO:0030163;GO:0010498;GO:0043161	3	Sym_66220_c0_g2	-0.404158036114577
+"protein catabolic process"	GO:0030163;GO:0010498;GO:0043161	3	Sym_107783_c2_g1	1.08092272624163
+"protein catabolic process"	GO:0030163;GO:0010498;GO:0043161	3	Sym_103763_c6_g1	1.64809471626028
+"protein catabolic process"	GO:0030163;GO:0010498;GO:0043161	3	Sym_148791_c2_g2	-31.0746237720127
+"protein catabolic process"	GO:0030163;GO:0010498;GO:0043161	3	Sym_278829_c0_g1	-0.494732375542863
+"protein catabolic process"	GO:0030163;GO:0010498;GO:0043161	3	Sym_130165_c13_g1	-2.53371309750074
+"protein catabolic process"	GO:0030163;GO:0010498;GO:0043161	3	Sym_204881_c0_g1	0.0129770166476083
+"protein catabolic process"	GO:0030163;GO:0010498;GO:0043161	3	Sym_136877_c0_g1	-6.95505543899488
+"protein catabolic process"	GO:0030163;GO:0010498;GO:0043161	3	Sym_175830_c0_g1	-0.373197317978894
+"monosaccharide metabolic process"	GO:0006006;GO:0019318;GO:0005996	3	Sym_310154_c0_g1	-0.107919262979185
+"monosaccharide metabolic process"	GO:0006006;GO:0019318;GO:0005996	3	Sym_127086_c1_g3	-0.273855837115441
+"monosaccharide metabolic process"	GO:0006006;GO:0019318;GO:0005996	3	Sym_107578_c2_g1	-1.10516438094495
+"monosaccharide metabolic process"	GO:0006006;GO:0019318;GO:0005996	3	Sym_107578_c2_g2	-0.53508738027716
+"monosaccharide metabolic process"	GO:0006006;GO:0019318;GO:0005996	3	Sym_211422_c0_g1	-2.88350466247405
+"monosaccharide metabolic process"	GO:0006006;GO:0019318;GO:0005996	3	Sym_102664_c0_g1	0.378359429094274
+"monosaccharide metabolic process"	GO:0006006;GO:0019318;GO:0005996	3	Sym_74356_c0_g1	2.04398092389789
+"monosaccharide metabolic process"	GO:0006006;GO:0019318;GO:0005996	3	Sym_271368_c0_g1	42.7295258977713
+"cellular response to organic substance"	GO:0071310	2	Sym_57115_c0_g1	-15.119363668111
+"cellular response to organic substance"	GO:0071310	2	Sym_107369_c3_g5	0.117245382176398
+"cellular response to organic substance"	GO:0071310	2	Sym_130013_c0_g1	6.1725525506105
+"cellular response to organic substance"	GO:0071310	2	Sym_94700_c0_g1	1.53117151021395
+"cellular response to organic substance"	GO:0071310	2	Sym_80796_c0_g1	2.75787866185817
+"cellular response to organic substance"	GO:0071310	2	Sym_159792_c0_g1	-2.71154134479165
+"cellular response to organic substance"	GO:0071310	2	Sym_119843_c6_g1	15.250034955111
+"cellular amino acid metabolic process"	GO:0006520	2	Sym_111600_c1_g1	-9.33430189193298
+"cellular amino acid metabolic process"	GO:0006520	2	Sym_107647_c1_g2	-11.4130605925763
+"cellular amino acid metabolic process"	GO:0006520	2	Sym_119993_c5_g1	-1.46564702288652
+"cellular amino acid metabolic process"	GO:0006520	2	Sym_206385_c0_g1	-0.665200675108518
+"cellular amino acid metabolic process"	GO:0006520	2	Sym_93060_c0_g1	1.16011359355256
+"cellular amino acid metabolic process"	GO:0006520	2	Sym_174615_c0_g1	-12.0305196781801
+"regulation of catalytic activity"	GO:0050790	3	Sym_175570_c0_g1	21.094498827213
+"regulation of catalytic activity"	GO:0050790	3	Sym_107369_c3_g5	0.117245382176398
+"regulation of catalytic activity"	GO:0050790	3	Sym_24568_c0_g1	16.2353942201521
+"regulation of catalytic activity"	GO:0050790	3	Sym_114958_c5_g1	3.14374182900109
+"regulation of catalytic activity"	GO:0050790	3	Sym_157544_c0_g1	4.47498758621292
+"regulation of catalytic activity"	GO:0050790	3	Sym_242526_c0_g1	-49.1375764095091
+"regulation of catalytic activity"	GO:0050790	3	Sym_282497_c0_g1	1.58597831106069
+"regulation of catalytic activity"	GO:0050790	3	Sym_84654_c0_g1	-3.11425835421903
+"negative regulation of multicellular organismal process"	GO:0051241	4	Sym_310154_c0_g1	-0.107919262979185
+"negative regulation of multicellular organismal process"	GO:0051241	4	Sym_109358_c2_g1	-0.530669227466644
+"negative regulation of multicellular organismal process"	GO:0051241	4	Sym_24568_c0_g1	16.2353942201521
+"negative regulation of multicellular organismal process"	GO:0051241	4	Sym_109253_c1_g2	-4.07479292137967
+"negative regulation of multicellular organismal process"	GO:0051241	4	Sym_150432_c3_g6	61.8550133899771
+"negative regulation of multicellular organismal process"	GO:0051241	4	Sym_109253_c1_g1	1.57359036822975
+"negative regulation of multicellular organismal process"	GO:0051241	4	Sym_84654_c0_g1	-3.11425835421903
+"response to temperature stimulus"	GO:0009409;GO:0009266	2	Sym_125225_c1_g2	-0.78987481266211
+"response to temperature stimulus"	GO:0009409;GO:0009266	2	Sym_179741_c0_g1	-4.57090491711408
+"response to temperature stimulus"	GO:0009409;GO:0009266	2	Sym_125225_c1_g1	-0.95138836303257
+"response to temperature stimulus"	GO:0009409;GO:0009266	2	Sym_125225_c1_g3	-33.3722638015644
+"response to temperature stimulus"	GO:0009409;GO:0009266	2	Sym_105943_c4_g1	-0.477191255612564
+"response to temperature stimulus"	GO:0009409;GO:0009266	2	Sym_130013_c0_g1	6.1725525506105
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_140163_c0_g1	-14.0962370651635
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_30458_c0_g1	8.33934130259168
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_120719_c3_g1	-0.70117177674369
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_127086_c1_g3	-0.273855837115441
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_107578_c2_g1	-1.10516438094495
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_107578_c2_g2	-0.53508738027716
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_105819_c0_g1	-5.48831246788115
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_150432_c3_g6	61.8550133899771
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_106193_c0_g1	0.266178946928881
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_211422_c0_g1	-2.88350466247405
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_85763_c0_g2	-0.418774948238708
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_107242_c3_g1	3.72647676843126
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_176037_c0_g1	-0.71450110033221
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_107647_c1_g2	-11.4130605925763
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_156351_c0_g1	-13.2671179124383
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_37542_c0_g1	-0.0629221229476182
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_116663_c1_g1	-0.191313982081301
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_115874_c4_g1	0.102243361472688
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_244548_c0_g1	-61.1818249116412
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_101543_c0_g2	-13.3092254362418
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_101543_c0_g3	-4.83332352909251
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_113653_c1_g2	-22.4809407064687
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_208217_c0_g1	1.77326250004317
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_109725_c2_g2	-0.150318508403171
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_174615_c0_g1	-12.0305196781801
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_120676_c2_g1	-4.74919964214161
+"phosphorus metabolic process"	GO:0006796;GO:0006793	3	Sym_144324_c2_g4	-1.22980373812778
+"regulation of molecular function"	GO:0065009	2	Sym_175570_c0_g1	21.094498827213
+"regulation of molecular function"	GO:0065009	2	Sym_107369_c3_g5	0.117245382176398
+"regulation of molecular function"	GO:0065009	2	Sym_24568_c0_g1	16.2353942201521
+"regulation of molecular function"	GO:0065009	2	Sym_237540_c0_g1	13.2824926785187
+"regulation of molecular function"	GO:0065009	2	Sym_145648_c3_g1	-1.13964814778694
+"regulation of molecular function"	GO:0065009	2	Sym_114958_c5_g1	3.14374182900109
+"regulation of molecular function"	GO:0065009	2	Sym_157544_c0_g1	4.47498758621292
+"regulation of molecular function"	GO:0065009	2	Sym_242526_c0_g1	-49.1375764095091
+"regulation of molecular function"	GO:0065009	2	Sym_100008_c0_g3	0.652887439468474
+"regulation of molecular function"	GO:0065009	2	Sym_45310_c0_g1	-4.24782038117046
+"regulation of molecular function"	GO:0065009	2	Sym_282497_c0_g1	1.58597831106069
+"regulation of molecular function"	GO:0065009	2	Sym_84654_c0_g1	-3.11425835421903
+"regulation of response to stimulus"	GO:0009966;GO:0010646;GO:0023051;GO:0048583	4	Sym_310154_c0_g1	-0.107919262979185
+"regulation of response to stimulus"	GO:0009966;GO:0010646;GO:0023051;GO:0048583	4	Sym_131859_c1_g2	5.83979639411501
+"regulation of response to stimulus"	GO:0009966;GO:0010646;GO:0023051;GO:0048583	4	Sym_109358_c2_g1	-0.530669227466644
+"regulation of response to stimulus"	GO:0009966;GO:0010646;GO:0023051;GO:0048583	4	Sym_24568_c0_g1	16.2353942201521
+"regulation of response to stimulus"	GO:0009966;GO:0010646;GO:0023051;GO:0048583	4	Sym_132105_c3_g7	-3.4633075803853
+"regulation of response to stimulus"	GO:0009966;GO:0010646;GO:0023051;GO:0048583	4	Sym_150432_c3_g6	61.8550133899771
+"regulation of response to stimulus"	GO:0009966;GO:0010646;GO:0023051;GO:0048583	4	Sym_92829_c0_g1	0.38997535529179
+"regulation of response to stimulus"	GO:0009966;GO:0010646;GO:0023051;GO:0048583	4	Sym_43139_c0_g1	-3.22564337894425
+"regulation of response to stimulus"	GO:0009966;GO:0010646;GO:0023051;GO:0048583	4	Sym_37542_c0_g1	-0.0629221229476182
+"regulation of response to stimulus"	GO:0009966;GO:0010646;GO:0023051;GO:0048583	4	Sym_89763_c0_g1	8.47349820276669
+"regulation of response to stimulus"	GO:0009966;GO:0010646;GO:0023051;GO:0048583	4	Sym_66494_c0_g1	0.712134852533098
+"regulation of response to stimulus"	GO:0009966;GO:0010646;GO:0023051;GO:0048583	4	Sym_84654_c0_g1	-3.11425835421903
+"regulation of response to stimulus"	GO:0009966;GO:0010646;GO:0023051;GO:0048583	4	Sym_42149_c0_g1	0.127481875528154
+"regulation of response to stimulus"	GO:0009966;GO:0010646;GO:0023051;GO:0048583	4	Sym_120986_c2_g1	4.22237326430696
+"regulation of response to stimulus"	GO:0009966;GO:0010646;GO:0023051;GO:0048583	4	Sym_237540_c0_g1	13.2824926785187
+"regulation of response to stimulus"	GO:0009966;GO:0010646;GO:0023051;GO:0048583	4	Sym_100008_c0_g3	0.652887439468474
+"regulation of response to stimulus"	GO:0009966;GO:0010646;GO:0023051;GO:0048583	4	Sym_119843_c6_g1	15.250034955111
+"regulation of response to stimulus"	GO:0009966;GO:0010646;GO:0023051;GO:0048583	4	Sym_109253_c1_g2	-4.07479292137967
+"regulation of response to stimulus"	GO:0009966;GO:0010646;GO:0023051;GO:0048583	4	Sym_109253_c1_g1	1.57359036822975
+"regulation of response to stimulus"	GO:0009966;GO:0010646;GO:0023051;GO:0048583	4	Sym_45310_c0_g1	-4.24782038117046
+"regulation of response to stimulus"	GO:0009966;GO:0010646;GO:0023051;GO:0048583	4	Sym_142384_c1_g2	-2.71930854896858
+"inorganic ion transmembrane transport"	GO:0098662;GO:0098655;GO:0098660;GO:0006812	4	Sym_105819_c0_g1	-5.48831246788115
+"inorganic ion transmembrane transport"	GO:0098662;GO:0098655;GO:0098660;GO:0006812	4	Sym_176037_c0_g1	-0.71450110033221
+"inorganic ion transmembrane transport"	GO:0098662;GO:0098655;GO:0098660;GO:0006812	4	Sym_128149_c1_g1	-8.04282547175407
+"inorganic ion transmembrane transport"	GO:0098662;GO:0098655;GO:0098660;GO:0006812	4	Sym_141362_c0_g3	-16.943075722627
+"inorganic ion transmembrane transport"	GO:0098662;GO:0098655;GO:0098660;GO:0006812	4	Sym_101543_c0_g2	-13.3092254362418
+"inorganic ion transmembrane transport"	GO:0098662;GO:0098655;GO:0098660;GO:0006812	4	Sym_102471_c7_g1	4.83583699478512
+"inorganic ion transmembrane transport"	GO:0098662;GO:0098655;GO:0098660;GO:0006812	4	Sym_101543_c0_g3	-4.83332352909251
+"inorganic ion transmembrane transport"	GO:0098662;GO:0098655;GO:0098660;GO:0006812	4	Sym_112513_c2_g1	-3.28059436606443
+"inorganic ion transmembrane transport"	GO:0098662;GO:0098655;GO:0098660;GO:0006812	4	Sym_208217_c0_g1	1.77326250004317
+"inorganic ion transmembrane transport"	GO:0098662;GO:0098655;GO:0098660;GO:0006812	4	Sym_120676_c2_g1	-4.74919964214161
+"inorganic ion transmembrane transport"	GO:0098662;GO:0098655;GO:0098660;GO:0006812	4	Sym_89392_c0_g1	1.35410188875899
+"response to chemical"	GO:0042221	2	Sym_117355_c0_g1	-1.39800870612488
+"response to chemical"	GO:0042221	2	Sym_140163_c0_g1	-14.0962370651635
+"response to chemical"	GO:0042221	2	Sym_310154_c0_g1	-0.107919262979185
+"response to chemical"	GO:0042221	2	Sym_57115_c0_g1	-15.119363668111
+"response to chemical"	GO:0042221	2	Sym_107369_c3_g5	0.117245382176398
+"response to chemical"	GO:0042221	2	Sym_24568_c0_g1	16.2353942201521
+"response to chemical"	GO:0042221	2	Sym_24952_c0_g1	-69.1736814680241
+"response to chemical"	GO:0042221	2	Sym_109253_c1_g2	-4.07479292137967
+"response to chemical"	GO:0042221	2	Sym_237540_c0_g1	13.2824926785187
+"response to chemical"	GO:0042221	2	Sym_130013_c0_g1	6.1725525506105
+"response to chemical"	GO:0042221	2	Sym_207498_c0_g1	4.13727158147116
+"response to chemical"	GO:0042221	2	Sym_101971_c0_g1	1.94771167599123
+"response to chemical"	GO:0042221	2	Sym_101806_c0_g1	0.0477912589509881
+"response to chemical"	GO:0042221	2	Sym_94700_c0_g1	1.53117151021395
+"response to chemical"	GO:0042221	2	Sym_278829_c0_g1	-0.494732375542863
+"response to chemical"	GO:0042221	2	Sym_80796_c0_g1	2.75787866185817
+"response to chemical"	GO:0042221	2	Sym_146541_c1_g1	-8.09430899017412
+"response to chemical"	GO:0042221	2	Sym_109253_c1_g1	1.57359036822975
+"response to chemical"	GO:0042221	2	Sym_89763_c0_g1	8.47349820276669
+"response to chemical"	GO:0042221	2	Sym_159792_c0_g1	-2.71154134479165
+"response to chemical"	GO:0042221	2	Sym_209170_c0_g1	-1.21885817220069
+"response to chemical"	GO:0042221	2	Sym_101138_c0_g1	1.62889206614134
+"response to chemical"	GO:0042221	2	Sym_242526_c0_g1	-49.1375764095091
+"response to chemical"	GO:0042221	2	Sym_238053_c0_g1	-7.48550007893156
+"response to chemical"	GO:0042221	2	Sym_119843_c6_g1	15.250034955111
+"response to chemical"	GO:0042221	2	Sym_206385_c0_g1	-0.665200675108518
+"response to chemical"	GO:0042221	2	Sym_148542_c0_g2	-8.11764781885257
+"response to chemical"	GO:0042221	2	Sym_114907_c3_g2	-1.94385574826031
+"ncRNA metabolic process"	GO:0034660	6	Sym_138442_c2_g4	-1.07245367093778
+"ncRNA metabolic process"	GO:0034660	6	Sym_80984_c0_g1	23.5788200099427
+"ncRNA metabolic process"	GO:0034660	6	Sym_284899_c0_g1	7.05401579318168
+"ncRNA metabolic process"	GO:0034660	6	Sym_92614_c0_g2	0.280025840472364
+"ncRNA metabolic process"	GO:0034660	6	Sym_119993_c5_g1	-1.46564702288652
+"ncRNA metabolic process"	GO:0034660	6	Sym_93060_c0_g1	1.16011359355256
+"organophosphate biosynthetic process"	GO:1901137;GO:0009260;GO:0009165;GO:0046390;GO:1901293;GO:0090407;GO:0034654	3	Sym_126392_c0_g1	-0.224133526947624
+"organophosphate biosynthetic process"	GO:1901137;GO:0009260;GO:0009165;GO:0046390;GO:1901293;GO:0090407;GO:0034654	3	Sym_105819_c0_g1	-5.48831246788115
+"organophosphate biosynthetic process"	GO:1901137;GO:0009260;GO:0009165;GO:0046390;GO:1901293;GO:0090407;GO:0034654	3	Sym_106193_c0_g1	0.266178946928881
+"organophosphate biosynthetic process"	GO:1901137;GO:0009260;GO:0009165;GO:0046390;GO:1901293;GO:0090407;GO:0034654	3	Sym_176037_c0_g1	-0.71450110033221
+"organophosphate biosynthetic process"	GO:1901137;GO:0009260;GO:0009165;GO:0046390;GO:1901293;GO:0090407;GO:0034654	3	Sym_116663_c1_g1	-0.191313982081301
+"organophosphate biosynthetic process"	GO:1901137;GO:0009260;GO:0009165;GO:0046390;GO:1901293;GO:0090407;GO:0034654	3	Sym_244548_c0_g1	-61.1818249116412
+"organophosphate biosynthetic process"	GO:1901137;GO:0009260;GO:0009165;GO:0046390;GO:1901293;GO:0090407;GO:0034654	3	Sym_101543_c0_g2	-13.3092254362418
+"organophosphate biosynthetic process"	GO:1901137;GO:0009260;GO:0009165;GO:0046390;GO:1901293;GO:0090407;GO:0034654	3	Sym_101543_c0_g3	-4.83332352909251
+"organophosphate biosynthetic process"	GO:1901137;GO:0009260;GO:0009165;GO:0046390;GO:1901293;GO:0090407;GO:0034654	3	Sym_208217_c0_g1	1.77326250004317
+"organophosphate biosynthetic process"	GO:1901137;GO:0009260;GO:0009165;GO:0046390;GO:1901293;GO:0090407;GO:0034654	3	Sym_120676_c2_g1	-4.74919964214161
+"organophosphate biosynthetic process"	GO:1901137;GO:0009260;GO:0009165;GO:0046390;GO:1901293;GO:0090407;GO:0034654	3	Sym_144324_c2_g4	-1.22980373812778
+"organophosphate biosynthetic process"	GO:1901137;GO:0009260;GO:0009165;GO:0046390;GO:1901293;GO:0090407;GO:0034654	3	Sym_37542_c0_g1	-0.0629221229476182
+"organophosphate biosynthetic process"	GO:1901137;GO:0009260;GO:0009165;GO:0046390;GO:1901293;GO:0090407;GO:0034654	3	Sym_107647_c1_g2	-11.4130605925763
+"organophosphate biosynthetic process"	GO:1901137;GO:0009260;GO:0009165;GO:0046390;GO:1901293;GO:0090407;GO:0034654	3	Sym_28806_c0_g1	0.61347772348389
+"regulation of cell cycle process"	GO:0090068;GO:0010564;GO:0045787	5	Sym_107369_c3_g5	0.117245382176398
+"regulation of cell cycle process"	GO:0090068;GO:0010564;GO:0045787	5	Sym_101501_c0_g2	-0.928240260689423
+"regulation of cell cycle process"	GO:0090068;GO:0010564;GO:0045787	5	Sym_145648_c3_g1	-1.13964814778694
+"regulation of cell cycle process"	GO:0090068;GO:0010564;GO:0045787	5	Sym_101501_c0_g1	3.95441988581741
+"regulation of cell cycle process"	GO:0090068;GO:0010564;GO:0045787	5	Sym_84654_c0_g1	-3.11425835421903
+"positive regulation of cell communication"	GO:0009967;GO:0010647;GO:0023056;GO:0048584	2	Sym_24568_c0_g1	16.2353942201521
+"positive regulation of cell communication"	GO:0009967;GO:0010647;GO:0023056;GO:0048584	2	Sym_132105_c3_g7	-3.4633075803853
+"positive regulation of cell communication"	GO:0009967;GO:0010647;GO:0023056;GO:0048584	2	Sym_43139_c0_g1	-3.22564337894425
+"positive regulation of cell communication"	GO:0009967;GO:0010647;GO:0023056;GO:0048584	2	Sym_37542_c0_g1	-0.0629221229476182
+"positive regulation of cell communication"	GO:0009967;GO:0010647;GO:0023056;GO:0048584	2	Sym_84654_c0_g1	-3.11425835421903
+"positive regulation of cell communication"	GO:0009967;GO:0010647;GO:0023056;GO:0048584	2	Sym_42149_c0_g1	0.127481875528154
+"positive regulation of cell communication"	GO:0009967;GO:0010647;GO:0023056;GO:0048584	2	Sym_237540_c0_g1	13.2824926785187
+"positive regulation of cell communication"	GO:0009967;GO:0010647;GO:0023056;GO:0048584	2	Sym_45310_c0_g1	-4.24782038117046
+"organelle organization"	GO:0006996	2	Sym_131859_c1_g2	5.83979639411501
+"organelle organization"	GO:0006996	2	Sym_30458_c0_g1	8.33934130259168
+"organelle organization"	GO:0006996	2	Sym_136847_c3_g1	12.0492609525839
+"organelle organization"	GO:0006996	2	Sym_205051_c0_g1	36.6258781028596
+"organelle organization"	GO:0006996	2	Sym_121495_c10_g3	-2.43816164327294
+"organelle organization"	GO:0006996	2	Sym_101501_c0_g2	-0.928240260689423
+"organelle organization"	GO:0006996	2	Sym_28806_c0_g1	0.61347772348389
+"organelle organization"	GO:0006996	2	Sym_85763_c0_g2	-0.418774948238708
+"organelle organization"	GO:0006996	2	Sym_112389_c0_g1	0.985562171814962
+"organelle organization"	GO:0006996	2	Sym_145648_c3_g1	-1.13964814778694
+"organelle organization"	GO:0006996	2	Sym_30900_c0_g1	1.9750961562418
+"organelle organization"	GO:0006996	2	Sym_102785_c0_g1	8.05531505118345
+"organelle organization"	GO:0006996	2	Sym_43139_c0_g1	-3.22564337894425
+"organelle organization"	GO:0006996	2	Sym_137236_c0_g1	0.0324716805471844
+"organelle organization"	GO:0006996	2	Sym_18246_c0_g1	-0.312855860006296
+"organelle organization"	GO:0006996	2	Sym_101501_c0_g1	3.95441988581741
+"organelle organization"	GO:0006996	2	Sym_115171_c4_g3	-0.96290338136238
+"organelle organization"	GO:0006996	2	Sym_239078_c0_g1	-3.07685220933308
+"negative regulation of biosynthetic process"	GO:2000113;GO:0010558;GO:0031327;GO:0009890	5	Sym_109358_c2_g1	-0.530669227466644
+"negative regulation of biosynthetic process"	GO:2000113;GO:0010558;GO:0031327;GO:0009890	5	Sym_121495_c10_g2	2.50119520282685
+"negative regulation of biosynthetic process"	GO:2000113;GO:0010558;GO:0031327;GO:0009890	5	Sym_130013_c0_g1	6.1725525506105
+"negative regulation of biosynthetic process"	GO:2000113;GO:0010558;GO:0031327;GO:0009890	5	Sym_104762_c1_g5	-6.80631077923629
+"negative regulation of biosynthetic process"	GO:2000113;GO:0010558;GO:0031327;GO:0009890	5	Sym_69276_c0_g1	1.49397127110569
+"negative regulation of biosynthetic process"	GO:2000113;GO:0010558;GO:0031327;GO:0009890	5	Sym_84654_c0_g1	-3.11425835421903
+"negative regulation of biosynthetic process"	GO:2000113;GO:0010558;GO:0031327;GO:0009890	5	Sym_130850_c4_g1	-6.877253236067
+"negative regulation of biosynthetic process"	GO:2000113;GO:0010558;GO:0031327;GO:0009890	5	Sym_109253_c1_g2	-4.07479292137967
+"negative regulation of biosynthetic process"	GO:2000113;GO:0010558;GO:0031327;GO:0009890	5	Sym_109253_c1_g1	1.57359036822975
+"mRNA processing"	GO:0006397;GO:0008380	3	Sym_133740_c1_g1	1.32754046388189
+"mRNA processing"	GO:0006397;GO:0008380	3	Sym_105077_c3_g2	-0.0989275511979511
+"mRNA processing"	GO:0006397;GO:0008380	3	Sym_80984_c0_g1	23.5788200099427
+"mRNA processing"	GO:0006397;GO:0008380	3	Sym_104366_c3_g1	0.378156585162894
+"mRNA processing"	GO:0006397;GO:0008380	3	Sym_284899_c0_g1	7.05401579318168
+"mRNA processing"	GO:0006397;GO:0008380	3	Sym_107369_c3_g5	0.117245382176398
+"mRNA processing"	GO:0006397;GO:0008380	3	Sym_244501_c0_g1	-10.2617774494438
+"mRNA processing"	GO:0006397;GO:0008380	3	Sym_173607_c0_g1	3.44627375643787
+"mRNA processing"	GO:0006397;GO:0008380	3	Sym_179741_c0_g1	-4.57090491711408
+"mRNA processing"	GO:0006397;GO:0008380	3	Sym_104264_c2_g1	0.642015807834817
+"mRNA processing"	GO:0006397;GO:0008380	3	Sym_139545_c4_g1	-2.01932242622509
+"mRNA processing"	GO:0006397;GO:0008380	3	Sym_101312_c0_g2	-3.10341568803234
+"mRNA processing"	GO:0006397;GO:0008380	3	Sym_128217_c2_g1	-0.946632288707344
+"mRNA processing"	GO:0006397;GO:0008380	3	Sym_78927_c0_g1	-1.576760358643
+"mRNA processing"	GO:0006397;GO:0008380	3	Sym_66494_c0_g1	0.712134852533098
+"mRNA processing"	GO:0006397;GO:0008380	3	Sym_144233_c1_g1	-1.51148092003028
+"mRNA processing"	GO:0006397;GO:0008380	3	Sym_104103_c2_g4	-0.71413616432613
+"mRNA processing"	GO:0006397;GO:0008380	3	Sym_245377_c0_g1	0.0652133445433471
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_138442_c2_g4	-1.07245367093778
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_133740_c1_g1	1.32754046388189
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_105077_c3_g2	-0.0989275511979511
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_80984_c0_g1	23.5788200099427
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_104366_c3_g1	0.378156585162894
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_284899_c0_g1	7.05401579318168
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_107369_c3_g5	0.117245382176398
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_244501_c0_g1	-10.2617774494438
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_173607_c0_g1	3.44627375643787
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_179741_c0_g1	-4.57090491711408
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_92614_c0_g2	0.280025840472364
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_104264_c2_g1	0.642015807834817
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_139545_c4_g1	-2.01932242622509
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_101312_c0_g2	-3.10341568803234
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_128217_c2_g1	-0.946632288707344
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_78927_c0_g1	-1.576760358643
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_20490_c0_g1	-3.70010562374536
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_66494_c0_g1	0.712134852533098
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_144233_c1_g1	-1.51148092003028
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_104103_c2_g4	-0.71413616432613
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_245377_c0_g1	0.0652133445433471
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_43139_c0_g1	-3.22564337894425
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_119993_c5_g1	-1.46564702288652
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_69276_c0_g1	1.49397127110569
+"RNA metabolic process"	GO:0016071;GO:0016070;GO:0006396	2	Sym_93060_c0_g1	1.16011359355256
+"cellular developmental process"	GO:0048869	2	Sym_131859_c1_g2	5.83979639411501
+"cellular developmental process"	GO:0048869	2	Sym_284899_c0_g1	7.05401579318168
+"cellular developmental process"	GO:0048869	2	Sym_107369_c3_g5	0.117245382176398
+"cellular developmental process"	GO:0048869	2	Sym_237540_c0_g1	13.2824926785187
+"cellular developmental process"	GO:0048869	2	Sym_97621_c0_g2	2.33939547493827
+"cellular developmental process"	GO:0048869	2	Sym_112389_c0_g1	0.985562171814962
+"cellular developmental process"	GO:0048869	2	Sym_92614_c0_g2	0.280025840472364
+"cellular developmental process"	GO:0048869	2	Sym_80796_c0_g1	2.75787866185817
+"cellular developmental process"	GO:0048869	2	Sym_67222_c0_g1	-4.11227944685487
+"cellular developmental process"	GO:0048869	2	Sym_104762_c1_g5	-6.80631077923629
+"cellular developmental process"	GO:0048869	2	Sym_69276_c0_g1	1.49397127110569
+"cellular developmental process"	GO:0048869	2	Sym_119843_c6_g1	15.250034955111
+"cellular developmental process"	GO:0048869	2	Sym_115171_c4_g3	-0.96290338136238
+"cellular developmental process"	GO:0048869	2	Sym_84654_c0_g1	-3.11425835421903
+"cellular developmental process"	GO:0048869	2	Sym_42149_c0_g1	0.127481875528154
+"macromolecule catabolic process"	GO:0044265;GO:0009057	2	Sym_138442_c2_g4	-1.07245367093778
+"macromolecule catabolic process"	GO:0044265;GO:0009057	2	Sym_80984_c0_g1	23.5788200099427
+"macromolecule catabolic process"	GO:0044265;GO:0009057	2	Sym_178813_c0_g1	-1.66116606087105
+"macromolecule catabolic process"	GO:0044265;GO:0009057	2	Sym_66220_c0_g2	-0.404158036114577
+"macromolecule catabolic process"	GO:0044265;GO:0009057	2	Sym_107783_c2_g1	1.08092272624163
+"macromolecule catabolic process"	GO:0044265;GO:0009057	2	Sym_132105_c3_g7	-3.4633075803853
+"macromolecule catabolic process"	GO:0044265;GO:0009057	2	Sym_103763_c6_g1	1.64809471626028
+"macromolecule catabolic process"	GO:0044265;GO:0009057	2	Sym_101971_c0_g1	1.94771167599123
+"macromolecule catabolic process"	GO:0044265;GO:0009057	2	Sym_92614_c0_g2	0.280025840472364
+"macromolecule catabolic process"	GO:0044265;GO:0009057	2	Sym_128685_c8_g1	2.85787311302968
+"macromolecule catabolic process"	GO:0044265;GO:0009057	2	Sym_278829_c0_g1	-0.494732375542863
+"macromolecule catabolic process"	GO:0044265;GO:0009057	2	Sym_17199_c0_g1	29.122263033591
+"macromolecule catabolic process"	GO:0044265;GO:0009057	2	Sym_130165_c13_g1	-2.53371309750074
+"macromolecule catabolic process"	GO:0044265;GO:0009057	2	Sym_100802_c0_g1	-4.46148008552169
+"macromolecule catabolic process"	GO:0044265;GO:0009057	2	Sym_128217_c2_g1	-0.946632288707344
+"macromolecule catabolic process"	GO:0044265;GO:0009057	2	Sym_204881_c0_g1	0.0129770166476083
+"macromolecule catabolic process"	GO:0044265;GO:0009057	2	Sym_136877_c0_g1	-6.95505543899488
+"macromolecule catabolic process"	GO:0044265;GO:0009057	2	Sym_175830_c0_g1	-0.373197317978894
+"macromolecule catabolic process"	GO:0044265;GO:0009057	2	Sym_148791_c2_g2	-31.0746237720127
+"macromolecule catabolic process"	GO:0044265;GO:0009057	2	Sym_82427_c0_g1	10.2741796340878
+"macromolecule catabolic process"	GO:0044265;GO:0009057	2	Sym_133813_c2_g1	1.90138426453913
+"macromolecule catabolic process"	GO:0044265;GO:0009057	2	Sym_151306_c5_g1	-0.353140761930338
+"negative regulation of protein metabolic process"	GO:0032269;GO:0051248	3	Sym_175570_c0_g1	21.094498827213
+"negative regulation of protein metabolic process"	GO:0032269;GO:0051248	3	Sym_145648_c3_g1	-1.13964814778694
+"negative regulation of protein metabolic process"	GO:0032269;GO:0051248	3	Sym_147119_c0_g1	0.330276428917375
+"negative regulation of protein metabolic process"	GO:0032269;GO:0051248	3	Sym_69276_c0_g1	1.49397127110569
+"negative regulation of protein metabolic process"	GO:0032269;GO:0051248	3	Sym_84654_c0_g1	-3.11425835421903
+"negative regulation of protein metabolic process"	GO:0032269;GO:0051248	3	Sym_310154_c0_g1	-0.107919262979185
+"dicarboxylic acid metabolic process"	GO:0043648;GO:0006099	2	Sym_103259_c1_g4	-1.83054870965001
+"dicarboxylic acid metabolic process"	GO:0043648;GO:0006099	2	Sym_103259_c1_g2	5.76705949990883
+"dicarboxylic acid metabolic process"	GO:0043648;GO:0006099	2	Sym_206385_c0_g1	-0.665200675108518
+"dicarboxylic acid metabolic process"	GO:0043648;GO:0006099	2	Sym_103259_c1_g1	6.49348943739329
+"dicarboxylic acid metabolic process"	GO:0043648;GO:0006099	2	Sym_83072_c0_g2	-4.4422346603043
+"dicarboxylic acid metabolic process"	GO:0043648;GO:0006099	2	Sym_103259_c2_g1	-12.594402679183
+"dicarboxylic acid metabolic process"	GO:0043648;GO:0006099	2	Sym_174615_c0_g1	-12.0305196781801
+"animal organ development"	GO:0048513	3	Sym_310154_c0_g1	-0.107919262979185
+"animal organ development"	GO:0048513	3	Sym_24568_c0_g1	16.2353942201521
+"animal organ development"	GO:0048513	3	Sym_102785_c0_g1	8.05531505118345
+"animal organ development"	GO:0048513	3	Sym_80796_c0_g1	2.75787866185817
+"animal organ development"	GO:0048513	3	Sym_67222_c0_g1	-4.11227944685487
+"porphyrin-containing compound metabolic process"	GO:0015995;GO:0006779;GO:0015994;GO:0046148;GO:0006778;GO:0033014;GO:0042440;GO:0033013	5	Sym_94893_c0_g3	1.69989650639723
+"porphyrin-containing compound metabolic process"	GO:0015995;GO:0006779;GO:0015994;GO:0046148;GO:0006778;GO:0033014;GO:0042440;GO:0033013	5	Sym_146541_c1_g1	-8.09430899017412
+"porphyrin-containing compound metabolic process"	GO:0015995;GO:0006779;GO:0015994;GO:0046148;GO:0006778;GO:0033014;GO:0042440;GO:0033013	5	Sym_94893_c0_g2	-5.37096176268859
+"porphyrin-containing compound metabolic process"	GO:0015995;GO:0006779;GO:0015994;GO:0046148;GO:0006778;GO:0033014;GO:0042440;GO:0033013	5	Sym_206385_c0_g1	-0.665200675108518
+"porphyrin-containing compound metabolic process"	GO:0015995;GO:0006779;GO:0015994;GO:0046148;GO:0006778;GO:0033014;GO:0042440;GO:0033013	5	Sym_94893_c0_g4	12.2730302159295
+"porphyrin-containing compound metabolic process"	GO:0015995;GO:0006779;GO:0015994;GO:0046148;GO:0006778;GO:0033014;GO:0042440;GO:0033013	5	Sym_82593_c0_g2	0.246569685967351
+"response to osmotic stress"	GO:0006970	3	Sym_117355_c0_g1	-1.39800870612488
+"response to osmotic stress"	GO:0006970	3	Sym_140163_c0_g1	-14.0962370651635
+"response to osmotic stress"	GO:0006970	3	Sym_30458_c0_g1	8.33934130259168
+"response to osmotic stress"	GO:0006970	3	Sym_24952_c0_g1	-69.1736814680241
+"response to osmotic stress"	GO:0006970	3	Sym_207498_c0_g1	4.13727158147116
+"response to osmotic stress"	GO:0006970	3	Sym_85763_c0_g2	-0.418774948238708
+"response to osmotic stress"	GO:0006970	3	Sym_148542_c0_g2	-8.11764781885257
+"organonitrogen compound catabolic process"	GO:1901565	2	Sym_66220_c0_g2	-0.404158036114577
+"organonitrogen compound catabolic process"	GO:1901565	2	Sym_107783_c2_g1	1.08092272624163
+"organonitrogen compound catabolic process"	GO:1901565	2	Sym_103763_c6_g1	1.64809471626028
+"organonitrogen compound catabolic process"	GO:1901565	2	Sym_148791_c2_g2	-31.0746237720127
+"organonitrogen compound catabolic process"	GO:1901565	2	Sym_278829_c0_g1	-0.494732375542863
+"organonitrogen compound catabolic process"	GO:1901565	2	Sym_111600_c1_g1	-9.33430189193298
+"organonitrogen compound catabolic process"	GO:1901565	2	Sym_130165_c13_g1	-2.53371309750074
+"organonitrogen compound catabolic process"	GO:1901565	2	Sym_101138_c0_g1	1.62889206614134
+"organonitrogen compound catabolic process"	GO:1901565	2	Sym_82593_c0_g2	0.246569685967351
+"organonitrogen compound catabolic process"	GO:1901565	2	Sym_204881_c0_g1	0.0129770166476083
+"organonitrogen compound catabolic process"	GO:1901565	2	Sym_136877_c0_g1	-6.95505543899488
+"organonitrogen compound catabolic process"	GO:1901565	2	Sym_175830_c0_g1	-0.373197317978894
+"organonitrogen compound catabolic process"	GO:1901565	2	Sym_174615_c0_g1	-12.0305196781801
+"regulation of phosphate metabolic process"	GO:0042325;GO:0019220;GO:0051174	3	Sym_127086_c1_g3	-0.273855837115441
+"regulation of phosphate metabolic process"	GO:0042325;GO:0019220;GO:0051174	3	Sym_24568_c0_g1	16.2353942201521
+"regulation of phosphate metabolic process"	GO:0042325;GO:0019220;GO:0051174	3	Sym_145648_c3_g1	-1.13964814778694
+"regulation of phosphate metabolic process"	GO:0042325;GO:0019220;GO:0051174	3	Sym_282497_c0_g1	1.58597831106069
+"regulation of phosphate metabolic process"	GO:0042325;GO:0019220;GO:0051174	3	Sym_84654_c0_g1	-3.11425835421903
+"microtubule-based process"	GO:0007017	2	Sym_101851_c0_g1	-11.2856085650436
+"microtubule-based process"	GO:0007017	2	Sym_113215_c4_g5	0.465587027237812
+"microtubule-based process"	GO:0007017	2	Sym_205051_c0_g1	36.6258781028596
+"microtubule-based process"	GO:0007017	2	Sym_30900_c0_g1	1.9750961562418
+"microtubule-based process"	GO:0007017	2	Sym_102785_c0_g1	8.05531505118345
+"microtubule-based process"	GO:0007017	2	Sym_120913_c7_g2	-2.15956664826875
+"regulation of cell death"	GO:0010941	2	Sym_131859_c1_g2	5.83979639411501
+"regulation of cell death"	GO:0010941	2	Sym_24568_c0_g1	16.2353942201521
+"regulation of cell death"	GO:0010941	2	Sym_112389_c0_g1	0.985562171814962
+"regulation of cell death"	GO:0010941	2	Sym_145648_c3_g1	-1.13964814778694
+"regulation of cell death"	GO:0010941	2	Sym_92829_c0_g1	0.38997535529179
+"regulation of cell death"	GO:0010941	2	Sym_89763_c0_g1	8.47349820276669
+"regulation of cell death"	GO:0010941	2	Sym_242526_c0_g1	-49.1375764095091
+"regulation of cell death"	GO:0010941	2	Sym_104103_c2_g4	-0.71413616432613
+"regulation of cell death"	GO:0010941	2	Sym_45310_c0_g1	-4.24782038117046
+"regulation of cell death"	GO:0010941	2	Sym_120986_c2_g1	4.22237326430696
+"homeostatic process"	GO:0042592	2	Sym_57115_c0_g1	-15.119363668111
+"homeostatic process"	GO:0042592	2	Sym_109358_c2_g1	-0.530669227466644
+"homeostatic process"	GO:0042592	2	Sym_127086_c1_g3	-0.273855837115441
+"homeostatic process"	GO:0042592	2	Sym_24568_c0_g1	16.2353942201521
+"homeostatic process"	GO:0042592	2	Sym_109253_c1_g2	-4.07479292137967
+"homeostatic process"	GO:0042592	2	Sym_110848_c2_g1	2.0755308621403
+"homeostatic process"	GO:0042592	2	Sym_237540_c0_g1	13.2824926785187
+"homeostatic process"	GO:0042592	2	Sym_28806_c0_g1	0.61347772348389
+"homeostatic process"	GO:0042592	2	Sym_145648_c3_g1	-1.13964814778694
+"homeostatic process"	GO:0042592	2	Sym_84255_c0_g2	0.200887196280385
+"homeostatic process"	GO:0042592	2	Sym_92829_c0_g1	0.38997535529179
+"homeostatic process"	GO:0042592	2	Sym_109253_c1_g1	1.57359036822975
+"homeostatic process"	GO:0042592	2	Sym_159792_c0_g1	-2.71154134479165
+"homeostatic process"	GO:0042592	2	Sym_82593_c0_g2	0.246569685967351
+"homeostatic process"	GO:0042592	2	Sym_100008_c0_g3	0.652887439468474
+"posttranscriptional regulation of gene expression"	GO:0006417;GO:0010608;GO:0034248	3	Sym_113764_c0_g1	10.2267597202933
+"posttranscriptional regulation of gene expression"	GO:0006417;GO:0010608;GO:0034248	3	Sym_111423_c4_g1	0.629301819249032
+"posttranscriptional regulation of gene expression"	GO:0006417;GO:0010608;GO:0034248	3	Sym_145648_c3_g1	-1.13964814778694
+"posttranscriptional regulation of gene expression"	GO:0006417;GO:0010608;GO:0034248	3	Sym_43139_c0_g1	-3.22564337894425
+"posttranscriptional regulation of gene expression"	GO:0006417;GO:0010608;GO:0034248	3	Sym_69276_c0_g1	1.49397127110569
+"posttranscriptional regulation of gene expression"	GO:0006417;GO:0010608;GO:0034248	3	Sym_119843_c6_g1	15.250034955111
+"posttranscriptional regulation of gene expression"	GO:0006417;GO:0010608;GO:0034248	3	Sym_109060_c7_g1	-7.1368908262198
+"posttranscriptional regulation of gene expression"	GO:0006417;GO:0010608;GO:0034248	3	Sym_84654_c0_g1	-3.11425835421903
+"posttranscriptional regulation of gene expression"	GO:0006417;GO:0010608;GO:0034248	3	Sym_284899_c0_g1	7.05401579318168
+"anatomical structure morphogenesis"	GO:0009653	2	Sym_131859_c1_g2	5.83979639411501
+"anatomical structure morphogenesis"	GO:0009653	2	Sym_30458_c0_g1	8.33934130259168
+"anatomical structure morphogenesis"	GO:0009653	2	Sym_109253_c1_g2	-4.07479292137967
+"anatomical structure morphogenesis"	GO:0009653	2	Sym_237540_c0_g1	13.2824926785187
+"anatomical structure morphogenesis"	GO:0009653	2	Sym_85763_c0_g2	-0.418774948238708
+"anatomical structure morphogenesis"	GO:0009653	2	Sym_80796_c0_g1	2.75787866185817
+"anatomical structure morphogenesis"	GO:0009653	2	Sym_109253_c1_g1	1.57359036822975
+"anatomical structure morphogenesis"	GO:0009653	2	Sym_136877_c0_g1	-6.95505543899488
+"anatomical structure morphogenesis"	GO:0009653	2	Sym_115171_c4_g3	-0.96290338136238
+"anatomical structure morphogenesis"	GO:0009653	2	Sym_84654_c0_g1	-3.11425835421903
+"cell surface receptor signaling pathway"	GO:0007166	2	Sym_128463_c0_g2	0.323865567791101
+"cell surface receptor signaling pathway"	GO:0007166	2	Sym_132105_c3_g7	-3.4633075803853
+"cell surface receptor signaling pathway"	GO:0007166	2	Sym_112389_c0_g1	0.985562171814962
+"cell surface receptor signaling pathway"	GO:0007166	2	Sym_80796_c0_g1	2.75787866185817
+"cell surface receptor signaling pathway"	GO:0007166	2	Sym_42149_c0_g1	0.127481875528154
+"negative regulation of metabolic process"	GO:0010605;GO:0009892	5	Sym_138442_c2_g4	-1.07245367093778
+"negative regulation of metabolic process"	GO:0010605;GO:0009892	5	Sym_175570_c0_g1	21.094498827213
+"negative regulation of metabolic process"	GO:0010605;GO:0009892	5	Sym_310154_c0_g1	-0.107919262979185
+"negative regulation of metabolic process"	GO:0010605;GO:0009892	5	Sym_109358_c2_g1	-0.530669227466644
+"negative regulation of metabolic process"	GO:0010605;GO:0009892	5	Sym_80984_c0_g1	23.5788200099427
+"negative regulation of metabolic process"	GO:0010605;GO:0009892	5	Sym_109253_c1_g2	-4.07479292137967
+"negative regulation of metabolic process"	GO:0010605;GO:0009892	5	Sym_150432_c3_g6	61.8550133899771
+"negative regulation of metabolic process"	GO:0010605;GO:0009892	5	Sym_121495_c10_g2	2.50119520282685
+"negative regulation of metabolic process"	GO:0010605;GO:0009892	5	Sym_130013_c0_g1	6.1725525506105
+"negative regulation of metabolic process"	GO:0010605;GO:0009892	5	Sym_145648_c3_g1	-1.13964814778694
+"negative regulation of metabolic process"	GO:0010605;GO:0009892	5	Sym_92614_c0_g2	0.280025840472364
+"negative regulation of metabolic process"	GO:0010605;GO:0009892	5	Sym_80796_c0_g1	2.75787866185817
+"negative regulation of metabolic process"	GO:0010605;GO:0009892	5	Sym_104762_c1_g5	-6.80631077923629
+"negative regulation of metabolic process"	GO:0010605;GO:0009892	5	Sym_109253_c1_g1	1.57359036822975
+"negative regulation of metabolic process"	GO:0010605;GO:0009892	5	Sym_147119_c0_g1	0.330276428917375
+"negative regulation of metabolic process"	GO:0010605;GO:0009892	5	Sym_128217_c2_g1	-0.946632288707344
+"negative regulation of metabolic process"	GO:0010605;GO:0009892	5	Sym_69276_c0_g1	1.49397127110569
+"negative regulation of metabolic process"	GO:0010605;GO:0009892	5	Sym_100230_c0_g1	8.89454650346743
+"negative regulation of metabolic process"	GO:0010605;GO:0009892	5	Sym_84654_c0_g1	-3.11425835421903
+"negative regulation of metabolic process"	GO:0010605;GO:0009892	5	Sym_130850_c4_g1	-6.877253236067
+"negative regulation of metabolic process"	GO:0010605;GO:0009892	5	Sym_24568_c0_g1	16.2353942201521
+"negative regulation of metabolic process"	GO:0010605;GO:0009892	5	Sym_112389_c0_g1	0.985562171814962
