@@ -7,6 +7,18 @@ Increasing ocean temperatures are causing dysbiosis between coral hosts and thei
 
 This repository is organized such that each folder contains the associated data and code needed to recreate specific analyses presented in the paper. 
 
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
+
+
 All raw sequencing data will be uploaded to SRA upon publication.
 
 For any questions, please contact Hannah Aichelman (hannahaichelman @ gmail.com) or Sarah Davies (daviessw @ gmail.com)

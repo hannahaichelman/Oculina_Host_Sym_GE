@@ -1,0 +1,3 @@
+# DESeq_Scripts README
+
+This folder contains all of the scripts needed to conduct the differential expression analyses, including PCAs and gene expression plasticity, presented in Figures 2, 3, 4, 5, and 7. The counts files needed as input are included in the folder 'CountsFiles'. The 'assemble_ortholog_counts_hea.R' script takes the counts file output from the ortholog pipeline and compiles based on the shared ortholog id to create the counts file that becomes input into deseq for comparative gene expression.
