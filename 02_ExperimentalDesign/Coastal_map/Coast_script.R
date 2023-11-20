@@ -8,7 +8,8 @@ library(rnaturalearth)
 library(rnaturalearthdata)
 library(maptools)
 
-#c lip gshhs_f.b to the broader area that you want to include in your map. gshhs_f.b is the high definition noaa coastline layer
+#clip gshhs_f.b to the broader area that you want to include in your map. gshhs_f.b is the high definition noaa coastline layer
+# you can download from here: https://www.ngdc.noaa.gov/mgg/shorelines/data/gshhs/oldversions/version1.2/?C=S;O=A
 if (!rgeosStatus()) gpclibPermit()
 gshhs.f.b <- "gshhs_f.b"
 

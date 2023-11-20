@@ -1,0 +1,4 @@
+ITS2 type profile UID	Clade	Majority ITS2 sequence	Associated species	ITS2 profile abundance local	ITS2 profile abundance DB	ITS2 type profile	Sequence accession / SymPortal UID	Average defining sequence proportions and [stdev]
+129926	B	B2	S. psygmophilum	37	39	B2-B2e	21914-1463664	0.962[0.016]-0.038[0.016]
+129899	B	B2	S. psygmophilum	2	17	B2	21914	1.000[0.000]
+129905	B	B5a	None	1	4	B5a	37517	1.000[nan]
