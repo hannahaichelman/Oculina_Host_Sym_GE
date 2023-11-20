@@ -59,7 +59,7 @@ library(VennDiagram)
 ### Counts file and experimental design
 Read in Oculina host counts file. 
 ```{r CountsFile,cache=TRUE, echo=FALSE}
-countDataHost <- read.table("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/CountsFiles/Oculina_counts_newref_host.txt")
+countDataHost <- read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/03_DESeq_Scripts/CountsFiles/Oculina_counts_newref_host.txt")
 ```
 
 
@@ -149,7 +149,7 @@ stats.per.sample = data.frame(t(do.call(cbind, lapply(countDataHost_clones_remov
       stats.per.sample$perc95 = apply(countDataHost_clones_removed, 2, quantile, 0.95)
       stats.per.sample$zeros = apply(countDataHost_clones_removed==0, 2, sum)
       stats.per.sample$percent.zeros = 100*stats.per.sample$zeros/nrow(countDataHost_clones_removed)
-write.csv(stats.per.sample, file= "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_host_summary_table.csv", quote = FALSE)
+write.csv(stats.per.sample, file= "~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/oculina_host_summary_table.csv", quote = FALSE)
 
       
 kable(stats.per.sample) %>%
@@ -227,7 +227,7 @@ head(results)
 
 ```{r echo=FALSE, cache=TRUE}
 norm.counts.host = counts(dds, normalized = TRUE) # these are the counts DESeq uses
-write.csv(norm.counts.host, "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/Oculina_normalized_counts_host.csv") #these are all counts, not considering treatment comparisons
+write.csv(norm.counts.host, "~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/Oculina_normalized_counts_host.csv") #these are all counts, not considering treatment comparisons
 
 
 norm.counts.stats = data.frame(
@@ -260,7 +260,7 @@ table(res_hot_brown_host$padj<0.01) # we actually get more DEGs when genotype is
 # 0.05=218
 # 0.01=110
 summary(res_hot_brown_host)
-write.table(res_hot_brown_host, file="/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_hot_brown_host_results.txt", quote=F, sep="\t")
+write.table(res_hot_brown_host, file="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/oculina_hot_brown_host_results.txt", quote=F, sep="\t")
 
 res_hot_white_host <- results(dds, contrast=c("treat_type","heat_apo","control_apo"))
 head(res_hot_white_host)
@@ -270,7 +270,7 @@ table(res_hot_white_host$padj<0.01)
 # 0.05=66
 # 0.01=29
 summary(res_hot_white_host)
-write.table(res_hot_white_host, file="/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_hot_white_host_results.txt", quote=F, sep="\t")
+write.table(res_hot_white_host, file="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/oculina_hot_white_host_results.txt", quote=F, sep="\t")
 ```
 
 MA plot, red dots indicate genes significantly differentially expressed at FDR < 0.1 
@@ -292,7 +292,7 @@ table(res_cold_brown_host$padj<0.01)
 # 0.05=3259
 # 0.01=2077
 summary(res_cold_brown_host)
-write.table(res_cold_brown_host, file="/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_cold_brown_host_results.txt", quote=F, sep="\t")
+write.table(res_cold_brown_host, file="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/oculina_cold_brown_host_results.txt", quote=F, sep="\t")
 
 res_cold_white_host <- results(dds, contrast=c("treat_type","cold_apo","control_apo"))
 head(res_cold_white_host)
@@ -302,7 +302,7 @@ table(res_cold_white_host$padj<0.05)
 # 0.05=1779
 # 0.01=1033
 summary(res_cold_white_host)
-write.table(res_cold_white_host, file="/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_cold_white_host_results.txt", quote=F, sep="\t")
+write.table(res_cold_white_host, file="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/oculina_cold_white_host_results.txt", quote=F, sep="\t")
 
 ```
 
@@ -360,7 +360,7 @@ deg_barplot = ggplot(host_degs, aes(x = temperature, y = number, fill=temperatur
   geom_text(data = annotate_text, aes(x = x, y = y, label = label))
 deg_barplot
 
-ggsave(deg_barplot, file = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/host_deg_barplot.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
+ggsave(deg_barplot, file = "host_deg_barplot.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
 ```
 
 ##Test for differences in # of DE genes
@@ -458,7 +458,7 @@ host_pca = DESeq2::plotPCA(rlogged, returnData = TRUE, intgroup = c("treatment",
       theme_bw() 
 host_pca
 
-ggsave(host_pca, file = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/host_pca.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
+ggsave(host_pca, file = "host_pca.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
 
 ```
 Principal component analyses highlighting treatment groups. Treatment has a significant affect (p < 0.001) on overall expression
@@ -511,7 +511,7 @@ plotPCA_allPCs <- function (object, intgroup = "condition", ntop = 500, returnDa
 
 ```{r eval=FALSE, include=FALSE}
 # source the script Colleen wrote with the different functions to calculate plasticity
-source("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/CombinedHostSymAnalyses/PlasticityCustomFunctions_means.R")
+source("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/04_GE_Plasticity/PlasticityCustomFunctions_means.R")
 
 # use modified plotPCA function to give you all PCs
 pcadata.plast = plotPCA_allPCs(rlogged, intgroup = c("treat_type","sym_state"), returnData = TRUE)
@@ -603,7 +603,7 @@ plast_plot = ggplot(dist_summ, aes(x = treat_type, y = dist)) +
       theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1), legend.position = "none")
        
 plast_plot
-ggsave(plast_plot, filename = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/PCA_plasticity_2PCs_host.pdf", width=6, height=5, units=c("in"), useDingbats=FALSE)
+ggsave(plast_plot, filename = "PCA_plasticity_2PCs_host.pdf", width=6, height=5, units=c("in"), useDingbats=FALSE)
 
 
 cols_nocontrol = c("#3182bd", "#3182bd", "#de2d26", "#de2d26")
@@ -634,189 +634,16 @@ plast_boxplot <- ggplot(all_plast_nocontrol, aes(x = treat_type, y = dist)) +
   theme(axis.title.x = element_blank())
 plast_boxplot
 
-ggsave(plast_boxplot, filename = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/PCA_plasticity_boxplot_host.pdf", width=2.5, height=4, units=c("in"), useDingbats=FALSE)
+ggsave(plast_boxplot, filename = "PCA_plasticity_boxplot_host.pdf", width=2.5, height=4, units=c("in"), useDingbats=FALSE)
 
 ```
-
-
-
-##Heatmaps
-***
-<br> <br> 
-
-Overall expression, sample by distance. 
-
-```{r, cache=TRUE, fig.align="center"}
-sampleDists <- as.matrix(dist(t(assay(rlogged))))
-heatmap.2(as.matrix(sampleDists), key=F, trace="none",
-          col=colorpanel(100, "black", "white"),
-          margin=c(10, 10))
-```
-
-<br><br>
-<b>Individual genes heatmap </b> 
-<br> 
-Now plotting the z scores, as heatmap2 creates nice clean clusters by doing this. Upregulation indicated by warmer colors, downregulation indicated by cooler colors.
-
-First for heat vs. control comparison
-```{r, cache=TRUE, fig.align='center'}
-norm_counts_host = read.csv("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/Oculina_normalized_counts_host.csv")
-hm_brown = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_hot_brown_host_results.txt", header=TRUE, col.names=c("X", "baseMean", "log2FoldChange", "lfcSE", "stat", "pvalue","padj")) %>% as_tibble() %>%
-  filter(padj < 0.1) %>% # only want the most DEGs
-  select(X) %>%
-  merge(norm_counts_host, by.x = "X", by.y = "X")  # turn into a countdatafile
-  row.names(hm_brown) = hm_brown$X
-  hm_brown$X = NULL
-
-## Turning into z-score table
-hm_brown.z = data.matrix(hm_brown)
-hm_brown.z = sweep(hm_brown.z, 1L, rowMeans(hm_brown.z), check.margin = FALSE)
-hm_brown.z.sx = apply(hm_brown.z, 1L, sd)
-hm_brown.z = sweep(hm_brown.z, 1L, hm_brown.z.sx, "/", check.margin = FALSE)
-hm_brown.z = data.matrix(hm_brown.z)
-
-colour = colorRampPalette(rev(c("chocolate1","#FEE090","grey10", "cyan3","cyan")))(100)
-heatmap.2(hm_brown.z, col = colour, Rowv = TRUE, Colv = TRUE, scale = "row", 
-          dendrogram = "both",
-          trace = "none", 
-          margin = c(5,15))
-
-
-hm_white = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_hot_white_host_results.txt", header=TRUE, col.names=c("X", "baseMean", "log2FoldChange", "lfcSE", "stat", "pvalue","padj")) %>% as_tibble() %>%
-  filter(padj < 0.1) %>% # only want the most DEGs
-  select(X) %>%
-  merge(norm_counts_host, by.x = "X", by.y = "X")  # turn into a countdatafile
-  row.names(hm_white) = hm_white$X
-  hm_white$X = NULL
-
-## Turning into z-score table
-hm_white.z = data.matrix(hm_white)
-hm_white.z = sweep(hm_white.z, 1L, rowMeans(hm_white.z), check.margin = FALSE)
-hm_white.z.sx = apply(hm_white.z, 1L, sd)
-hm_white.z = sweep(hm_white.z, 1L, hm_white.z.sx, "/", check.margin = FALSE)
-hm_white.z = data.matrix(hm_white.z)
-
-heatmap.2(hm_white.z, col = colour, Rowv = TRUE, Colv = TRUE, scale = "row", 
-          dendrogram = "both",
-          trace = "none", 
-          margin = c(5,15))
-```
-
-Now for cold vs. control comparison
-```{r, cache=TRUE, fig.align='center'}
-norm_counts_host = read.csv("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/Oculina_normalized_counts_host.csv")
-hm_brown = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_cold_brown_host_results.txt", header=TRUE, col.names=c("X", "baseMean", "log2FoldChange", "lfcSE", "stat", "pvalue","padj")) %>% as_tibble() %>%
-  filter(padj < 0.1) %>% # only want the most DEGs
-  select(X) %>%
-  merge(norm_counts_host, by.x = "X", by.y = "X")  # turn into a countdatafile
-  row.names(hm_brown) = hm_brown$X
-  hm_brown$X = NULL
-
-## Turning into z-score table
-hm_brown.z = data.matrix(hm_brown)
-hm_brown.z = sweep(hm_brown.z, 1L, rowMeans(hm_brown.z), check.margin = FALSE)
-hm_brown.z.sx = apply(hm_brown.z, 1L, sd)
-hm_brown.z = sweep(hm_brown.z, 1L, hm_brown.z.sx, "/", check.margin = FALSE)
-hm_brown.z = data.matrix(hm_brown.z)
-
-colour = colorRampPalette(rev(c("chocolate1","#FEE090","grey10", "cyan3","cyan")))(100)
-heatmap.2(hm_brown.z, col = colour, Rowv = TRUE, Colv = TRUE, scale = "row", 
-          dendrogram = "both",
-          trace = "none", 
-          margin = c(5,15))
-
-
-hm_white = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_cold_white_host_results.txt", header=TRUE, col.names=c("X", "baseMean", "log2FoldChange", "lfcSE", "stat", "pvalue","padj")) %>% as_tibble() %>%
-  filter(padj < 0.1) %>% # only want the most DEGs
-  select(X) %>%
-  merge(norm_counts_host, by.x = "X", by.y = "X")  # turn into a countdatafile
-  row.names(hm_white) = hm_white$X
-  hm_white$X = NULL
-
-## Turning into z-score table
-hm_white.z = data.matrix(hm_white)
-hm_white.z = sweep(hm_white.z, 1L, rowMeans(hm_white.z), check.margin = FALSE)
-hm_white.z.sx = apply(hm_white.z, 1L, sd)
-hm_white.z = sweep(hm_white.z, 1L, hm_white.z.sx, "/", check.margin = FALSE)
-hm_white.z = data.matrix(hm_white.z)
-
-heatmap.2(hm_white.z, col = colour, Rowv = TRUE, Colv = TRUE, scale = "row", 
-          dendrogram = "both",
-          trace = "none", 
-          margin = c(5,15))
-```
-
-
-##Venn Diagrams
-
-Read in our result tables and isolate gene lists that significant in each experiment. 
-
-```{r cache=TRUE}
-hot.brown = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_hot_brown_host_results.txt")
-hot.brown = row.names(hot.brown[hot.brown$padj<0.05 & !is.na(hot.brown$padj),])
-
-freezing.brown = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_cold_brown_host_results.txt")
-freezing.brown = row.names(freezing.brown[freezing.brown$padj<0.05 & !is.na(freezing.brown$padj),])
-
-hot.white = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_hot_white_host_results.txt")
-hot.white = row.names(hot.white[hot.white$padj<0.05 & !is.na(hot.white$padj),])
-
-freezing.white = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_cold_white_host_results.txt")
-freezing.white = row.names(freezing.white[freezing.white$padj<0.05 & !is.na(freezing.white$padj),])
-```
-<br><br>
-
-Set up a venn diagram looking for similar genes in each experiment. 
-```{r cache=TRUE}
-all_shared.brown = list("Heat" = hot.brown, "Cold" = freezing.brown)
-prettyvenn.brown=venn.diagram(
-      x = all_shared.brown,
-      filename=NULL,
-      col = "transparent",
-      fill = c("#ea6227", "#68a2ff"),
-      alpha = 0.5,
-      #label.col = c("darkred", "white", "darkgreen", "white", "white", "white", "blue4"),
-      cex = 2.5,
-      fontfamily = "sans",
-      fontface = "bold",
-      cat.default.pos = "text",
-      cat.col = "black",
-      cat.cex = 2.5,
-      cat.fontfamily = "sans",
-      cat.dist = c(0.08, 0.08),
-      cat.pos = 1
-    );
-grid.draw(prettyvenn.brown)
-    
-all_shared.white = list("Heat" = hot.white, "Cold" = freezing.white)
-prettyvenn.white=venn.diagram(
-      x = all_shared.white,
-      filename=NULL,
-      col = "transparent",
-      fill = c("#ea6227", "#68a2ff"),
-      alpha = 0.5,
-      # label.col = c("darkred", "white", "darkgreen", "white", "white", "white", "blue4"),
-      cex = 2.5,
-      fontfamily = "sans",
-      fontface = "bold",
-      cat.default.pos = "text",
-      cat.col = "black",
-      cat.cex = 2.5,
-      cat.fontfamily = "sans",
-      cat.dist = c(0.08, 0.08),
-      cat.pos = 1
-    );
-grid.draw(prettyvenn.white)
-
-```
-
 
 
 ##Gene Ontology
 Make Gene Ontology input table for MWU for hot treatment
 ```{r message=FALSE, warning=FALSE, eval = FALSE}
 #sym
-oc_brown_hot_res = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_hot_brown_host_results.txt")
+oc_brown_hot_res = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/oculina_hot_brown_host_results.txt")
 head(oc_brown_hot_res)
 oc_brown_hot_res$isogroup=row.names(oc_brown_hot_res)
 
@@ -830,10 +657,10 @@ nrow(go_input_brown_hot_oculina)
 head(go_input_brown_hot_oculina)
 colnames(go_input_brown_hot_oculina) <- c("gene", "pval")
 head(go_input_brown_hot_oculina)
-write.csv(go_input_brown_hot_oculina, file="/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/GO_Analyses/oculina_hot_brown_host_GO.csv", quote=F, row.names=FALSE)
+write.csv(go_input_brown_hot_oculina, file="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/oculina_hot_brown_host_GO.csv", quote=F, row.names=FALSE)
 
 #apo
-oc_white_hot_res = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_hot_white_host_results.txt")
+oc_white_hot_res = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/oculina_hot_white_host_results.txt")
 head(oc_white_hot_res)
 oc_white_hot_res$isogroup=row.names(oc_white_hot_res)
 
@@ -853,7 +680,7 @@ write.csv(go_input_white_hot_oculina, file="/Users/hannahaichelman/Documents/BU/
 Make Gene Ontology input table for MWU for Oculina cold treatment
 ```{r message=FALSE, warning=FALSE, eval = FALSE}
 #sym
-oc_brown_cold_res = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_cold_brown_host_results.txt")
+oc_brown_cold_res = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/oculina_cold_brown_host_results.txt")
 head(oc_brown_cold_res)
 oc_brown_cold_res$isogroup=row.names(oc_brown_cold_res)
 
@@ -867,10 +694,10 @@ nrow(go_input_brown_cold_oculina)
 head(go_input_brown_cold_oculina)
 colnames(go_input_brown_cold_oculina) <- c("gene", "pval")
 head(go_input_brown_cold_oculina)
-write.csv(go_input_brown_cold_oculina, file="/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/GO_Analyses/oculina_cold_brown_host_GO.csv", quote=F, row.names=FALSE)
+write.csv(go_input_brown_cold_oculina, file="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/oculina_cold_brown_host_GO.csv", quote=F, row.names=FALSE)
 
 #apo
-oc_white_cold_res = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_cold_white_host_results.txt")
+oc_white_cold_res = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/oculina_cold_white_host_results.txt")
 head(oc_white_cold_res)
 oc_white_cold_res$isogroup=row.names(oc_white_cold_res)
 
@@ -884,7 +711,7 @@ nrow(go_input_white_cold_oculina)
 head(go_input_white_cold_oculina)
 colnames(go_input_white_cold_oculina) <- c("gene", "pval")
 head(go_input_white_cold_oculina)
-write.csv(go_input_white_cold_oculina, file="/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/GO_Analyses/oculina_cold_white_host_GO.csv", quote=F, row.names=FALSE)
+write.csv(go_input_white_cold_oculina, file="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/oculina_cold_white_host_GO.csv", quote=F, row.names=FALSE)
 ```
 
 

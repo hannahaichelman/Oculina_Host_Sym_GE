@@ -59,18 +59,18 @@ library(sva)
 library(textshape)
 ```
 
-Read in Oculina counts files.
+###Counts files and experimental design.
 ```{r,cache=TRUE, echo=FALSE}
 # this is the original counts file used in the analysis - which was made by mapping to a referene transcriptome of only single copy orthologs
-countData <- read.table("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/CountsFiles/OrthoCounts_deseq.txt") # clones are already removed from this dataset
+countData <- read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/03_DESeq_Scripts/CountsFiles/OrthoCounts_deseq.txt") # clones are already removed from this dataset
 dim(countData)
 # [1] 185  54
 
 # New analysis - September 2023
 # Try subsetting original host and symbiont count files for identified single copy orthologs
 # first read in host ortholog and gene names, then combine into one df
-host_ortholog_gene_names <- read.table("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/CountsFiles/O_arbuscula_ortholog_genenames.txt")
-host_original_gene_names <- read.table("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/CountsFiles/O_arbuscula_original_genenames.txt")
+host_ortholog_gene_names <- read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/03_DESeq_Scripts/CountsFiles/O_arbuscula_ortholog_genenames.txt")
+host_original_gene_names <- read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/03_DESeq_Scripts/CountsFiles//O_arbuscula_original_genenames.txt")
 dim(host_ortholog_gene_names) # [1] 57470     1
 dim(host_original_gene_names) # [1] 57470     2
 
@@ -80,8 +80,8 @@ host_dat = host_dat %>%
   select(host_original_gene, host_ortholog_gene)
 
 # read in symbiont ortholog and gene names, then combine into one df
-sym_ortholog_gene_names <- read.table("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/CountsFiles/B_psygmophilum_ortholog_genenames.txt")
-sym_original_gene_names <- read.table("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/CountsFiles/B_psygmophilum_original_genenames.txt")
+sym_ortholog_gene_names <- read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/03_DESeq_Scripts/CountsFiles/B_psygmophilum_ortholog_genenames.txt")
+sym_original_gene_names <- read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/03_DESeq_Scripts/CountsFiles/B_psygmophilum_original_genenames.txt")
 dim(sym_ortholog_gene_names) # [1] 31970     1
 dim(sym_original_gene_names) # [1] 31970     2
 
@@ -91,7 +91,7 @@ sym_dat = sym_dat %>%
   select(sym_original_gene, sym_ortholog_gene)
 
 # read in single copy ortholog names 
-single_copy_orthos <- read.table("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/CountsFiles/singleCopyOrthos.txt")
+single_copy_orthos <- read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/03_DESeq_Scripts/CountsFiles/singleCopyOrthos.txt")
 
 # subset host gene and ortholog name dataframe to include only single copy orthologs 
 host_data_sco = host_dat %>%
@@ -102,9 +102,9 @@ sym_data_sco = sym_dat %>%
 
 # Need to extract only single copy orthologs from the counts files used in the host and symbiont individual gene expression analyses
 # First read in the counts files for those analyses
-countDataHost <- read.table("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/CountsFiles/Oculina_counts_newref_host.txt")
+countDataHost <- read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/03_DESeq_Scripts/CountsFiles/Oculina_counts_newref_host.txt")
 dim(countDataHost)
-countDataSym <- read.table("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/CountsFiles/Oculina_Counts_newref_sym.txt")
+countDataSym <- read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/03_DESeq_Scripts/CountsFiles/Oculina_Counts_newref_sym.txt")
 dim(countDataSym)
 
 # subset host count data to include only single copy orthologs
@@ -172,7 +172,7 @@ dim(orthoCounts)
 
 Set up experimental design matrix
 ```{r,cache=TRUE}
-expDesign_old = read.csv("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/ExpDesign_orthos_noculture.csv")
+expDesign_old = read.csv("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/ExpDesign_orthos_noculture.csv")
 expDesign_old$temp = as.factor(expDesign_old$temp)
 expDesign_old$type = as.factor(expDesign_old$type)
 expDesign_old$batch = as.factor(expDesign_old$batch)
@@ -226,7 +226,7 @@ stats.per.sample = data.frame(t(do.call(cbind, lapply(countData, summary))))
       stats.per.sample$perc95 = apply(countData, 2, quantile, 0.95)
       stats.per.sample$zeros = apply(countData==0, 2, sum)
       stats.per.sample$percent.zeros = 100*stats.per.sample$zeros/nrow(countData)
-write.csv(stats.per.sample, file = "/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_orthos_oldcounts_summary_table.csv", quote = FALSE)
+write.csv(stats.per.sample, file = "~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/oculina_orthos_oldcounts_summary_table.csv", quote = FALSE)
       
 kable(stats.per.sample) %>%
   kable_styling(bootstrap_options = "striped", full_width = F)
@@ -240,7 +240,7 @@ stats.per.sample = data.frame(t(do.call(cbind, lapply(orthoCounts_noclones, summ
       stats.per.sample$perc95 = apply(orthoCounts_noclones, 2, quantile, 0.95)
       stats.per.sample$zeros = apply(orthoCounts_noclones==0, 2, sum)
       stats.per.sample$percent.zeros = 100*stats.per.sample$zeros/nrow(orthoCounts_noclones)
-write.csv(stats.per.sample, file = "/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_orthos_newcounts_summary_table.csv", quote = FALSE)
+write.csv(stats.per.sample, file = "~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/oculina_orthos_newcounts_summary_table.csv", quote = FALSE)
       
 kable(stats.per.sample) %>%
   kable_styling(bootstrap_options = "striped", full_width = F)
@@ -287,14 +287,9 @@ max(totalCounts)
 #max(totalCountssym) 
 
 ```
-####Outlier Conclusisons
+###Outlier Conclusisons
 
 Do not need to remove any outliers for the Oculina host or symbiont. 
-
-
-***
-
-
 
 
 Look at total counts across symbiont samples in the host and in culture
@@ -343,7 +338,7 @@ resultsNames(dds)
 ```{r echo=FALSE, cache=TRUE}
 norm.counts.ortho.old = counts(dds.old, normalized = TRUE) # these are the counts DESeq uses
 norm.counts.ortho.new = counts(dds, normalized = TRUE) # these are the counts DESeq uses
-write.csv(norm.counts.ortho, "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/Oculina_normalized_counts_ortho.csv") #these are all counts, not considering treatment comparisons
+write.csv(norm.counts.ortho, "~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/Oculina_normalized_counts_ortho.csv") #these are all counts, not considering treatment comparisons
               
 norm.counts.stats = data.frame(
   min = apply(norm.counts.ortho, 2, min),
@@ -636,7 +631,7 @@ deg_barplot = ggplot(ortho_combined_degs, aes(x = temperature, y = number, fill=
   #geom_text(data = annotate_text, aes(x = x, y = y, label = label))
 deg_barplot
 
-ggsave(deg_barplot, file = "/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/orthos_deg_barplot_newcounts_filtered.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
+ggsave(deg_barplot, file = "orthos_deg_barplot_newcounts_filtered.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
 ```
 
 ##Test for differences in DE orthologs
@@ -886,7 +881,7 @@ plotPCA_rlog_batchcorr = DESeq2::plotPCA(rlogged.corr, returnData = TRUE, intgro
       theme_bw()
 plotPCA_rlog_batchcorr
 
-ggsave(plotPCA_rlog_batchcorr, filename = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/orthos_pca.pdf", width=7, height=5, units=c("in"), useDingbats=FALSE)
+ggsave(plotPCA_rlog_batchcorr, filename = "orthos_pca.pdf", width=7, height=5, units=c("in"), useDingbats=FALSE)
 ```
 Principal component analyses highlighting treatment groups. Treatment has a significant affect (p < 0.001) on overall expression
 
@@ -929,7 +924,7 @@ plotPCA_allPCs <- function (object, intgroup = "condition", ntop = 500, returnDa
 
 ```{r eval=FALSE, include=FALSE}
 # source the script Colleen wrote with the different functions to calculate plasticity
-source("/Users/hannahaichelman/Documents/BU/Host_Buffering/CombinedHostSymAnalyses/PlasticityCustomFunctions_means.R")
+source("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/04_GE_Plasticity/PlasticityCustomFunctions_means.R")
 
 # use modified plotPCA function to give you all PCs
 pcadata.plast = plotPCA_allPCs(rlogged.corr, intgroup = c("temp_type", "type"), returnData = TRUE)
@@ -1018,7 +1013,7 @@ plast_plot = ggplot(dist_summ, aes(x = temp_type, y = dist)) +
       theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1), legend.position = "none")
        
 plast_plot
-ggsave(plast_plot, filename = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/PCA_plasticity_2PCs_orthos.pdf", width=7, height=5, units=c("in"), useDingbats=FALSE)
+ggsave(plast_plot, filename = "PCA_plasticity_2PCs_orthos.pdf", width=7, height=5, units=c("in"), useDingbats=FALSE)
 
 
 plast_boxplot <- ggplot(all_plast, aes(x = temp_type, y = dist)) +
@@ -1038,7 +1033,7 @@ plast_boxplot <- ggplot(all_plast, aes(x = temp_type, y = dist)) +
   theme(axis.title.x = element_blank())
 plast_boxplot
 
-ggsave(plast_boxplot, filename = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/PCA_plasticity_boxplot.pdf", width=7, height=5, units=c("in"), useDingbats=FALSE)
+ggsave(plast_boxplot, filename = "PCA_plasticity_boxplot.pdf", width=7, height=5, units=c("in"), useDingbats=FALSE)
 
 
 cols_nocontrol = c("cold_brown_host" = "#3182bd", "heat_brown_host" =  "#de2d26",
@@ -1080,185 +1075,6 @@ plast_boxplot <- ggplot(all_plast_nocontrol, aes(x = temp_type, y = dist)) +
   theme(axis.title.x = element_blank())
 plast_boxplot
 
-ggsave(plast_boxplot, filename = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/PCA_plasticity_boxplot_orthos.pdf", width=4.5, height=3, units=c("in"), useDingbats=FALSE)
+ggsave(plast_boxplot, filename = "PCA_plasticity_boxplot_orthos.pdf", width=4.5, height=3, units=c("in"), useDingbats=FALSE)
 ```
 
-##Heatmaps
-***
-<br> <br> 
-
-Overall expression, sample by distance. 
-
-```{r, cache=TRUE, fig.align="center"}
-sampleDists <- as.matrix(dist(t(assay(rlogged))))
-heatmap.2(as.matrix(sampleDists), key=F, trace="none",
-          col=colorpanel(100, "black", "white"),
-          margin=c(10, 10))
-```
-
-<br><br>
-<b>Individual genes heatmap </b> 
-<br> 
-Now plotting the z scores, as heatmap2 creates nice clean clusters by doing this. Upregulation indicated by warmer colors, downregulation indicated by cooler colors.
-
-First for heat vs. control comparison - Brown Host
-```{r, cache=TRUE, fig.align='center'}
-norm_counts = read.csv("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/Oculina_normalized_counts_ortho.csv")
-hm = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/brown_host_hot_orthos_results.txt", header=TRUE, col.names=c("X", "baseMean", "log2FoldChange", "lfcSE", "stat", "pvalue","padj")) %>% as_tibble() %>%
-  filter(padj < 0.1) %>% # only want the most DEGs
-  select(X) %>%
-  merge(norm_counts, by.x = "X", by.y = "X")  # turn into a countdatafile
-  row.names(hm) = hm$X
-  hm$X = NULL
-
-## Turning into z-score table
-hm.z = data.matrix(hm)
-hm.z = sweep(hm.z, 1L, rowMeans(hm.z), check.margin = FALSE)
-hm.z.sx = apply(hm.z, 1L, sd)
-hm.z = sweep(hm.z, 1L, hm.z.sx, "/", check.margin = FALSE)
-hm.z = data.matrix(hm.z)
-
-colour = colorRampPalette(rev(c("chocolate1","#FEE090","grey10", "cyan3","cyan")))(100)
-heatmap.2(hm.z, col = colour, Rowv = TRUE, Colv = TRUE, scale = "row", 
-          dendrogram = "both",
-          trace = "none", 
-          margin = c(5,15))
-```
-
-Could do these same heatmaps for all comparisons - skipping for now since we aren't including heatmaps in the manuscript.
-
-##Venn Diagrams
-
-Read in our result tables and isolate gene lists that are significant in each experiment. 
-
-Look at the symbiotic host orthologs first.
-```{r cache=TRUE}
-hot_brown_host = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/brown_host_hot_orthos_results.txt")
-hot_brown_host = row.names(hot_brown_host[hot_brown_host$padj<0.05 & !is.na(hot_brown_host$padj),])
-
-cold_brown_host = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/brown_host_cold_orthos_results.txt")
-cold_brown_host = row.names(cold_brown_host[cold_brown_host$padj<0.05 & !is.na(cold_brown_host$padj),])
-```
-<br><br>
-
-Set up a venn diagram looking for similar genes in each experiment. 
-```{r cache=TRUE}
-all_brown_host_shared = list("Hot" = hot_brown_host, "Cold" = cold_brown_host)
-    prettyvenn=venn.diagram(
-      x = all_brown_host_shared,
-      filename=NULL,
-      #col = "transparent",
-      fill = c("#de2d26","#3182bd"),
-      alpha = 0.5,
-      # label.col = c("darkred", "white", "darkgreen", "white", "white", "white", "blue4"),
-      cex = 2.5,
-      fontfamily = "sans",
-      fontface = "bold",
-      cat.default.pos = "text",
-      cat.col = "black",
-      cat.cex = 2.5,
-      cat.fontfamily = "sans",
-      cat.dist = c(0.08, 0.08),
-      cat.pos = 1
-    );
-grid.draw(prettyvenn)
-```
-
-Now aposymbiotic host orthologs first.
-```{r cache=TRUE}
-hot_white_host = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/white_host_hot_orthos_results.txt")
-hot_white_host = row.names(hot_white_host[hot_white_host$padj<0.05 & !is.na(hot_white_host$padj),])
-
-cold_white_host = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/white_host_cold_orthos_results.txt")
-cold_white_host = row.names(cold_white_host[cold_white_host$padj<0.05 & !is.na(cold_white_host$padj),])
-```
-<br><br>
-
-Set up a venn diagram looking for similar genes in each experiment. 
-```{r cache=TRUE}
-all_white_host_shared = list("Hot" = hot_white_host, "Cold" = cold_white_host)
-    prettyvenn=venn.diagram(
-      x = all_white_host_shared,
-      filename=NULL,
-      #col = "transparent",
-      fill = c("#de2d26","#3182bd"),
-      alpha = 0.5,
-      # label.col = c("darkred", "white", "darkgreen", "white", "white", "white", "blue4"),
-      cex = 2.5,
-      fontfamily = "sans",
-      fontface = "bold",
-      cat.default.pos = "text",
-      cat.col = "black",
-      cat.cex = 2.5,
-      cat.fontfamily = "sans",
-      cat.dist = c(0.08, 0.08),
-      cat.pos = 1
-    );
-grid.draw(prettyvenn)
-```
-
-Now look at Venn Diagram of symbiont in host orthologs
-```{r cache=TRUE}
-hot_sym_inhost = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/sym_inhost_hot_orthos_results.txt")
-hot_sym_inhost = row.names(hot_sym_inhost[hot_sym_inhost$padj<0.05 & !is.na(hot_sym_inhost$padj),])
-
-cold_sym_inhost = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/sym_inhost_cold_orthos_results.txt")
-cold_sym_inhost = row.names(cold_sym_inhost[cold_sym_inhost$padj<0.05 & !is.na(cold_sym_inhost$padj),])
-```
-<br><br>
-
-Set up a venn diagram looking for similar genes in each experiment. 
-```{r cache=TRUE}
-all_inhost_shared = list("Hot" = hot_sym_inhost, "Cold" = cold_sym_inhost)
-    prettyvenn=venn.diagram(
-      x = all_inhost_shared,
-      filename=NULL,
-      #col = "transparent",
-      fill = c("#fd8d3c","#74c476"),
-      alpha = 0.5,
-      # label.col = c("darkred", "white", "darkgreen", "white", "white", "white", "blue4"),
-      cex = 2.5,
-      fontfamily = "sans",
-      fontface = "bold",
-      cat.default.pos = "text",
-      cat.col = "black",
-      cat.cex = 2.5,
-      cat.fontfamily = "sans",
-      cat.dist = c(0.08, 0.08),
-      cat.pos = 1
-    );
-grid.draw(prettyvenn)
-```
-
-And finally sym in culture orthologs - SKIPPING NOW.
-```{r cache=TRUE}
-hot_sym_culture = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/sym_culture_hot_orthos_results.txt")
-hot_sym_culture = row.names(hot_sym_culture[hot_sym_culture$padj<0.05 & !is.na(hot_sym_culture$padj),])
-
-cold_sym_culture = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/sym_culture_cold_orthos_results.txt")
-cold_sym_culture = row.names(cold_sym_culture[cold_sym_culture$padj<0.05 & !is.na(cold_sym_culture$padj),])
-```
-<br><br>
-
-Set up a venn diagram looking for similar genes in each experiment. 
-```{r cache=TRUE}
-all_culture_shared = list("Hot" = hot_sym_culture, "Cold" = cold_sym_culture)
-    prettyvenn=venn.diagram(
-      x = all_culture_shared,
-      filename=NULL,
-      #col = "transparent",
-      fill = c("#fd8d3c","#74c476"),
-      alpha = 0.5,
-      # label.col = c("darkred", "white", "darkgreen", "white", "white", "white", "blue4"),
-      cex = 2.5,
-      fontfamily = "sans",
-      fontface = "bold",
-      cat.default.pos = "text",
-      cat.col = "black",
-      cat.cex = 2.5,
-      cat.fontfamily = "sans",
-      cat.dist = c(0.08, 0.08),
-      cat.pos = 1
-    );
-grid.draw(prettyvenn)
-```

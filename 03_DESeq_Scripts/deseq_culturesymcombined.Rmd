@@ -64,17 +64,17 @@ library(adegenet)
 
 Read in Oculina symbiont counts files, separately for in host and in culture data.  
 ```{r,cache=TRUE, echo=FALSE}
-countDataSym <- read.table("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/CountsFiles/Oculina_Counts_newref_sym.txt")
+countDataSym <- read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/03_DESeq_Scripts/CountsFiles/Oculina_Counts_newref_sym.txt")
 
-countDataCulture <- read.table("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/CountsFiles/B_psygmophilum_counts.txt")
+countDataCulture <- read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/03_DESeq_Scripts/CountsFiles/B_psygmophilum_counts.txt")
 ```
 
 Read in counts files in a way so that we can merge them, as we don't want the contig names to be rows here, but a column that we can merge on.
 ```{r,cache=TRUE, echo=FALSE}
-countDataSym_tomerge <- read.table("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/CountsFiles/Oculina_Counts_newref_sym.txt", row.names = NULL)
+countDataSym_tomerge <- read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/03_DESeq_Scripts/CountsFiles/Oculina_Counts_newref_sym.txt", row.names = NULL)
 colnames(countDataSym_tomerge)[1] = "contig"
 
-countDataCulture_tomerge <- read.table("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/CountsFiles/B_psygmophilum_counts.txt", row.names = NULL)
+countDataCulture_tomerge <- read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/03_DESeq_Scripts/CountsFiles/B_psygmophilum_counts.txt", row.names = NULL)
 colnames(countDataCulture_tomerge)[1] = "contig"
 
 # create a combined counts file for the symbionts in hospite and in culture
@@ -192,7 +192,7 @@ stats.per.sample = data.frame(t(do.call(cbind, lapply(countDataCombined_brown, s
       stats.per.sample$perc95 = apply(countDataCombined_brown, 2, quantile, 0.95)
       stats.per.sample$zeros = apply(countDataCombined_brown==0, 2, sum)
       stats.per.sample$percent.zeros = 100*stats.per.sample$zeros/nrow(countDataCombined_brown)
-      write.csv(stats.per.sample, file = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/sym_culture_inhost_combined_summary_table.csv", quote = FALSE)
+      write.csv(stats.per.sample, file = "~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/sym_culture_inhost_combined_summary_table.csv", quote = FALSE)
       
 kable(stats.per.sample) %>%
   kable_styling(bootstrap_options = "striped", full_width = F)
@@ -219,7 +219,7 @@ Create a directory with a bunch of output figures from arrayQualityMetrics() for
 ```{r message=FALSE, warning=FALSE, eval = FALSE}
 cds=DESeq::estimateDispersions(real,method="blind")
 vsdBlind=DESeq::varianceStabilizingTransformation(cds)
-arrayQualityMetrics(vsdBlind,intgroup="treat_type", force=TRUE, outdir = "/Users/hannahaichelman/Documents/BU/Host_Buffering/CombinedHostSymAnalyses/sym_combined_arrayqualitymetrics") # this makes a directory "arrayQualityMetrics" and outputs various reports on outliers
+arrayQualityMetrics(vsdBlind,intgroup="treat_type", force=TRUE, outdir = "sym_combined_arrayqualitymetrics") # this makes a directory "arrayQualityMetrics" and outputs various reports on outliers
 
 # detach original DESeq package since we won't need it anymore
 detach(package:DESeq, unload = TRUE)
@@ -289,7 +289,7 @@ summary(results.corr)
 
 ```{r echo=FALSE, cache=TRUE}
 norm.counts.corr = counts(dds.corr, normalized = TRUE) # these are the counts DESeq uses
-write.csv(norm.counts.corr,"/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/normalized_counts_symscombined_batchcorr.csv") #these are all counts, not considering treatment comparisons
+write.csv(norm.counts.corr,"~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/normalized_counts_symscombined_batchcorr.csv") #these are all counts, not considering treatment comparisons
               
 norm.counts.corr.stats = data.frame(
   min = apply(norm.counts.corr, 2, min),
@@ -328,7 +328,7 @@ table(res_hot_culture_corr$padj<0.01)
 # 0.05=646
 # 0.01=486
 summary(res_hot_culture_corr)
-write.table(res_hot_culture_corr, file="/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_hot_symcombined_culture_results.txt", quote=F, sep="\t")
+write.table(res_hot_culture_corr, file="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/oculina_hot_symcombined_culture_results.txt", quote=F, sep="\t")
 ```
 
 MA plot, red dots indicate genes significantly differentially expressed at FDR < 0.1 
@@ -349,7 +349,7 @@ table(res_hot_inhost_corr$padj<0.01)
 # 0.05=61
 # 0.01=24
 summary(res_hot_inhost_corr)
-write.table(res_hot_inhost_corr, file="/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_hot_symcombined_inhost_results.txt", quote=F, sep="\t")
+write.table(res_hot_inhost_corr, file="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/oculina_hot_symcombined_inhost_results.txt", quote=F, sep="\t")
 ```
 
 MA plot, red dots indicate genes significantly differentially expressed at FDR < 0.1 
@@ -369,7 +369,7 @@ table(res_cold_culture_corr$padj<0.01)
 # 0.05=704
 # 0.01=592
 summary(res_cold_culture_corr)
-write.table(res_cold_culture_corr, file="/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_cold_symcombined_culture_results.txt", quote=F, sep="\t")
+write.table(res_cold_culture_corr, file="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/oculina_cold_symcombined_culture_results.txt", quote=F, sep="\t")
 ```
 
 MA plot, red dots indicate genes significantly differentially expressed at FDR < 0.1 
@@ -389,7 +389,7 @@ table(res_cold_inhost_corr$padj<0.01)
 # 0.05=4
 # 0.01=1
 summary(res_cold_inhost_corr)
-write.table(res_cold_inhost_corr, file="/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_cold_symcombined_inhost_results.txt", quote=F, sep="\t")
+write.table(res_cold_inhost_corr, file="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/oculina_cold_symcombined_inhost_results.txt", quote=F, sep="\t")
 ```
 
 MA plot, red dots indicate genes significantly differentially expressed at FDR < 0.1 
@@ -456,7 +456,7 @@ deg_barplot = ggplot(sym_combined_degs, aes(x = temperature, y = number, fill=te
   #geom_text(data = annotate_text, aes(x = x, y = y, label = label))
 deg_barplot
 
-ggsave(deg_barplot, file = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/symcombined_deg_barplot.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
+ggsave(deg_barplot, file = "symcombined_deg_barplot.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
 ```
 
 Moving forward with batch corrected (using ComBat-seq) and rlog-transformed data. 
@@ -515,7 +515,7 @@ plotPCA_rlog_batchcorr = DESeq2::plotPCA(rlogged.corr, returnData = TRUE, intgro
       theme_bw() 
 plotPCA_rlog_batchcorr
 
-ggsave(plotPCA_rlog_batchcorr, filename = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/symcombined_pca.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
+ggsave(plotPCA_rlog_batchcorr, filename = "symcombined_pca.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
 
 ```
 
@@ -604,7 +604,7 @@ plotPCA_allPCs <- function (object, intgroup = "condition", ntop = 500, returnDa
 
 ```{r eval=FALSE, include=FALSE}
 # source the script Colleen wrote with the different functions to calculate plasticity
-source("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/GE_Plasticity/PlasticityCustomFunctions_means.R")
+source("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/04_GE_Plasticity/PlasticityCustomFunctions_means.R")
 
 # use modified plotPCA function to give you all PCs
 pcadata.plast = plotPCA_allPCs(rlogged.corr, intgroup = c("treat_type", "type"), returnData = TRUE)
@@ -695,7 +695,7 @@ plast_plot = ggplot(dist_summ, aes(x = treat_type, y = dist)) +
       theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1), legend.position = "none")
 plast_plot
 
-ggsave(plast_plot, filename = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/PCA_plasticity_2PCs_symcombined.pdf", width=6, height=5, units=c("in"), useDingbats=FALSE)
+ggsave(plast_plot, filename = "PCA_plasticity_2PCs_symcombined.pdf", width=6, height=5, units=c("in"), useDingbats=FALSE)
 
 # boxplot with points overlaid
 all_plast_nocontrol = all_plast %>%
@@ -725,14 +725,14 @@ plast_boxplot <- ggplot(all_plast_nocontrol, aes(x = treat_type, y = dist)) +
   theme(axis.title.x = element_blank())
 plast_boxplot
 
-ggsave(plast_boxplot, filename = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/PCA_plasticity_boxplot_symcombined.pdf", width=3, height=4, units=c("in"), useDingbats=FALSE)
+ggsave(plast_boxplot, filename = "PCA_plasticity_boxplot_symcombined.pdf", width=3, height=4, units=c("in"), useDingbats=FALSE)
 
 ```
 
 ### Gene Ontology
 Make Gene Ontology input table for MWU for hot treatment
 ```{r message=FALSE, warning=FALSE, eval = FALSE}
-oc_hot_culture_res = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_hot_symcombined_culture_results.txt")
+oc_hot_culture_res = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/oculina_hot_symcombined_culture_results.txt")
 head(oc_hot_culture_res)
 oc_hot_culture_res$isogroup=row.names(oc_hot_culture_res)
 
@@ -746,9 +746,9 @@ nrow(go_input_hot_culture)
 head(go_input_hot_culture)
 colnames(go_input_hot_culture) <- c("gene", "pval")
 head(go_input_hot_culture)
-write.csv(go_input_hot_culture, file="/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/Oculina_GO_Analyses/oculina_hot_symcombined_culture_GO.csv", quote=F, row.names=FALSE)
+write.csv(go_input_hot_culture, file="/~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/oculina_hot_symcombined_culture_GO.csv", quote=F, row.names=FALSE)
 
-oc_hot_inhost_res = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_hot_symcombined_inhost_results.txt")
+oc_hot_inhost_res = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/oculina_hot_symcombined_inhost_results.txt")
 head(oc_hot_inhost_res)
 oc_hot_inhost_res$isogroup=row.names(oc_hot_inhost_res)
 
@@ -762,13 +762,13 @@ nrow(go_input_hot_inhost)
 head(go_input_hot_inhost)
 colnames(go_input_hot_inhost) <- c("gene", "pval")
 head(go_input_hot_inhost)
-write.csv(go_input_hot_inhost, file="/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/Oculina_GO_Analyses/oculina_hot_symcombined_inhost_GO.csv", quote=F, row.names=FALSE)
+write.csv(go_input_hot_inhost, file="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/oculina_hot_symcombined_inhost_GO.csv", quote=F, row.names=FALSE)
 
 ```
 
 Make Gene Ontology input table for MWU for Oculina cold treatment
 ```{r message=FALSE, warning=FALSE, eval = FALSE}
-oc_cold_culture_res = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_cold_symcombined_culture_results.txt")
+oc_cold_culture_res = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/oculina_cold_symcombined_culture_results.txt")
 head(oc_cold_culture_res)
 oc_cold_culture_res$isogroup=row.names(oc_cold_culture_res)
 
@@ -782,9 +782,9 @@ nrow(go_input_cold_culture) #630
 head(go_input_cold_culture)
 colnames(go_input_cold_culture) <- c("gene", "pval")
 head(go_input_cold_culture)
-write.csv(go_input_cold_culture, file="/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/Oculina_GO_Analyses/oculina_cold_symcombined_culture_GO.csv", quote=F, row.names=FALSE)
+write.csv(go_input_cold_culture, file="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/oculina_cold_symcombined_culture_GO.csv", quote=F, row.names=FALSE)
 
-oc_cold_inhost_res = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_cold_symcombined_inhost_results.txt")
+oc_cold_inhost_res = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/oculina_cold_symcombined_inhost_results.txt")
 head(oc_cold_inhost_res)
 oc_cold_inhost_res$isogroup=row.names(oc_cold_inhost_res)
 
@@ -798,368 +798,5 @@ nrow(go_input_cold_inhost)
 head(go_input_cold_inhost)
 colnames(go_input_cold_inhost) <- c("gene", "pval")
 head(go_input_cold_inhost)
-write.csv(go_input_cold_inhost, file="/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/Oculina_GO_Analyses/oculina_cold_symcombined_inhost_GO.csv", quote=F, row.names=FALSE)
-```
-
-
-
-### Log2 Fold Change Density Plots
-
-```{r}
-culture_cold_res = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_cold_symcombined_culture_results.txt", header=TRUE) %>%
-  mutate(type = "culture_cold")
-culture_hot_res = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_hot_symcombined_culture_results.txt", header=TRUE) %>%
-  mutate(type = "culture_hot")
-host_cold_res = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_cold_symcombined_inhost_results.txt", header=TRUE) %>%
-  mutate(type = "host_cold")
-host_hot_res= read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_hot_symcombined_inhost_results.txt", header=TRUE) %>%
-  mutate(type = "host_hot")
-
-# all types combined
-res_combined = rbind(culture_cold_res, culture_hot_res, host_cold_res, host_hot_res) %>%
-  mutate(abs_log2foldchange = abs(log2FoldChange))
-res_combined$type = as.factor(res_combined$type)
-
-res_cols = c("#2166ac", "#b2182b", "#67a9cf", "#ef8a62")
-
-# plot the absolute value of log 2 fold change as a density plot, color by group
-ggplot(res_combined, aes(x = abs(log2FoldChange), group = type, color = type))+
-  geom_density(lwd = 1.5) +
-  scale_color_manual(values = res_cols) +
-  xlab("|log-fold change relative to control|") +
-  theme_cowplot()
-
-# hot treatments separate
-res_combined_hot = rbind(culture_hot_res, host_hot_res)
-res_combined_hot$type = as.factor(res_combined_hot$type)
-
-res_cols_hot = c("#b2182b", "#ef8a62")
-
-ggplot(res_combined_hot, aes(x = abs(log2FoldChange), group = type, color = type))+
-  geom_density(lwd = 1.5) +
-  scale_color_manual(values = res_cols_hot) +
-  xlab("|log-fold change relative to control|") +
-  theme_cowplot()
-
-# cold treatments separate
-res_combined_cold = rbind(culture_cold_res, host_cold_res)
-res_combined_cold$type = as.factor(res_combined_cold$type)
-
-res_cols_cold = c("#2166ac", "#67a9cf")
-
-ggplot(res_combined_cold, aes(x = abs(log2FoldChange), group = type, color = type))+
-  geom_density(lwd = 1.5) +
-  scale_color_manual(values = res_cols_cold) +
-  xlab("|log-fold change relative to control|") +
-  theme_cowplot()
-
-# do stats on the absolute value of log2fold change
-summarySE(res_combined)
-
-aov1 = aov(abs_log2foldchange~type, data=res_combined)
-summary(aov1)
-TukeyHSD(aov1)
-# $type
-#                                  diff         lwr         upr     p adj
-# culture_hot-culture_cold -0.059999658 -0.09816988 -0.02182944 0.0003195
-# host_cold-culture_cold   -0.057166253 -0.09533647 -0.01899603 0.0006984
-# host_hot-culture_cold     0.012994448 -0.02517577  0.05116467 0.8177370
-# host_cold-culture_hot     0.002833406 -0.03533682  0.04100363 0.9975372
-# host_hot-culture_hot      0.072994107  0.03482389  0.11116433 0.0000056
-# host_hot-host_cold        0.070160701  0.03199048  0.10833092 0.0000144
-
-
-lm1 = lm(abs_log2foldchange~type, data=res_combined)
-summary(lm1)
-
-# try splitting up into up- and down-regulated genes
-res_combined_pos = res_combined %>%
-  filter(log2FoldChange > 0)
-
-aov_pos = aov(abs_log2foldchange~type, data=res_combined_pos)
-summary(aov_pos)
-TukeyHSD(aov_pos)
-
-res_combined_neg = res_combined %>%
-  filter(log2FoldChange < 0)
-
-aov_neg = aov(abs_log2foldchange~type, data=res_combined_neg)
-summary(aov_neg)
-TukeyHSD(aov_neg)
-
-```
-
-### Log2 Fold Change Correlation Plots
-
-```{r}
-library(plotly)
-
-# make lfc combined matrix to plot lfc in host vs. in culture
-# start with heat datasets first
-
-culture_hot_res_merge = culture_hot_res %>%
-  select(log2FoldChange) %>%
-  rownames_to_column(var = "gene")
-
-host_hot_res_merge = host_hot_res %>%
-  select(log2FoldChange) %>%
-  rownames_to_column(var = "gene")
-
-hot_res_merged = left_join(culture_hot_res_merge, host_hot_res_merge, by = "gene")
-
-# combine in host and in culture df's for lfc
-hot_res_merged = hot_res_merged %>%
-  dplyr::rename(log2FoldChange.inculture = log2FoldChange.x) %>%
-  dplyr::rename(log2FoldChange.inhost = log2FoldChange.y)
-
-# add gene name to this df - trim down names and add to photo_genes
-iso2gene = read.delim("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_TagSeq/References/B_psygmophilum_transcriptome/B_psygmophilum_isogroup_to_genename.tab", sep = "\t", header = FALSE) %>%
-  dplyr::rename("gene" = "V1") %>%
-  dplyr::rename("gene_name" = "V2")
-
-iso2gene$gene_name = gsub("OS=.*", "", iso2gene$gene_name)
-head(iso2gene)
-
-# combine with lfc merged dataframe
-hot_res_merged_anno = hot_res_merged %>%
-  left_join(iso2gene, by = "gene")
-head(hot_res_merged_anno)
-
-# look for most correlated categories
-# can id delta ranks using this plotly:
-heat_plotly = ggplot(hot_res_merged_anno, aes(x = log2FoldChange.inculture, y = log2FoldChange.inhost)) +
-  geom_point(aes(text = paste("Gene:", gene_name)), size = 2) +
-  geom_smooth(method='lm') +
-  xlim(-1.5, 1.5) +
-  ylim(-1.5, 1.5) +
-  geom_hline(yintercept = 0, lty = 2) +
-  geom_vline(xintercept = 0, lty = 2) +
-  ggtitle("Heat Challenge")
-ggplotly(heat_plotly)
-
-# what is the relationship of this line:
-lm_heat <- lm(log2FoldChange.inhost ~ log2FoldChange.inculture, hot_res_merged_anno) 
-summary(lm_heat)
-my_equation_heat <- paste("y =",        # Extract equation of model
-                     coef(lm_heat)[[1]],
-                     "+",
-                     coef(lm_heat)[[2]],
-                     "* x")
-my_equation_heat   # Print equation of model
-
-# [1] "y = -0.0532470628552914 + 0.608385970135619 * x"
-
-# now repeat with cold challenge data
-
-culture_cold_res_merge = culture_cold_res %>%
-  select(log2FoldChange) %>%
-  rownames_to_column(var = "gene")
-
-host_cold_res_merge = host_cold_res %>%
-  select(log2FoldChange) %>%
-  rownames_to_column(var = "gene")
-
-cold_res_merged = left_join(culture_cold_res_merge, host_cold_res_merge, by = "gene")
-
-# combine in host and in culture df's for lfc
-cold_res_merged = cold_res_merged %>%
-  dplyr::rename(log2FoldChange.inculture = log2FoldChange.x) %>%
-  dplyr::rename(log2FoldChange.inhost = log2FoldChange.y)
-
-# add gene name to this df - trim down names and add to photo_genes
-# combine with lfc merged dataframe
-cold_res_merged_anno = cold_res_merged %>%
-  left_join(iso2gene, by = "gene")
-head(cold_res_merged_anno)
-
-# look for most correlated categories
-# can id delta ranks using this plotly:
-cold_plotly = ggplot(cold_res_merged_anno, aes(x = log2FoldChange.inculture, y = log2FoldChange.inhost)) +
-  geom_point(aes(text = paste("Gene:", gene_name)), size = 2) +
-  geom_smooth(method='lm') +
-  xlim(-1.5, 1.5) +
-  ylim(-1.5, 1.5) +
-  geom_hline(yintercept = 0, lty = 2) +
-  geom_vline(xintercept = 0, lty = 2) +
-  ggtitle("Cold Challenge")
-ggplotly(cold_plotly)
-
-# what is the relationship of this line:
-lm_cold <- lm(log2FoldChange.inhost ~ log2FoldChange.inculture, cold_res_merged_anno) 
-summary(lm_cold)
-my_equation_cold <- paste("y =",        # Extract equation of model
-                     coef(lm_cold)[[1]],
-                     "+",
-                     coef(lm_cold)[[2]],
-                     "* x")
-my_equation_cold   # Print equation of mode```
-e4# [1] "y = -0.0194476898444039 + 0.336978917947459 * x"
-
-```
-
-
-### Heatmaps
-***
-<br> <br> 
-
-Overall expression, sample by distance. 
-
-```{r fig.align="center", cache=TRUE}
-sampleDists <- as.matrix(dist(t(assay(rlogged.corr))))
-heatmap.2(as.matrix(sampleDists), key=F, trace="none",
-          col=colorpanel(100, "black", "white"),
-          margin=c(10, 10))
-```
-
-<br><br>
-<b>Individual genes heatmap </b> 
-<br> 
-Now plotting the z scores, as heatmap2 creates nice clean clusters by doing this. Upregulation indicated by warmer colors, downregulation indicated by cooler colors.
-
-First for heat vs. control comparison in culture
-```{r, cache=TRUE, fig.align='center'}
-norm_counts = read.csv("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/normalized_counts_symscombined_batchcorr.csv") 
-
-hm = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_hot_symcombined_culture_results.txt", header=TRUE) %>%
-  rownames_to_column("X") %>%
-  filter(padj < 0.1) %>% # only want the most DEGs
-  select(X) %>%
-  merge(norm_counts, by.x = "X", by.y = "X") %>% # turn into a countdatafile
-  column_to_rownames(var = "X")
-
-## Turning into z-score table
-hm.z = data.matrix(hm)
-hm.z = sweep(hm.z, 1L, rowMeans(hm.z), check.margin = FALSE)
-hm.z.sx = apply(hm.z, 1L, sd)
-hm.z = sweep(hm.z, 1L, hm.z.sx, "/", check.margin = FALSE)
-hm.z = data.matrix(hm.z)
-
-colour = colorRampPalette(rev(c("chocolate1","#FEE090","grey10", "cyan3","cyan")))(100)
-heatmap.2(hm.z, col = colour, Rowv = TRUE, Colv = TRUE, scale = "row", 
-          dendrogram = "both",
-          trace = "none", 
-          margin = c(5,15))
-```
-
-Now for cold vs. control comparison in culture
-```{r, cache=TRUE, fig.align='center'}
-norm_counts = read.csv("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/normalized_counts_symscombined_batchcorr.csv") 
-
-hm = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_cold_symcombined_culture_results.txt", header=TRUE) %>%
-  rownames_to_column("X") %>%
-  filter(padj < 0.1) %>% # only want the most DEGs
-  select(X) %>%
-  merge(norm_counts, by.x = "X", by.y = "X") %>% # turn into a countdatafile
-  column_to_rownames(var = "X")
-
-## Turning into z-score table
-hm.z = data.matrix(hm)
-hm.z = sweep(hm.z, 1L, rowMeans(hm.z), check.margin = FALSE)
-hm.z.sx = apply(hm.z, 1L, sd)
-hm.z = sweep(hm.z, 1L, hm.z.sx, "/", check.margin = FALSE)
-hm.z = data.matrix(hm.z)
-
-colour = colorRampPalette(rev(c("chocolate1","#FEE090","grey10", "cyan3","cyan")))(100)
-heatmap.2(hm.z, col = colour, Rowv = TRUE, Colv = TRUE, scale = "row", 
-          dendrogram = "both",
-          trace = "none", 
-          margin = c(5,15))
-```
-
-Could repeat for in host heatmaps but skipping for now
-
-
-### Venn Diagrams
-
-Read in our result tables and isolate gene lists that are significant in each experiment. 
-
-```{r eval=FALSE, cache=TRUE, include=FALSE}
-culture_hot = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_hot_symcombined_culture_results.txt", header = TRUE)
-culture_hot = row.names(culture_hot[culture_hot$padj<0.05 & !is.na(culture_hot$padj),])
-
-culture_cold = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_cold_symcombined_culture_results.txt", header = TRUE)
-culture_cold = row.names(culture_cold[culture_cold$padj<0.05 & !is.na(culture_cold$padj),])
-
-inhost_hot = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_hot_symcombined_inhost_results.txt", header = TRUE)
-inhost_hot = row.names(inhost_hot[inhost_hot$padj<0.05 & !is.na(inhost_hot$padj),])
-
-inhost_cold = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/oculina_cold_symcombined_inhost_results.txt", header = TRUE)
-inhost_cold = row.names(inhost_cold[inhost_cold$padj<0.05 & !is.na(inhost_cold$padj),])
-
-```
-<br><br>
-
-Set up a venn diagram looking for similar genes in each experiment. 
-```{r eval=FALSE, cache=TRUE, include=FALSE}
-all_shared.culture = list("Heat" = culture_hot, "Cold" = culture_cold)
-prettyvenn.culture=venn.diagram(
-      x = all_shared.culture,
-      filename=NULL,
-      col = "transparent",
-      fill = c("#fd8d3c", "#74c476"),
-      alpha = 0.5,
-      #label.col = c("darkred", "white", "darkgreen", "white", "white", "white", "blue4"),
-      cex = 2.5,
-      fontfamily = "sans",
-      fontface = "bold",
-      cat.default.pos = "text",
-      cat.col = "black",
-      cat.cex = 2.5,
-      cat.fontfamily = "sans",
-      cat.dist = c(0.08, 0.08),
-      cat.pos = 1
-    );
-grid.draw(prettyvenn.culture)
-    
-all_shared.inhost = list("Heat" = inhost_hot, "Cold" = inhost_cold)
-prettyvenn.inhost=venn.diagram(
-      x = all_shared.inhost,
-      filename=NULL,
-      col = "transparent",
-      fill = c("#fd8d3c", "#74c476"),
-      # label.col = c("darkred", "white", "darkgreen", "white", "white", "white", "blue4"),
-      cex = 2.5,
-      fontfamily = "sans",
-      fontface = "bold",
-      cat.default.pos = "text",
-      cat.col = "black",
-      cat.cex = 2.5,
-      cat.fontfamily = "sans",
-      cat.dist = c(0.08, 0.08),
-      cat.pos = 1
-    );
-grid.draw(prettyvenn.inhost)
-```
-
-
-
-
-### DAPC
-Looks like I want to run the DAPC with 3ish PC (if that many) just a heads up.  
-If you just run: dapc(ge_matrix, grp_pca$symb_reef)
-then it will prompt you to select your number of PCs (from a plot) and you can type the number there. Then it will do the same for DAs
-You may use more, but just make sure when you run it first, you don’t specify the PC or DA numbers like it did. But you can specify them once you select!
-
-```{r eval=FALSE, include=FALSE}
-
-## convert vsd to matrix
-rlog.corr.ge.matrix <- t(assay(rlogged.corr)) 
-
-## grouping variable:
-grp_pca <- DESeq2::plotPCA(rlogged.corr, intgroup = c("treat_type", "type"), returnData = TRUE)
-
-## 
-dapc1 = dapc(rlog.corr.ge.matrix, grp_pca$treat_type)
-scatter(dapc1)
-scatter(dapc1,1,1)
-
-find.clusters(rlog.corr.ge.matrix, max.n.clust=40)
-
-## Run the treatment and type DAPC with 43 PCs and 6 DAs
-dapc2 <- dapc(rlog.corr.ge.matrix, grp_pca$treat_type, n.pca = 3, n.da = 6)
-dapc2
-summary(dapc2)
-scatter(dapc2)
-
-scatter(dapc2,1,1, cols = cols, bg = "white", scree.da = FALSE, legend = TRUE, solid = 0.6)
+write.csv(go_input_cold_inhost, file="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/oculina_cold_symcombined_inhost_GO.csv", quote=F, row.names=FALSE)
 ```

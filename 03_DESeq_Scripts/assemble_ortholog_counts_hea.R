@@ -6,7 +6,7 @@ library(tidyverse)
 library(data.table)
 
 # This updated analysis includes all comparisons - (brown host, white host, syms in culture, syms in symbiosis)
-setwd('/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/CountsFiles')
+setwd('~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/03_DESeq_Scripts/CountsFiles')
 
 
 # READ IN THE ORTHOLOGS ---------------------------------------------------
@@ -182,7 +182,7 @@ write.table(counts, "OrthoCounts_deseq.txt", sep="\t") #this is the counts file 
 # RUN DESEQ TO CHECK EXPRESSION AGREEMENT ---------------------------------
 library(DESeq2)
 
-expDesign = read.csv("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/ExpDesign_orthos_noculture.csv")
+expDesign = read.csv("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/ExpDesign_orthos_noculture.csv")
 expDesign$treat_type = as.factor(paste(expDesign$temp,expDesign$type, sep = "_"))
 
 #run DESeq

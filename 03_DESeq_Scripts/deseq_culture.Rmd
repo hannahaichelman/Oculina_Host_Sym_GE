@@ -61,7 +61,7 @@ library(VennDiagram)
 
 Read in Breviolum psygmophilum symbiont in culture counts file
 ```{r,cache=TRUE, echo=FALSE}
-countDataCulture <- read.table("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/CountsFiles/B_psygmophilum_counts.txt")
+countDataCulture <- read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/03_DESeq_Scripts/CountsFiles/B_psygmophilum_counts.txt")
 ```
 
 
@@ -95,7 +95,7 @@ stats.per.sample = data.frame(t(do.call(cbind, lapply(countDataCulture, summary)
       stats.per.sample$perc95 = apply(countDataCulture, 2, quantile, 0.95)
       stats.per.sample$zeros = apply(countDataCulture==0, 2, sum)
       stats.per.sample$percent.zeros = 100*stats.per.sample$zeros/nrow(countDataCulture)
-write.csv(stats.per.sample, file = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/sym_culture_summary_table.csv", quote = FALSE)
+write.csv(stats.per.sample, file = "~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/sym_culture_summary_table.csv", quote = FALSE)
       
 kable(stats.per.sample) %>%
   kable_styling(bootstrap_options = "striped", full_width = F)
@@ -179,7 +179,7 @@ head(results)
 
 ```{r echo=FALSE, cache=TRUE}
 norm.counts.culture = counts(dds, normalized = TRUE) # these are the counts DESeq uses
-write.csv(norm.counts.culture,"/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/normalized_counts_culture.csv") #these are all counts, not considering treatment comparisons
+write.csv(norm.counts.culture,"~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/normalized_counts_culture.csv") #these are all counts, not considering treatment comparisons
               
 norm.counts.stats = data.frame(
   min = apply(norm.counts.culture, 2, min),
@@ -211,7 +211,7 @@ table(res_hot_culture$padj<0.05)
 # 0.05=4330
 # 0.01=2860
 summary(res_hot_culture)
-write.table(res_hot_culture, file="/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/culture_hot_results.txt", quote=F, sep="\t")
+write.table(res_hot_culture, file="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/culture_hot_results.txt", quote=F, sep="\t")
 ```
 
 MA plot, red dots indicate genes significantly differentially expressed at FDR < 0.1 
@@ -232,7 +232,7 @@ table(res_cold_culture$padj<0.1)
 # 0.05=5834
 # 0.01=4057
 summary(res_cold_culture)
-write.table(res_cold_culture, file="/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/culture_cold_results.txt", quote=F, sep="\t")
+write.table(res_cold_culture, file="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/culture_cold_results.txt", quote=F, sep="\t")
 ```
 
 MA plot, red dots indicate genes significantly differentially expressed at FDR < 0.1 
@@ -270,7 +270,7 @@ table(complete.cases(rldpvals))
 # FALSE  TRUE 
 # 8768 19497
 
-write.csv(rldpvals, "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/Culture_RLDandPVALS.csv", quote=F)
+write.csv(rldpvals, "~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/Culture_RLDandPVALS.csv", quote=F)
 
 ```
 
@@ -316,7 +316,7 @@ deg_barplot = ggplot(culture_degs, aes(x = temperature, y = number, fill=tempera
   geom_text(data = annotate_text, aes(x = x, y = y, label = label))
 deg_barplot
 
-ggsave(deg_barplot, file = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/culture_deg_barplot.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
+ggsave(deg_barplot, file = "culture_deg_barplot.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
 ```
 
 ##Principal Component Analyses 
@@ -357,7 +357,7 @@ pca_culture = DESeq2::plotPCA(rlogged, returnData = TRUE, intgroup = c("treatmen
       theme_bw()
 pca_culture
 
-ggsave(pca_culture, file = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/culture_pca.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
+ggsave(pca_culture, file = "culture_pca.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
 ```
 Principal component analyses highlighting treatment groups. Treatment has a significant affect (p < 0.001) on overall expression
 
@@ -411,7 +411,7 @@ plotPCA_allPCs <- function (object, intgroup = "condition", ntop = 500, returnDa
 
 ```{r eval=FALSE, include=FALSE}
 # source the script Colleen wrote with the different functions to calculate plasticity
-source("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/GE_Plasticity/PlasticityCustomFunctions_means.R")
+source("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/04_GE_Plasticity/PlasticityCustomFunctions_means.R")
 
 # use modified plotPCA function to give you all PCs
 pcadata.plast = plotPCA_allPCs(rlogged, intgroup = c("treatment"), returnData = TRUE)
@@ -471,7 +471,7 @@ plast_plot = ggplot(dist_summ, aes(x = treatment, y = dist)) +
       theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1), legend.position = "none")
 plast_plot
 
-ggsave(plast_plot, filename = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/PCA_plasticity_2PCs_syminculture.pdf", width=6, height=5, units=c("in"), useDingbats=FALSE)
+ggsave(plast_plot, filename = "PCA_plasticity_2PCs_syminculture.pdf", width=6, height=5, units=c("in"), useDingbats=FALSE)
 
 # boxplot with points overlaid
 plast_nocontrol = pca_plast %>%
@@ -495,7 +495,7 @@ plast_boxplot <- ggplot(plast_nocontrol, aes(x = treatment, y = dist)) +
   theme(axis.title.x = element_blank())
 plast_boxplot
 
-ggsave(plast_boxplot, filename = "/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/PCA_plasticity_boxplot_syminculture.pdf", width=2.5, height=4, units=c("in"), useDingbats=FALSE)
+ggsave(plast_boxplot, filename = "PCA_plasticity_boxplot_syminculture.pdf", width=2.5, height=4, units=c("in"), useDingbats=FALSE)
 
 ```
 
@@ -520,8 +520,8 @@ Now plotting the z scores, as heatmap2 creates nice clean clusters by doing this
 
 First for heat vs. control comparison
 ```{r, cache=TRUE, fig.align='center'}
-norm_counts = read.csv("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/normalized_counts_culture.csv")
-hm = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/culture_hot_results.txt", header=TRUE, col.names=c("X", "baseMean", "log2FoldChange", "lfcSE", "stat", "pvalue","padj")) %>% as_tibble() %>%
+norm_counts = read.csv("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/normalized_counts_culture.csv")
+hm = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/culture_hot_results.txt", header=TRUE, col.names=c("X", "baseMean", "log2FoldChange", "lfcSE", "stat", "pvalue","padj")) %>% as_tibble() %>%
   filter(padj < 0.1) %>% # only want the most DEGs
   select(X) %>%
   merge(norm_counts, by.x = "X", by.y = "X")  # turn into a countdatafile
@@ -544,8 +544,8 @@ heatmap.2(hm.z, col = colour, Rowv = TRUE, Colv = TRUE, scale = "row",
 
 Now for cold vs. control comparison
 ```{r, cache=TRUE, fig.align='center'}
-norm_counts = read.csv("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/normalized_counts_culture.csv")
-hm = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/culture_cold_results.txt", header=TRUE, col.names=c("X", "baseMean", "log2FoldChange", "lfcSE", "stat", "pvalue","padj")) %>% as_tibble() %>%
+norm_counts = read.csv("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/normalized_counts_culture.csv")
+hm = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/culture_cold_results.txt", header=TRUE, col.names=c("X", "baseMean", "log2FoldChange", "lfcSE", "stat", "pvalue","padj")) %>% as_tibble() %>%
   filter(padj < 0.1) %>% # only want the most DEGs
   select(X) %>%
   merge(norm_counts, by.x = "X", by.y = "X")  # turn into a countdatafile
@@ -571,10 +571,10 @@ heatmap.2(hm.z, col = colour, Rowv = TRUE, Colv = TRUE, scale = "row",
 Read in our result tables and isolate gene lists that are significant in each experiment. 
 
 ```{r cache=TRUE}
-hot = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/culture_hot_results.txt", header = TRUE)
+hot = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/culture_hot_results.txt", header = TRUE)
 hot = row.names(hot[hot$padj<0.05 & !is.na(hot$padj),])
 
-cold = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/culture_cold_results.txt", header = TRUE)
+cold = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/culture_cold_results.txt", header = TRUE)
 cold = row.names(cold[cold$padj<0.05 & !is.na(cold$padj),])
 ```
 <br><br>
@@ -607,7 +607,7 @@ grid.draw(prettyvenn)
 ##Gene Ontology
 Make Gene Ontology input table for MWU for hot treatment
 ```{r message=FALSE, warning=FALSE, eval = FALSE}
-culture_hot_res = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/culture_hot_results.txt")
+culture_hot_res = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/culture_hot_results.txt")
 head(culture_hot_res)
 culture_hot_res$isogroup=row.names(culture_hot_res)
 
@@ -621,13 +621,13 @@ nrow(go_input_hot_culture)
 head(go_input_hot_culture)
 colnames(go_input_hot_culture) <- c("gene", "pval")
 head(go_input_hot_culture)
-write.csv(go_input_hot_culture, file="/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/GO_Analyses/culture_hot_GO.csv", quote=F, row.names=FALSE)
+write.csv(go_input_hot_culture, file="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/culture_hot_GO.csv", quote=F, row.names=FALSE)
 
 ```
 
 Now for cold treatment
 ```{r message=FALSE, warning=FALSE, eval = FALSE}
-culture_cold_res = read.table("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/culture_cold_results.txt")
+culture_cold_res = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/culture_cold_results.txt")
 head(culture_cold_res)
 culture_cold_res$isogroup=row.names(culture_cold_res)
 
@@ -641,7 +641,7 @@ nrow(go_input_cold_culture)
 head(go_input_cold_culture)
 colnames(go_input_cold_culture) <- c("gene", "pval")
 head(go_input_cold_culture)
-write.csv(go_input_cold_culture, file="/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/GO_Analyses/culture_cold_GO.csv", quote=F, row.names=FALSE)
+write.csv(go_input_cold_culture, file="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/culture_cold_GO.csv", quote=F, row.names=FALSE)
 ```
 
 
