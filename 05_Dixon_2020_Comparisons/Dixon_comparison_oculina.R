@@ -5,20 +5,19 @@ library(cowplot)
 library(ggpubr)
 library(plotly)
 
-setwd("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/Dixon_Comparisons/")
 
 # Read in Dixon's 'type A' cluster for each GO category
 # downloaded from here: https://github.com/grovesdixon/Acropora_gene_expression_meta/tree/master/go_mwu
-Dixon_BP = read.table("MWU_BP_clusterAstress_For_MWU.csv", header = T)
-Dixon_MF = read.table("MWU_MF_clusterAstress_For_MWU.csv", header = T)
-Dixon_CC = read.table("MWU_CC_clusterAstress_For_MWU.csv", header = T)
+Dixon_BP = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/05_Dixon_2020_Comparisons/MWU_BP_clusterAstress_For_MWU.csv", header = T)
+Dixon_MF = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/05_Dixon_2020_Comparisons/MWU_MF_clusterAstress_For_MWU.csv", header = T)
+Dixon_CC = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/05_Dixon_2020_Comparisons/MWU_CC_clusterAstress_For_MWU.csv", header = T)
 
 #### Biological Processes ####
 # Read in MWU GO files
-Ocu_SymHost_Heat_BP = read.table("../Oculina_GO_Analyses/MWU_BP_oculina_hot_brown_host_GO.csv", header = T)
-Ocu_SymHost_Cold_BP = read.table("../Oculina_GO_Analyses/MWU_BP_oculina_cold_brown_host_GO.csv", header = T)
-Ocu_ApoHost_Heat_BP = read.table("../Oculina_GO_Analyses/MWU_BP_oculina_hot_white_host_GO.csv", header = T)
-Ocu_ApoHost_Cold_BP = read.table("../Oculina_GO_Analyses/MWU_BP_oculina_cold_white_host_GO.csv", header = T)
+Ocu_SymHost_Heat_BP = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_output_files/MWU_BP_oculina_hot_brown_host_GO.csv", header = T)
+Ocu_SymHost_Cold_BP = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_output_files/MWU_BP_oculina_cold_brown_host_GO.csv", header = T)
+Ocu_ApoHost_Heat_BP = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_output_files/MWU_BP_oculina_hot_white_host_GO.csv", header = T)
+Ocu_ApoHost_Cold_BP = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_output_files/MWU_BP_oculina_cold_white_host_GO.csv", header = T)
 
 
 ## heat symbiotic host
@@ -165,4 +164,4 @@ all_BP = ggarrange(heat_symhost_BP_plot, heat_apohost_BP_plot,
           cold_symhost_BP_plot, cold_apohost_BP_plot,
           ncol = 2, nrow = 2)
 all_BP
-ggsave(all_BP, file = "/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/Dixon_Comparisons_Host_BP.pdf", width=6, height=4, units=c("in"), useDingbats=FALSE)
+ggsave(all_BP, file = "Dixon_Comparisons_Host_BP.pdf", width=6, height=4, units=c("in"), useDingbats=FALSE)
