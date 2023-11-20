@@ -1,2 +1,0 @@
-Output as part of data_analysis ID: 166; Number of data_set objects as part of analysis = 153; submitting_user: humebc; time_stamp: 20210826T053023
-Data_set ID: 639; Data_set name: 20210826_aichelman; submitting_user: humebc; time_stamp: 20210826T045349
