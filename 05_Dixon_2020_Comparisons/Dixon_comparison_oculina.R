@@ -7,11 +7,6 @@ library(plotly)
 
 setwd("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/Dixon_Comparisons/")
 
-# Read in Dixon's red module
-#Dixon_BP = read.table("Dixon_BP.csv", header = T)
-#Dixon_MF = read.table("Dixon_MF.csv", header = T)
-#Dixon_CC = read.table("Dixon_CC.csv", header = T)
-
 # Read in Dixon's 'type A' cluster for each GO category
 # downloaded from here: https://github.com/grovesdixon/Acropora_gene_expression_meta/tree/master/go_mwu
 Dixon_BP = read.table("MWU_BP_clusterAstress_For_MWU.csv", header = T)
