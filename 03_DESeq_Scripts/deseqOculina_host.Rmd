@@ -34,9 +34,7 @@ BiocManager::install("DESeq", type = "source", checkBuilt = TRUE, lib.loc = "/Li
 ```
 
 ```{r Libraries, message=FALSE, warning=FALSE}
-library(tidyr)
-library(plyr)
-library(dplyr)
+library(tidyverse)
 library(DESeq2)
 library(ggplot2)
 library(affycoretools)
@@ -81,6 +79,33 @@ names(countDataHost) = c("OA4_C_W", "OA5_F_W", "OA6_H_W",
                         "OP1_C_W", "OP2_F_W", "OP3_H_W",
                         "OQ11_H_W", "OQ1_C_W", "OQ4_F_W",
                         "OR7_C_B",	"OR8_F_B",	"OR9_H_B")
+
+# output total counts per individual to compare with symbiont counts
+host_counts_summary = data.frame(colSums(countDataHost))
+View(host_counts_summary)
+host_counts_summary = host_counts_summary %>%
+  rownames_to_column() %>%
+  rename("SampleID" = "rowname") %>%
+  rename("HostCounts" = "colSums.countDataHost.")
+#write.csv(host_counts_summary, "~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/03_DESeq_Scripts/CountsFiles/HostCountSummary.csv", row.names = FALSE)
+
+# read in host and symbiont summary counts to compare across individuals
+host_counts = read.csv("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/03_DESeq_Scripts/CountsFiles/HostCountSummary.csv")
+sym_counts = read.csv("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/03_DESeq_Scripts/CountsFiles/SymCountSummary.csv")
+combined_counts = cbind(host_counts, sym_counts)
+head(combined_counts)
+
+combined_counts2 = combined_counts %>%
+  select(SampleID, HostCounts, SymCounts)
+
+combined_counts2$symState  = as.factor(sapply(strsplit(combined_counts2$SampleID, split = "_"), "[[", 3)) %>%
+  revalue(c("B" = "sym", "W" = "apo"))
+head(combined_counts2)
+
+# plot summary of host vs. symbiont counts across individual
+ggplot(combined_counts2, aes(x = SampleID, y = SymCounts)) +
+  geom_bar(stat = "identity") +
+  facet_grid(~symState, scales = "free", space = "free")
 
 #countDataHost_brown = countDataHost %>%
 #  select(-c("OA4_C_W", "OA5_F_W", "OA6_H_W", "OE10_F_W", "OE11_C_W", "OE3_H_W", "OH11_F_W", "OH15_H_W", "OH1_C_W", "OK1_C_W", "OK2_F_W", "OK3_H_W", "ON4_C_W", "ON5_F_W", "ON6_H_W", "OO1_C_W", "OO2_F_W", "OP1_C_W", "OP2_F_W", "OP3_H_W", "OQ11_H_W", "OQ1_C_W", "OQ4_F_W"))

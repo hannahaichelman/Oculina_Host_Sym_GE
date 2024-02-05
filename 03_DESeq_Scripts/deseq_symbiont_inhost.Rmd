@@ -35,9 +35,7 @@ BiocManager::install("DESeq", type = "source", checkBuilt = TRUE, lib.loc = "/Li
 ```
 
 ```{r Libraries, message=FALSE, warning=FALSE}
-library(tidyr)
-library(plyr)
-library(dplyr)
+library(tidyverse)
 library(DESeq2)
 library(ggplot2)
 library(affycoretools)
@@ -84,6 +82,17 @@ names(countDataSym) = c("OA4", "OA5", "OA6",
                         "OQ11", "OQ1", "OQ4",
                         "OR7_C_B",	"OR8_F_B",	"OR9_H_B")
 
+# output total counts per individual to compare with host counts
+sym_counts_summary = data.frame(colSums(countDataSym))
+View(sym_counts_summary)
+sym_counts_summary = sym_counts_summary %>%
+  rownames_to_column() %>%
+  rename("SampleID1" = "rowname") %>%
+  rename("SymCounts" = "colSums.countDataSym.")
+
+#write.csv(sym_counts_summary, "~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/03_DESeq_Scripts/CountsFiles/SymCountSummary.csv", row.names = FALSE)
+
+# now re-organize samples and keep only what we will use for differential expression analyses
 countDataSym_brown = countDataSym %>%
   select(-c(OA4, OA5, OA6, OE10, OE11, OE3, OH11, OH15, OH1, OK1, OK2, OK3, ON4, ON5, ON6, OO1, OO2, OP1, OP2, OP3, OQ11, OQ1, OQ4))
 
@@ -100,6 +109,9 @@ expDesign_Sym = data.frame(colnames(countDataSym_brown_noclone), treatmentSym, g
 expDesign_Sym$type = "sym_inhost"
 expDesign_Sym$treat_type = paste(expDesign_Sym$treatmentSym,expDesign_Sym$type, sep = "_")
 names(expDesign_Sym) = c("sample", "treatment", "genotype", "type", "treat_type")
+
+
+
 ```
 
 Experimental Design key with sample names 
