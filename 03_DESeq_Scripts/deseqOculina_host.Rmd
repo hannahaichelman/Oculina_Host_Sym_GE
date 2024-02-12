@@ -80,6 +80,16 @@ names(countDataHost) = c("OA4_C_W", "OA5_F_W", "OA6_H_W",
                         "OQ11_H_W", "OQ1_C_W", "OQ4_F_W",
                         "OR7_C_B",	"OR8_F_B",	"OR9_H_B")
 
+
+#countDataHost_brown = countDataHost %>%
+#  select(-c("OA4_C_W", "OA5_F_W", "OA6_H_W", "OE10_F_W", "OE11_C_W", "OE3_H_W", "OH11_F_W", "OH15_H_W", "OH1_C_W", "OK1_C_W", "OK2_F_W", "OK3_H_W", "ON4_C_W", "ON5_F_W", "ON6_H_W", "OO1_C_W", "OO2_F_W", "OP1_C_W", "OP2_F_W", "OP3_H_W", "OQ11_H_W", "OQ1_C_W", "OQ4_F_W"))
+
+#countDataHost_white = countDataHost %>%
+#  select(c("OA4_C_W", "OA5_F_W", "OA6_H_W", "OE10_F_W", "OE11_C_W", "OE3_H_W", "OH11_F_W", "OH15_H_W", "OH1_C_W", "OK1_C_W", "OK2_F_W", "OK3_H_W", "ON4_C_W", "ON5_F_W", "ON6_H_W", "OO1_C_W", "OO2_F_W", "OP1_C_W", "OP2_F_W", "OP3_H_W", "OQ11_H_W", "OQ1_C_W", "OQ4_F_W"))
+
+```
+
+```{r Counts Ratios,cache=TRUE}
 # output total counts per individual to compare with symbiont counts
 host_counts_summary = data.frame(colSums(countDataHost))
 View(host_counts_summary)
@@ -96,24 +106,56 @@ combined_counts = cbind(host_counts, sym_counts)
 head(combined_counts)
 
 combined_counts2 = combined_counts %>%
-  select(SampleID, HostCounts, SymCounts)
+  select(SampleID, HostCounts, SymCounts) %>%
+  mutate(TotalCounts = HostCounts + SymCounts) %>%
+  mutate(PropSymCounts = SymCounts / TotalCounts)
 
 combined_counts2$symState  = as.factor(sapply(strsplit(combined_counts2$SampleID, split = "_"), "[[", 3)) %>%
   revalue(c("B" = "sym", "W" = "apo"))
-head(combined_counts2)
 
+combined_counts2$genotypeHost  = as.factor(sapply(strsplit(combined_counts2$SampleID, split = ""), "[[", 2))
+
+combined_counts3 = combined_counts2 %>%
+  filter(genotypeHost!="P") %>%
+  filter(genotypeHost!="O") %>%
+  filter(genotypeHost!="L") %>%
+  filter(genotypeHost!="K") %>%
+  filter(genotypeHost!="A") #strange on cluster dendrogram
+
+  
 # plot summary of host vs. symbiont counts across individual
-ggplot(combined_counts2, aes(x = SampleID, y = SymCounts)) +
+ggplot(combined_counts3, aes(x = SampleID, y = PropSymCounts)) +
   geom_bar(stat = "identity") +
   facet_grid(~symState, scales = "free", space = "free")
 
-#countDataHost_brown = countDataHost %>%
-#  select(-c("OA4_C_W", "OA5_F_W", "OA6_H_W", "OE10_F_W", "OE11_C_W", "OE3_H_W", "OH11_F_W", "OH15_H_W", "OH1_C_W", "OK1_C_W", "OK2_F_W", "OK3_H_W", "ON4_C_W", "ON5_F_W", "ON6_H_W", "OO1_C_W", "OO2_F_W", "OP1_C_W", "OP2_F_W", "OP3_H_W", "OQ11_H_W", "OQ1_C_W", "OQ4_F_W"))
+ggplot(combined_counts3, aes(x = SampleID, y = PropSymCounts)) +
+  geom_boxplot() +
+  facet_grid(~symState, scales = "free", space = "free")
 
-#countDataHost_white = countDataHost %>%
-#  select(c("OA4_C_W", "OA5_F_W", "OA6_H_W", "OE10_F_W", "OE11_C_W", "OE3_H_W", "OH11_F_W", "OH15_H_W", "OH1_C_W", "OK1_C_W", "OK2_F_W", "OK3_H_W", "ON4_C_W", "ON5_F_W", "ON6_H_W", "OO1_C_W", "OO2_F_W", "OP1_C_W", "OP2_F_W", "OP3_H_W", "OQ11_H_W", "OQ1_C_W", "OQ4_F_W"))
+propsym_plot <- ggplot(combined_counts3, aes(x = symState, y = PropSymCounts))+
+  theme_bw()+
+  geom_boxplot(aes(group = symState), alpha = 0.5, outlier.shape=NA) +
+  #scale_fill_manual(values = cols_lineage)+
+  geom_jitter(aes(shape = symState), color = "black", size = 2, width = 0.3)+
+  scale_shape_manual(values = c(19,21),
+                     breaks=c("sym", "apo"),
+                     labels=c("sym", "apo"),
+                     name = "Sym State") +
+  ylab("Proportion of Symbiont Counts") +
+  xlab("Sym State") +
+  theme(legend.position = "none")
+
+propsym_plot
+ggsave(propsym_plot, filename = "/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MolecEcol_Submission/Revision/SymCounts.pdf", width=4, height=4, units=c("in"), useDingbats=FALSE)
+
+lm1 = lmer(PropSymCounts ~ symState + , data = combined_counts3)
+summary(lm1)
+# Coefficients:
+#              Estimate Std. Error t value Pr(>|t|)    
+# (Intercept)  0.080699   0.007065   11.42 1.22e-12 ***
+# symStateapo -0.029060   0.011716   -2.48   0.0188 *  
+
 ```
-
 
 Set up experimental design matrix
 Based on clone analysis, there are 3 sets of clones in Oculina individuals:

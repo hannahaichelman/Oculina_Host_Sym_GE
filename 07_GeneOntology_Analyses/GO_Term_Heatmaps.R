@@ -8,8 +8,6 @@ library(viridis)
 library(scales)
 library(plyr)
 
-setwd("/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/")
-
 
 #### Heat Maps of Interesting GOs - Syms in Host ####
 ## Symbionts in Host ##
@@ -49,12 +47,14 @@ photo_genes = iso2go_sym %>%
   left_join(rldpval)
 head(photo_genes)
 str(photo_genes)
+dim(photo_genes)
 
 # add gene name to this df - trim down names and add to photo_genes
 iso2gene = read.delim("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_TagSeq/References/B_psygmophilum_transcriptome/B_psygmophilum_isogroup_to_genename.tab", sep = "\t", header = FALSE) %>%
   dplyr::rename("gene" = "V1") %>%
   dplyr::rename("gene_name" = "V2")
 head(iso2gene)
+dim(iso2gene)
 
 # shorten gene name for easier reading on heatmap
 iso2gene$gene_name = gsub(" OS.*","",as.character(iso2gene$gene_name))
@@ -66,27 +66,29 @@ View(iso2gene)
 photo_genes_anno = photo_genes %>%
   left_join(iso2gene)
 head(photo_genes_anno)
+dim(photo_genes_anno)
 
 # set raw p-value for GO enriched
-p.val = 0.10 
+p.val = 0.1 
 
 # filter based on p-values from deseq results
 conds=photo_genes_anno[photo_genes_anno$pval.cold.syminhost<=p.val & !is.na(photo_genes_anno$pval.cold.syminhost),]
+
 length(conds[,1])
 #6
 head(conds)
 rownames(conds)<-NULL
 
-# make gene names row names
-conds2 = conds %>%   
-  column_to_rownames(var = "gene_name")
-head(conds2)
-
-# make unique row names - only need for p=0.2
+# make unique row names
 #rownames(conds) <- make.unique(conds$gene_name)
 
+#make gene names row names
+conds2 = conds %>%
+ column_to_rownames(var = "gene_name")
+head(conds2)
+
 #row.names(conds)=conds$gene_name
-exp = conds2[, c(3:23)]
+exp = conds[, c(3:23)]
 head(exp)
 
 
@@ -102,8 +104,8 @@ explc = explc %>%
 
 # now make heatmap
 # set color palette
-col0=colorRampPalette(rev(c("#c51b7d","#e9a3c9","#ffffff", "#5ab4ac","#01665e")))(100)
-
+#col0=colorRampPalette(rev(c("#c51b7d","#e9a3c9","#ffffff", "#5ab4ac","#01665e")))(100)
+col0=colorRampPalette(rev(c("#e3e418ff", "#fde725ff", "#ffffff", "#414487ff", "#440154ff")))(100)
 # make treatment data frame
 treatment = as.factor(sapply(strsplit(colnames(explc), split = "_"), "[[", 2)) %>%
   revalue(c("C" = "control", "F" = "cold", "H" = "heat"))
@@ -123,7 +125,7 @@ my_colour = list(treatment = c(cold = "#74c476", heat = "#fd8d3c", control = "#a
 library(pheatmap)
 
 photo.heatmap = pheatmap(explc, cluster_cols = F, scale = "row", color = col0, annotation_col = expDesign, annotation_colors = my_colour, show_rownames = TRUE, show_colnames = FALSE, border_color = "NA")
-ggsave(photo.heatmap, file = "/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/syminhost_heatmap_photosynthesis_p=.1.pdf", width=8, height=2.5, units=c("in"), useDingbats=FALSE)
+#ggsave(photo.heatmap, file = "/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/syminhost_heatmap_photosynthesis_newcol_allpadj.pdf", width=8, height=2.5, units=c("in"), useDingbats=FALSE)
 
 #### Heat Maps of Interesting Photosynthesis GOs - Syms in Culture ####
 ## Symbionts in Culture ##
@@ -186,13 +188,13 @@ photo_genes_anno = photo_genes %>%
 head(photo_genes_anno)
 
 # set raw p-value for GO enriched
-p.val = 0.01
+p.val = 0.05
 
 # filter based on p-values from deseq results
-conds=photo_genes_anno[photo_genes_anno$pval.cold.culture<=p.val & !is.na(photo_genes_anno$pval.cold.culture),]
+conds=photo_genes_anno[photo_genes_anno$padj.cold.culture<=p.val & !is.na(photo_genes_anno$padj.cold.culture),]
 length(conds[,1])
-#85, p = 0.05
-#59, p = 0.01
+#39 padj<0.01
+#63 padj<0.05
 head(conds)
 
 # add annotation as row names and remove p-values and identifying info from dataframe
@@ -215,7 +217,8 @@ explc = explc %>%
 
 # now make heatmap
 # set color palette
-col0=colorRampPalette(rev(c("#c51b7d","#e9a3c9","#ffffff", "#5ab4ac","#01665e")))(100)
+#col0=colorRampPalette(rev(c("#c51b7d","#e9a3c9","#ffffff", "#5ab4ac","#01665e")))(100)
+col0=colorRampPalette(rev(c("#e3e418ff", "#fde725ff", "#ffffff", "#414487ff", "#440154ff")))(100)
 
 # make treatment data frame
 treatment = as.factor(sapply(strsplit(colnames(explc), split = "_"), "[[", 1)) %>%
@@ -236,7 +239,7 @@ my_colour = list(treatment = c(cold = "#74c476", heat = "#fd8d3c", control = "#a
 library(pheatmap)
 
 photo.heatmap = pheatmap(explc, cluster_cols = FALSE, scale = "row", color = col0, annotation_col = expDesign, annotation_colors = my_colour, show_rownames = TRUE, show_colnames = FALSE, border_color = "NA")
-ggsave(photo.heatmap, file = "/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/culture_heatmap_photosynthesis_p=.01.pdf", width=9, height=7, units=c("in"), useDingbats=FALSE)
+ggsave(photo.heatmap, file = "/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/culture_heatmap_photosynthesis_newcols_padj=.05.pdf", width=9, height=7, units=c("in"), useDingbats=FALSE)
 
 
  #### Heat Maps of Interesting Stress GOs - Syms in Culture ####
@@ -298,14 +301,12 @@ stress_genes_anno = stress_genes %>%
 head(stress_genes_anno)
 
 # set raw p-value for GO enriched
-p.val = 0.01
+p.val = 0.05
 
 # filter based on p-values from deseq results
-conds=stress_genes_anno[stress_genes_anno$pval.cold.culture<=p.val & !is.na(stress_genes_anno$pval.cold.culture),]
+conds=stress_genes_anno[stress_genes_anno$padj.cold.culture<=p.val & !is.na(stress_genes_anno$padj.cold.culture),]
 length(conds[,1])
-#109, p = 0.1
-#92, p = 0.05
-#69, p = 0.01
+#70 - padj<0.05
 head(conds)
 
 # add annotation as row names and remove p-values and identifying info from dataframe
@@ -333,7 +334,8 @@ explc = explc %>%
 # now make heatmap
 # set color palette
 #col0=colorRampPalette(rev(c("chocolate1","#FEE090","grey10", "cyan3","cyan")))(100)
-col0=colorRampPalette(rev(c("#c51b7d","#e9a3c9","#ffffff", "#5ab4ac","#01665e")))(100)
+#col0=colorRampPalette(rev(c("#c51b7d","#e9a3c9","#ffffff", "#5ab4ac","#01665e")))(100)
+col0=colorRampPalette(rev(c("#e3e418ff", "#fde725ff", "#ffffff", "#414487ff", "#440154ff")))(100)
 
 # make treatment data frame
 treatment = as.factor(sapply(strsplit(colnames(explc), split = "_"), "[[", 1)) %>%
@@ -350,4 +352,4 @@ my_colour = list(treatment = c(cold = "#74c476", heat = "#fd8d3c", control = "#a
 library(pheatmap)
 
 stress.heatmap = pheatmap(explc, cluster_cols = FALSE, scale = "row", color = col0, annotation_col = expDesign, annotation_colors = my_colour, show_rownames = TRUE, show_colnames = FALSE, border_color = "NA")
-ggsave(stress.heatmap, file = "/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/culture_heatmap_stress_p=.01.pdf", width=9, height=8, units=c("in"), useDingbats=FALSE)
+ggsave(stress.heatmap, file = "/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/plots/culture_heatmap_stress_newcols_padj=.05.pdf", width=9, height=8, units=c("in"), useDingbats=FALSE)
