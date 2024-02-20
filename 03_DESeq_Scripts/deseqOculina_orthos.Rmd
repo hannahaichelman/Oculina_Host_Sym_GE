@@ -71,7 +71,7 @@ library(textshape)
 # Try subsetting original host and symbiont count files for identified single copy orthologs
 # first read in host ortholog and gene names, then combine into one df
 host_ortholog_gene_names <- read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/03_DESeq_Scripts/CountsFiles/O_arbuscula_ortholog_genenames.txt")
-host_original_gene_names <- read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/03_DESeq_Scripts/CountsFiles//O_arbuscula_original_genenames.txt")
+host_original_gene_names <- read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/03_DESeq_Scripts/CountsFiles/O_arbuscula_original_genenames.txt")
 dim(host_ortholog_gene_names) # [1] 57470     1
 dim(host_original_gene_names) # [1] 57470     2
 
@@ -168,6 +168,13 @@ names(countDataSym_sco) = c("OA4.sym", "OA5.sym", "OA6.sym",
 orthoCounts = merge(countDataHost_sco, countDataSym_sco, by = 0)
 dim(orthoCounts)
 #[1] 1176   95
+
+# summarize the counts per sample
+orthoCounts_sum = orthoCounts %>% 
+  mutate_if(is.integer, as.numeric) %>%
+  select(-Row.names) %>%
+  colSums()
+orthoCounts_sum = as.data.frame(orthoCounts_sum)
 ```
 
 
