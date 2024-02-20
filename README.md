@@ -9,4 +9,6 @@ This repository is organized such that each folder contains the associated data 
 
 All raw sequencing data are deposited in NCBI's SRA (BioProject ID = PRJNA1077922).
 
+[![DOI](https://zenodo.org/badge/718787950.svg)](https://zenodo.org/doi/10.5281/zenodo.10684735)
+
 For any questions, please contact Hannah Aichelman (hannahaichelman [at] gmail.com) or Sarah Davies (daviessw [at] gmail.com)
