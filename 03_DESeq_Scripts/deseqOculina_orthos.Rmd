@@ -1,7 +1,7 @@
 ---
 title: "deseqOculina_orthologs"
 author: "Hannah Aichelman"
-date: "12/6/2022"
+date: "2/20/2024"
 output: 
   html_document:
     toc: true
@@ -35,13 +35,10 @@ BiocManager::install("DESeq", type = "source", checkBuilt = TRUE, lib.loc = "/Li
 
 ```{r LibraryPackages, message=FALSE, warning=FALSE}
 
-library(tidyr)
-library(plyr)
-library(dplyr)
 library(DESeq2)
 library(ggplot2)
-#library(affycoretools)
-#library(arrayQualityMetrics)
+library(affycoretools)
+library(arrayQualityMetrics)
 library(genefilter)
 #library(DESeq)
 library(cowplot)
@@ -55,8 +52,7 @@ library(kableExtra)
 library(reshape2)
 library(prettydoc)
 library(VennDiagram)
-library(sva)
-library(textshape)
+library(tidyverse)
 ```
 
 ###Counts files and experimental design.
@@ -190,7 +186,7 @@ orthoCounts_noclones = orthoCounts %>%
 
 # Build in identifying info from the samples
 treatment = as.factor(sapply(strsplit(colnames(orthoCounts_noclones), split = "_"), "[[", 2)) %>%
-  revalue(c("C" = "control", "F" = "cold", "H" = "heat"))
+  plyr::revalue(c("C" = "control", "F" = "cold", "H" = "heat"))
 genotype  = as.factor(sapply(strsplit(colnames(orthoCounts_noclones), split = ""), "[[", 2))
 type  = as.factor(sapply(strsplit(colnames(orthoCounts_noclones), split = "_"), "[[", 3))
 
@@ -231,6 +227,7 @@ kable(stats.per.sample) %>%
 
 
 Conduct array quality metrics to identify outliers  
+Skip while running, but arrayqualitymetrics output can be found on github
 
 ```{r, cache=TRUE}
 real=newCountDataSet(countData,expDesign) 
@@ -485,12 +482,6 @@ ortho_combined_degs = data.frame(
                                         "apo_host_cold_up","apo_host_cold_down",
                                         "sym_inhost_heat_up","sym_inhost_heat_down",
                                         "sym_inhost_cold_up","sym_inhost_cold_down")),
-  #number = c(3, -11, 39, -31, 
-  #           5, -2, 30, -15,
-  #           1, -6, 3, -2),
-  #number = c(3, -20, 116, -120, 
-  #           4, -8, 77, -66,
-  #           1, -3, 1, -3),
   number = c(2, -10, 40, -21, 
              5, -3, 28, -14,
              1, -3, 1, -2)
@@ -637,21 +628,15 @@ Not using PCA for the ortholog analysis anymore
 <br>
 First we create a PCA data frame and calculate the variance estimated by PC1 and PC2
 ```{r cache=TRUE, fig.align="center"}
-pcadata = DESeq2::plotPCA(rlogged, intgroup = "temp_type", returnData = TRUE)
+pcadata = DESeq2::plotPCA(rlogged, intgroup = "treat_type", returnData = TRUE)
 percentVar = round(100 * attr(pcadata, "percentVar"))
-pca = prcomp(t(assay(rlogged.corr)), center = TRUE, scale. = FALSE)
+pca = prcomp(t(assay(rlogged)), center = TRUE, scale. = FALSE)
 ```
 <br><br>
 
 Using adonis from library(vegan) we can see if there are any significant differences based on treatment (as is illustrated in the model displayed below) 
 ```{r cache=TRUE}
-adonis2(pca$x ~ temp_type, data = pcadata, method = 'eu')
-
-#           Df SumOfSqs      R2      F Pr(>F)    
-# temp_type 11   3497.9 0.50671 5.7897  0.001 ***
-# Residual  62   3405.3 0.49329                  
-# Total     73   6903.2 1.00000                  
-
+adonis2(pca$x ~ treat_type, data = pcadata, method = 'eu')
 ```
 <br><br>
 Significant effect of treatment (p = 0.001)
@@ -672,10 +657,10 @@ legend.labels =  c("control_sym_host", "cold_sym_host", "heat_sym_host",
            "control_sym_inhost", "cold_sym_inhost", "heat_sym_inhost",
            "control_culture", "cold_culture", "heat_culture")
 
-plotPCA_rlog_batchcorr = DESeq2::plotPCA(rlogged.corr, returnData = TRUE, intgroup = "temp_type" ) %>% 
+plotPCA_rlog_batchcorr = DESeq2::plotPCA(rlogged, returnData = TRUE, intgroup = "treat_type" ) %>% 
       ggplot(aes(x = PC1, y = PC2)) +
-      geom_point(aes(colour = temp_type, shape = temp_type), size = 3) +
-      stat_ellipse(aes(x = PC1, y = PC2, color=temp_type, lty = temp_type), 
+      geom_point(aes(colour = treat_type, shape = treat_type), size = 3) +
+      stat_ellipse(aes(x = PC1, y = PC2, color=treat_type, lty = treat_type), 
                    type = "t", 
                    lwd = 1)+    
       scale_shape_manual(values = shapes,
@@ -687,7 +672,7 @@ plotPCA_rlog_batchcorr = DESeq2::plotPCA(rlogged.corr, returnData = TRUE, intgro
       scale_fill_manual(values = cols,
                         name = "Treatment",
                         labels = legend.labels) +
-      stat_ellipse(aes(color=rlogged.corr$temp_type, lty = rlogged.corr$temp_type), type = "t", lwd = 1) +
+      stat_ellipse(aes(color=rlogged$treat_type, lty = rlogged$treat_type), type = "t", lwd = 1) +
       scale_linetype_manual(values = c(1,1,1,2,2,2,1,1,1,2,2,2),
                             name = "Treatment",
                             labels = legend.labels) +
@@ -701,196 +686,6 @@ ggsave(plotPCA_rlog_batchcorr, filename = "orthos_pca.pdf", width=7, height=5, u
 ```
 Principal component analyses highlighting treatment groups. Treatment has a significant affect (p < 0.001) on overall expression
 
-<br><br>
 
 
-# PCA Plasticity 
-Not using PCA plasticity for the orthologs anymore.
-PCA plasticity functions written by C. Bove.
-
-This function allows you to save all principal components 
-```{r}
-plotPCA_allPCs <- function (object, intgroup = "condition", ntop = 500, returnData = FALSE)
-{
-  rv <- rowVars(assay(object)) # Variance estimates for each row (column) in a matrix.
-  select <- order(rv, decreasing = TRUE)[seq_len(min(ntop, length(rv)))] # orders genes from largest -> smallest and pulls ntop (default 500) genes
-  pca <- prcomp(t(assay(object)[select, ]), center = TRUE, scale. = FALSE) # performs PCA on ntop (default 500) from dataset
-  percentVar <- pca$sdev^2/sum(pca$sdev^2)
-  if (!all(intgroup %in% names(colData(object)))) {
-    stop("the argument 'intgroup' should specify columns of colData(dds)")
-  }
-  intgroup.df <- as.data.frame(colData(object)[, intgroup, drop = FALSE])
-  group <- if (length(intgroup) > 1) {
-    factor(apply(intgroup.df, 1, paste, collapse = ":"))
-  }
-  else {
-    colData(object)[[intgroup]]
-  }
-  d <- data.frame(group = group, intgroup.df, name = colnames(object), pca$x)
-  if (returnData) {
-    attr(d, "percentVar") <- percentVar[1:2]
-    return(d)
-  }
-  ggplot(data = d, aes_string(x = "PC1", y = "PC2", color = "group")) +
-    geom_point(size = 3) + xlab(paste0("PC1: ", round(percentVar[1] *
-                                                        100), "% variance")) + ylab(paste0("PC2: ", round(percentVar[2] *
-                                                                                                            100), "% variance")) + coord_fixed()
-}
-```
-
-```{r eval=FALSE, include=FALSE}
-# source the script Colleen wrote with the different functions to calculate plasticity
-source("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/04_GE_Plasticity/PlasticityCustomFunctions_means.R")
-
-# use modified plotPCA function to give you all PCs
-pcadata.plast = plotPCA_allPCs(rlogged.corr, intgroup = c("temp_type", "type"), returnData = TRUE)
-
-pcadata.brownhost.plast = pcadata.plast %>%
-  dplyr::filter(type == "brown_host")
-
-pcadata.whitehost.plast = pcadata.plast %>%
-  dplyr::filter(type == "white_host")
-
-pcadata.symhost.plast = pcadata.plast %>%
-  dplyr::filter(type == "sym_inhost")
-
-pcadata.culture.plast = pcadata.plast %>%
-  dplyr::filter(type == "culture")
-
-
-pca_plast_brownhost <-  PCAplast(pca = pcadata.brownhost.plast[,c(5:ncol(pcadata.brownhost.plast))], # PCA dataframe containing the PCA eigenvalues
-                data = pcadata.brownhost.plast[,c(1:4)], # condition/treatment data 
-                sample_ID = "name", # name of column with unique ID per sample (if blank, will pull rownames for this)
-                num_pca = "2", # number of PCs to include in measure (default is 'all' if left blank)
-                control_col = "temp_type", # name of 'treatment' column
-                control_lvl = "control_brown_host") # control level of the treatment 
-
-pca_plast_whitehost <-  PCAplast(pca = pcadata.whitehost.plast[,c(5:ncol(pcadata.whitehost.plast))], # PCA dataframe containing the PCA eigenvalues
-                data = pcadata.whitehost.plast[,c(1:4)], # condition/treatment data 
-                sample_ID = "name", # name of column with unique ID per sample (if blank, will pull rownames for this)
-                num_pca = "2", # number of PCs to include in measure (default is 'all' if left blank)
-                control_col = "temp_type", # name of 'treatment' column
-                control_lvl = "control_white_host") # control level of the treatment 
-
-pca_plast_symhost <-  PCAplast(pca = pcadata.symhost.plast[,c(5:ncol(pcadata.symhost.plast))], # PCA dataframe containing the PCA eigenvalues
-                data = pcadata.symhost.plast[,c(1:4)], # condition/treatment data 
-                sample_ID = "name", # name of column with unique ID per sample (if blank, will pull rownames for this)
-                num_pca = "2", # number of PCs to include in measure (default is 'all' if left blank)
-                control_col = "temp_type", # name of 'treatment' column
-                control_lvl = "control_sym_inhost") # control level of the treatment 
-
-pca_plast_culture <-  PCAplast(pca = pcadata.culture.plast[,c(5:ncol(pcadata.culture.plast))], # PCA dataframe containing the PCA eigenvalues
-                data = pcadata.culture.plast[,c(1:4)], # condition/treatment data 
-                sample_ID = "name", # name of column with unique ID per sample (if blank, will pull rownames for this)
-                num_pca = "2", # number of PCs to include in measure (default is 'all' if left blank)
-                control_col = "temp_type", # name of 'treatment' column
-                control_lvl = "control_culture") # control level of the treatment 
-```
-
-
-Now plot PCA plasticity, separately for host and symbiont
-```{r}
-library(Rmisc)
-
-all_plast = rbind(pca_plast_brownhost, pca_plast_whitehost, pca_plast_symhost, pca_plast_culture) # re-combine for plotting
-
-cols
-shapes
-
-dist_summ = summarySE(data = all_plast, measurevar = "dist", groupvars = c("temp_type","type"))
-
-lm = lm(dist ~ temp_type, data = all_plast)
-summary(lm)
-
-aov = aov(dist ~ temp_type, data = all_plast)
-summary(aov)
-#             Df Sum Sq Mean Sq F value Pr(>F)    
-# temp_type   11 310.37  28.216   44.31 <2e-16 ***
-# Residuals   62  39.48   0.637                   
-
-TukeyHSD(aov)
-
-# in host plasticity
-cols = c("control_brown_host" = "grey", "cold_brown_host" = "#3182bd", "heat_brown_host" =  "#de2d26",
-         "control_white_host" = "grey", "cold_white_host" = "#3182bd", "heat_white_host" = "#de2d26",
-         "control_sym_inhost" = "#a6611a", "cold_sym_inhost" = "#74c476", "heat_sym_inhost" = "#fd8d3c",
-         "control_culture" = "#a6611a", "cold_culture" = "#74c476", "heat_culture" = "#fd8d3c")
-
-plast_plot = ggplot(dist_summ, aes(x = temp_type, y = dist)) +
-      geom_point(aes(colour = temp_type, shape = temp_type), size = 4) +
-      geom_errorbar(aes(x = temp_type, ymin = dist - sd, ymax = dist + sd, colour = temp_type), width = 0.2) +
-      scale_color_manual(values = cols) +
-      scale_fill_manual(values = cols) +
-      scale_shape_manual(values = shapes) +
-      xlab("Treatment") +
-      ylab("Plasticity") +
-      labs(title = "Gene Expression Plasticity") +
-      theme_bw() +
-      theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1), legend.position = "none")
-       
-plast_plot
-ggsave(plast_plot, filename = "PCA_plasticity_2PCs_orthos.pdf", width=7, height=5, units=c("in"), useDingbats=FALSE)
-
-
-plast_boxplot <- ggplot(all_plast, aes(x = temp_type, y = dist)) +
-  geom_jitter(size = 3,
-              position=position_jitter(0.2), 
-              alpha=0.99,
-              aes(color = temp_type, shape = temp_type)) +
-  scale_color_manual(values = cols) + # for jittered points
-  scale_shape_manual(values = shapes) +
-  geom_boxplot(outlier.shape = NA,
-               alpha = 0.85,
-               aes(fill = temp_type))+
-  scale_fill_manual(values = cols) + # for boxplot
-  ylab("Gene Expression Plasticity") +
-  theme_bw() +
-  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1, face ="bold"), legend.position = "none") +
-  theme(axis.title.x = element_blank())
-plast_boxplot
-
-ggsave(plast_boxplot, filename = "PCA_plasticity_boxplot.pdf", width=7, height=5, units=c("in"), useDingbats=FALSE)
-
-
-cols_nocontrol = c("cold_brown_host" = "#3182bd", "heat_brown_host" =  "#de2d26",
-         "cold_white_host" = "#3182bd", "heat_white_host" = "#de2d26",
-         "cold_sym_inhost" = "#74c476", "heat_sym_inhost" = "#fd8d3c",
-         "cold_culture" = "#74c476", "heat_culture" = "#fd8d3c")
-
-shapes_nocontrol = c("cold_brown_host" = 19, "heat_brown_host" =  19,
-           "cold_white_host" = 21, "heat_white_host" = 21,
-           "cold_sym_inhost" = 19, "heat_sym_inhost" = 19,
-           "cold_culture" = 21, "heat_culture" = 21)
-
-# boxplot with points overlaid
-all_plast_nocontrol = all_plast %>%
-  dplyr::filter(temp_type != "control_brown_host") %>%
-  dplyr::filter(temp_type != "control_white_host") %>%
-  dplyr::filter(temp_type != "control_sym_inhost") %>%
-  dplyr::filter(temp_type != "control_culture")
-
-
-plast_boxplot <- ggplot(all_plast_nocontrol, aes(x = temp_type, y = dist)) +
-  geom_boxplot(outlier.shape = NA,
-               alpha = 0.8,
-               aes(fill = temp_type))+
-  scale_fill_manual(values = cols_nocontrol) + # for boxplot
-  geom_jitter(size = 2,
-              position=position_jitter(0.2), 
-              alpha=0.99,
-              aes(shape = temp_type),
-              color = 'black') +
-  scale_shape_manual(values = shapes_nocontrol) +
-  scale_color_manual(values = cols_nocontrol) + # for jittered points
-  ylab("Gene Expression Plasticity") +
-  #xlab("Site") +
-  #theme(axis.text.x = element_text(angle = 45, vjust=0.7, hjust=.6)) +
-  theme_bw() +
-  #theme(legend.position = "none") +
-  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1, face ="bold"), legend.position = "none") +
-  theme(axis.title.x = element_blank())
-plast_boxplot
-
-ggsave(plast_boxplot, filename = "PCA_plasticity_boxplot_orthos.pdf", width=4.5, height=3, units=c("in"), useDingbats=FALSE)
-```
 

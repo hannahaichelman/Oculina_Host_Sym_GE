@@ -1,7 +1,7 @@
 ---
 title: "Breviolum Symbiont Combined deseq Analylses"
 author: "Hannah Aichelman"
-date: "12/2/2022"
+date: "2/20/2024"
 output: 
   html_document:
     toc: true
@@ -33,17 +33,12 @@ BiocManager::install("DESeq", type = "source", checkBuilt = TRUE, lib.loc = "/Li
 ```
 
 ```{r message=FALSE, warning=FALSE}
-library(arrayQualityMetrics)
-#library(DESeq)
 library(DESeq2)
-library(WGCNA)
-
-library(sva) # batch effects
-library(tidyr)
-library(plyr)
-library(dplyr)
 library(ggplot2)
+library(affycoretools)
+library(arrayQualityMetrics)
 library(genefilter)
+#library(DESeq)
 library(cowplot)
 library(readr)
 library(RColorBrewer)
@@ -56,8 +51,7 @@ library(reshape2)
 library(prettydoc)
 library(VennDiagram)
 library(tidyverse)
-library(gridExtra)
-library(adegenet)
+library(sva)
 ```
 
 ### Read in and format data
@@ -149,11 +143,11 @@ countDataCombined_brown_noclone = countDataCombined_brown %>%
 
 # assign treatments for the culture experiment
 treatmentCulture = as.factor(sapply(strsplit(colnames(countDataCulture), split = "_"), "[[", 1)) %>%
-  revalue(c("Control" = "control", "Cool" = "cold", "Heat" = "heat"))
+  plyr::revalue(c("Control" = "control", "Cool" = "cold", "Heat" = "heat"))
 
 # assign treatments for the symbionts in hospite
 treatmentSym = as.factor(sapply(strsplit(colnames(countDataSym_brown_noclone), split = "_"), "[[", 2)) %>%
-  revalue(c("C" = "control", "F" = "cold", "H" = "heat"))
+  plyr::revalue(c("C" = "control", "F" = "cold", "H" = "heat"))
 
 genotypeSym  = as.factor(sapply(strsplit(colnames(countDataSym_brown_noclone), split = ""), "[[", 2))
 
@@ -456,7 +450,7 @@ deg_barplot = ggplot(sym_combined_degs, aes(x = temperature, y = number, fill=te
   #geom_text(data = annotate_text, aes(x = x, y = y, label = label))
 deg_barplot
 
-ggsave(deg_barplot, file = "symcombined_deg_barplot.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
+#ggsave(deg_barplot, file = "symcombined_deg_barplot.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
 ```
 
 Moving forward with batch corrected (using ComBat-seq) and rlog-transformed data. 
@@ -695,7 +689,7 @@ plast_plot = ggplot(dist_summ, aes(x = treat_type, y = dist)) +
       theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1), legend.position = "none")
 plast_plot
 
-ggsave(plast_plot, filename = "PCA_plasticity_2PCs_symcombined.pdf", width=6, height=5, units=c("in"), useDingbats=FALSE)
+#ggsave(plast_plot, filename = "PCA_plasticity_2PCs_symcombined.pdf", width=6, height=5, units=c("in"), useDingbats=FALSE)
 
 # boxplot with points overlaid
 all_plast_nocontrol = all_plast %>%

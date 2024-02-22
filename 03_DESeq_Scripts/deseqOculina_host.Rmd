@@ -1,7 +1,7 @@
 ---
 title: "OculinaDEseq_host"
 author: "Hannah Aichelman"
-date: "11/29/2022"
+date: "2/20/2024"
 output: 
   html_document:
     toc: true
@@ -52,6 +52,7 @@ library(kableExtra)
 library(reshape2)
 library(prettydoc)
 library(VennDiagram)
+
 ```
 
 ### Counts file and experimental design
@@ -111,7 +112,7 @@ combined_counts2 = combined_counts %>%
   mutate(PropSymCounts = SymCounts / TotalCounts)
 
 combined_counts2$symState  = as.factor(sapply(strsplit(combined_counts2$SampleID, split = "_"), "[[", 3)) %>%
-  revalue(c("B" = "sym", "W" = "apo"))
+  plyr::revalue(c("B" = "sym", "W" = "apo"))
 
 combined_counts2$genotypeHost  = as.factor(sapply(strsplit(combined_counts2$SampleID, split = ""), "[[", 2))
 
@@ -146,9 +147,9 @@ propsym_plot <- ggplot(combined_counts3, aes(x = symState, y = PropSymCounts))+
   theme(legend.position = "none")
 
 propsym_plot
-ggsave(propsym_plot, filename = "/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MolecEcol_Submission/Revision/SymCounts.pdf", width=4, height=4, units=c("in"), useDingbats=FALSE)
+#ggsave(propsym_plot, filename = "/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MolecEcol_Submission/Revision/SymCounts.pdf", width=4, height=4, units=c("in"), useDingbats=FALSE)
 
-lm1 = lmer(PropSymCounts ~ symState + , data = combined_counts3)
+lm1 = lm(PropSymCounts ~ symState, data = combined_counts3)
 summary(lm1)
 # Coefficients:
 #              Estimate Std. Error t value Pr(>|t|)    
@@ -174,12 +175,12 @@ More details on github: https://github.com/wuitchik/MPCC_2018/tree/main/Host_ana
 
 ```{r ExperimentalDesignMatrix,cache=TRUE}
 treatmentHost = as.factor(sapply(strsplit(colnames(countDataHost), split = "_"), "[[", 2)) %>%
-  revalue(c("C" = "control", "F" = "cold", "H" = "heat"))
+  plyr::revalue(c("C" = "control", "F" = "cold", "H" = "heat"))
 
 genotypeHost  = as.factor(sapply(strsplit(colnames(countDataHost), split = ""), "[[", 2))
 
 symState  = as.factor(sapply(strsplit(colnames(countDataHost), split = "_"), "[[", 3)) %>%
-  revalue(c("B" = "sym", "W" = "apo"))
+  plyr::revalue(c("B" = "sym", "W" = "apo"))
 
 expDesign_Host = data.frame(colnames(countDataHost), treatmentHost, genotypeHost, symState)
 expDesign_Host$type = "host"
@@ -284,8 +285,6 @@ results = results(dds)
 summary(results)
 ```
 
-
-
 Let's check to see if we set up our contrast correctly. We should have the treatment condition first and the control second in the log2 fold change (MLE) output. 
 
 ```{r, cache=TRUE}
@@ -364,7 +363,7 @@ write.table(res_cold_brown_host, file="~/Dropbox/BU/Host_Buffering/FinalGithub/O
 res_cold_white_host <- results(dds, contrast=c("treat_type","cold_apo","control_apo"))
 head(res_cold_white_host)
 #how many FDR < 10%?
-table(res_cold_white_host$padj<0.05)
+table(res_cold_white_host$padj<0.01)
 # 0.1=2352
 # 0.05=1779
 # 0.01=1033
@@ -427,7 +426,7 @@ deg_barplot = ggplot(host_degs, aes(x = temperature, y = number, fill=temperatur
   geom_text(data = annotate_text, aes(x = x, y = y, label = label))
 deg_barplot
 
-ggsave(deg_barplot, file = "host_deg_barplot.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
+#ggsave(deg_barplot, file = "host_deg_barplot.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
 ```
 
 ##Test for differences in # of DE genes
@@ -449,6 +448,18 @@ summary(res_cold_white_host)
 
 res.brownhost_v_apohost_heat <- prop.test(x = c(327, 105), n = c(24400, 24400), alternative = 'greater')
 res.brownhost_v_apohost_heat 
+# data:  c(327, 105) out of c(24400, 24400)
+# X-squared = 114.07, df = 1, p-value < 2.2e-16
+# alternative hypothesis: greater
+# 95 percent confidence interval:
+#  0.007664106 1.000000000
+# sample estimates:
+#      prop 1      prop 2 
+# 0.013401639 0.004303279 
+
+
+res.brownhost_v_apohost_cold <- prop.test(x = c(4095, 2352), n = c(24400, 24400), alternative = 'greater')
+res.brownhost_v_apohost_cold 
 # data:  c(4095, 2352) out of c(24400, 24400)
 # X-squared = 542.34, df = 1, p-value < 2.2e-16
 # alternative hypothesis: greater
@@ -457,18 +468,6 @@ res.brownhost_v_apohost_heat
 # sample estimates:
 #     prop 1     prop 2 
 # 0.16782787 0.09639344 
-
-
-res.brownhost_v_apohost_cold <- prop.test(x = c(4095, 2352), n = c(24400, 24400), alternative = 'greater')
-res.brownhost_v_apohost_cold 
-# data:  c(56, 5) out of c(137, 137)
-# X-squared = 52.721, df = 1, p-value = 1.923e-13
-# alternative hypothesis: greater
-# 95 percent confidence interval:
-#  0.2910232 1.0000000
-# sample estimates:
-#     prop 1     prop 2 
-# 0.40875912 0.03649635 
 
 
 ```
@@ -525,7 +524,7 @@ host_pca = DESeq2::plotPCA(rlogged, returnData = TRUE, intgroup = c("treatment",
       theme_bw() 
 host_pca
 
-ggsave(host_pca, file = "host_pca.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
+#ggsave(host_pca, file = "host_pca.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
 
 ```
 Principal component analyses highlighting treatment groups. Treatment has a significant affect (p < 0.001) on overall expression
@@ -670,7 +669,7 @@ plast_plot = ggplot(dist_summ, aes(x = treat_type, y = dist)) +
       theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1), legend.position = "none")
        
 plast_plot
-ggsave(plast_plot, filename = "PCA_plasticity_2PCs_host.pdf", width=6, height=5, units=c("in"), useDingbats=FALSE)
+#ggsave(plast_plot, filename = "PCA_plasticity_2PCs_host.pdf", width=6, height=5, units=c("in"), useDingbats=FALSE)
 
 
 cols_nocontrol = c("#3182bd", "#3182bd", "#de2d26", "#de2d26")
@@ -701,7 +700,7 @@ plast_boxplot <- ggplot(all_plast_nocontrol, aes(x = treat_type, y = dist)) +
   theme(axis.title.x = element_blank())
 plast_boxplot
 
-ggsave(plast_boxplot, filename = "PCA_plasticity_boxplot_host.pdf", width=2.5, height=4, units=c("in"), useDingbats=FALSE)
+#ggsave(plast_boxplot, filename = "PCA_plasticity_boxplot_host.pdf", width=2.5, height=4, units=c("in"), useDingbats=FALSE)
 
 ```
 
@@ -741,7 +740,7 @@ nrow(go_input_white_hot_oculina)
 head(go_input_white_hot_oculina)
 colnames(go_input_white_hot_oculina) <- c("gene", "pval")
 head(go_input_white_hot_oculina)
-write.csv(go_input_white_hot_oculina, file="/Users/hannahaichelman/Documents/BU/Host_Buffering/MPCC_2018/Sym_analyses/GO_Analyses/oculina_hot_white_host_GO.csv", quote=F, row.names=FALSE)
+write.csv(go_input_white_hot_oculina, file="~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/oculina_hot_white_host_GO.csv", quote=F, row.names=FALSE)
 ```
 
 Make Gene Ontology input table for MWU for Oculina cold treatment

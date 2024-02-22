@@ -1,7 +1,7 @@
 ---
 title: "deseqOculina_symbiont"
 author: "Hannah Aichelman"
-date: "10/22/2019"
+date: "2/20/2024"
 output: 
   html_document:
     toc: true
@@ -35,9 +35,6 @@ BiocManager::install("DESeq", type = "source", checkBuilt = TRUE, lib.loc = "/Li
 ```
 
 ```{r Libraries, message=FALSE, warning=FALSE}
-library(tidyr)
-library(plyr)
-library(dplyr)
 library(DESeq2)
 library(ggplot2)
 library(affycoretools)
@@ -55,6 +52,7 @@ library(kableExtra)
 library(reshape2)
 library(prettydoc)
 library(VennDiagram)
+library(tidyverse)
 ```
 
 ### Counts file and experimental design
@@ -73,7 +71,7 @@ row.names(countDataCulture)=sub("", "isogroup", rownames(countDataCulture))
 head(countDataCulture)
 
 treatment = as.factor(sapply(strsplit(colnames(countDataCulture), split = "_"), "[[", 1)) %>%
-  revalue(c("Control" = "control", "Cool" = "cold", "Heat" = "heat"))
+  plyr::revalue(c("Control" = "control", "Cool" = "cold", "Heat" = "heat"))
 
 expDesign = data.frame(treatment) 
 expDesign$sample = colnames(countDataCulture)
@@ -168,8 +166,6 @@ dds = DESeq(dds)
 results = results(dds)
 summary(results)
 ```
-
-
 
 Let's check to see if we set up our contrast correctly. We should have the treatment condition first and the control second in the log2 fold change (MLE) output. 
 
@@ -316,7 +312,7 @@ deg_barplot = ggplot(culture_degs, aes(x = temperature, y = number, fill=tempera
   geom_text(data = annotate_text, aes(x = x, y = y, label = label))
 deg_barplot
 
-ggsave(deg_barplot, file = "culture_deg_barplot.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
+#ggsave(deg_barplot, file = "culture_deg_barplot.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
 ```
 
 ##Principal Component Analyses 
@@ -363,17 +359,6 @@ Principal component analyses highlighting treatment groups. Treatment has a sign
 
 <br><br>
 
-** Should try to do this for culture individual flask at some point. 
-```{r cache=TRUE, fig.align="center"}
-DESeq2::plotPCA(rlogged, returnData = TRUE, intgroup = c("treatment", "genotype") ) %>% 
-      ggplot(aes(x = PC1, y = PC2)) +
-      geom_point(aes(colour = genotype), size = 3) +
-      xlab(paste0("PC1: ",percentVar[1],"% variance")) +
-      ylab(paste0("PC2: ",percentVar[2],"% variance")) +
-      labs(title = "~ genotype, p=0.2")+
-      theme_cowplot()
-```
-Principal component analyses highlighting genotypes of coral. Genotype does not have a significant affect (p < 0.2) on overall expression
 
 ### PCA Plasticity 
 
@@ -471,7 +456,7 @@ plast_plot = ggplot(dist_summ, aes(x = treatment, y = dist)) +
       theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1), legend.position = "none")
 plast_plot
 
-ggsave(plast_plot, filename = "PCA_plasticity_2PCs_syminculture.pdf", width=6, height=5, units=c("in"), useDingbats=FALSE)
+#ggsave(plast_plot, filename = "PCA_plasticity_2PCs_syminculture.pdf", width=6, height=5, units=c("in"), useDingbats=FALSE)
 
 # boxplot with points overlaid
 plast_nocontrol = pca_plast %>%
@@ -495,113 +480,9 @@ plast_boxplot <- ggplot(plast_nocontrol, aes(x = treatment, y = dist)) +
   theme(axis.title.x = element_blank())
 plast_boxplot
 
-ggsave(plast_boxplot, filename = "PCA_plasticity_boxplot_syminculture.pdf", width=2.5, height=4, units=c("in"), useDingbats=FALSE)
+#ggsave(plast_boxplot, filename = "PCA_plasticity_boxplot_syminculture.pdf", width=2.5, height=4, units=c("in"), useDingbats=FALSE)
 
 ```
-
-
-##Heatmaps
-***
-<br> <br> 
-
-Overall expression, sample by distance. 
-
-```{r, cache=TRUE, fig.align="center"}
-sampleDists <- as.matrix(dist(t(assay(rlogged))))
-heatmap.2(as.matrix(sampleDists), key=F, trace="none",
-          col=colorpanel(100, "black", "white"),
-          margin=c(10, 10))
-```
-
-<br><br>
-<b>Individual genes heatmap </b> 
-<br> 
-Now plotting the z scores, as heatmap2 creates nice clean clusters by doing this. Upregulation indicated by warmer colors, downregulation indicated by cooler colors.
-
-First for heat vs. control comparison
-```{r, cache=TRUE, fig.align='center'}
-norm_counts = read.csv("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/normalized_counts_culture.csv")
-hm = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/culture_hot_results.txt", header=TRUE, col.names=c("X", "baseMean", "log2FoldChange", "lfcSE", "stat", "pvalue","padj")) %>% as_tibble() %>%
-  filter(padj < 0.1) %>% # only want the most DEGs
-  select(X) %>%
-  merge(norm_counts, by.x = "X", by.y = "X")  # turn into a countdatafile
-  row.names(hm) = hm$X
-  hm$X = NULL
-
-## Turning into z-score table
-hm.z = data.matrix(hm)
-hm.z = sweep(hm.z, 1L, rowMeans(hm.z), check.margin = FALSE)
-hm.z.sx = apply(hm.z, 1L, sd)
-hm.z = sweep(hm.z, 1L, hm.z.sx, "/", check.margin = FALSE)
-hm.z = data.matrix(hm.z)
-
-colour = colorRampPalette(rev(c("chocolate1","#FEE090","grey10", "cyan3","cyan")))(100)
-heatmap.2(hm.z, col = colour, Rowv = TRUE, Colv = TRUE, scale = "row", 
-          dendrogram = "both",
-          trace = "none", 
-          margin = c(5,15))
-```
-
-Now for cold vs. control comparison
-```{r, cache=TRUE, fig.align='center'}
-norm_counts = read.csv("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/normalized_counts_culture.csv")
-hm = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/culture_cold_results.txt", header=TRUE, col.names=c("X", "baseMean", "log2FoldChange", "lfcSE", "stat", "pvalue","padj")) %>% as_tibble() %>%
-  filter(padj < 0.1) %>% # only want the most DEGs
-  select(X) %>%
-  merge(norm_counts, by.x = "X", by.y = "X")  # turn into a countdatafile
-  row.names(hm) = hm$X
-  hm$X = NULL
-
-## Turning into z-score table
-hm.z = data.matrix(hm)
-hm.z = sweep(hm.z, 1L, rowMeans(hm.z), check.margin = FALSE)
-hm.z.sx = apply(hm.z, 1L, sd)
-hm.z = sweep(hm.z, 1L, hm.z.sx, "/", check.margin = FALSE)
-hm.z = data.matrix(hm.z)
-
-colour = colorRampPalette(rev(c("chocolate1","#FEE090","grey10", "cyan3","cyan")))(100)
-heatmap.2(hm.z, col = colour, Rowv = TRUE, Colv = TRUE, scale = "row", 
-          dendrogram = "both",
-          trace = "none", 
-          margin = c(5,15))
-```
-
-##Venn Diagrams
-
-Read in our result tables and isolate gene lists that are significant in each experiment. 
-
-```{r cache=TRUE}
-hot = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/culture_hot_results.txt", header = TRUE)
-hot = row.names(hot[hot$padj<0.05 & !is.na(hot$padj),])
-
-cold = read.table("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/culture_cold_results.txt", header = TRUE)
-cold = row.names(cold[cold$padj<0.05 & !is.na(cold$padj),])
-```
-<br><br>
-
-Set up a venn diagram looking for similar genes in each experiment. 
-```{r cache=TRUE}
-all_shared = list("Hot" = hot, "Cold" = cold)
-prettyvenn=venn.diagram(
-      x = all_shared,
-      filename=NULL,
-      #col = "transparent",
-      fill = c("#fd8d3c", "#74c476"),
-      alpha = 0.5,
-      # label.col = c("darkred", "white", "darkgreen", "white", "white", "white", "blue4"),
-      cex = 2.5,
-      fontfamily = "sans",
-      fontface = "bold",
-      cat.default.pos = "text",
-      cat.col = "black",
-      cat.cex = 2.5,
-      cat.fontfamily = "sans",
-      cat.dist = c(0.08, 0.08),
-      cat.pos = 1
-    );
-grid.draw(prettyvenn)
-```
-
 
 
 ##Gene Ontology

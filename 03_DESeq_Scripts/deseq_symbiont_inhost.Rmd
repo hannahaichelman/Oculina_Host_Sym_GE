@@ -1,7 +1,7 @@
 ---
 title: "deseqOculina_symbiont"
 author: "Hannah Aichelman"
-date: "11/30/2022"
+date: "2/20/2024"
 output: 
   html_document:
     toc: true
@@ -35,7 +35,6 @@ BiocManager::install("DESeq", type = "source", checkBuilt = TRUE, lib.loc = "/Li
 ```
 
 ```{r Libraries, message=FALSE, warning=FALSE}
-library(tidyverse)
 library(DESeq2)
 library(ggplot2)
 library(affycoretools)
@@ -53,6 +52,7 @@ library(kableExtra)
 library(reshape2)
 library(prettydoc)
 library(VennDiagram)
+library(tidyverse)
 ```
 
 ### Counts file and experimental design
@@ -87,8 +87,8 @@ sym_counts_summary = data.frame(colSums(countDataSym))
 View(sym_counts_summary)
 sym_counts_summary = sym_counts_summary %>%
   rownames_to_column() %>%
-  rename("SampleID1" = "rowname") %>%
-  rename("SymCounts" = "colSums.countDataSym.")
+  dplyr::rename("SampleID1" = "rowname") %>%
+  dplyr::rename("SymCounts" = "colSums.countDataSym.")
 
 #write.csv(sym_counts_summary, "~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/03_DESeq_Scripts/CountsFiles/SymCountSummary.csv", row.names = FALSE)
 
@@ -101,7 +101,7 @@ countDataSym_brown_noclone = countDataSym_brown %>%
   select(-c(OL6_C_B,  OL7_F_B,  OL8_H_B))
 
 treatmentSym = as.factor(sapply(strsplit(colnames(countDataSym_brown_noclone), split = "_"), "[[", 2)) %>%
-  revalue(c("C" = "control", "F" = "cold", "H" = "heat"))
+  plyr::revalue(c("C" = "control", "F" = "cold", "H" = "heat"))
 
 genotypeSym  = as.factor(sapply(strsplit(colnames(countDataSym_brown_noclone), split = ""), "[[", 2))
 
@@ -109,9 +109,6 @@ expDesign_Sym = data.frame(colnames(countDataSym_brown_noclone), treatmentSym, g
 expDesign_Sym$type = "sym_inhost"
 expDesign_Sym$treat_type = paste(expDesign_Sym$treatmentSym,expDesign_Sym$type, sep = "_")
 names(expDesign_Sym) = c("sample", "treatment", "genotype", "type", "treat_type")
-
-
-
 ```
 
 Experimental Design key with sample names 
@@ -119,8 +116,8 @@ Experimental Design key with sample names
 kable(expDesign_Sym) %>%
   kable_styling(bootstrap_options = "striped", full_width = F)
 ```
-Descriptive Summary stats of the mapped reads. 
 
+Descriptive Summary stats of the mapped reads. 
 ```{r echo=FALSE}
 stats.per.sample = data.frame(t(do.call(cbind, lapply(countDataSym_brown_noclone, summary))))
       stats.per.sample$libsum = apply(countDataSym_brown_noclone, 2, sum) ## libsum
@@ -189,10 +186,7 @@ results = results(dds)
 summary(results)
 ```
 
-
-
-Let's check to see if we set up our contrast correctly. We should have the treatment condition first and the control second in the log2 fold change (MLE) output. 
-
+Check to see if we set up our contrast correctly. We should have the treatment condition first and the control second in the log2 fold change (MLE) output. 
 ```{r, cache=TRUE}
 head(results)
 ```
@@ -265,7 +259,6 @@ DESeq2::plotMA(res_cold_sym, main = "Cold vs Control, Symbiont in Host")
 ## Get RLDPVAL table
 ```{r, cache=TRUE, fig.align='center'}
 #get pvals
-
 valcold=cbind(res_cold_sym$pvalue, res_cold_sym$padj)
 head(valcold)
 colnames(valcold)=c("pval.cold.syminhost", "padj.cold.syminhost")
@@ -340,7 +333,7 @@ deg_barplot = ggplot(syminhost_degs, aes(x = temperature, y = number, fill=tempe
   geom_text(data = annotate_text, aes(x = x, y = y, label = label))
 deg_barplot
 
-ggsave(deg_barplot, file = "syminhost_deg_barplot.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
+#ggsave(deg_barplot, file = "syminhost_deg_barplot.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
 ```
 ##Test for differences in # of DE genes
 ```{r, cache=TRUE, fig.align='center'}
@@ -406,7 +399,7 @@ pca_syminhost = DESeq2::plotPCA(rlogged, returnData = TRUE, intgroup = c("treatm
       #labs(title = "~ treatment, p<0.001")+
       theme_bw()
 pca_syminhost
-ggsave(pca_syminhost, file = "syminhost_pca.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
+#ggsave(pca_syminhost, file = "syminhost_pca.pdf", width=5, height=4, units=c("in"), useDingbats=FALSE)
 ```
 Principal component analyses highlighting treatment groups. Treatment has a significant affect (p < 0.001) on overall expression
 
@@ -421,7 +414,6 @@ DESeq2::plotPCA(rlogged, returnData = TRUE, intgroup = c("treatment", "genotype"
       geom_point(aes(colour = genotype), size = 3) +
       xlab(paste0("PC1: ",percentVar[1],"% variance")) +
       ylab(paste0("PC2: ",percentVar[2],"% variance")) +
-      labs(title = "~ genotype, p=0.2")+
       theme_cowplot()
 ```
 Principal component analyses highlighting genotypes of coral. Genotype does not have a significant affect (p = 0.2) on overall expression (justification for not including it in the model)
@@ -523,7 +515,7 @@ plast_plot = ggplot(dist_summ, aes(x = treatment, y = dist)) +
       theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1), legend.position = "none")
 plast_plot
 
-ggsave(plast_plot, filename = "PCA_plasticity_2PCs_syminhost.pdf", width=6, height=5, units=c("in"), useDingbats=FALSE)
+#ggsave(plast_plot, filename = "PCA_plasticity_2PCs_syminhost.pdf", width=6, height=5, units=c("in"), useDingbats=FALSE)
 
 # boxplot with points overlaid
 plast_nocontrol = pca_plast %>%
@@ -546,7 +538,7 @@ plast_boxplot <- ggplot(plast_nocontrol, aes(x = treatment, y = dist)) +
   theme(axis.title.x = element_blank())
 plast_boxplot
 
-ggsave(plast_boxplot, filename = "PCA_plasticity_boxplot_syminhost.pdf", width=2.5, height=4, units=c("in"), useDingbats=FALSE)
+#ggsave(plast_boxplot, filename = "PCA_plasticity_boxplot_syminhost.pdf", width=2.5, height=4, units=c("in"), useDingbats=FALSE)
 
 ```
 
