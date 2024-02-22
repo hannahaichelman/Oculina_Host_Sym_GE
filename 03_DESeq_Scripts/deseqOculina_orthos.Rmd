@@ -281,12 +281,12 @@ max(totalCounts)
 
 ```{r warning=FALSE, cache=TRUE}
 dds<-DESeqDataSetFromMatrix(countData=orthoCounts_noclones, colData=expDesign, design=~treat_type) #can only test for the main effects of treatment
-keep.dds = rowSums(counts(dds) >= 2) >= 42 # at least 33 samples (80%) with a count of 2 or higher
+keep.dds = rowSums(counts(dds) >= 2) >= 42 # at least 80% of samples with a count of 2 or higher
 dds.corr = dds[keep.dds,]
 
 dds = DESeq2::DESeq(dds.corr)
 results = results(dds) 
-summary(results) # 134 up 155 down / 23 up 47 down after filtering
+summary(results) #23 up 47 down after filtering
 plotDispEsts(dds)
 ```
 

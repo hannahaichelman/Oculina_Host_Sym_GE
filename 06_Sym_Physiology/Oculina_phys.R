@@ -114,39 +114,40 @@ ggsave(temp.pam.plot, file = "temps.fvfm.pdf", width=5, height=2, units=c("in"),
 
 
 #### Stats ####
-head(pam.sym)
-str(pam.sym)
-pam.sym$day = as.factor(pam.sym$day)
+head(pam_temps)
+str(pam_temps)
+pam_temps$day = as.factor(pam_temps$day)
 
-lm.pam = lmer(avgfvfm ~ day*treatment + (1|genet), data = pam.sym, REML = TRUE)
+lm.pam = lmer(avgfvfm ~ day*treatment + (1|genet), data = pam_temps, REML = TRUE)
 summary(lm.pam)
 Anova(lm.pam)
 
 # Response: avgfvfm
-#                 Chisq Df Pr(>Chisq)    
-# day            81.38  4  < 2.2e-16 ***
-# treatment     124.08  2  < 2.2e-16 ***
-# day:treatment 125.36  8  < 2.2e-16 ***
-
+# Chisq Df Pr(>Chisq)    
+# day            75.074  4  1.922e-15 ***
+# treatment     163.371  2  < 2.2e-16 ***
+# day:treatment 151.534  8  < 2.2e-16 ***
+  
 emms<-emmeans(lm.pam, ~treatment|day) #, adjust="Bonferoni"
 pairs(emms, interaction = "pairwise") %>% rbind(adjust="fdr")
 
-# day treatment_pairwise  estimate     SE  df t.ratio p.value
-# 2   cold - control      0.010163 0.0210 409   0.484  0.6739
-# 2   cold - heat         0.026537 0.0212 409   1.252  0.3522
-# 2   control - heat      0.016375 0.0210 409   0.779  0.5455
-# 5   cold - control     -0.023169 0.0208 409  -1.112  0.3844
-# 5   cold - heat        -0.000724 0.0208 409  -0.035  0.9723
-# 5   control - heat      0.022444 0.0208 409   1.078  0.3844
-# 8   cold - control     -0.054215 0.0208 409  -2.603  0.0205
-# 8   cold - heat        -0.041092 0.0208 409  -1.974  0.0921
-# 8   control - heat      0.013123 0.0208 409   0.630  0.6104
-# 11  cold - control     -0.210801 0.0208 409 -10.120  <.0001
-# 11  cold - heat        -0.118379 0.0208 409  -5.685  <.0001
-# 11  control - heat      0.092421 0.0208 409   4.437  <.0001
-# 14  cold - control     -0.238042 0.0208 409 -11.428  <.0001
-# 14  cold - heat        -0.161264 0.0208 409  -7.745  <.0001
-# 14  control - heat      0.076778 0.0208 409   3.686  0.0006
+# day treatment_pairwise estimate     SE  df t.ratio p.value
+# 2   control - cold     -0.00167 0.0198 282  -0.084  0.9328
+# 2   control - heat      0.01689 0.0198 282   0.854  0.4544
+# 2   cold - heat         0.01855 0.0203 282   0.916  0.4508
+# 5   control - cold      0.03647 0.0195 282   1.869  0.1342
+# 5   control - heat      0.03078 0.0195 282   1.578  0.1928
+# 5   cold - heat        -0.00568 0.0197 282  -0.288  0.8289
+# 8   control - cold      0.05378 0.0195 282   2.757  0.0155
+# 8   control - heat      0.02771 0.0195 282   1.421  0.2348
+# 8   cold - heat        -0.02607 0.0197 282  -1.321  0.2560
+# 11  control - cold      0.22160 0.0195 282  11.359  <.0001
+# 11  control - heat      0.03163 0.0195 282   1.621  0.1928
+# 11  cold - heat        -0.18997 0.0197 282  -9.624  <.0001
+# 14  control - cold      0.23822 0.0195 282  12.211  <.0001
+# 14  control - heat      0.08213 0.0195 282   4.210  0.0001
+# 14  cold - heat        -0.15608 0.0197 282  -7.908  <.0001
+
 
 
   

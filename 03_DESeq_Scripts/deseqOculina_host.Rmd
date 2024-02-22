@@ -34,7 +34,6 @@ BiocManager::install("DESeq", type = "source", checkBuilt = TRUE, lib.loc = "/Li
 ```
 
 ```{r Libraries, message=FALSE, warning=FALSE}
-library(tidyverse)
 library(DESeq2)
 library(ggplot2)
 library(affycoretools)
@@ -52,7 +51,7 @@ library(kableExtra)
 library(reshape2)
 library(prettydoc)
 library(VennDiagram)
-
+library(tidyverse)
 ```
 
 ### Counts file and experimental design
@@ -490,13 +489,6 @@ adonis2(pca$x ~ treat_type, data = pcadata, method = 'eu')
 # treat_type  5    51354 0.32969 2.656  0.001 ***
 # Residual   27   104411 0.67031                 
 # Total      32   155766 1.00000                 
-
-
-#           Df SumOfSqs      R2      F Pr(>F)    
-# treatment  2    39640 0.25921 5.3828  0.001 ***
-# sym_state  1     6506 0.04254 1.7670  0.042 *  
-# Residual  29   106781 0.69825                  
-# Total     32   152926 1.00000                  
 
 ```
 <br><br>
