@@ -13,7 +13,7 @@ library(plyr)
 ## Symbionts in Host ##
 # read in go.obo database to figure out the go category id's that we want to pull.
 
-go.obo = read.delim("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/Oculina_GO_Analyses/go.obo")
+go.obo = read.delim("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/go.obo")
 
 # these terms are visually pulled from the Cold GO tree outputs, all terms related to photosynthesis 
 inds = c(which(go.obo$format.version..1.2 == "name: tetrapyrrole binding"), # MF
@@ -29,11 +29,11 @@ want.go.obo = go.obo %>%
   mutate_at("format.version..1.2", str_replace, "id: ", "")
 
 ##pulling all of the photosynthesis terms and making a data frame
-rldpval = read.csv("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/tables/SymInHost_RLDandPVALS.csv", header = TRUE) %>%
+rldpval = read.csv("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/SymInHost_RLDandPVALS.csv", header = TRUE) %>%
   dplyr::rename("gene" = "X")
 
 # read in iso2go file for the algae
-iso2go_sym = read.delim("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/Oculina_GO_Analyses/B_psygmophilum_isogroup_to_GOterm.tab", sep = "\t", header = FALSE) %>%
+iso2go_sym = read.delim("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/B_psygmophilum_isogroup_to_GOterm.tab", sep = "\t", header = FALSE) %>%
   dplyr::rename("gene" = "V1") %>%
   dplyr::rename("GO_ID" = "V2")
  
@@ -50,7 +50,7 @@ str(photo_genes)
 dim(photo_genes)
 
 # add gene name to this df - trim down names and add to photo_genes
-iso2gene = read.delim("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_TagSeq/References/B_psygmophilum_transcriptome/B_psygmophilum_isogroup_to_genename.tab", sep = "\t", header = FALSE) %>%
+iso2gene = read.delim("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/B_psygmophilum_isogroup_to_genename.tab", sep = "\t", header = FALSE) %>%
   dplyr::rename("gene" = "V1") %>%
   dplyr::rename("gene_name" = "V2")
 head(iso2gene)
@@ -61,7 +61,7 @@ iso2gene$gene_name = gsub(" OS.*","",as.character(iso2gene$gene_name))
 iso2gene$gene_name = gsub(", .*","",as.character(iso2gene$gene_name))
 
 head(iso2gene)
-View(iso2gene)
+#View(iso2gene)
 
 photo_genes_anno = photo_genes %>%
   left_join(iso2gene)
@@ -132,7 +132,7 @@ photo.heatmap = pheatmap(explc, cluster_cols = F, scale = "row", color = col0, a
 # Photosynthesis genes first
 # read in go.obo database to figure out the go category id's that we want to pull.
 
-go.obo = read.delim("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/Oculina_GO_Analyses/go.obo")
+go.obo = read.delim("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/go.obo")
 
 # these terms are visually pulled from the GO tree outputs, all terms related to photosynthesis 
 inds = c(which(go.obo$format.version..1.2 == "name: photosynthesis, light harvesting"), # BP
@@ -150,14 +150,14 @@ want.go.obo = go.obo %>%
   mutate_at("format.version..1.2", str_replace, "id: ", "")
 
 ##pulling all of the photosynthesis terms and making a data frame
-rldpval = read.csv("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/Sym_TagSeq/Culture_RLDandPVALS.csv", header = TRUE) %>%
+rldpval = read.csv("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/Culture_RLDandPVALS.csv", header = TRUE) %>%
   dplyr::rename("gene" = "X")
 
 # remove isogroup from rldpval gene
 rldpval$gene = gsub("isogroup", "", rldpval$gene)
 
 # read in iso2go file for the algae
-iso2go_sym = read.delim("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/Oculina_GO_Analyses/B_psygmophilum_isogroup_to_GOterm.tab", sep = "\t", header = FALSE) %>%
+iso2go_sym = read.delim("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/B_psygmophilum_isogroup_to_GOterm.tab", sep = "\t", header = FALSE) %>%
   dplyr::rename("gene" = "V1") %>%
   dplyr::rename("GO_ID" = "V2")
 
@@ -172,7 +172,7 @@ head(photo_genes)
 str(photo_genes)
 
 # add gene name to this df - trim down names and add to photo_genes
-iso2gene = read.delim("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_TagSeq/References/B_psygmophilum_transcriptome/B_psygmophilum_isogroup_to_genename.tab", sep = "\t", header = FALSE) %>%
+iso2gene = read.delim("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/B_psygmophilum_isogroup_to_genename.tab", sep = "\t", header = FALSE) %>%
   dplyr::rename("gene" = "V1") %>%
   dplyr::rename("gene_name" = "V2")
 head(iso2gene)
@@ -246,7 +246,7 @@ ggsave(photo.heatmap, file = "/Users/hannahaichelman/Dropbox/BU/Host_Buffering/M
 # Stress genes
 # read in go.obo database to figure out the go category id's that we want to pull.
 
-go.obo = read.delim("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/Oculina_GO_Analyses/go.obo")
+go.obo = read.delim("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/go.obo")
 
 # these terms are visually pulled from the GO tree outputs, all terms related to stress 
 inds = c(which(go.obo$format.version..1.2 == "name: cellular response to chemical stress"), # BP
@@ -264,14 +264,14 @@ want.go.obo = go.obo %>%
   mutate_at("format.version..1.2", str_replace, "id: ", "")
 
 ##pulling all of the stress terms and making a data frame
-rldpval = read.csv("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/Sym_TagSeq/Culture_RLDandPVALS.csv", header = TRUE) %>%
+rldpval = read.csv("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/08_tables/Culture_RLDandPVALS.csv", header = TRUE) %>%
   dplyr::rename("gene" = "X")
 
 # remove isogroup from rldpval gene
 rldpval$gene = gsub("isogroup", "", rldpval$gene)
 
 # read in iso2go file for the algae
-iso2go_sym = read.delim("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_2018/Sym_analyses/Oculina_GO_Analyses/B_psygmophilum_isogroup_to_GOterm.tab", sep = "\t", header = FALSE) %>%
+iso2go_sym = read.delim("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/B_psygmophilum_isogroup_to_GOterm.tab", sep = "\t", header = FALSE) %>%
   dplyr::rename("gene" = "V1") %>%
   dplyr::rename("GO_ID" = "V2")
 
@@ -286,7 +286,7 @@ head(stress_genes)
 str(stress_genes)
 
 # add gene name to this df - trim down names and add to photo_genes
-iso2gene = read.delim("/Users/hannahaichelman/Dropbox/BU/Host_Buffering/MPCC_TagSeq/References/B_psygmophilum_transcriptome/B_psygmophilum_isogroup_to_genename.tab", sep = "\t", header = FALSE) %>%
+iso2gene = read.delim("~/Dropbox/BU/Host_Buffering/FinalGithub/Oculina_Host_Sym_GE/07_GeneOntology_Analyses/GO_MWU_input_files/B_psygmophilum_isogroup_to_genename.tab", sep = "\t", header = FALSE) %>%
   dplyr::rename("gene" = "V1") %>%
   dplyr::rename("gene_name" = "V2")
 head(iso2gene)
